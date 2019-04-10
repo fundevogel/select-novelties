@@ -1,5 +1,13 @@
+# Composer files
 /composer.lock
-/*.login.json
-/.*cache
 /vendor
-/dist
+
+# Sensitive information
+/*.login.json
+
+# Auto-generated content
+/dist/**/templates
+/dist/**/images
+/dist/**/csv
+!/dist/**/*.pdf
+/.*cache
