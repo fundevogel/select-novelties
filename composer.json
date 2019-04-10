@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "fundevogel/pcbis2pdf": "0.3",
+        "fundevogel/pcbis2pdf": "0.4",
         "berteh/scribusgenerator": "dev-master"
     },
     "repositories": [
