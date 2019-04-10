@@ -1,5 +1,5 @@
 {
-    "name": "fundevogel/novelties-and-recommendations",
+    "name": "fundevogel/recommended-novelties",
     "type": "library",
     "description": "Fundevogel book recommendations, published biannually",
     "keywords": ["books", "pcbis", "knv", "csv", "dtp"],
@@ -7,7 +7,6 @@
     "license": "GPL-3.0",
     "scripts": {
         "start": "php index.php",
-        "print": "./vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py --single -c ./src/formatted/merge.csv -d \";\" -o dist -n result src/example.sla",
         "cs-dry": "php-cs-fixer fix --dry-run --diff",
         "cs-fix": "php-cs-fixer fix"
     },
@@ -19,7 +18,13 @@
         }
     ],
     "require": {
-        "fundevogel/pcbis2pdf": "^0.2"
+        "fundevogel/pcbis2pdf": "0.2",
+        "berteh/scribusgenerator": "dev-master"
     },
-    "minimum-stability": "dev"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Fundevogel/ScribusGenerator"
+        }
+    ]
 }
