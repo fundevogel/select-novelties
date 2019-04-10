@@ -2,10 +2,12 @@
 
 require_once('vendor/autoload.php');
 
-function csv($issue = '2019_01')
+$currentIssue = '2019_01';
+
+function csv($issue)
 {
     $object = new PCBIS2PDF\PCBIS2PDF;
-    $csv_raw = glob('./src/' . $issue . '/csv_raw/*.csv');
+    $csv_raw = glob('./src/' . $issue . '/csv/*.csv');
 
     foreach ($csv_raw as $file) {
         $fromCSV = $object->CSV2PHP($file);
@@ -20,16 +22,15 @@ function csv($issue = '2019_01')
             $outputData[] = $array;
         }
 
-        $object->PHP2CSV($outputData, './src/' . $issue . '/csv_done/' . basename($file));
+        $object->PHP2CSV($outputData, './dist/' . $issue . '/csv/' . basename($file));
     }
     return;
 }
 
-csv();
 
-function scribus($issue = '2019_01')
+function scribus($issue)
 {
-    $files = glob('./src/' . $issue . '/csv_done/*.csv');
+    $files = glob('./dist/' . $issue . '/csv/*.csv');
 
     foreach ($files as $file) {
         $template = './src/'. $issue . '/templates/' . basename($file, '.csv') . '.sla';
@@ -40,7 +41,7 @@ function scribus($issue = '2019_01')
                 '--single', // Single file output
                 '-c ' . $file, // CSV file
                 '-d ";"', // Semicolon as delimiter
-                '-o dist/' . $issue . '/partials', // Output path
+                '-o dist/' . $issue . '/templates', // Output path
                 '-n ' . basename($file, '.csv'), // Output filename (without extension)
                 $template, // Template path
             ];
@@ -52,4 +53,5 @@ function scribus($issue = '2019_01')
     return;
 }
 
-scribus();
+csv($currentIssue);
+scribus($currentIssue);
