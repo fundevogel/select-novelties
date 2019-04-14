@@ -4,10 +4,10 @@
 
 # Sensitive information
 /*.login.json
+.*cache
 
 # Auto-generated content
 /dist/**/templates
 /dist/**/images
 /dist/**/csv
 !/dist/**/*.pdf
-/.*cache

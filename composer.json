@@ -18,13 +18,7 @@
         }
     ],
     "require": {
-        "fundevogel/pcbis2pdf": "0.4",
+        "fundevogel/pcbis2pdf": "dev-master",
         "berteh/scribusgenerator": "dev-master"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Fundevogel/ScribusGenerator"
-        }
-    ]
+    }
 }
