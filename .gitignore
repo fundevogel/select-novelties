@@ -10,4 +10,5 @@
 /dist/**/templates
 /dist/**/images
 /dist/**/csv
+/dist/**/*.csv
 !/dist/**/*.pdf
