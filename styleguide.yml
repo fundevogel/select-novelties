@@ -1,0 +1,31 @@
+fonts:
+  main: "Dosis"
+  frontpage_title: "Cabin Sketch Bold"
+
+colors:
+  black:
+    name: "Black C"
+    hex: "#2D2926"
+  primary_light:
+    spring:
+      name: "Spring Bouquet"
+      hex: "#6DCE87"
+    autumn:
+      name: "Banana"
+      hex: "#FCB953"
+  primary_dark:
+    spring:
+      name: "Irish Green"
+      hex: "#45BE76"
+    autumn:
+      name: "Kumquat"
+      hex: "#FBAA4C"
+
+elements:
+  quote:
+    text: white
+    reference:
+      color: primary_light
+      opacity: 40%
+
+  background: primary_dark
