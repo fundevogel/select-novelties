@@ -2,13 +2,13 @@
 /composer.lock
 /vendor
 
+# Development files
+.vscode
+.env
+
 # Sensitive information
 /*.login.json
 .*cache
 
 # Auto-generated content
-/dist/**/templates
-/dist/**/images
-/dist/**/csv
-/dist/**/*.csv
-!/dist/**/*.pdf
+/issues/**/dist

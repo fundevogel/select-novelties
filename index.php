@@ -1,15 +1,62 @@
+#!/usr/bin/env php
+
 <?php
+
+/*
+ * INCLUDES
+ */
 
 require_once('vendor/autoload.php');
 
-$currentIssue = '2019_01';
+
+/*
+ * VARIABLES
+ */
+
+$issue = isset($argv[1]) ? $argv[1] : die('I find your lack of arguments disturbing.' . "\n");
 
 
-function generateIssue($issue)
-{
-    $src = './src/' . $issue;
-    $dist = './dist/' . $issue;
+$src  = realpath('./issues/' . $issue . '/src');
+$dist = realpath('./issues/' . $issue . '/dist');
+$shared = realpath('./shared');
 
+$season = substr($issue, -2) == "01"
+    ? "spring"
+    : "autumn"
+;
+
+$general = [
+    'hoerbuch' => 15,
+    'besonderes' => 14,
+    'sachbuch' => 13,
+    'ab14' => 12,
+    'ab12' => 11,
+    'ab10' => 10,
+    'ab8' => 9,
+    'ab6' => 8,
+    'vorlesebuch' => 7,
+    'bilderbuch' => 6,
+    'toddler' => 5,
+];
+
+$specials = $season === 'spring'
+    ? [
+        'ostern' => 16,
+    ]
+    : [
+        'kalender' => 17,
+        'weihnachten' => 16,
+    ]
+;
+
+$categories = array_merge($specials, $general);
+
+
+/*
+ * MAIN
+ */
+
+if (!isset($argv[2])) {
 
     /**
      * Processing `.csv` source files
@@ -33,122 +80,154 @@ function generateIssue($issue)
     /**
      * Processing `.sla` source files (with corresponding `.csv` files)
      *
-     * `src/ISSUE/templates/example.sla` >> `dist/ISSUE/templates/example.sla`
-     * using `dist/ISSUE/csv/example.csv` + `src/ISSUE/csv/dataList.csv` as backup
+     * Using `ISSUE/dist/csv/example.csv` with either
+     *
+     * a) `ISSUE/src/templates/example.sla`,
+     * b) `ISSUE/src/templates/dataList.sla` or
+     * c) `shared/templates/dataList.sla` as fallback
+     *
+     * >> `ISSUE/dist/templates/example.sla`
      *
      */
 
     foreach (glob($dist . '/csv/*.csv') as $dataFile) {
-        $templateFile = $src . '/templates/' . basename($dataFile, 'csv') . 'sla';
+        $templateName = basename($dataFile, 'csv') . 'sla';
+        $templateFile = $src . '/templates/' . $templateName;
 
+        // Check if per-issue template file for given category exists
         if (!file_exists($templateFile)) {
+            // If it doesn't, choose per-issue generic template file
             $templateFile = $src . '/templates/dataList.sla';
-        }
 
-        if (file_exists($dist . '/templates/' . basename($dataFile, 'csv') . 'sla')) {
-            continue;
+            if (!file_exists($templateFile)) {
+                // If that doesn't exist either, choose common template file
+                $templateFile = $shared . '/templates/dataList.sla';
+            }
         }
 
         $command = [
             './vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py', // Python script
             '--single', // Single file output
             '-c ' . $dataFile, // CSV file
-            '-o ' . $dist . '/templates', // Output path
+            '-o ' . $dist . '/templates/partials', // Output path
             '-n ' . basename($dataFile, '.csv'), // Output filename (without extension)
             $templateFile, // Template path
         ];
 
         exec(implode(' ', $command), $result);
-        a::show($result);
+        print_r($result);
     }
 
     /**************************************************************************/
 
     /**
-     * Creating `.pdf` files from `.sla` destination files
+     * Importing `.sla` category partials into main `.sla` file
      *
-     * `dist/ISSUE/templates/example.sla` >> `dist/ISSUE/documents/raw/example.pdf`
+     * `ISSUE/dist/templates/*.sla` >> `ISSUE/dist/processed.sla`
      *
      */
 
-    foreach (glob($dist . '/templates/*.sla') as $templateFile) {
-        $command = [
-            // or simply `scribus` if installed via package manager
-            'flatpak run net.scribus.Scribus',
-            '-g',
-            '-py ./scripts/to-pdf.py',
-            '--',
-            $templateFile,
-        ];
+    $mainFile = $src . '/templates/main.sla';
 
-        exec(implode(' ', $command), $result);
-        a::show($result);
+    // Check if per-issue main file exists
+    if (!file_exists($mainFile)) {
+        // If it doesn't, choose common main file
+        $mainFile = $shared . '/templates/' . $season . '.sla';
     }
 
-    foreach (glob($dist . '/templates/*.pdf') as $pdfFile) {
-        rename($pdfFile, $dist . '/documents/raw/' . basename($pdfFile));
+    $baseFile = $dist . '/templates/unprocessed.sla';
+    $processedFile = $dist . '/templates/processed.sla';
+
+    copy($mainFile, $baseFile);
+
+    $count = 0;
+
+    foreach ($categories as $category => $page_number) {
+        $categoryFile = $dist . '/templates/partials/' . $category . '.sla';
+
+        if (!file_exists($categoryFile)) {
+            print_r('File doesn\'t exist: ' . $categoryFile);
+            continue;
+        }
+
+        if ($count > 0) {
+            $baseFile = $processedFile;
+        }
+
+        $command = [
+            'flatpak run net.scribus.Scribus -g -py ./scripts/sla-import.py', // Python script
+            $baseFile, // Base file
+            $categoryFile, // Import file
+            '--page ' . $page_number,
+            '--output ' . $processedFile,
+            '--masterpage category_' . $season . '_' . $category,
+        ];
+
+        $count++;
+
+        exec(implode(' ', $command), $result);
+        print_r($result);
     }
 
     /**************************************************************************/
+
+    /**
+     * Replacing all instances of pattern %%YEAR%% with current year
+     */
+
+    $pattern = '%%YEAR%%';
+
+    $command = [
+        'python ./scripts/replaceYear.py', // Python script
+        $processedFile, // (processed) base file
+        '--pattern ' . $pattern,
+    ];
+
+    exec(implode(' ', $command), $result);
+    print_r($result);
+} elseif (isset($argv[2]) && $argv[2] === '--build') {
 
     /**
      * Optimizing `.pdf` files with Ghostscript
      *
-     * `dist/ISSUE/documents/raw/example.pdf` >> `dist/ISSUE/documents/optimized/example.pdf`
+     * `ISSUE/dist/documents/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
      *
      */
 
-    foreach (glob($dist . '/documents/raw/*.pdf') as $pdfFile) {
-        $outputFile = dirname($pdfFile, 2) . '/optimized/' . basename($pdfFile);
+    $imageResolution = '50';
+    $seasonLocale = $season === 'spring'
+        ? 'fruehjahr'
+        : 'herbst'
+    ;
 
-        $command = [
-            'gs',
-            '-sDEVICE=pdfwrite',
-            '-dCompatibilityLevel=1.4',
-            '-dConvertCMYKImagesToRGB=true',
-            '-dSubsetFonts=true',
-            '-dCompressFonts=true',
-            '-dPDFSETTINGS=/printer',
-            '-dDownsampleColorImages=true',
-            '-dDownsampleGrayImages=true',
-            '-dDownsampleMonoImages=true',
-            '-dColorImageResolution=250',
-            '-dGrayImageResolution=250',
-            '-dMonoImageResolution=250',
-            '-dNOPAUSE',
-            '-dQUIET',
-            '-dBATCH',
-            '-sOutputFile=' . $outputFile,
-            '-c .setpdfwrite',
-            '-f ' . $pdfFile,
-        ];
-
-        exec(implode(' ', $command), $result);
-        a::show($result);
-    }
-
-    /**************************************************************************/
-
-    /**
-     * Merging optimized `.pdf` files with Poppler (see https://poppler.freedesktop.org)
-     *
-     * `dist/ISSUE/documents/optimized/example.pdf` >> `dist/ISSUE/example.pdf`
-     *
-     */
-
-    $pdfFiles = glob($dist . '/documents/optimized/*.pdf');
-    $outputFile = $dist . '/issue_' . $issue . '.pdf';
+    $inputFile = $dist . '/documents/*.pdf';
+    $outputName = date('Y') . '-' . $seasonLocale . '-buchempfehlungen.pdf';
+    $outputFile = dirname($inputFile, 3) . '/' . $outputName;
 
     $command = [
-        'pdfunite',
-        implode(' ', $pdfFiles),
-        $outputFile
+        'gs',
+        '-sDEVICE=pdfwrite',
+        '-dCompatibilityLevel=1.4',
+        '-dConvertCMYKImagesToRGB=true',
+        '-dSubsetFonts=true',
+        '-dCompressFonts=true',
+        '-dPDFSETTINGS=/printer',
+        '-dDownsampleColorImages=true',
+        '-dDownsampleGrayImages=true',
+        '-dDownsampleMonoImages=true',
+        '-dColorImageResolution=' . $imageResolution,
+        '-dGrayImageResolution=' . $imageResolution,
+        '-dMonoImageResolution=' . $imageResolution,
+        '-dNOPAUSE',
+        '-dQUIET',
+        '-dBATCH',
+        '-sOutputFile=' . $outputFile,
+        '-c .setpdfwrite',
+        '-f ' . $inputFile,
     ];
 
     exec(implode(' ', $command), $result);
-    a::show($result);
-
-    return;
+    print_r('Finished!');
+} else {
+    die('Please provide a valid issue identifier.' . "\n");
 }
-
-generateIssue($currentIssue);
