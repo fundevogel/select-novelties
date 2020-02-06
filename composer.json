@@ -6,7 +6,6 @@
     "homepage": "https://github.com/Fundevogel",
     "license": "GPL-3.0",
     "scripts": {
-        "start": "php index.php",
         "cs-dry": "php-cs-fixer fix --dry-run --diff",
         "cs-fix": "php-cs-fixer fix"
     },
@@ -15,10 +14,33 @@
             "name": "Fundevogel",
             "homepage": "https://fundevogel.de",
             "role": "Project Author"
+        },
+        {
+            "name": "Martin Folkers",
+            "homepage": "https://twobrain.io",
+            "role": "Contributor"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "berteh/scribusgenerator",
+                "version": "master",
+                "dist": {
+                    "url": "https://github.com/berteh/scribusgenerator/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git@github.com:berteh/scribusgenerator.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
         "fundevogel/pcbis2pdf": "^1.0",
-        "berteh/scribusgenerator": "dev-master"
+        "berteh/scribusgenerator": "@dev"
     }
 }
