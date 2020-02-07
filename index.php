@@ -53,6 +53,27 @@ $categories = array_merge($specials, $general);
 
 
 /*
+ * FUNCTIONS
+ */
+
+function makePDF(string $scribusFile, string $documentFile = '')
+{
+    if (!$scribusFile || !file_exists($scribusFile)) {
+        exit('Please provide a valid SLA file!' . "\n");
+    }
+
+    $command = [
+        'flatpak run net.scribus.Scribus -g -py ./scripts/pdf-gen.py', // Python script
+        '--input ' . $scribusFile,
+        '--output ' . $documentFile
+    ];
+
+    exec(implode(' ', $command), $result);
+    print_r($result);
+}
+
+
+/*
  * MAIN
  */
 
@@ -185,7 +206,34 @@ if (!isset($argv[2])) {
 
     exec(implode(' ', $command), $result);
     print_r($result);
+
+    /**************************************************************************/
+
+    /**
+     * Generating `.pdf` file for review
+     *
+     * `ISSUE/dist/templates/processed.sla` >> `ISSUE/dist/documents/raw.pdf`
+     */
+
+    $documentFile = $dist . '/documents/raw.pdf';
+
+    makePDF($processedFile, $documentFile);
+
+    // This file will be edited
+    copy($processedFile, $dist . '/templates/edited.sla');
+
 } elseif (isset($argv[2]) && $argv[2] === '--build') {
+
+    /**
+     * Generating the final `.pdf` file after reviewing & editing by hand
+     *
+     * `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
+     */
+
+    $scribusFile = $dist . '/templates/edited.sla';
+    $documentFile = $dist . '/documents/final.pdf';
+
+    makePDF($scribusFile, $documentFile);
 
     /**
      * Optimizing `.pdf` files with Ghostscript
@@ -194,15 +242,14 @@ if (!isset($argv[2])) {
      *
      */
 
-    $imageResolution = '50';
+    $imageResolution = '1';
     $seasonLocale = $season === 'spring'
         ? 'fruehjahr'
         : 'herbst'
     ;
 
-    $inputFile = $dist . '/documents/*.pdf';
     $outputName = date('Y') . '-' . $seasonLocale . '-buchempfehlungen.pdf';
-    $outputFile = dirname($inputFile, 3) . '/' . $outputName;
+    $outputFile = dirname($documentFile, 3) . '/' . $outputName;
 
     $command = [
         'gs',
@@ -223,7 +270,7 @@ if (!isset($argv[2])) {
         '-dBATCH',
         '-sOutputFile=' . $outputFile,
         '-c .setpdfwrite',
-        '-f ' . $inputFile,
+        '-f ' . $documentFile,
     ];
 
     exec(implode(' ', $command), $result);
