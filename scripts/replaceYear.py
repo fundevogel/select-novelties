@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 ##
 # Replaces all instances in a file with the current year
 #

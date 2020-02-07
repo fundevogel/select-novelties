@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 ##
 # Imports all pages of an `.sla` file into another one
 #
