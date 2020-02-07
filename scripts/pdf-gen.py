@@ -44,6 +44,7 @@ file_name = os.path.splitext(scribus.getDocName())[0] + ".pdf"
 if args.output is not None:
     file_name = args.output
 
+pdf.thumbnails = 1
 pdf.file = file_name
 pdf.save()
 scribus.closeDoc()
