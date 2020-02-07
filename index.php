@@ -199,7 +199,7 @@ if (!isset($argv[2])) {
     $pattern = '%%YEAR%%';
 
     $command = [
-        'python ./scripts/replaceYear.py', // Python script
+        'python ./scripts/replace-year.py', // Python script
         $processedFile, // (processed) base file
         '--pattern ' . $pattern,
     ];
