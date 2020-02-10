@@ -33,12 +33,12 @@ args = parser.parse_args()
 
 
 def replace(file_name, pattern, value=''):
-    f = fileinput.input(file_name, inplace=True)
-    for line in f:
+    file = fileinput.input(file_name, inplace=True)
+    for line in file:
         replacement = value
         line = re.sub(pattern, replacement, line)
         sys.stdout.write(line)
-    f.close()
+    file.close()
 
 
 if __name__ == "__main__":
