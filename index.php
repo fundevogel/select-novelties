@@ -80,6 +80,22 @@ function makePDF(string $scribusFile, string $documentFile = '')
 if (!isset($argv[2])) {
 
     /**
+     * Checking for duplicate entries in `.csv` source files
+     */
+
+    exec('bash scripts/find_duplicates.bash ' . $issue, $result);
+
+    if (!empty($result)) {
+        foreach ($result as $duplicate) {
+            print_r($duplicate . "\n");
+        }
+
+        die('Resolve duplicates first!' . "\n");
+    }
+
+    /**************************************************************************/
+
+    /**
      * Processing `.csv` source files
      *
      * `src/ISSUE/csv/example.csv` >> `dist/ISSUE/csv/example.csv`
