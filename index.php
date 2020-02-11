@@ -131,15 +131,22 @@ if (!isset($argv[2])) {
         $templateName = basename($dataFile, 'csv') . 'sla';
         $templateFile = $src . '/templates/' . $templateName;
 
-        // Check if per-issue template file for given category exists
+        // Check if per-issue template file for given category exists ..
         if (!file_exists($templateFile)) {
-            // If it doesn't, choose per-issue generic template file
+            // .. if it doesn't, choose per-issue generic template file
             $templateFile = $src . '/templates/dataList.sla';
+        }
 
-            if (!file_exists($templateFile)) {
-                // If that doesn't exist either, choose common template file
-                $templateFile = $shared . '/templates/dataList.sla';
-            }
+        // Otherwise ..
+        if (!file_exists($templateFile)) {
+            // .. common template file for given category
+            $templateFile = $shared . '/templates/partials/' . $templateName;
+        }
+
+        // But if that doesn't exist either ..
+        if (!file_exists($templateFile)) {
+            // .. ultimately resort to common generic template file
+            $templateFile = $shared . '/templates/partials/dataList.sla';
         }
 
         $command = [
