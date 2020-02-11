@@ -14,7 +14,7 @@ require_once('vendor/autoload.php');
  */
 
 $issue = isset($argv[1]) ? $argv[1] : die('I find your lack of arguments disturbing.' . "\n");
-
+$debug = in_array('--debug', $argv);
 
 $src  = realpath('./issues/' . $issue . '/src');
 $dist = realpath('./issues/' . $issue . '/dist');
@@ -69,7 +69,15 @@ function makePDF(string $scribusFile, string $documentFile = '')
     ];
 
     exec(implode(' ', $command), $result);
-    print_r($result);
+
+    return $result;
+}
+
+function printResult(array $array = [])
+{
+    foreach ($array as $line) {
+        echo $line . "\n";
+    }
 }
 
 
@@ -77,18 +85,18 @@ function makePDF(string $scribusFile, string $documentFile = '')
  * MAIN
  */
 
-if (!isset($argv[2])) {
+if (!isset($argv[2]) || $argv[2] !== '--build') {
 
     /**
      * Checking for duplicate entries in `.csv` source files
      */
 
+    echo('Checking for duplicate entries in `.csv` source files');
+
     exec('bash scripts/find_duplicates.bash ' . $issue, $result);
 
     if (!empty($result)) {
-        foreach ($result as $duplicate) {
-            print_r($duplicate . "\n");
-        }
+        printResult($result);
 
         die('Resolve duplicates first!' . "\n");
     }
@@ -102,15 +110,17 @@ if (!isset($argv[2])) {
      *
      */
 
-    $object = new PCBIS2PDF\PCBIS2PDF;
-    $object->setImagePath($dist . '/images');
-    $object->setCachePath($dist . '/.cache');
+    echo('Processing `.csv` source files');
 
-    foreach (glob($src . '/csv/*.csv') as $dataFile) {
-        $fromCSV = $object->CSV2PHP($dataFile, ';');
-        $data = $object->processData($fromCSV);
-        $object->PHP2CSV($data, $dist . '/csv/' . basename($dataFile));
-    }
+    // $object = new PCBIS2PDF\PCBIS2PDF;
+    // $object->setImagePath($dist . '/images');
+    // $object->setCachePath($dist . '/.cache');
+
+    // foreach (glob($src . '/csv/*.csv') as $dataFile) {
+    //     $fromCSV = $object->CSV2PHP($dataFile, ';');
+    //     $data = $object->processData($fromCSV);
+    //     $object->PHP2CSV($data, $dist . '/csv/' . basename($dataFile));
+    // }
 
     /**************************************************************************/
 
@@ -126,6 +136,8 @@ if (!isset($argv[2])) {
      * >> `ISSUE/dist/templates/example.sla`
      *
      */
+
+    echo('Processing `.sla` source files (with corresponding `.csv` files)');
 
     foreach (glob($dist . '/csv/*.csv') as $dataFile) {
         $templateName = basename($dataFile, 'csv') . 'sla';
@@ -159,7 +171,10 @@ if (!isset($argv[2])) {
         ];
 
         exec(implode(' ', $command), $result);
-        print_r($result);
+
+        if ($debug && !empty($result)) {
+            printResult($result);
+        }
     }
 
     /**************************************************************************/
@@ -170,6 +185,8 @@ if (!isset($argv[2])) {
      * `ISSUE/dist/templates/*.sla` >> `ISSUE/dist/processed.sla`
      *
      */
+
+    echo('Importing `.sla` category partials into main `.sla` file');
 
     $mainFile = $src . '/templates/main.sla';
 
@@ -190,7 +207,7 @@ if (!isset($argv[2])) {
         $categoryFile = $dist . '/templates/partials/' . $category . '.sla';
 
         if (!file_exists($categoryFile)) {
-            print_r('File doesn\'t exist: ' . $categoryFile);
+            echo('File doesn\'t exist: ' . $categoryFile);
             continue;
         }
 
@@ -210,7 +227,10 @@ if (!isset($argv[2])) {
         $count++;
 
         exec(implode(' ', $command), $result);
-        print_r($result);
+
+        if ($debug && !empty($result)) {
+            printResult($result);
+        }
     }
 
     /**************************************************************************/
@@ -218,6 +238,8 @@ if (!isset($argv[2])) {
     /**
      * Replacing all instances of pattern %%YEAR%% with current year
      */
+
+    echo('Replacing all instances of pattern %%YEAR%% with current year');
 
     $pattern = '%%YEAR%%';
 
@@ -228,18 +250,23 @@ if (!isset($argv[2])) {
     ];
 
     exec(implode(' ', $command), $result);
-    print_r($result);
+
+    if ($debug && !empty($result)) {
+        printResult($result);
+    }
 
     /**************************************************************************/
 
     /**
-     * Generating `.pdf` file for review
+     * Generating `.pdf` file for review & copying `.sla` file for proposed changes
      *
      * `ISSUE/dist/templates/processed.sla` >> `ISSUE/dist/documents/raw.pdf`
      *
      * TODO: Until ScribusGenerator doesn't stack dataList entries (for whatever reason),
      * this has to be done manually!
      */
+
+    // echo('Generating `.pdf` file for review & copying `.sla` file for proposed changes');
 
     // $documentFile = $dist . '/documents/raw.pdf';
 
@@ -256,17 +283,21 @@ if (!isset($argv[2])) {
      * `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
      */
 
+    echo('Generating the final `.pdf` file');
+
     $scribusFile = $dist . '/templates/edited.sla';
     $documentFile = $dist . '/documents/final.pdf';
 
     makePDF($scribusFile, $documentFile);
 
     /**
-     * Optimizing `.pdf` files with Ghostscript
+     * Optimizing the final `.pdf` file with Ghostscript
      *
      * `ISSUE/dist/documents/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
      *
      */
+
+    echo('Optimizing the final `.pdf` file with Ghostscript');
 
     $imageResolution = '1';
     $seasonLocale = $season === 'spring'
@@ -300,7 +331,12 @@ if (!isset($argv[2])) {
     ];
 
     exec(implode(' ', $command), $result);
-    print_r('Finished!');
+
+    if ($debug && !empty($result)) {
+        printResult($result);
+    }
+
+    echo('Finished!');
 } else {
     die('Please provide a valid issue identifier.' . "\n");
 }
