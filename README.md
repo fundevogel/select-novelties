@@ -18,8 +18,13 @@ Create a virtual environment with `python2`, since ScribusGenerator doesn't work
 
 
 ## Roadmap
-- [x] Auto PDF generation from python, see e14f969
-- [x] Adding masterpages via import script, see bafac00
+- [x] Auto PDF generation from python, see `e14f969`
+- [x] Adding masterpages via import script, see `bafac00`
 - [ ] Adding tests
+
+
+## Troubleshooting
+After exporting `.csv` files from `pcbis`, they're saved as Latin-3 encoded text (ISO-8859-3). Changing this by hand (eg when removing duplicate entries) causes trouble.
+
 
 :copyright: Fundevogel Kinder- und Jugendbuchhandlung
