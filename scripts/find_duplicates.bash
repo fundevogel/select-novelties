@@ -13,29 +13,40 @@ issue="$1"
 root_directory=$(dirname "$(dirname "$0")")
 cd "$root_directory"/issues/"$issue"/src/csv || exit
 
-isbns=()
-
 while IFS= read -r isbn; do
-    isbns+=("$isbn")
 
     # Remove surrounding quotes
     isbn="${isbn%\"}"
     isbn="${isbn#\"}"
 
-    # Search for files containing ISBN, remove duplicate file entries & put them all in one line
-    duplicate=$(grep -l "$isbn" ./*.csv | uniq | paste -sd "" -)
+    # Search for files containing ISBN, remove those without
+    duplicates=$(grep -c "$isbn" ./*.csv | sed "/0/d")
 
-    # Remove leading './' and trailing '.csv'
-    duplicate="${duplicate:2:-4}"
+    # Check occurences per file ..
+    perfile="${duplicates: -1}"
 
-    # Replace '.csv./' with ' & '
-    duplicate=${duplicate//.csv.\//\ &\ }
+    # .. and across all files
+    infiles=$(echo "$duplicates" | wc -l)
 
-    # Print the result
-    printf "Duplicate found for %s in $duplicate\\n" "$isbn"
+    # If ISBN occurs more than once (per file or across files) ..
+    if [[ $perfile -gt 1 ]] || [[ $infiles -gt 1 ]]; then
 
-# Inject all duplicate entries across `.csv` files, cutting out their ISBNs
-done < <(awk '_[$0]++' ./*.csv | awk -F ";" '{ print $4 }')
+        # (1) Remove last two characters of each entry & put them all in one line
+        files=$(echo "$duplicates" | sed 's/..$//' | paste -sd "" -)
+
+        # (2) Remove leading './'
+        files="${files:2}"
+
+        # (3) Replace './' with ' & '
+        files=${files//.\//\ &\ }
+
+        # (4) Print the result
+        printf "Duplicate found for %s in %s\\n" "$isbn" "$files"
+
+    fi
+
+# Inject ISBNs found across all `.csv` files
+done < <(awk -F ";" '{ print $4 }' ./*.csv | sort | uniq)
 
 
 ##
