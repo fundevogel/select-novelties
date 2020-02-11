@@ -236,11 +236,14 @@ if (!isset($argv[2])) {
      * Generating `.pdf` file for review
      *
      * `ISSUE/dist/templates/processed.sla` >> `ISSUE/dist/documents/raw.pdf`
+     *
+     * TODO: Until ScribusGenerator doesn't stack dataList entries (for whatever reason),
+     * this has to be done manually!
      */
 
-    $documentFile = $dist . '/documents/raw.pdf';
+    // $documentFile = $dist . '/documents/raw.pdf';
 
-    makePDF($processedFile, $documentFile);
+    // makePDF($processedFile, $documentFile);
 
     // This file will be edited
     copy($processedFile, $dist . '/templates/edited.sla');
