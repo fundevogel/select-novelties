@@ -91,7 +91,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * Checking for duplicate entries in `.csv` source files
      */
 
-    echo('Checking for duplicate entries in `.csv` source files');
+    echo('Checking for duplicate entries in `.csv` source files' . "\n");
 
     exec('bash scripts/find_duplicates.bash ' . $issue, $result);
 
@@ -110,17 +110,17 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      *
      */
 
-    echo('Processing `.csv` source files');
+    echo('Processing `.csv` source files' . "\n");
 
-    // $object = new PCBIS2PDF\PCBIS2PDF;
-    // $object->setImagePath($dist . '/images');
-    // $object->setCachePath($dist . '/.cache');
+    $object = new PCBIS2PDF\PCBIS2PDF;
+    $object->setImagePath($dist . '/images');
+    $object->setCachePath($dist . '/.cache');
 
-    // foreach (glob($src . '/csv/*.csv') as $dataFile) {
-    //     $fromCSV = $object->CSV2PHP($dataFile, ';');
-    //     $data = $object->processData($fromCSV);
-    //     $object->PHP2CSV($data, $dist . '/csv/' . basename($dataFile));
-    // }
+    foreach (glob($src . '/csv/*.csv') as $dataFile) {
+        $fromCSV = $object->CSV2PHP($dataFile, ';');
+        $data = $object->processData($fromCSV);
+        $object->PHP2CSV($data, $dist . '/csv/' . basename($dataFile));
+    }
 
     /**************************************************************************/
 
@@ -137,7 +137,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      *
      */
 
-    echo('Processing `.sla` source files (with corresponding `.csv` files)');
+    echo('Processing `.sla` source files (with corresponding `.csv` files)' . "\n");
 
     foreach (glob($dist . '/csv/*.csv') as $dataFile) {
         $templateName = basename($dataFile, 'csv') . 'sla';
@@ -186,7 +186,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      *
      */
 
-    echo('Importing `.sla` category partials into main `.sla` file');
+    echo('Importing `.sla` category partials into main `.sla` file' . "\n");
 
     $mainFile = $src . '/templates/main.sla';
 
@@ -207,7 +207,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
         $categoryFile = $dist . '/templates/partials/' . $category . '.sla';
 
         if (!file_exists($categoryFile)) {
-            echo('File doesn\'t exist: ' . $categoryFile);
+            echo('File doesn\'t exist: ' . $categoryFile . "\n");
             continue;
         }
 
@@ -239,7 +239,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * Replacing all instances of pattern %%YEAR%% with current year
      */
 
-    echo('Replacing all instances of pattern %%YEAR%% with current year');
+    echo('Replacing all instances of pattern %%YEAR%% with current year' . "\n");
 
     $pattern = '%%YEAR%%';
 
@@ -266,7 +266,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * this has to be done manually!
      */
 
-    // echo('Generating `.pdf` file for review & copying `.sla` file for proposed changes');
+    // echo('Generating `.pdf` file for review & copying `.sla` file for proposed changes' . "\n");
 
     // $documentFile = $dist . '/documents/raw.pdf';
 
@@ -283,7 +283,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
      */
 
-    echo('Generating the final `.pdf` file');
+    echo('Generating the final `.pdf` file' . "\n");
 
     $scribusFile = $dist . '/templates/edited.sla';
     $documentFile = $dist . '/documents/final.pdf';
@@ -297,7 +297,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      *
      */
 
-    echo('Optimizing the final `.pdf` file with Ghostscript');
+    echo('Optimizing the final `.pdf` file with Ghostscript' . "\n");
 
     $imageResolution = '1';
     $seasonLocale = $season === 'spring'
@@ -336,7 +336,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
         printResult($result);
     }
 
-    echo('Finished!');
+    echo('Finished!' . "\n");
 } else {
     die('Please provide a valid issue identifier.' . "\n");
 }
