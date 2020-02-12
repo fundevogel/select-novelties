@@ -20,11 +20,12 @@ Create a virtual environment with `python2`, since ScribusGenerator doesn't work
 ## Roadmap
 - [x] Auto PDF generation from python, see `e14f969`
 - [x] Adding masterpages via import script, see `bafac00`
+- [ ] Fixing `ScribusGenerator` related bug leading to stacked
 - [ ] Adding tests
 
 
 ## Troubleshooting
-After exporting `.csv` files from `pcbis`, they're saved as Latin-3 encoded text (ISO-8859-3). Changing this by hand (eg when removing duplicate entries) causes trouble.
+After exporting saved lists (called *Speicherlisten*) as `.csv` files from [`pcbis`](https://www.pcbis.de), they're saved as Latin-3 encoded text ([ISO-8859-3](https://en.wikipedia.org/wiki/ISO/IEC_8859-3)). Changing this by hand, let's say when removing duplicate entries, will render certain characters (especially [umlauts](https://en.wikipedia.org/wiki/Diaeresis_(diacritic)#Umlaut)) unreadable during the process.
 
 
 :copyright: Fundevogel Kinder- und Jugendbuchhandlung
