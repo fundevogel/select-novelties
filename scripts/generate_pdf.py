@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#! /usr/bin/python
+# ~*~ coding=utf-8 ~*~
 
 ##
 # Generates PDF file from a given SLA file - quick & dirty
@@ -31,20 +32,19 @@ parser.add_argument(
     help="Creates PDF file under specified path",
 )
 
+if __name__ == "__main__":
+    args = parser.parse_args()
 
-args = parser.parse_args()
+    # Generating PDF
+    scribus.openDoc(args.input)
+    pdf = scribus.PDFfile()
 
+    file_name = os.path.splitext(scribus.getDocName())[0] + ".pdf"
 
-# Generating PDF
-scribus.openDoc(args.input)
-pdf = scribus.PDFfile()
+    if args.output is not None:
+        file_name = args.output
 
-file_name = os.path.splitext(scribus.getDocName())[0] + ".pdf"
-
-if args.output is not None:
-    file_name = args.output
-
-pdf.thumbnails = 1
-pdf.file = file_name
-pdf.save()
-scribus.closeDoc()
+    pdf.thumbnails = 1
+    pdf.file = file_name
+    pdf.save()
+    scribus.closeDoc()

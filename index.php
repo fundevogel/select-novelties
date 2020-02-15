@@ -63,7 +63,7 @@ function makePDF(string $scribusFile, string $documentFile = '')
     }
 
     $command = [
-        'flatpak run net.scribus.Scribus -g -py ./scripts/pdf-gen.py', // Python script
+        'flatpak run net.scribus.Scribus -g -py ./scripts/generate_pdf.py', // Python script
         '--input ' . $scribusFile,
         '--output ' . $documentFile
     ];
@@ -216,7 +216,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
         }
 
         $command = [
-            'flatpak run net.scribus.Scribus -g -py ./scripts/sla-import.py', // Python script
+            'flatpak run net.scribus.Scribus -g -py ./scripts/import-sla.py', // Python script
             $baseFile, // Base file
             $categoryFile, // Import file
             '--page ' . $page_number,
@@ -272,7 +272,17 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
 
     // makePDF($processedFile, $documentFile);
 
-    // This file will be edited
+    /**************************************************************************/
+
+    /**
+     * Copying processed `.sla` file, ready to be edited
+     *
+     * `ISSUE/dist/templates/processed.sla` >> `ISSUE/dist/templates/edited.sla`
+     *
+     */
+
+    echo('Copying processed `.sla` file, ready to be edited' . "\n");
+
     copy($processedFile, $dist . '/templates/edited.sla');
 
 } elseif (isset($argv[2]) && $argv[2] === '--build') {
@@ -283,11 +293,11 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
      */
 
+    $scribusFile = $dist . '/templates/edited.sla';
+    $documentFile = $dist . '/documents/final.pdf';
+
     if (isset($argv[3]) && $argv[3] === '--all') {
         echo('Generating the final `.pdf` file' . "\n");
-
-        $scribusFile = $dist . '/templates/edited.sla';
-        $documentFile = $dist . '/documents/final.pdf';
 
         makePDF($scribusFile, $documentFile);
     }
