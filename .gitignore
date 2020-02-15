@@ -9,6 +9,7 @@
 # Sensitive information
 /*.login.json
 .*cache
+example.py
 
 # Auto-generated content
 /issues/**/dist
