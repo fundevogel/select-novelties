@@ -283,12 +283,16 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
      */
 
-    echo('Generating the final `.pdf` file' . "\n");
+    if (isset($argv[3]) && $argv[3] === '--all') {
+        echo('Generating the final `.pdf` file' . "\n");
 
-    $scribusFile = $dist . '/templates/edited.sla';
-    $documentFile = $dist . '/documents/final.pdf';
+        $scribusFile = $dist . '/templates/edited.sla';
+        $documentFile = $dist . '/documents/final.pdf';
 
-    makePDF($scribusFile, $documentFile);
+        makePDF($scribusFile, $documentFile);
+    }
+
+    /**************************************************************************/
 
     /**
      * Optimizing the final `.pdf` file with Ghostscript
@@ -299,7 +303,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
 
     echo('Optimizing the final `.pdf` file with Ghostscript' . "\n");
 
-    $imageResolution = '1';
+    $imageResolution = '200';
     $seasonLocale = $season === 'spring'
         ? 'fruehjahr'
         : 'herbst'
