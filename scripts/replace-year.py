@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#! /usr/bin/python
+# ~*~ coding=utf-8 ~*~
 
 ##
 # Replaces all instances in a file with the current year
@@ -29,8 +30,6 @@ parser.add_argument(
     "--pattern", help="Pattern to be replaced"
 )
 
-args = parser.parse_args()
-
 
 def replace(file_name, pattern, value=''):
     file = fileinput.input(file_name, inplace=True)
@@ -42,6 +41,8 @@ def replace(file_name, pattern, value=''):
 
 
 if __name__ == "__main__":
+    args = parser.parse_args()
+
     if args.pattern is None:
         print('No pattern specified, exiting ..')
         sys.exit()

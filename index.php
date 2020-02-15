@@ -350,6 +350,31 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
         printResult($result);
     }
 
+    /**************************************************************************/
+
+    /**
+     * Generating `.eml` message drafts
+     */
+
+    echo('Generating `.eml` message drafts' . "\n");
+
+    $seasonLocale = $season === 'spring'
+        ? 'Frühling'
+        : 'Herbst'
+    ;
+
+    $command = [
+        'python ./scripts/get_books.py', // Python script
+        '--input ' . $scribusFile,
+        '--subject "Empfehlungsliste ' . $seasonLocale . ' ' . date('Y') . '"'
+    ];
+
+    exec(implode(' ', $command), $result);
+
+    if ($debug && !empty($result)) {
+        printResult($result);
+    }
+
     echo('Finished!' . "\n");
 } else {
     die('Please provide a valid issue identifier.' . "\n");
