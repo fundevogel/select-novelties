@@ -162,7 +162,7 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
         }
 
         $command = [
-            './vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py', // Python script
+            '.env/bin/python vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py', // Python script
             '--single', // Single file output
             '-c ' . $dataFile, // CSV file
             '-o ' . $dist . '/templates/partials', // Output path
@@ -283,9 +283,30 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
 
     echo('Copying processed `.sla` file, ready to be edited' . "\n");
 
-    copy($processedFile, $dist . '/templates/edited.sla');
+    copy(
+        $processedFile,
+        $dist . '/templates/edited.sla'
+    );
+}
 
-} elseif (isset($argv[2]) && $argv[2] === '--build') {
+    /**
+     * Checking for duplicate entries in `.csv` source files
+     */
+
+    echo('Checking for duplicate entries in `.csv` source files' . "\n");
+
+    exec('bash scripts/find_duplicates.bash ' . $issue, $result);
+
+    if (!empty($result)) {
+        printResult($result);
+
+        die('Resolve duplicates first!' . "\n");
+    }
+
+
+if (in_array('--build', $argv)) {
+
+    $documentFile = $dist . '/documents/final.pdf';
 
     /**
      * Generating the final `.pdf` file after reviewing & editing by hand
@@ -294,9 +315,8 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      */
 
     $scribusFile = $dist . '/templates/edited.sla';
-    $documentFile = $dist . '/documents/final.pdf';
 
-    if (isset($argv[3]) && $argv[3] === '--all') {
+    if (in_array('--pdf', $argv)) {
         echo('Generating the final `.pdf` file' . "\n");
 
         makePDF($scribusFile, $documentFile);
@@ -356,23 +376,25 @@ if (!isset($argv[2]) || $argv[2] !== '--build') {
      * Generating `.eml` message drafts
      */
 
-    echo('Generating `.eml` message drafts' . "\n");
+    if (in_array('--mail', $argv)) {
+        echo('Generating `.eml` message drafts' . "\n");
 
-    $seasonLocale = $season === 'spring'
-        ? 'Frühling'
-        : 'Herbst'
-    ;
+        $seasonLocale = $season === 'spring'
+            ? 'Frühling'
+            : 'Herbst'
+        ;
 
-    $command = [
-        'python ./scripts/get_books.py', // Python script
-        '--input ' . $scribusFile,
-        '--subject "Empfehlungsliste ' . $seasonLocale . ' ' . date('Y') . '"'
-    ];
+        $command = [
+            'python ./scripts/get_books.py', // Python script
+            '--input ' . $scribusFile,
+            '--subject "Empfehlungsliste ' . $seasonLocale . ' ' . date('Y') . '"'
+        ];
 
-    exec(implode(' ', $command), $result);
+        exec(implode(' ', $command), $result);
 
-    if ($debug && !empty($result)) {
-        printResult($result);
+        if ($debug && !empty($result)) {
+            printResult($result);
+        }
     }
 
     echo('Finished!' . "\n");
