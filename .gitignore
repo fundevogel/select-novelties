@@ -1,15 +1,21 @@
+# Cache files
+/__pycache__/
+/.doit.db
+
 # Composer files
 /composer.lock
 /vendor
 
 # Development files
-.vscode
-.env
+/.vscode
+/.env
 
 # Sensitive information
 /*.login.json
-.*cache
-example.py
+/.*cache
+/example.py
 
 # Auto-generated content
 /issues/**/dist
+/issues/**/*.pdf
+!/issues/**/buchempfehlungen-*-[0-9][0-9][0-9][0-9].pdf

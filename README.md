@@ -18,10 +18,26 @@ Create a virtual environment with `python2`, since ScribusGenerator doesn't work
 
 
 ## Roadmap
-- [x] Auto PDF generation from python, see `e14f969`
-- [x] Adding masterpages via import script, see `bafac00`
-- [ ] Fixing `ScribusGenerator` related bug leading to stacked
+- [x] Auto PDF generation from python
+- [x] Adding masterpages via import script
+- [ ] Fixing bug that causes imported pages to be "stacked" somehow (maybe Scribus)
 - [ ] Adding tests
+- [x] Generate list: book>page, sorted by publisher
+- [ ] Improving string-replacement
+  - Neuausg > Neuausgabe
+  - 1Zweitauflage (?)
+  - farbigen Tab > farbige Tabellen
+  - + > und (?)
+  - 3 Aufl > Drittauflage / 3. Auflage
+  - 17 Aufl > 17. Auflage
+  - Großformatiges Paperback Klappenbroschur > Großformatiges Paperback (Klappenbroschur)
+  - Mit zahlreichen bunten zum Teil ausklappb Bild > Mit zahlreichen bunten und zum Teil ausklappbaren Bildern
+  - Mit farbige Abbildungen > Mit farbigen Abbildungen
+  - 1 Auflage > Erstauflage
+  - Mit Illustrationen und Sticker > Mit Illustrationen und Stickern
+  - 6, überarb Aufl > Sechste, überarbeitete Auflage
+  - (2 mp3 CD) > (2 CDs)
+
 
 
 ## Troubleshooting
