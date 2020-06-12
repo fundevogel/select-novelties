@@ -1,0 +1,5 @@
+Results:
+Duplicate found for 978-3-7725-2917-7 in bilderbuch.csv
+Duplicate found for 978-3-7725-2932-0 in bilderbuch.csv
+Duplicate found for 978-3-8251-5248-2 in vorlesebuch.csv
+Duplicate found for 978-3-8251-5262-8 in bilderbuch.csv & vorlesebuch.csv
