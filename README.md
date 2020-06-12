@@ -20,6 +20,7 @@ Create a virtual environment with `python2`, since ScribusGenerator doesn't work
 ## Roadmap
 - [x] Auto PDF generation from python
 - [x] Adding masterpages via import script
+- [ ] Implement python WSDL workflow (eg using Zeep)
 - [ ] Fixing bug that causes imported pages to be "stacked" somehow (maybe Scribus)
 - [ ] Adding tests
 - [x] Generate list: book>page, sorted by publisher
@@ -37,11 +38,6 @@ Create a virtual environment with `python2`, since ScribusGenerator doesn't work
   - Mit Illustrationen und Sticker > Mit Illustrationen und Stickern
   - 6, überarb Aufl > Sechste, überarbeitete Auflage
   - (2 mp3 CD) > (2 CDs)
-
-
-
-## Troubleshooting
-After exporting saved lists (called *Speicherlisten*) as `.csv` files from [`pcbis`](https://www.pcbis.de), they're saved as Latin-3 encoded text ([ISO-8859-3](https://en.wikipedia.org/wiki/ISO/IEC_8859-3)). Changing this by hand, let's say when removing duplicate entries, will render certain characters (especially [umlauts](https://en.wikipedia.org/wiki/Diaeresis_(diacritic)#Umlaut)) unreadable during the process.
 
 
 :copyright: Fundevogel Kinder- und Jugendbuchhandlung
