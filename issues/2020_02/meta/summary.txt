@@ -2,9 +2,10 @@ Anaconda:
 Gerdt von Bassewitz - "Peterchens Mondfahrt" auf Seite 31
 Lewis Carroll - "Alice im Wunderland" auf Seite 32
 Claire Gratias & Sylvie Serprix - "Hör auf zu lesen!" auf Seite 33
-Erich Ackermann - "Schwedische Märchen" auf Seite 92
+Erich Ackermann - "Schwedische Märchen" auf Seite 91
 
 Arctis Verlag:
+Siri Pettersen - "Der Eisenwolf (Bd. 1)" auf Seite None
 Norton Juster - "Die Abenteuer von Milo, Tack und Kackerlack" auf Seite 45
 Erich Kästner - "Gullivers Reisen" auf Seite 46
 Louisa May Alcott - "Little Women. Vier Schwestern halten zusammen" auf Seite 57
@@ -12,8 +13,7 @@ Kerry Drewery - "Der letzte Papierkranich - Eine Geschichte aus Hiroshima" auf S
 Roshani Chokshi - "Die silbernen Schlangen (Bd. 2)" auf Seite 63
 Claire McFall - "Ferryman - Die Grenzgänger (Bd. 2)" auf Seite 67
 Rosaria Munda - "Feuererwachen (Bd. 1)" auf Seite 68
-Siri Pettersen - "Der Eisenwolf (Bd. 1)" auf Seite 68
-Laura Zimmermann - "Meine Augen sind hier oben" auf Seite 71
+Laura Zimmermann - "Meine Augen sind hier oben" auf Seite 70
 
 Arena:
 Andreas H. Schmachtl - "Snöfrid aus dem Wiesental (3). Die wahrlich rasante Jagd nach der Flussperle" auf Seite 36
@@ -23,9 +23,9 @@ Atlantis, Orell Füssli:
 Kathrin Schärer - "Was steckt dahinter?" auf Seite 9
 Heyjin Go - "Schneeglück verschenken" auf Seite 15
 Maria Stalder - "Die Waldlinge" auf Seite 27
-Kathrin Schärer - "Spuren im Schnee, Adventskalender" auf Seite 111
-Maria Stalder - "Advent im Waldhaus, Adventskalender" auf Seite 111
-Dieter Wiesmüller - "Ein Schiff bringt einen Schatz, Adventskalender" auf Seite 113
+Kathrin Schärer - "Spuren im Schnee, Adventskalender" auf Seite 110
+Maria Stalder - "Advent im Waldhaus, Adventskalender" auf Seite 110
+Dieter Wiesmüller - "Ein Schiff bringt einen Schatz, Adventskalender" auf Seite 112
 
 Baobab Books:
 Tatia Nadareischwili - "Tina hat Mut" auf Seite 23
@@ -56,10 +56,10 @@ Sabine Engel - "Bühne frei für Ben!" auf Seite 50
 Verena Petrasch - "Der Händler der Töne" auf Seite 52
 Ross MacKenzie - "Immernacht" auf Seite 59
 Stephan Knösel - "Panic Hotel" auf Seite 66
-Julia Dürr - "Wo kommt unser Essen her?" auf Seite 77
-Michael Schäfer - "Mein Geld, dein Geld" auf Seite 84
-Katrin Wiehle - "Ich bin das Eichhörnchen" auf Seite 85
-Ola Woldanska-Plocinska - "Schütze die Natur" auf Seite 86
+Julia Dürr - "Wo kommt unser Essen her?" auf Seite 76
+Michael Schäfer - "Mein Geld, dein Geld" auf Seite 83
+Katrin Wiehle - "Ich bin das Eichhörnchen" auf Seite 84
+Ola Woldanska-Plocinska - "Schütze die Natur" auf Seite 85
 
 Carlsen:
 Lisa Stickley - "Spring, Bernard, spring!" auf Seite 27
@@ -71,25 +71,25 @@ Anna Woltz - "Haifischzähne" auf Seite 55
 Tamara Bach - "Sankt Irgendwas" auf Seite 63
 Kate Gordon - "Girl running, Boy falling" auf Seite 65
 Sandhya Menon - "Zufällig vorherbestimmt" auf Seite 68
-Bouwien Jansen & Lotte Stegeman - "Tierisch" auf Seite 79
-Ina Schmidt - "So viele Fragen an die Welt" auf Seite 83
-Yaroslava Black - "Zug der Fische" auf Seite 92
-Günther Jakobs - "Du bist mein Freund, weil..." auf Seite 96
-J. K. Rowling - "Quidditch im Wandel der Zeiten, Schmuckausgabe" auf Seite 98
-Margit Auer - "Lenni im Weihnachtsglück" auf Seite 106
-Sabine Städing - "13 Weihnachtstrolle machen Ärger" auf Seite 111
-Juli Zeh - "Alle Jahre wieder" auf Seite 114
+Bouwien Jansen & Lotte Stegeman - "Tierisch" auf Seite 78
+Ina Schmidt - "So viele Fragen an die Welt" auf Seite 82
+Yaroslava Black - "Zug der Fische" auf Seite 91
+Günther Jakobs - "Du bist mein Freund, weil..." auf Seite 95
+J. K. Rowling - "Quidditch im Wandel der Zeiten, Schmuckausgabe" auf Seite 97
+Margit Auer - "Lenni im Weihnachtsglück" auf Seite 105
+Sabine Städing - "13 Weihnachtstrolle machen Ärger" auf Seite 110
+Juli Zeh - "Alle Jahre wieder" auf Seite 113
 
 Diogenes:
 Thomas Meyer & Mehrdad Zaeri - "Wie der kleine Stern auf die Welt kam" auf Seite 21
 Timon Meyer - "Rolf röhrt" auf Seite 22
-Tomi Ungerer - "Familie Mellops feiert Weihnachten" auf Seite 112
+Tomi Ungerer - "Familie Mellops feiert Weihnachten" auf Seite 111
 
 Dorling Kindersley:
-nan - "Wissen. Geschichte" auf Seite 75
-Moira Butterfield - "Der Klang der Tiere. In der Wildnis" auf Seite 77
-Ben Hoare - "Wundervolle Welt der Natur" auf Seite 78
-Jean Menzies - "Griechische Mythen und Sagen" auf Seite 81
+nan - "Wissen. Geschichte" auf Seite 74
+Moira Butterfield - "Der Klang der Tiere. In der Wildnis" auf Seite 76
+Ben Hoare - "Wundervolle Welt der Natur" auf Seite 77
+Jean Menzies - "Griechische Mythen und Sagen" auf Seite 80
 
 Dressler Verlag GmbH:
 Miriam Mann - "Mila und die geheime Schule" auf Seite 46
@@ -97,41 +97,41 @@ Heather Fawcett - "Ember Drachentochter" auf Seite 50
 Cornelia Funke - "Reckless - Auf silberner Fährte" auf Seite 64
 Cornelia Funke - "Spiegelwelt" auf Seite 64
 Grit Poppe - "Verraten" auf Seite 69
-Nina Brochmann & Ellen Støkken Dahl - "Schamlos schön" auf Seite 76
-Martin Dorey - "#umweltheld in 2 minuten" auf Seite 77
-Heather Camlot - "Stell dir vor, es ist Krieg und keiner geht hin" auf Seite 93
-Charles Dickens - "Eine Weihnachtsgeschichte" auf Seite 108
+Nina Brochmann & Ellen Støkken Dahl - "Schamlos schön" auf Seite 75
+Martin Dorey - "#umweltheld in 2 minuten" auf Seite 76
+Heather Camlot - "Stell dir vor, es ist Krieg und keiner geht hin" auf Seite 92
+Charles Dickens - "Eine Weihnachtsgeschichte" auf Seite 107
 
 DTV:
 Håkan Jaensson - "Die Strubbelköpfe - Volle Fahrt ins Abenteuer" auf Seite 34
 Sebastien De Castell - "Spellslinger - Shadowblack" auf Seite 57
 Nora Hoch - "Das Salzwasserjahr" auf Seite 66
 Sarah J. Maas - "Crescent City 1 - Wenn das Dunkel erwacht" auf Seite 67
-Linda Rottler - "Die Stadt der gläsernen Träume" auf Seite 70
+Linda Rottler - "Die Stadt der gläsernen Träume" auf Seite 69
 
 DuMont Kalenderverlag:
-Rotraud Susanne Berner - "Wimmel-Kalender 2021" auf Seite 116
-Rotraut Susanne Berner - "Wimmlingen 2021" auf Seite 116
-Tom Schamp - "Der schönste und größte Bildwörterkalender der Farben 2021" auf Seite 117
-Torben Kuhlmann - "Mäuseabenteuer 2021" auf Seite 118
-Aleksandra Mizielinska - "Alle Welt 2021" auf Seite 119
-Daniela Kulot - "Megaplaner 2021, Familienkalender" auf Seite 119
-Raman Prinja - "Das Planetarium 2021" auf Seite 120
-Sven Nordqvist - "Spaziergang mit Hund 2021" auf Seite 120
+Rotraud Susanne Berner - "Wimmel-Kalender 2021" auf Seite 115
+Rotraut Susanne Berner - "Wimmlingen 2021" auf Seite 115
+Tom Schamp - "Der schönste und größte Bildwörterkalender der Farben 2021" auf Seite 116
+Torben Kuhlmann - "Mäuseabenteuer 2021" auf Seite 117
+Aleksandra Mizielinska - "Alle Welt 2021" auf Seite 118
+Daniela Kulot - "Megaplaner 2021, Familienkalender" auf Seite 118
+Raman Prinja - "Das Planetarium 2021" auf Seite 119
+Sven Nordqvist - "Spaziergang mit Hund 2021" auf Seite 119
 
 Ellermann:
 Oksana Bula - "Nein, ich bin nicht müde! / Ja, ich will ins Bett!" auf Seite 12
 Florian Fickel - "Jetzt wird geschlafen, Freunde!" auf Seite 33
-Petra Maria Schmitt & Christian Dreller - "Das große Buch der Kinderfragen" auf Seite 83
-Susanne Orosz - "Und wie feierst du?" auf Seite 110
+Petra Maria Schmitt & Christian Dreller - "Das große Buch der Kinderfragen" auf Seite 82
+Susanne Orosz - "Und wie feierst du?" auf Seite 109
 
 EMF Edition Michael Fischer:
-Annette Neubauer - "Girls for Future" auf Seite 89
-Claudia Schaumann - "Das große Kinderkunst-Kreativbuch" auf Seite 90
+Annette Neubauer - "Girls for Future" auf Seite 88
+Claudia Schaumann - "Das große Kinderkunst-Kreativbuch" auf Seite 89
 
 Eulenspiegel:
 Ernst Anschütz - "Putt, putt, putt, ihr Hühnerchen" auf Seite 6
-Achim Roscher - "Ilse Bilse" auf Seite 97
+Achim Roscher - "Ilse Bilse" auf Seite 96
 
 Freies Geistesleben:
 Jean E. Pendziwol - "In einem Kirschbaum fand ich Hoffnung" auf Seite 24
@@ -151,18 +151,18 @@ Eric Carle & Bill Martin - "Brauner Bär, wen siehst denn du?" auf Seite 7
 Nadine Brun-Cosme & Oliver Tallec - "Großer Wolf & kleiner Wolf - Das Glück, das nicht vom Baum fallen wollte" auf Seite 11
 Doreen Cronin - "Hier lang! Da lang!" auf Seite 13
 Olivier Tallec - "Das ist mein Baum" auf Seite 28
-Øyvind Torseter - "Ein Mann für alle Fälle" auf Seite 73
-Anne-Sophie Baumann & Pierrick Graviou - "Mein großes Buch der Erde" auf Seite 76
-Bernadette Gervais - "Von Zeit zu Zeit" auf Seite 78
-Volker Mehnert - "Die großen Flüsse der Welt" auf Seite 80
-Carole Saturno - "Griechenland" auf Seite 82
-Thomas Müller - "Ein Jahr mit den Kranichen" auf Seite 82
-Jan Van der Veken - "Das Flugzeugebuch" auf Seite 85
-Sabine Lohf - "Komm, lass uns spielen!" auf Seite 89
-Shannon Merenstein - "Collage-Workshops für Kinder" auf Seite 89
-Timothée de Fombelle - "Rosalie" auf Seite 94
-Eric Carle - "Die kleine Raupe Nimmersatt feiert Weihnachten" auf Seite 107
-Silke Lambeck - "Das Weihnachtsmannprojekt" auf Seite 109
+Øyvind Torseter - "Ein Mann für alle Fälle" auf Seite 72
+Anne-Sophie Baumann & Pierrick Graviou - "Mein großes Buch der Erde" auf Seite 75
+Bernadette Gervais - "Von Zeit zu Zeit" auf Seite 77
+Volker Mehnert - "Die großen Flüsse der Welt" auf Seite 79
+Carole Saturno - "Griechenland" auf Seite 81
+Thomas Müller - "Ein Jahr mit den Kranichen" auf Seite 81
+Jan Van der Veken - "Das Flugzeugebuch" auf Seite 84
+Sabine Lohf - "Komm, lass uns spielen!" auf Seite 88
+Shannon Merenstein - "Collage-Workshops für Kinder" auf Seite 88
+Timothée de Fombelle - "Rosalie" auf Seite 93
+Eric Carle - "Die kleine Raupe Nimmersatt feiert Weihnachten" auf Seite 106
+Silke Lambeck - "Das Weihnachtsmannprojekt" auf Seite 108
 
 Hanser:
 Henrike Wilson - "Das kleine Nein-Schwein" auf Seite 29
@@ -173,43 +173,43 @@ Jutta Richter - "Frau Wolle und die Welt hinter der Welt" auf Seite 52
 Thomas Taylor - "Malamander - Die Geheimnisse von Eerie-on-Sea" auf Seite 54
 Allan Stratton - "Zoe, Grace und der Weg zurück nach Hause" auf Seite 61
 Tobias Elsäßer - "Play" auf Seite 64
-Dirk Pope - "Still!" auf Seite 69
-Christoph Thomas Link - "Das neue Universum 120" auf Seite 80
-Mathilda Masters - "123 superschlaue Dinge, die du über das Klima wissen musst" auf Seite 80
-Elena Favilli - "Good Night Stories for Rebel Girls - 100 Migrantinnen, die die Welt verändern" auf Seite 94
-Issa Watanabe - "Flucht" auf Seite 98
+Dirk Pope - "Still!" auf Seite 68
+Christoph Thomas Link - "Das neue Universum 120" auf Seite 79
+Mathilda Masters - "123 superschlaue Dinge, die du über das Klima wissen musst" auf Seite 79
+Elena Favilli - "Good Night Stories for Rebel Girls - 100 Migrantinnen, die die Welt verändern" auf Seite 93
+Issa Watanabe - "Flucht" auf Seite 97
 
 Hörcompany:
-Christine Schulz-Reiss - "Fernando Magellan einmal um die ganze Welt, 1 Audio-CD" auf Seite 104
+Christine Schulz-Reiss - "Fernando Magellan einmal um die ganze Welt, 1 Audio-CD" auf Seite 103
 
 Jaja Verlag:
-Jenny Boidol - "Taschenkalender 2021 - Vögel" auf Seite 116
-Marie Geißler - "Familienplaner 2021" auf Seite 117
-Annette Köhn - "Heldinnen 2021" auf Seite 119
+Jenny Boidol - "Taschenkalender 2021 - Vögel" auf Seite 115
+Marie Geißler - "Familienplaner 2021" auf Seite 116
+Annette Köhn - "Heldinnen 2021" auf Seite 118
 
 Jumbo Neue Medien:
 Adolfo Serra - "Eine andere Geschichte" auf Seite 27
-Marko Simsa & Silke Brix - "Bach für Kinder, m. 1 Audio-CD, m. 1 Buch" auf Seite 85
-Kirsten Boie - "Zurück in Sommerby, 4 Audio-CD" auf Seite 100
-Gordon Griffin - "Five Little Monkeys. English Nursery Rhymes and Children's Songs, Audio-CD" auf Seite 101
-Markus Osterwalder - "Mit Bobo Siebenschläfer durch das Jahr, 3 Audio-CD" auf Seite 102
-Andreas H. Schmachtl - "Tilda Apfelkern. Weihnachtszeit im Winterwald, Audio-CD" auf Seite 103
-Andreas H. Schmachtl & Bernd Stephan - "Snöfrid aus dem Wiesental. Die wahrlich rasante Jagd nach der Flussperle, Audio-CD" auf Seite 104
-Kirsten Boie - "O du fröhliche Entführung, Audio-CD" auf Seite 106
+Marko Simsa & Silke Brix - "Bach für Kinder, m. 1 Audio-CD, m. 1 Buch" auf Seite 84
+Kirsten Boie - "Zurück in Sommerby, 4 Audio-CD" auf Seite 99
+Gordon Griffin - "Five Little Monkeys. English Nursery Rhymes and Children's Songs, Audio-CD" auf Seite 100
+Markus Osterwalder - "Mit Bobo Siebenschläfer durch das Jahr, 3 Audio-CD" auf Seite 101
+Andreas H. Schmachtl - "Tilda Apfelkern. Weihnachtszeit im Winterwald, Audio-CD" auf Seite 102
+Andreas H. Schmachtl & Bernd Stephan - "Snöfrid aus dem Wiesental. Die wahrlich rasante Jagd nach der Flussperle, Audio-CD" auf Seite 103
+Kirsten Boie - "O du fröhliche Entführung, Audio-CD" auf Seite 105
 
 Jungbrunnen-Verlag:
 Canizales - "Hübsch!" auf Seite 12
 Eva Roth - "Lila Perk" auf Seite 53
 
 Kindermann:
-Christine Schulz-Reiss - "Fernando Magellan" auf Seite 84
+Christine Schulz-Reiss - "Fernando Magellan" auf Seite 83
 
 Klett Kinderbuch Verlag:
 Hans-Christian Schmidt - "Eine Wiese für alle" auf Seite 26
-Kim Fupz Aakeson - "Hugo & Hassan" auf Seite 73
-Marja Baseler & Annemarie van den Brink - "Das Hotel zum Oberstübchen" auf Seite 75
-Lena Zeise - "Das wahre Leben der Bauernhoftiere" auf Seite 87
-Moni Port - "Wenn die Kuh am Himmel schwirrt" auf Seite 97
+Kim Fupz Aakeson - "Hugo & Hassan" auf Seite 72
+Marja Baseler & Annemarie van den Brink - "Das Hotel zum Oberstübchen" auf Seite 74
+Lena Zeise - "Das wahre Leben der Bauernhoftiere" auf Seite 86
+Moni Port - "Wenn die Kuh am Himmel schwirrt" auf Seite 96
 
 Knesebeck:
 Samuel Langley-Swain - "Theo liebt es bunt" auf Seite 19
@@ -218,13 +218,13 @@ Charles Dickens - "Oliver Twist" auf Seite 49
 Charles Dickens - "Oliver Twist" auf Seite 49
 Nancy Springer - "Der Fall des geheimnisvollen Fächers" auf Seite 61
 Robin Stevens - "Eine Prise Mord" auf Seite 61
-Michael Bright - "Als der Mensch auf Bäumen saß" auf Seite 76
-Jess French - "Bedrohte Arten" auf Seite 78
-Avalon Nuovo - "Hier spielt die Musik. Das Orchester und seine Instrumente" auf Seite 82
+Michael Bright - "Als der Mensch auf Bäumen saß" auf Seite 75
+Jess French - "Bedrohte Arten" auf Seite 77
+Avalon Nuovo - "Hier spielt die Musik. Das Orchester und seine Instrumente" auf Seite 81
 
 LittleTiger Verlag:
-Janosch - "Janosch Tigerentenkalender 2021" auf Seite 118
-Janosch - "Janosch Familienplaner 2021" auf Seite 118
+Janosch - "Janosch Tigerentenkalender 2021" auf Seite 117
+Janosch - "Janosch Familienplaner 2021" auf Seite 117
 
 Loewe Verlag:
 Jeremy Lachlan - "Der Schlüssel aller Seelen" auf Seite 58
@@ -250,15 +250,15 @@ Sabine Giebken - "Orcasommer" auf Seite 65
 Antje Leser - "Luftschlösser sind schwer zu knacken" auf Seite 66
 Sarah Lyu - "14 Minuten gelogene Wahrheit" auf Seite 67
 Tamara Ireland Stone - "Mit anderen Worten: ich" auf Seite 70
-Martin Jenkins - "Komm, wir entdecken die Eichhörnchen" auf Seite 79
-Francois Moutou - "Matti und das Leben im Wald - Ein Marder zeigt dir sein Zuhause" auf Seite 81
-Nadine Schubert - "Grüne Helden - Ohne Plastik geht es auch" auf Seite 83
-Natalie Wollersheim - "Die Blaue Stunde" auf Seite 86
-Günther Jakobs - "Wunderbare Liederzeit" auf Seite 95
-Annette Amrhein - "Ein wunderbares Weihnachtslied" auf Seite 106
+Martin Jenkins - "Komm, wir entdecken die Eichhörnchen" auf Seite 78
+Francois Moutou - "Matti und das Leben im Wald - Ein Marder zeigt dir sein Zuhause" auf Seite 80
+Nadine Schubert - "Grüne Helden - Ohne Plastik geht es auch" auf Seite 82
+Natalie Wollersheim - "Die Blaue Stunde" auf Seite 85
+Günther Jakobs - "Wunderbare Liederzeit" auf Seite 94
+Annette Amrhein - "Ein wunderbares Weihnachtslied" auf Seite 105
 
 Midas:
-Philip Hopman - "Audrey & Hubert" auf Seite 95
+Philip Hopman - "Audrey & Hubert" auf Seite 94
 
 Minedition:
 Robert Ingpen - "Das Magische Buchregal" auf Seite 17
@@ -269,15 +269,15 @@ Baek Hee Na - "Wolkenbrot" auf Seite 16
 Mireille Messier - "Nichts los im Wald" auf Seite 21
 Maria Engstrand - "Code: Elektra" auf Seite 57
 Laurel Snyder - "Insel der Waisen" auf Seite 60
-Jan P. Schutten - "Nette Skelette" auf Seite 84
-Agnès de Lestrade - "Jubiläumsausgabe - Die große Wörterfabrik" auf Seite 96
+Jan P. Schutten - "Nette Skelette" auf Seite 83
+Agnès de Lestrade - "Jubiläumsausgabe - Die große Wörterfabrik" auf Seite 95
 
 Moritz:
 Satomi Ichikawa - "Kleines Pferdchen Mahabat" auf Seite 17
 Ulf Nilsson & Gitte Spee - "Die allerkleinste Polizistin" auf Seite 23
 Megumi Iwasa - "Viele Grüße aus dem Algenwäldchen" auf Seite 41
 Sara Ohlsson - "Fanny ist die Beste" auf Seite 42
-Aleksandra Mizielinska & Daniel Mizielinski - "Auf nach Yellowstone!" auf Seite 81
+Aleksandra Mizielinska & Daniel Mizielinski - "Auf nach Yellowstone!" auf Seite 80
 
 NordSüd Verlag:
 Jon Klassen - "Wo ist mein Hut" auf Seite 8
@@ -288,10 +288,10 @@ Taltal Levi - "Wo ihr mich findet" auf Seite 20
 Johanna Ries - "Die Fleckenfeder" auf Seite 24
 Sophie Blackall - "Lieber Besucher aus dem All" auf Seite 31
 Erwin Moser - "Boris der Kater" auf Seite 35
-Torben Kuhlmann - "Einstein" auf Seite 96
-Gisela Cölle - "Der Sternenbaum" auf Seite 107
-Marcus Pfister - "Frohe Weihnachten, Regenbogenfisch" auf Seite 110
-Monika Utnik-Strugala - "Die schönste Zeit" auf Seite 112
+Torben Kuhlmann - "Einstein" auf Seite 95
+Gisela Cölle - "Der Sternenbaum" auf Seite 106
+Marcus Pfister - "Frohe Weihnachten, Regenbogenfisch" auf Seite 109
+Monika Utnik-Strugala - "Die schönste Zeit" auf Seite 111
 
 Oetinger:
 Annette Moser - "1,2,3 groooß!" auf Seite 8
@@ -307,44 +307,44 @@ Paul Maar - "Das Sams und der blaue Drache" auf Seite 46
 Kirsten Boie - "Zurück in Sommerby" auf Seite 49
 Antonia Michaelis - "Der Koffer der tausend Zauber" auf Seite 52
 Tanya Stewner - "Alea Aquarius 6" auf Seite 54
-Kirsten Boie - "O du fröhliche Entführung" auf Seite 107
-Astrid Lindgren - "Tierisch schöne Weihnachtszeit" auf Seite 112
-Sven Nordqvist - "Pettersson und Findus Familienkalender 2021" auf Seite 120
+Kirsten Boie - "O du fröhliche Entführung" auf Seite 106
+Astrid Lindgren - "Tierisch schöne Weihnachtszeit" auf Seite 111
+Sven Nordqvist - "Pettersson und Findus Familienkalender 2021" auf Seite 119
 
 Oetinger Media:
-Astrid Lindgren & Paul Maar & Sabine Ludwig - "Tierisch schöne Weihnachtszeit, 1 Audio-CD" auf Seite 110
+Astrid Lindgren & Paul Maar & Sabine Ludwig - "Tierisch schöne Weihnachtszeit, 1 Audio-CD" auf Seite 109
 
 Peter Hammer Verlag:
 Yvonne Hergane - "Später, sagt Peter" auf Seite 7
 Will Gmehling - "Nächste Runde" auf Seite 51
-Leonard Erlbruch - "Ich wünsch mir einen Engel" auf Seite 93
-Arne Rautenberg - "kuddelmuddel remmidemmi schnickschnack" auf Seite 97
-Wolf Erlbruch - "Wolf Erlbruchs Adventskalender - Schöne Bescherung" auf Seite 108
-Leonard Erlbruch - "Leonard Erlbruchs Kinderzimmerkalender 2021" auf Seite 117
+Leonard Erlbruch - "Ich wünsch mir einen Engel" auf Seite 92
+Arne Rautenberg - "kuddelmuddel remmidemmi schnickschnack" auf Seite 96
+Wolf Erlbruch - "Wolf Erlbruchs Adventskalender - Schöne Bescherung" auf Seite 107
+Leonard Erlbruch - "Leonard Erlbruchs Kinderzimmerkalender 2021" auf Seite 116
 
 Picus Verlag:
 Jean-Luc Englebert - "Keine Angst, kleiner Prinz!" auf Seite 14
 
 Prestel:
 Jessica Courtney-Tickle - "Der Karneval der Tiere, m. Soundeffekten" auf Seite 13
-Sandra Lawrence - "Atlas der Heldinnen und Helden" auf Seite 79
-Rachel Williams - "Wunder der Natur zum Innehalten und Staunen" auf Seite 86
-Emily Hawkins - "Das große Handbuch der Elfen" auf Seite 94
-Larissa Ribeiro - "Im Dschungel wird gewählt" auf Seite 95
+Sandra Lawrence - "Atlas der Heldinnen und Helden" auf Seite 78
+Rachel Williams - "Wunder der Natur zum Innehalten und Staunen" auf Seite 85
+Emily Hawkins - "Das große Handbuch der Elfen" auf Seite 93
+Larissa Ribeiro - "Im Dschungel wird gewählt" auf Seite 94
 
 Rotopol:
 Matthew Forsythe - "Pokko und die Trommel" auf Seite 15
-Guillaume Perreault - "Der Weltraumpostbote" auf Seite 73
+Guillaume Perreault - "Der Weltraumpostbote" auf Seite 72
 
 Silberfisch:
-Margit Auer - "Eingeschneit! Das Hörspiel, 1 Audio-CD" auf Seite 100
-Sabine Bohlmann - "Eine Pudelmütze voller Wintergeschichten, 1 Audio-CD" auf Seite 100
-Martin Muser - "Kannawoniwasein - Manchmal fliegt einem alles um die Ohren - Das Hörspiel, Audio-CD" auf Seite 101
-Otfried Preußler - "Das kleine Gespenst - Das Hörspiel, 2 Audio-CD" auf Seite 102
-Otfried Preußler - "Der kleine Wassermann - Das Hörspiel, 2 Audio-CD" auf Seite 102
-Otfried Preußler - "Die kleine Hexe - Das Hörspiel, 2 Audio-CD" auf Seite 103
-Otfried Preußler & Susanne Preußler-Bitsch - "Die kleine Hexe, 1 Audio-CD" auf Seite 103
-Albert Sixtus & Anne und Rudolf Mühlhaus & Herbert Kranz - "Winter in der Häschenschule, Musik in der Häschenschule, Lampes Wochenende, Schnuckihas und Miezemau, 1 Audio-CD" auf Seite 104
+Margit Auer - "Eingeschneit! Das Hörspiel, 1 Audio-CD" auf Seite 99
+Sabine Bohlmann - "Eine Pudelmütze voller Wintergeschichten, 1 Audio-CD" auf Seite 99
+Martin Muser - "Kannawoniwasein - Manchmal fliegt einem alles um die Ohren - Das Hörspiel, Audio-CD" auf Seite 100
+Otfried Preußler - "Das kleine Gespenst - Das Hörspiel, 2 Audio-CD" auf Seite 101
+Otfried Preußler - "Der kleine Wassermann - Das Hörspiel, 2 Audio-CD" auf Seite 101
+Otfried Preußler - "Die kleine Hexe - Das Hörspiel, 2 Audio-CD" auf Seite 102
+Otfried Preußler & Susanne Preußler-Bitsch - "Die kleine Hexe, 1 Audio-CD" auf Seite 102
+Albert Sixtus & Anne und Rudolf Mühlhaus & Herbert Kranz - "Winter in der Häschenschule, Musik in der Häschenschule, Lampes Wochenende, Schnuckihas und Miezemau, 1 Audio-CD" auf Seite 103
 
 Thienemann in der Thienemann-Esslinger Verlag GmbH:
 Sabine Bohlmann - "Der kleine Siebenschläfer: Eine Pudelmütze voller Wintergeschichten" auf Seite 32
@@ -361,7 +361,7 @@ Charlotte Habersack - "Torkel - Ist Brokkoli giftig?" auf Seite 41
 Martin Klein - "Speedy rennt" auf Seite 42
 Antje Herden - "Parole Teetee" auf Seite 45
 Jutta Nymphius - "Oben ohne" auf Seite 60
-Nikola Huppertz - "Gebrannte Mandeln für Grisou" auf Seite 109
+Nikola Huppertz - "Gebrannte Mandeln für Grisou" auf Seite 108
 
 Urachhaus:
 Cecilia Davidsson - "Die Mumins und der letzte Drache" auf Seite 13
@@ -372,26 +372,26 @@ Daniela Drescher - "Giesbert und der Gluckerbach" auf Seite 32
 Nora Surojegin - "Untu und das Geheimnis des Lichts" auf Seite 37
 Ulf Stark - "Die Ausreißer" auf Seite 47
 Susin Nielsen - "Adresse unbekannt" auf Seite 60
-Rose Lagercrantz - "Kleiner schwarzer Hund in der Nacht" auf Seite 109
+Rose Lagercrantz - "Kleiner schwarzer Hund in der Nacht" auf Seite 108
 
 Usborne Verlag:
-Sam Baer & Laura Cowan - "Mein Geschichts-Bilderbuch: Rückwärts durch die Zeit" auf Seite 75
+Sam Baer & Laura Cowan - "Mein Geschichts-Bilderbuch: Rückwärts durch die Zeit" auf Seite 74
 
 Verlag Antje Kunstmann:
-Keri Smith - "Mach dieses Bilderbuch fertig" auf Seite 98
+Keri Smith - "Mach dieses Bilderbuch fertig" auf Seite 97
 
 White Star:
 Federica Magrin - "Die zauberhafte Welt der Feen" auf Seite 21
 L. Frank Baum - "Der Zauberer von Oz" auf Seite 39
 Manuela Adreani - "Das Dschungelbuch" auf Seite 39
-Claudia Bordin - "Die schönsten Brettspiele für Weihnachten" auf Seite 108
+Claudia Bordin - "Die schönsten Brettspiele für Weihnachten" auf Seite 107
 
 Woow Books:
 Joyce Dunbar - "Maus und Maulwurf machen sich's gemütlich (Bd. 2)" auf Seite 33
 Colas Gutman - "Der Stinkehund fährt Ski" auf Seite 40
 Anne Michaels - "Die Abenteuer der Miss Petitfour" auf Seite 47
-Lisa Aisato - "Alle Farben des Lebens" auf Seite 92
-Johan Egerkrans - "Dinosaurier und andere Wesen der Urzeit" auf Seite 93
-Marianne Kaurin - "Irgendwo ist immer Süden, Audio-CD, MP3" auf Seite 101
-Heidi Viherjuuri - "Hilja und der Weihnachtszauber (Bd. 3)" auf Seite 113
+Lisa Aisato - "Alle Farben des Lebens" auf Seite 91
+Johan Egerkrans - "Dinosaurier und andere Wesen der Urzeit" auf Seite 92
+Marianne Kaurin - "Irgendwo ist immer Süden, Audio-CD, MP3" auf Seite 100
+Heidi Viherjuuri - "Hilja und der Weihnachtszauber (Bd. 3)" auf Seite 112
 
