@@ -40,7 +40,7 @@ DOIT_CONFIG = {
 #
 
 # CLI
-config = {'issue': get_var('issue', '2020_02')}
+config = {'issue': get_var('issue', '2021_01')}
 issue = config['issue']
 
 # Directories
@@ -51,22 +51,31 @@ meta = home + '/meta'
 shared = 'shared'
 
 # Files
-base_unprocessed = dist + '/templates/unprocessed.sla'
-base_processed = dist + '/templates/processed.sla'
+base_template = dist + '/templates/base.sla'
 edited_template = dist + '/templates/edited.sla'
 document_file = dist + '/documents/pdf/final.pdf'
 
 # Time
 now = datetime.datetime.now()
+
+# Get this & next year
 year = str(now.year)
+next_year = str(now.year + 1)
 
-# Seasonal
+# Season
 season = 'spring' if issue[-2:] == '01' else 'autumn'
+season_de = 'Frühjahr' if season == 'spring' else 'Herbst'
 
-general = [
-    ['hoerbuch', 15],
-    ['besonderes', 14],
-    ['sachbuch', 13],
+# Document structure
+structure = [
+    ['kalender', 20],
+    ['weihnachten', 19],
+    ['ostern', 18],
+    ['hoerbuch', 17],
+    ['besonderes', 16],
+    ['kreatives', 15],
+    ['sachbuch', 14],
+    ['comic', 13],
     ['ab14', 12],
     ['ab12', 11],
     ['ab10', 10],
@@ -77,18 +86,33 @@ general = [
     ['toddler', 5],
 ]
 
-specials = [['ostern', 16]] if season == 'spring' else [
-    ['kalender', 17], ['weihnachten', 16]]
-
-categories = specials + general
-
-# Category files
-csv_files = [file[0] + '.csv' for file in categories]
-csv_files_src = [src + '/csv/' + file_name for file_name in csv_files]
-csv_files_dist = [dist + '/csv/' + file_name for file_name in csv_files]
+# Data files
+categories = [section[0] for section in structure]
+csv_files = [category + '.csv' for category in categories]
+csv_src = [src + '/csv/' + file for file in csv_files if os.path.isfile(src + '/csv/' + file)]
+csv_dist = [path.replace(src, dist) for path in csv_src]
 
 #
 # VARIABLES (END)
+###
+
+
+###
+# HELPERS (START)
+#
+
+# Replaces pattern inside a given file
+def replace(path, pattern, replacement):
+    file = fileinput.input(path, inplace=True)
+
+    for line in file:
+        line = re.sub(pattern, replacement, line)
+        sys.stdout.write(line)
+
+    file.close()
+
+#
+# HELPERS (END)
 ###
 
 
@@ -104,9 +128,10 @@ def task_phase_one():
         'actions': None,
         'task_dep': [
             'new_issue',
-            'find_duplicates',
             'fetch_api',
+            'find_duplicates',
             'detect_age_ratings',
+            'generate_partials',
         ]
     }
 
@@ -118,11 +143,9 @@ def task_phase_two():
     return {
         'actions': None,
         'task_dep': [
-            'generate_partials',
-            'copy_base_template',
-            'import_pages',
-            'replace_year',
-            'prepare_editing',
+            'create_base',
+            'extend_base',
+            'steady_base',
         ]
     }
 
@@ -136,8 +159,8 @@ def task_phase_three():
         'task_dep': [
             'build_pdf',
             'optimize_document',
-            # 'compose_mails',
             'write_summary',
+            'compose_mails',
         ]
     }
 
@@ -155,25 +178,8 @@ def task_new_issue():
     Sets up new issue
     """
     return {
-        'actions': ['bash scripts/new_issue.bash ' + issue],
-        'targets': csv_files_src,
         'uptodate': [run_once],
-    }
-
-
-def task_find_duplicates():
-    """
-    Finds all duplicate ISBNs
-
-    >> `ISSUE/meta/duplicates.txt`
-    """
-    # TODO: Run always (for the `echo`)
-    # TODO: Clean
-    return {
-        # 'file_dep': csv_files_src,
-        'actions': ['bash scripts/find_duplicates.bash ' + issue],
-        'targets': [meta + '/duplicates.txt'],
-        'verbosity': 2,
+        'actions': ['bash scripts/new_issue.bash ' + issue],
     }
 
 
@@ -184,15 +190,41 @@ def task_fetch_api():
     ISSUE/dist/csv/example.csv` >> `ISSUE/dist/csv/example.csv`
     """
     return {
-        'file_dep': csv_files_src,
+        'file_dep': csv_src,
         'actions': ['php scripts/fetch_api.php ' + issue],
-        'targets': csv_files_dist,
+        'targets': csv_dist,
+    }
+
+
+def task_find_duplicates():
+    """
+    Finds all duplicate ISBNs
+
+    >> `ISSUE/meta/duplicates.txt`
+    """
+    return {
+        'file_dep': csv_dist,
+        'actions': ['bash scripts/find_duplicates.bash ' + issue],
+        'targets': [meta + '/duplicates.txt'],
+    }
+
+
+def task_detect_age_ratings():
+    """
+    Detects improper age ratings
+
+    >> `ISSUE/meta/age-ratings.txt`
+    """
+    return {
+        'file_dep': csv_dist,
+        'actions': ['bash scripts/detect_age_ratings.bash ' + issue],
+        'targets': [meta + '/age-ratings.txt'],
     }
 
 
 def task_generate_partials():
     """
-    Generates template file for each category
+    Generates one template file per category
 
     Using `ISSUE/dist/csv/example.csv` with either
     a) `ISSUE/src/templates/example.sla`,
@@ -201,7 +233,7 @@ def task_generate_partials():
 
     >> `ISSUE/dist/templates/example.sla`
     """
-    for data_file in csv_files_dist:
+    for data_file in csv_dist:
         # Stripping path & extension
         category = os.path.basename(data_file)[:-4]
 
@@ -240,34 +272,72 @@ def task_generate_partials():
             template_file,  # Template path
         ]
 
+        # Prepare category substitution
+        partial_file = dist + '/templates/partials/' + category + '.sla'
+
+        headings = {
+            'toddler': 'Für die Kleinsten',
+            'bilderbuch': 'Bilderbuch',
+            'vorlesebuch': 'Vorlesegeschichten',
+            'ab6': 'Erstleser',
+            'ab8': 'Bücher ab 8',
+            'ab10': 'Bücher ab 10',
+            'ab12': 'Bücher ab 12',
+            'ab14': 'Junge Erwachsene',
+            'comic': 'Graphic Novel',
+            'sachbuch': 'Sachbuch',
+            'kreatives': 'Kreatives Gestalten',
+            'besonderes': 'Besonderes',
+            'hoerbuch': 'Hörbuch Spezial',
+            'ostern': 'Ostern Spezial',
+            'weihnachten': 'Weihnachten Spezial',
+            'kalender': 'Kalender für ' + next_year,
+        }
+
         yield {
             'name': data_file,
             'file_dep': [data_file, template_file],
-            'actions': [' '.join(command)],
+            'actions': [
+                ' '.join(command),
+                (replace, [partial_file, '%%CATEGORY%%', headings[category]]),
+            ],
             'targets': [dist + '/templates/partials/' + category + '.sla'],
         }
 
 
-def task_copy_base_template():
+def task_create_base():
     """
     Sets up base template before importing category partials
     """
     # Check if per-issue base template exists
-    base_template = src + '/templates/main.sla'
+    base_file = src + '/templates/main.sla'
 
-    if os.path.isfile(base_template) is False:
+    if os.path.isfile(base_file) is False:
         # If it doesn't, choose common base template
-        base_template = shared + '/templates/' + season + '.sla'
+        base_file = shared + '/templates/main.sla'
+
+    # Remove unsuitable intro page
+    page_number = 4 if season == 'spring' else 3
+
+    # Build command
+    intro_cmd = [
+        'flatpak run net.scribus.Scribus -g -ns -py',
+        'scripts/delete_page.py',
+        base_template,
+        '--page ' + str(page_number),
+    ]
 
     return {
         'actions': [
-            'cp ' + base_template + ' ' + base_unprocessed,
-            'cp ' + base_template + ' ' + base_processed,
-        ]
+            'cp ' + base_file + ' ' + base_template,
+            ' '.join(intro_cmd),
+        ],
+        'targets': [base_template],
+        'clean': True,
     }
 
 
-def task_import_pages():
+def task_extend_base():
     """
     Imports category partials into base template
 
@@ -275,7 +345,7 @@ def task_import_pages():
     `ISSUE/dist/templates/partials/*.sla` >> `ISSUE/dist/processed.sla`
     """
     # Create import for each category partial after its designated page number
-    for category, page_number in categories:
+    for category, page_number in structure:
         # Define category partial
         category_file = dist + '/templates/partials/' + category + '.sla'
 
@@ -283,87 +353,81 @@ def task_import_pages():
         command = [
             # (1) Python script, executed via Scribus (Flatpak)
             # (2) Uses `processed` base template version
-            'flatpak run net.scribus.Scribus -g -ns -py scripts/import_pages.py',
-            base_processed,
+            'flatpak run net.scribus.Scribus -g -ns -py',
+            'scripts/import_pages.py',
+            base_template,
             category_file,  # Import file
             '--page ' + str(page_number),  # Page number
-            '--masterpage category_' + season + '_' + category,  # Masterpage
+            '--masterpage category_' + season,  # Masterpage
         ]
+
+        # Remove cover page if corresponding category partial doesn't exist
+        if os.path.isfile(category_file) is False:
+            command = [
+                'flatpak run net.scribus.Scribus -g -ns -py',
+                'scripts/delete_page.py',
+                base_template,
+                '--page ' + str(page_number),
+            ]
 
         yield {
             'name': category_file,
+            'file_dep': [base_template],
             'actions': [' '.join(command)],
         }
 
 
-def task_replace_year():
-    """
-    Inserts current year into base template
-
-    `ISSUE/dist/templates/placeholder.sla` >> `ISSUE/dist/templates/year.sla`
-
-    """
-    def replace(path, pattern):
-        file = fileinput.input(path, inplace=True)
-
-        for line in file:
-            line = re.sub(pattern, year, line)
-            sys.stdout.write(line)
-
-        file.close()
-
-    return {
-        'file_dep': [base_processed],
-        'actions': [(replace, [base_processed, '%%YEAR%%'])],
-    }
-
-
-def task_prepare_editing():
+def task_steady_base():
     """
     Ensures that base template is ready for manual editing
 
-    `ISSUE/dist/templates/processed.sla` >> `ISSUE/dist/templates/edited.sla`
+    a) replacing variables
+    b) copying base template
+    c) comparing book count
+
+    `ISSUE/dist/templates/base.sla` >> `ISSUE/dist/templates/edited.sla`
     """
+    # Replace spring template names with autumn ones
+    def apply_season():
+        templates = [
+            'cover_spring',
+            'toc_spring',
+            'section_spring',
+            'category_spring',
+        ]
+
+        # Base template features spring colors ..
+        if season == 'autumn':
+            # .. therefore, we have to change in case of autumn edition
+            for template in templates:
+                # .. achieved with a simple substitution
+                replace(
+                    base_template,
+                    'MNAM="' + template,
+                    'MNAM="' + template.replace('spring', 'autumn')
+                )
+
     # Performs nominal-actual comparison of total books
     def compare(template_file):
         # Count books - [0] = CSV, [1] = SLA
-        total_csv, total_sla = get_book_count(template_file)
+        total_csv, total_sla = get_book_count(edited_template)
 
         # Check if they match - if not, exit
-        if total_csv == total_sla:
-            print 'Total books (from CSV): ' + str(total_csv)
-            print 'Total books (from SLA): ' + str(total_sla)
-            print 'Numbers match, you may pass!\n'
-        else:
-            print('Something\'s wrong - total book count doesn\'t match:')
-            print 'Total books (from CSV): ' + str(total_csv)
-            print 'Total books (from SLA): ' + str(total_sla)
-            print('You shall not pass!\n')
-
-            sys.exit()
+        if total_csv != total_sla:
+            sys.exit('You shall not pass!')
 
     return {
-        'file_dep': [base_processed],
+        'file_dep': [base_template],
+        'task_dep': ['extend_base'],
         'actions': [
+            (apply_season),
+            (replace, [base_template, '%%SEASON%%', season_de]),
+            (replace, [base_template, '%%YEAR%%', year]),
+            (replace, [base_template, '%%NEXT_YEAR%%', next_year]),
             'cp %(dependencies)s %(targets)s',
             (compare, [edited_template])
         ],
-        'targets': [edited_template]
-    }
-
-
-def task_detect_age_ratings():
-    """
-    Detects improper age ratings
-
-    >> `ISSUE/meta/age-ratings.txt`
-    """
-    age_ratings_file = meta + '/age-ratings.txt'
-
-    return {
-        'file_dep': csv_files_dist,
-        'actions': ['bash scripts/detect_age_ratings.bash ' + issue],
-        'targets': [age_ratings_file],
+        'targets': [edited_template],
     }
 
 
@@ -377,12 +441,11 @@ def task_build_pdf():
     command = [
         # Python script, executed via Scribus (Flatpak)
         'flatpak run net.scribus.Scribus -g -py scripts/build_pdf.py',
-        '--input %(dependencies)s',  # Input file
+        '--input ' + edited_template,  # Input file
         '--output %(targets)s',  # Output file
     ]
 
     return {
-        'file_dep': [edited_template],
         'actions': [' '.join(command)],
         'targets': [document_file]
     }
@@ -394,28 +457,25 @@ def task_optimize_document():
 
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
-    # Season identifier
-    identifier = 'fruehjahr' if season == 'spring' else 'herbst'
+    # Season slug
+    slug = slugify(season_de)
 
     # Image resolutions
     resolutions = [
-        '50',   # 3XS
-        '75',   # XXS
+        '50',   # XXS
         '100',  # XS
         '150',  # S
         '200',  # M
         '250',  # L
         '300',  # XL
-        '400',  # XXL
-        '500',  # 3XL
     ]
 
     # TODO: Keep order
     for resolution in resolutions:
         # Craft output path
         optimized_file = home + '/'  # Add path
-        optimized_file += 'buchempfehlungen-' + identifier  # Add season
-        optimized_file += '-' + year + '_' + resolution + '.pdf'
+        optimized_file += 'buchempfehlungen-' + slug  # Add season
+        optimized_file += '-' + str(now.year) + '_' + resolution + '.pdf'
 
         # Build command
         command = [
@@ -454,9 +514,9 @@ def task_write_summary():
 
     >> `ISSUE/meta/summary.txt`
     """
-    def summarize(template_file):
+    def summarize():
         # Extract books from template
-        books = get_booklist(template_file)
+        books = get_booklist(edited_template)
 
         # Select publishers
         publishers = get_publishers(books)
@@ -479,122 +539,56 @@ def task_write_summary():
                 file.write('\n')
 
     return {
-        # 'file_dep': [edited_template],
-        'actions': [(summarize, [edited_template])],
+        'actions': [(summarize)],
         'targets': [meta + '/summary.txt'],
     }
 
 
-# def task_compose_mails():
-#     """
-#     Drafts mail files for publishers
+# TODO: Improve mail + templates
+def task_compose_mails():
+    """
+    Drafts mail files for publishers
 
-#     >> `ISSUE/dist/documents/mails/publisher.eml`
-#     """
-#     # Extract books from template
-#     books = get_booklist(edited_template)
+    >> `ISSUE/dist/documents/mails/publisher.eml`
+    """
+    # Extract books from template
+    books = get_booklist(edited_template)
 
-#     # Season identifier
-#     identifier = 'Frühling' if season == 'spring' else 'Herbst'
+    # Select publishers
+    publishers = get_publishers(books)
 
-#     # Select publishers
-#     publishers = get_publishers(books)
+    for publisher in publishers:
+        text_block = []
 
-#     for publisher in publishers:
-#         text_block = []
+        for book in books:
+            if book[1] == publisher:
+                author = book[2]
+                title = book[3]
+                page_number = book[4]
 
-#         for book in books:
-#             if book[1] == publisher:
-#                 author = book[2]
-#                 title = book[3]
-#                 page_number = book[4]
+                text_block.append(
+                    author + ' - "' + title + '" auf Seite ' +
+                    str(page_number) + '<br>'
+                )
 
-#                 text_block.append(
-#                     author + ' - "' + title + '" auf Seite ' +
-#                     str(page_number) + '<br>'
-#                 )
+        # Craft output path
+        mail_file = dist + '/documents/mails/'  # Add path
+        mail_file += publisher + '.eml'
 
-#         # Craft output path
-#         mail_file = dist + '/documents/mails/'  # Add path
-#         mail_file += slugify(publisher) + '.eml'
+        subject = 'Empfehlungsliste ' + season_de + ' ' + year
+        # TODO: Variable text - autumn is quite different!
+        text = '\n'.join(text_block)
 
-#         subject = 'Empfehlungsliste ' + identifier + ' ' + year
-#         # TODO: Variable text - autumn is quite different!
-#         text = '\n'.join(text_block)
-
-#         yield {
-#             'name': mail_file,
-#             # 'file_dep': [edited_template],
-#             'actions': [(create_mail, [], {
-#                 'subject': subject,
-#                 'text': text,
-#                 'output_path': mail_file,
-#             })],
-#             'targets': [mail_file],
-#         }
+        yield {
+            'name': mail_file,
+            'actions': [(create_mail, [], {
+                'subject': subject,
+                'text': text,
+                'output_path': mail_file,
+            })],
+            'targets': [mail_file],
+        }
 
 #
 # TASKS (END)
-###
-
-
-###
-# HELPERS (START)
-#
-
-def task_generate_single():
-    """
-    Generates single template file for custom category
-
-    Behaves like `generate_partials`, but for a single category
-    """
-    # Stripping path & extension
-    category = get_var('cat', '')
-
-    # Define data file
-    data_file = dist + '/csv/' + category + '.csv'
-
-    # Add template extension
-    template_name = category + '.sla'
-
-    # Add source path
-    template_file = src + '/templates/' + template_name
-
-    # Check if per-issue template file for given category exists ..
-    if os.path.isfile(template_file) is False:
-        # .. if it doesn't, choose per-issue generic template file
-        template_file = src + '/templates/dataList.sla'
-
-    # Otherwise ..
-    if os.path.isfile(template_file) is False:
-        # .. common template file for given category
-        template_file = shared + '/templates/partials/' + template_name
-
-    # But if that doesn't exist either ..
-    if os.path.isfile(template_file) is False:
-        # .. ultimately resort to common generic template file
-        template_file = shared + '/templates/partials/dataList.sla'
-
-    # TODO: Maybe python function may be imported + executed directly?
-    command = [
-        # (1) Virtual environment python executable
-        # (2) Python script `ScribusGenerator` by @berteh
-        # See https:#github.com/berteh/ScribusGenerator
-        '.env/bin/python',
-        'scripts/vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
-        '--single',  # Single file output
-        '-c ' + data_file,  # CSV file
-        '-o ' + dist + '/templates/partials',  # Output directory
-        '-n ' + category,  # Output filename (without extension)
-        template_file,  # Template path
-    ]
-
-    return {
-        # 'file_dep': [data_file, template_file],
-        'actions': [' '.join(command)],
-        'targets': [dist + '/templates/partials/' + category + '.sla'],
-    }
-
-#
-# HELPERS (END)
 ###
