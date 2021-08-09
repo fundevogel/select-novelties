@@ -13,8 +13,8 @@ import fileinput  # input
 
 from slugify import slugify
 
-from scripts.hermes import create_mail
-from scripts.thoth import get_booklist, get_publishers, get_book_count
+from scripts.python.hermes import create_mail
+from scripts.python.thoth import get_booklist, get_publishers, get_book_count
 
 
 ###
@@ -40,7 +40,7 @@ DOIT_CONFIG = {
 #
 
 # CLI
-config = {'issue': get_var('issue', '2021_01')}
+config = {'issue': get_var('issue', '2021_02')}
 issue = config['issue']
 
 # Directories
@@ -179,7 +179,7 @@ def task_new_issue():
     """
     return {
         'uptodate': [run_once],
-        'actions': ['bash scripts/new_issue.bash ' + issue],
+        'actions': ['bash scripts/bash/new_issue.bash ' + issue],
     }
 
 
@@ -191,7 +191,7 @@ def task_fetch_api():
     """
     return {
         'file_dep': csv_src,
-        'actions': ['php scripts/fetch_api.php ' + issue],
+        'actions': ['php scripts/php/fetch_api.php ' + issue],
         'targets': csv_dist,
     }
 
@@ -204,7 +204,7 @@ def task_find_duplicates():
     """
     return {
         'file_dep': csv_dist,
-        'actions': ['bash scripts/find_duplicates.bash ' + issue],
+        'actions': ['bash scripts/bash/find_duplicates.bash ' + issue],
         'targets': [meta + '/duplicates.txt'],
     }
 
@@ -217,7 +217,7 @@ def task_detect_age_ratings():
     """
     return {
         'file_dep': csv_dist,
-        'actions': ['bash scripts/detect_age_ratings.bash ' + issue],
+        'actions': ['bash scripts/bash/detect_age_ratings.bash ' + issue],
         'targets': [meta + '/age-ratings.txt'],
     }
 
@@ -321,7 +321,8 @@ def task_create_base():
 
     # Build command
     intro_cmd = [
-        'flatpak run net.scribus.Scribus -g -ns -py',
+        # 'flatpak run net.scribus.Scribus -g -ns -py',
+        'scribus -g -ns -py',
         'scripts/delete_page.py',
         base_template,
         '--page ' + str(page_number),
@@ -353,7 +354,8 @@ def task_extend_base():
         command = [
             # (1) Python script, executed via Scribus (Flatpak)
             # (2) Uses `processed` base template version
-            'flatpak run net.scribus.Scribus -g -ns -py',
+            # 'flatpak run net.scribus.Scribus -g -ns -py',
+            'scribus -g -ns -py',
             'scripts/import_pages.py',
             base_template,
             category_file,  # Import file
@@ -364,7 +366,8 @@ def task_extend_base():
         # Remove cover page if corresponding category partial doesn't exist
         if os.path.isfile(category_file) is False:
             command = [
-                'flatpak run net.scribus.Scribus -g -ns -py',
+                # 'flatpak run net.scribus.Scribus -g -ns -py',
+                'scribus -g -ns -py',
                 'scripts/delete_page.py',
                 base_template,
                 '--page ' + str(page_number),
@@ -440,7 +443,8 @@ def task_build_pdf():
     # Build command
     command = [
         # Python script, executed via Scribus (Flatpak)
-        'flatpak run net.scribus.Scribus -g -py scripts/build_pdf.py',
+        # 'flatpak run net.scribus.Scribus -g -py scripts/build_pdf.py',
+        'scribus -g -py scripts/build_pdf.py',
         '--input ' + edited_template,  # Input file
         '--output %(targets)s',  # Output file
     ]
@@ -582,6 +586,7 @@ def task_compose_mails():
         yield {
             'name': mail_file,
             'actions': [(create_mail, [], {
+                'season': season,
                 'subject': subject,
                 'text': text,
                 'output_path': mail_file,

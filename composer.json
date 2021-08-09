@@ -1,0 +1,46 @@
+{
+    "name": "fundevogel/recommended-novelties",
+    "type": "library",
+    "description": "Fundevogel book recommendations, published biannually",
+    "keywords": ["books", "pcbis", "knv", "csv", "dtp"],
+    "homepage": "https://github.com/Fundevogel",
+    "license": "GPL-3.0",
+    "scripts": {
+        "cs-dry": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix"
+    },
+    "authors": [
+        {
+            "name": "Fundevogel",
+            "homepage": "https://fundevogel.de",
+            "role": "Project Author"
+        },
+        {
+            "name": "Martin Folkers",
+            "homepage": "https://twobrain.io",
+            "role": "Contributor"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "berteh/scribusgenerator",
+                "version": "master",
+                "dist": {
+                    "url": "https://github.com/berteh/scribusgenerator/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "git@github.com:berteh/scribusgenerator.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "fundevogel/php-pcbis": "2.1.4",
+        "berteh/scribusgenerator": "@dev"
+    }
+}

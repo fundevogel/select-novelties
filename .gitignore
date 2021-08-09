@@ -13,9 +13,12 @@
 # Sensitive information
 /login.json
 /.*cache
-/example.py
 
 # Auto-generated content
 /issues/**/dist
 /issues/**/*.pdf
 !/issues/**/buchempfehlungen-*-[0-9][0-9][0-9][0-9].pdf
+
+# Experimental
+/scripts/python/spring.py
+/scripts/python/autumn.py
