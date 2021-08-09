@@ -10,7 +10,7 @@
 
 issue=$1
 
-root_directory=$(dirname "$(dirname "$0")")
+root_directory=$(dirname "$(dirname "$(dirname "$0")")")
 cd "$root_directory"/issues/"$issue"/dist/csv || exit
 
 newline=$'\n'
@@ -28,7 +28,11 @@ while IFS= read -r line; do
 # (2) Choose only entries from 'ISBN' and 'age recommendation' columns
 # (3) Select lines containing strings indicating improper age ratings
 # (4) Remove duplicates
-done < <(cat -- *.csv | csvcut -c ISBN,Altersempfehlung | grep "Altersangabe\|bis" | uniq | sed "/ISBN,Altersempfehlung/d")
+done < <(cat -- *.csv | csvcut -c ISBN,Altersempfehlung --encoding utf-8-sig | grep "Altersangabe\|bis" | uniq | sed "/ISBN,Altersempfehlung/d")
+
+# Since we encode CSV files using a byte-order-mark (BOM), we have to pass 'utf-8-sig' as encoding
+# See https://csvkit.readthedocs.io/en/1.0.2/tricks.html#reading-a-csv-with-a-byte-order-mark-bom
+##
 
 
 file=../../meta/age-ratings.txt

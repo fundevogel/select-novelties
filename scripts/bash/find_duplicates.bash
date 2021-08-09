@@ -10,7 +10,7 @@
 
 issue=$1
 
-root_directory=$(dirname "$(dirname "$0")")
+root_directory=$(dirname "$(dirname "$(dirname "$0")")")
 cd "$root_directory"/issues/"$issue"/dist/csv || exit
 
 newline=$'\n'
@@ -45,7 +45,11 @@ while IFS= read -r isbn; do
 # (1) & (2) Inject ISBNs from all `.csv` files
 # (3) Sort them
 # (4) Remove duplicates
-done < <(cat -- *.csv | csvcut -d "," -c ISBN | sort | uniq | sed '/ISBN/d')
+done < <(cat -- *.csv | csvcut -d "," -c ISBN --encoding utf-8-sig | sort | uniq | sed '/ISBN/d')
+
+# Since we encode CSV files using a byte-order-mark (BOM), we have to pass 'utf-8-sig' as encoding
+# See https://csvkit.readthedocs.io/en/1.0.2/tricks.html#reading-a-csv-with-a-byte-order-mark-bom
+##
 
 
 file=../../meta/duplicates.txt

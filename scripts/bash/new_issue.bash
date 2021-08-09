@@ -10,7 +10,7 @@
 
 issue=$1
 
-root_directory=$(dirname "$(dirname "$0")")
+root_directory=$(dirname "$(dirname "$(dirname "$0")")")
 
 mkdir -p "$root_directory"/issues/"$issue"
 cd "$root_directory"/issues/"$issue" || exit
