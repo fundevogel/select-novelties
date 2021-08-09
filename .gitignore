@@ -11,7 +11,7 @@
 /.env
 
 # Sensitive information
-/*.login.json
+/login.json
 /.*cache
 /example.py
 
