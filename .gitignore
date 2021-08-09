@@ -19,3 +19,7 @@
 /issues/**/dist
 /issues/**/*.pdf
 !/issues/**/buchempfehlungen-*-[0-9][0-9][0-9][0-9].pdf
+
+# Experimental
+/scripts/lib/example.py
+/scripts/test
