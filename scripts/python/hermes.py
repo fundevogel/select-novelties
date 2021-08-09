@@ -15,7 +15,8 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-import scripts.lib.example as example
+from scripts.python import spring
+from scripts.python import autumn
 
 
 def get_rfc2822_date():
@@ -77,6 +78,7 @@ def _create_mail(
     text='',
     attachments=[],
     output_path='mail.eml',
+    season='spring'
 ):
     ###
     # Creating `eml` file
@@ -90,12 +92,17 @@ def _create_mail(
     mail['Bcc'] = bcc
     mail['Date'] = get_rfc2822_date()
 
+    seasons = {
+        'spring': spring,
+        'autumn': autumn,
+    }
+
     # Adding message text
     data = (
         '<html><head></head><body>'
-        + example.text +
+        + seasons[season].text +
         '<p>' + text + '</p>'
-        + example.signature +
+        + seasons[season].signature +
         '</body></html>'
     )
     body = MIMEText(data, 'html', 'utf-8')
@@ -115,8 +122,9 @@ def _create_mail(
     return True
 
 
-def create_mail(subject, text, output_path):
+def create_mail(season, subject, text, output_path):
     return _create_mail(
+        season=season,
         subject=subject,
         text=text,
         output_path=output_path

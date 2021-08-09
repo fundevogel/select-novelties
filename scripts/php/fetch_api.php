@@ -88,7 +88,7 @@ class FetchApi
 
         # Set paths
         # (1) Base path
-        $this->base = realpath(__DIR__ . '/../issues/' . $issue);
+        $this->base = realpath(dirname(__DIR__) . '/../issues/' . $this->issue);
 
         # (2) Source & destination path
         $this->root = $this->base . '/src';
@@ -99,18 +99,18 @@ class FetchApi
 
         # Fetch modifications
         # (1) Load list of ISBNs to be blocked per category, useful if they exist twice
-        if (file_exists($blockListFile = $this->dist . '/config/block-list.json')) {
+        if (file_exists($blockListFile = $this->base . '/config/block-list.json')) {
             $this->blockList = json_decode(file_get_contents($blockListFile), true);
         }
 
         # (2) Load list of age recommendations, replacing improper ones
-        if (file_exists($properAgesFile = $this->dist . '/config/proper-ages.json')) {
+        if (file_exists($properAgesFile = $this->base . '/config/proper-ages.json')) {
             $this->properAges = json_decode(file_get_contents($properAgesFile), true);
         }
 
         # Authenticate with KNV's API
         # (1) Load credentials
-        $credentials = json_decode(file_get_contents(__DIR__ . '/../login.json'), true);
+        $credentials = json_decode(file_get_contents(__DIR__ . '/../../login.json'), true);
 
         # (2) Initialize API
         $this->api = new Webservice($credentials, $this->dist . '/.cache');
@@ -228,6 +228,7 @@ class FetchApi
             $data = Butler::sort($data, 'order', 'asc');
 
             # Create updated CSV file
+            var_dump($this->dist . '/csv/' . basename($file));
             Pcbis\Spreadsheets::array2csv($data, $this->dist . '/csv/' . basename($file));
         }
     }

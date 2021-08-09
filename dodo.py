@@ -13,8 +13,8 @@ import fileinput  # input
 
 from slugify import slugify
 
-from scripts.hermes import create_mail
-from scripts.thoth import get_booklist, get_publishers, get_book_count
+from scripts.python.hermes import create_mail
+from scripts.python.thoth import get_booklist, get_publishers, get_book_count
 
 
 ###
@@ -191,7 +191,7 @@ def task_fetch_api():
     """
     return {
         'file_dep': csv_src,
-        'actions': ['php scripts/fetch_api.php ' + issue],
+        'actions': ['php scripts/php/fetch_api.php ' + issue],
         'targets': csv_dist,
     }
 
@@ -586,6 +586,7 @@ def task_compose_mails():
         yield {
             'name': mail_file,
             'actions': [(create_mail, [], {
+                'season': season,
                 'subject': subject,
                 'text': text,
                 'output_path': mail_file,
