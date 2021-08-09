@@ -32,8 +32,8 @@ do
 done
 
 # (2) Copy blocklist & proper ages skeletons
-cp ../../shared/block-list.json config/
-cp ../../shared/proper-ages.json config/
+cp ../../assets/config/block-list.json config/
+cp ../../assets/config/proper-ages.json config/
 
 # (3) Convert CSV (if present)
 if [ -d ../../"$issue" ]; then

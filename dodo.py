@@ -48,7 +48,7 @@ home = 'issues/' + issue
 src = home + '/src'
 dist = home + '/dist'
 meta = home + '/meta'
-shared = 'shared'
+shared = 'assets'
 
 # Files
 base_template = dist + '/templates/base.sla'
@@ -251,25 +251,25 @@ def task_generate_partials():
         # Otherwise ..
         if os.path.isfile(template_file) is False:
             # .. common template file for given category
-            template_file = shared + '/templates/partials/' + template_name
+            template_file = shared + '/templates/' + template_name
 
         # But if that doesn't exist either ..
         if os.path.isfile(template_file) is False:
             # .. ultimately resort to common generic template file
-            template_file = shared + '/templates/partials/dataList.sla'
+            template_file = shared + '/templates/dataList.sla'
 
         # TODO: Maybe python function may be imported + executed directly?
         command = [
             # (1) Virtual environment python executable
             # (2) Python script `ScribusGenerator` by @berteh
-            # See https:#github.com/berteh/ScribusGenerator
+            # See https://github.com/berteh/ScribusGenerator
             '.env/bin/python',
             'scripts/vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
-            '--single',  # Single file output
-            '-c ' + data_file,  # CSV file
+            '--single',                            # Single file output
+            '-c ' + data_file,                     # CSV file
             '-o ' + dist + '/templates/partials',  # Output directory
-            '-n ' + category,  # Output filename (without extension)
-            template_file,  # Template path
+            '-n ' + category,                      # Output filename
+            template_file,                         # Template path
         ]
 
         # Prepare category substitution
@@ -355,11 +355,11 @@ def task_extend_base():
             # (1) Python script, executed via Scribus (Flatpak)
             # (2) Uses `processed` base template version
             # 'flatpak run net.scribus.Scribus -g -ns -py',
-            'scribus -g -ns -py',
-            'scripts/import_pages.py',
-            base_template,
-            category_file,  # Import file
-            '--page ' + str(page_number),  # Page number
+            'scribus -g -ns -py',               # Scribus command
+            'scripts/import_pages.py',          # Scribus script
+            base_template,                      # Base template
+            category_file,                      # Import file
+            '--page ' + str(page_number),       # Page number
             '--masterpage category_' + season,  # Masterpage
         ]
 
@@ -367,10 +367,10 @@ def task_extend_base():
         if os.path.isfile(category_file) is False:
             command = [
                 # 'flatpak run net.scribus.Scribus -g -ns -py',
-                'scribus -g -ns -py',
-                'scripts/delete_page.py',
-                base_template,
-                '--page ' + str(page_number),
+                'scribus -g -ns -py',          # Scribus command
+                'scripts/delete_page.py',      # Scribus script
+                base_template,                 # Base template
+                '--page ' + str(page_number),  # Page number
             ]
 
         yield {
@@ -444,9 +444,9 @@ def task_build_pdf():
     command = [
         # Python script, executed via Scribus (Flatpak)
         # 'flatpak run net.scribus.Scribus -g -py scripts/build_pdf.py',
-        'scribus -g -py scripts/build_pdf.py',
-        '--input ' + edited_template,  # Input file
-        '--output %(targets)s',  # Output file
+        'scribus -g -py scripts/build_pdf.py',  # Scribus command
+        '--input ' + edited_template,           # Input file
+        '--output %(targets)s',                 # Output file
     ]
 
     return {
