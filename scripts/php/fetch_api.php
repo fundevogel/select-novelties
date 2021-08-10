@@ -238,8 +238,11 @@ class FetchApi
 
             # Store failed ISBNs
             if (!empty($this->failures)) {
+                # (1) Create file handle
+                # (2) Pretty-print results
+                # (3) Close file handle
                 $file = fopen($this->base . '/config/failures.json', 'w');
-                fwrite($file, $this->failures);
+                fwrite($file, json_encode($this->failures, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT));
                 fclose($file);
             }
         }
