@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SCRIBUSUTF8NEW Version="1.5.5">
-    <DOCUMENT ANZPAGES="1" PAGEWIDTH="595.28" PAGEHEIGHT="841.89" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" PRESET="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" ORIENTATION="0" PAGESIZE="A4" FIRSTNUM="1" BOOK="0" AUTOSPALTEN="1" ABSTSPALTEN="31.1811023622047" UNITS="0" DFONT="DejaVu Sans Book" DSIZE="12" DCOL="1" DGAP="0" TabFill="" TabWidth="36" TextDistLeft="0" TextDistRight="0" TextDistBottom="0" TextDistTop="0" AUTHOR="" COMMENTS="" KEYWORDS="" PUBLISHER="" DOCDATE="" DOCTYPE="" DOCFORMAT="" DOCIDENT="" DOCSOURCE="" DOCLANGINFO="" DOCRELATION="" DOCCOVER="" DOCRIGHTS="" DOCCONTRIB="" TITLE="" SUBJECT="" VHOCH="33" VHOCHSC="66" VTIEF="33" VTIEFSC="66" VKAPIT="75" BASEGRID="14.4" BASEO="0" AUTOL="100" UnderlinePos="-1" UnderlineWidth="-1" StrikeThruPos="-1" StrikeThruWidth="-1" GROUPC="4" HCMS="0" DPSo="0" DPSFo="0" DPuse="0" DPgam="0" DPbla="1" DPPr="Fogra27L CMYK Coated Press" DPIn="sRGB IEC61966-2.1" DPInCMYK="Fogra27L CMYK Coated Press" DPIn2="sRGB IEC61966-2.1" DPIn3="Fogra27L CMYK Coated Press" DISc="1" DIIm="0" ALAYER="1" LANGUAGE="en_GB" AUTOMATIC="1" AUTOCHECK="0" GUIDELOCK="0" SnapToGuides="1" SnapToGrid="0" SnapToElement="1" MINGRID="20.001" MAJGRID="100.001" SHOWGRID="0" SHOWGUIDES="1" showcolborders="1" SHOWFRAME="1" SHOWControl="0" SHOWLAYERM="0" SHOWMARGIN="1" SHOWBASE="0" SHOWPICT="1" SHOWLINK="0" rulerMode="1" showrulers="1" showBleed="1" rulerXoffset="0" rulerYoffset="0" GuideRad="10" GRAB="4" POLYC="4" POLYF="0.502" POLYR="0" POLYIR="0" POLYCUR="0" POLYOCUR="0" POLYS="0" arcStartAngle="30" arcSweepAngle="300" spiralStartAngle="0" spiralEndAngle="1080" spiralFactor="1.2" AutoSave="1" AutoSaveTime="600000" AutoSaveCount="1" AutoSaveKeep="0" AUtoSaveInDocDir="1" AutoSaveDir="" ScratchBottom="20.001" ScratchLeft="100.001" ScratchRight="100.001" ScratchTop="20.001" GapHorizontal="0" GapVertical="40" StartArrow="0" EndArrow="0" PEN="Black" BRUSH="None" PENLINE="Black" PENTEXT="Black" StrokeText="Black" TextBackGround="None" TextLineColor="None" TextBackGroundShade="100" TextLineShade="100" TextPenShade="100" TextStrokeShade="100" STIL="1" STILLINE="1" WIDTH="1" WIDTHLINE="1" PENSHADE="100" LINESHADE="100" BRUSHSHADE="100" CPICT="None" PICTSHADE="100" CSPICT="None" PICTSSHADE="100" PICTSCX="1" PICTSCY="1" PSCALE="1" PASPECT="1" EmbeddedPath="0" HalfRes="1" dispX="10.001" dispY="10.001" constrain="15" MINORC="#00ff00" MAJORC="#00ff00" GuideC="#000080" BaseC="#c0c0c0" renderStack="2 0 4 1 3" GridType="0" PAGEC="#ffffff" MARGC="#0000ff" RANDF="0" currentProfile="PDF 1.4" calligraphicPenFillColor="Black" calligraphicPenLineColor="Black" calligraphicPenFillColorShade="100" calligraphicPenLineColorShade="100" calligraphicPenLineWidth="1" calligraphicPenAngle="0" calligraphicPenWidth="10" calligraphicPenStyle="1">
+<SCRIBUSUTF8NEW Version="1.5.6.1">
+    <DOCUMENT ANZPAGES="1" PAGEWIDTH="595.28" PAGEHEIGHT="841.89" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" PRESET="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" ORIENTATION="0" PAGESIZE="A4" FIRSTNUM="1" BOOK="0" AUTOSPALTEN="1" ABSTSPALTEN="31.1811023622047" UNITS="0" DFONT="DejaVu Sans Book" DSIZE="12" DCOL="1" DGAP="0" TabFill="" TabWidth="36" TextDistLeft="0" TextDistRight="0" TextDistBottom="0" TextDistTop="0" AUTHOR="" COMMENTS="" KEYWORDS="" PUBLISHER="" DOCDATE="" DOCTYPE="" DOCFORMAT="" DOCIDENT="" DOCSOURCE="" DOCLANGINFO="" DOCRELATION="" DOCCOVER="" DOCRIGHTS="" DOCCONTRIB="" TITLE="" SUBJECT="" VHOCH="33" VHOCHSC="66" VTIEF="33" VTIEFSC="66" VKAPIT="75" BASEGRID="14.4" BASEO="0" AUTOL="100" UnderlinePos="-1" UnderlineWidth="-1" StrikeThruPos="-1" StrikeThruWidth="-1" GROUPC="9" HCMS="0" DPSo="0" DPSFo="0" DPuse="0" DPgam="0" DPbla="1" DPPr="Fogra27L CMYK Coated Press" DPIn="sRGB IEC61966-2.1" DPInCMYK="Fogra27L CMYK Coated Press" DPIn2="sRGB IEC61966-2.1" DPIn3="Fogra27L CMYK Coated Press" DISc="1" DIIm="0" ALAYER="1" LANGUAGE="en_GB" AUTOMATIC="1" AUTOCHECK="0" GUIDELOCK="0" SnapToGuides="1" SnapToGrid="0" SnapToElement="1" MINGRID="20.001" MAJGRID="100.001" SHOWGRID="0" SHOWGUIDES="1" showcolborders="1" SHOWFRAME="1" SHOWControl="0" SHOWLAYERM="0" SHOWMARGIN="1" SHOWBASE="0" SHOWPICT="1" SHOWLINK="0" rulerMode="1" showrulers="1" showBleed="1" rulerXoffset="0" rulerYoffset="0" GuideRad="10" GRAB="4" POLYC="4" POLYF="0.502" POLYR="0" POLYIR="0" POLYCUR="0" POLYOCUR="0" POLYS="0" arcStartAngle="30" arcSweepAngle="300" spiralStartAngle="0" spiralEndAngle="1080" spiralFactor="1.2" AutoSave="1" AutoSaveTime="600000" AutoSaveCount="1" AutoSaveKeep="0" AUtoSaveInDocDir="1" AutoSaveDir="" ScratchBottom="20.001" ScratchLeft="100.001" ScratchRight="100.001" ScratchTop="20.001" GapHorizontal="0" GapVertical="40" StartArrow="0" EndArrow="0" PEN="Black" BRUSH="None" PENLINE="Black" PENTEXT="Black" StrokeText="Black" TextBackGround="None" TextLineColor="None" TextBackGroundShade="100" TextLineShade="100" TextPenShade="100" TextStrokeShade="100" STIL="1" STILLINE="1" WIDTH="1" WIDTHLINE="1" PENSHADE="100" LINESHADE="100" BRUSHSHADE="100" CPICT="None" PICTSHADE="100" CSPICT="None" PICTSSHADE="100" PICTSCX="1" PICTSCY="1" PSCALE="1" PASPECT="1" EmbeddedPath="0" HalfRes="1" dispX="10.001" dispY="10.001" constrain="15" MINORC="#00ff00" MAJORC="#00ff00" GuideC="#000080" BaseC="#c0c0c0" renderStack="2 0 4 1 3" GridType="0" PAGEC="#ffffff" MARGC="#0000ff" RANDF="0" currentProfile="PDF 1.4" calligraphicPenFillColor="Black" calligraphicPenLineColor="Black" calligraphicPenFillColorShade="100" calligraphicPenLineColorShade="100" calligraphicPenLineWidth="1" calligraphicPenAngle="0" calligraphicPenWidth="10" calligraphicPenStyle="1">
         <CheckProfile Name="PDF 1.3" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF 1.4" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF 1.5" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
+        <CheckProfile Name="PDF 1.6" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="0" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF/X-1a" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="1" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="1" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF/X-3" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="1" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="1" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF/X-4" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="1" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="1" checkFontNotEmbedded="1" checkFontIsOpenType="0" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
@@ -72,7 +73,7 @@
         </CellStyle>
         <LAYERS NUMMER="0" LEVEL="0" NAME="Background" SICHTBAR="1" DRUCKEN="1" EDIT="1" SELECT="0" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#000000"/>
         <LAYERS NUMMER="1" LEVEL="1" NAME="Content" SICHTBAR="1" DRUCKEN="1" EDIT="1" SELECT="0" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff0000"/>
-        <Printer firstUse="1" toFile="0" useAltPrintCommand="0" outputSeparations="0" useSpotColors="1" useColor="1" mirrorH="0" mirrorV="0" useICC="0" doGCR="0" doClip="0" setDevParam="0" useDocBleeds="1" cropMarks="0" bleedMarks="0" registrationMarks="0" colorMarks="0" includePDFMarks="1" PSLevel="3" PDLanguage="3" markLength="20.0013" markOffset="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" printer="File" filename="/home/fedora-user/Public/gendoc/src/2019_01/templates/pages.ps" separationName="All" printerCommand=""/>
+        <Printer firstUse="1" toFile="0" useAltPrintCommand="0" outputSeparations="0" useSpotColors="1" useColor="1" mirrorH="0" mirrorV="0" useICC="0" doGCR="0" doClip="0" setDevParam="0" useDocBleeds="1" cropMarks="0" bleedMarks="0" registrationMarks="0" colorMarks="0" includePDFMarks="1" PSLevel="3" PrintEngine="3" markLength="20.0013" markOffset="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" printer="Lexmark-MS410-Series" filename="" separationName="All" printerCommand=""/>
         <PDF firstUse="0" Thumbnails="0" Articles="0" Bookmarks="0" Compress="1" CMethod="0" Quality="0" EmbedPDF="0" MirrorH="0" MirrorV="0" Clip="0" rangeSel="0" rangeTxt="" RotateDeg="0" PresentMode="0" RecalcPic="0" FontEmbedding="0" Grayscale="0" RGBMode="1" UseProfiles="0" UseProfiles2="0" Binding="0" PicRes="300" Resolution="300" Version="14" Intent="1" Intent2="0" SolidP="sRGB IEC61966-2.1" ImageP="sRGB IEC61966-2.1" PrintP="Fogra27L CMYK Coated Press" InfoString="" BTop="0" BLeft="0" BRight="0" BBottom="0" useDocBleeds="1" cropMarks="0" bleedMarks="0" registrationMarks="0" colorMarks="0" docInfoMarks="0" markLength="20" markOffset="0" ImagePr="0" PassOwner="" PassUser="" Permissions="-4" Encrypt="0" UseLayers="0" UseLpi="0" UseSpotColors="1" doMultiFile="0" displayBookmarks="0" displayFullscreen="0" displayLayers="0" displayThumbs="0" hideMenuBar="0" hideToolBar="0" fitWindow="0" openAfterExport="0" PageLayout="0" openAction="">
             <Fonts Name="Dosis SemiBold"/>
             <LPI Color="" Frequency="133" Angle="45" SpotFunction="3"/>
@@ -88,7 +89,6 @@
         <NotesStyles>
             <notesStyle Name="Default" Start="1" Endnotes="0" Type="Type_1_2_3" Range="0" Prefix="" Suffix=")" AutoHeight="1" AutoWidth="1" AutoRemove="1" AutoWeld="1" SuperNote="1" SuperMaster="1" MarksStyle="" NotesStyle=""/>
         </NotesStyles>
-        <NotesFrames/>
         <PageSets>
             <Set Name="Single Page" FirstPage="0" Rows="1" Columns="1"/>
             <Set Name="Facing Pages" FirstPage="1" Rows="1" Columns="2">
@@ -110,22 +110,22 @@
         <Sections>
             <Section Number="0" Name="0" From="0" To="0" Type="Type_1_2_3" Start="1" Reversed="0" Active="1" FillChar="0" FieldWidth="0"/>
         </Sections>
-        <Pattern Name="Pattern_Text258" width="16.4444444444445" height="39.5555555555558" scaleX="1" scaleY="1" xoffset="0" yoffset="0"/>
         <Pattern Name="DoubleQuoteRight" width="19.8" height="27" scaleX="1" scaleY="1" xoffset="0" yoffset="0"/>
+        <Pattern Name="Pattern_Text258" width="16.4444444444445" height="39.5555555555558" scaleX="1" scaleY="1" xoffset="0" yoffset="0"/>
         <MASTERPAGE PAGEXPOS="100.001" PAGEYPOS="20.001" PAGEWIDTH="595.28" PAGEHEIGHT="841.89" BORDERLEFT="20" BORDERRIGHT="20" BORDERTOP="40" BORDERBOTTOM="40" NUM="0" NAM="Normal" MNAM="" Size="Custom" Orientation="0" LEFT="0" PRESET="0" VerticalGuides="" HorizontalGuides="" AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0" pageEffectDuration="1" pageViewDuration="1" effectType="0" Dm="0" M="0" Di="0"/>
         <PAGE PAGEXPOS="100.001" PAGEYPOS="20.001" PAGEWIDTH="595.28" PAGEHEIGHT="841.89" BORDERLEFT="20" BORDERRIGHT="20" BORDERTOP="40" BORDERBOTTOM="40" NUM="0" NAM="" MNAM="Normal" Size="Custom" Orientation="0" LEFT="0" PRESET="0" VerticalGuides="" HorizontalGuides="" AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0" pageEffectDuration="1" pageViewDuration="1" effectType="0" Dm="0" M="0" Di="0"/>
-        <PAGEOBJECT XPOS="120.001" YPOS="71.8909999999999" OwnPage="0" ItemID="590006159" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Group9" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="71.8909999999999" gWidth="0" gHeight="0" LAYER="1">
-            <PAGEOBJECT XPOS="120.001" YPOS="71.8909999999999" OwnPage="0" ItemID="589053183" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
-            <PAGEOBJECT XPOS="300.75" YPOS="71.8909999999999" OwnPage="0" ItemID="590093823" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="120.001" YPOS="71.8909999999999" OwnPage="0" ItemID="535158023" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Group5" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="71.8909999999999" gWidth="0" gHeight="0" LAYER="1">
+            <PAGEOBJECT XPOS="120.001" YPOS="71.8909999999999" OwnPage="0" ItemID="530786423" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
+            <PAGEOBJECT XPOS="300.75" YPOS="71.8909999999999" OwnPage="0" ItemID="530823943" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
                 <StoryText>
                     <DefaultStyle/>
-                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorIn%"/>
+                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorInnen%"/>
                     <para LINESPMode="1" LINESP="18"/>
-                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Titel%"/>
+                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Kopfleiste%"/>
                     <para LINESPMode="1" LINESP="16"/>
                 </StoryText>
             </PAGEOBJECT>
-            <PAGEOBJECT XPOS="300.75" YPOS="103.023712453363" OwnPage="0" ItemID="590675839" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+            <PAGEOBJECT XPOS="300.75" YPOS="103.023712453363" OwnPage="0" ItemID="530855815" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
                 <StoryText>
                     <DefaultStyle/>
                     <ITEXT FONT="Dosis Book" FONTSIZE="11" CH="%VAR_Inhaltsbeschreibung%"/>
@@ -133,10 +133,10 @@
                     <para ALIGN="3" LINESPMode="0" LINESP="11"/>
                     <ITEXT FONT="Dosis Medium" FONTSIZE="10" CH="%VAR_Mitwirkende%"/>
                     <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Erscheinungsjahr% bei %VAR_Verlag% erschienen; %VAR_Einband%, %Abmessungen% groß und %VAR_Seitenzahl% Seiten stark. %VAR_Informationen%"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Informationen%"/>
                     <para ALIGN="3" LINESPMode="0" LINESP="12"/>
                     <para LINESP="11"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_ISBN% - %VAR_Altersempfehlung%"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Abschluss%"/>
                     <para LINESP="11"/>
                     <ITEXT FONT="Dosis Bold" FONTSIZE="10" FCOLOR="FV Green - Pantone 361" CH="%VAR_Preis%"/>
                     <para ALIGN="2" LINESPMode="1" LINESP="11"/>
@@ -145,79 +145,79 @@
                 </StoryText>
             </PAGEOBJECT>
         </PAGEOBJECT>
-        <PAGEOBJECT XPOS="120.001" YPOS="322.891" OwnPage="0" ItemID="589227215" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Group10" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="322.891" gWidth="0" gHeight="0" LAYER="1">
-            <PAGEOBJECT XPOS="120.001" YPOS="322.891" OwnPage="0" ItemID="589219711" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
-            <PAGEOBJECT XPOS="300.75" YPOS="322.891" OwnPage="0" ItemID="589179023" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
-                <StoryText>
-                    <DefaultStyle/>
-                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorIn%"/>
-                    <para LINESPMode="1" LINESP="18"/>
-                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Titel%"/>
-                    <para LINESPMode="1" LINESP="16"/>
-                </StoryText>
-            </PAGEOBJECT>
-            <PAGEOBJECT XPOS="300.75" YPOS="354.023712453363" OwnPage="0" ItemID="590829679" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
-                <StoryText>
-                    <DefaultStyle/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="11" CH="%VAR_Inhaltsbeschreibung%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="11"/>
-                    <ITEXT FONT="Dosis Medium" FONTSIZE="10" CH="%VAR_Mitwirkende%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Erscheinungsjahr% bei %VAR_Verlag% erschienen; %VAR_Einband%, %Abmessungen% groß und %VAR_Seitenzahl% Seiten stark. %VAR_Informationen%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12"/>
-                    <para LINESP="11"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_ISBN% - %VAR_Altersempfehlung%"/>
-                    <para LINESP="11"/>
-                    <ITEXT FONT="Dosis Bold" FONTSIZE="10" FCOLOR="FV Green - Pantone 361" CH="%VAR_Preis%"/>
-                    <para ALIGN="2" LINESPMode="1" LINESP="11"/>
-                    <ITEXT FONTSIZE="12" CH="%SG_NEXT-RECORD%"/>
-                    <trail ALIGN="2"/>
-                </StoryText>
-            </PAGEOBJECT>
-        </PAGEOBJECT>
-        <PAGEOBJECT XPOS="120.001" YPOS="581.891" OwnPage="0" ItemID="590891455" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Group8" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="581.891" gWidth="0" gHeight="0" LAYER="1">
-            <PAGEOBJECT XPOS="120.001" YPOS="581.891" OwnPage="0" ItemID="590894127" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
-            <PAGEOBJECT XPOS="300.75" YPOS="581.891" OwnPage="0" ItemID="590887423" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
-                <StoryText>
-                    <DefaultStyle/>
-                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorIn%"/>
-                    <para LINESPMode="1" LINESP="18"/>
-                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Titel%"/>
-                    <para LINESPMode="1" LINESP="16"/>
-                </StoryText>
-            </PAGEOBJECT>
-            <PAGEOBJECT XPOS="300.75" YPOS="613.023712453363" OwnPage="0" ItemID="591072767" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
-                <StoryText>
-                    <DefaultStyle/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="11" CH="%VAR_Inhaltsbeschreibung%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="11"/>
-                    <ITEXT FONT="Dosis Medium" FONTSIZE="10" CH="%VAR_Mitwirkende%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Erscheinungsjahr% bei %VAR_Verlag% erschienen; %VAR_Einband%, %Abmessungen% groß und %VAR_Seitenzahl% Seiten stark. %VAR_Informationen%"/>
-                    <para ALIGN="3" LINESPMode="0" LINESP="12"/>
-                    <para LINESP="11"/>
-                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_ISBN% - %VAR_Altersempfehlung%"/>
-                    <para LINESP="11"/>
-                    <ITEXT FONT="Dosis Bold" FONTSIZE="10" FCOLOR="FV Green - Pantone 361" CH="%VAR_Preis%"/>
-                    <trail ALIGN="2"/>
-                </StoryText>
-            </PAGEOBJECT>
-        </PAGEOBJECT>
-        <PAGEOBJECT XPOS="572.531373993934" YPOS="35.001" OwnPage="0" ItemID="597562927" PTYPE="4" WIDTH="82.7496260060658" HEIGHT="14.9320761373372" FRTYPE="0" CLIPEDIT="0" PWIDTH="0.933254758583573" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L82.7496 0 L82.7496 14.9321 L0 14.9321 L0 0 Z" copath="M0 0 L82.7496 0 L82.7496 14.9321 L0 14.9321 L0 0 Z" gXpos="499.900505493648" gYpos="1349543038.93174" gWidth="637.85369913728" gHeight="52.010608627258" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="572.531373993934" YPOS="35.001" OwnPage="0" ItemID="531575175" PTYPE="4" WIDTH="82.7496260060658" HEIGHT="14.9320761373372" FRTYPE="0" CLIPEDIT="0" PWIDTH="0.933254758583573" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L82.7496 0 L82.7496 14.9321 L0 14.9321 L0 0 Z" copath="M0 0 L82.7496 0 L82.7496 14.9321 L0 14.9321 L0 0 Z" gXpos="499.900505493648" gYpos="1349543038.93174" gWidth="637.85369913728" gHeight="52.010608627258" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
             <StoryText>
                 <DefaultStyle/>
                 <ITEXT FONT="Dosis SemiBold" FONTSIZE="14.9" FCOLOR="White" CH="%%SEASON%% %%YEAR%%"/>
                 <trail ALIGN="2"/>
             </StoryText>
         </PAGEOBJECT>
-        <PAGEOBJECT XPOS="140.001" YPOS="35.001" OwnPage="0" ItemID="621432591" PTYPE="4" WIDTH="120.672478656837" HEIGHT="14.9320761373372" FRTYPE="0" CLIPEDIT="0" PWIDTH="0.933254758583573" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L120.672 0 L120.672 14.9321 L0 14.9321 L0 0 Z" copath="M0 0 L120.672 0 L120.672 14.9321 L0 14.9321 L0 0 Z" gXpos="38.8957957693094" gYpos="1349543038.93174" gWidth="637.85369913728" gHeight="52.010608627258" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="140.001" YPOS="35.001" OwnPage="0" ItemID="531494231" PTYPE="4" WIDTH="120.672478656837" HEIGHT="14.9320761373372" FRTYPE="0" CLIPEDIT="0" PWIDTH="0.933254758583573" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L120.672 0 L120.672 14.9321 L0 14.9321 L0 0 Z" copath="M0 0 L120.672 0 L120.672 14.9321 L0 14.9321 L0 0 Z" gXpos="38.8957957693094" gYpos="1349543038.93174" gWidth="637.85369913728" gHeight="52.010608627258" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
             <StoryText>
                 <DefaultStyle/>
                 <ITEXT FONT="Dosis SemiBold" FONTSIZE="14.9" FCOLOR="White" CH="%%CATEGORY%%"/>
                 <trail/>
             </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="120.001" YPOS="326.891" OwnPage="0" ItemID="535457175" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Copy of Group5" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="326.891" gWidth="0" gHeight="0" LAYER="1">
+            <PAGEOBJECT XPOS="220.002" YPOS="91.8919999999999" OwnPage="0" ItemID="535612135" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
+            <PAGEOBJECT XPOS="400.751" YPOS="91.8919999999999" OwnPage="0" ItemID="535573143" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorInnen%"/>
+                    <para LINESPMode="1" LINESP="18"/>
+                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Kopfleiste%"/>
+                    <para LINESPMode="1" LINESP="16"/>
+                </StoryText>
+            </PAGEOBJECT>
+            <PAGEOBJECT XPOS="400.751" YPOS="123.024712453363" OwnPage="0" ItemID="535569111" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="11" CH="%VAR_Inhaltsbeschreibung%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="11"/>
+                    <ITEXT FONT="Dosis Medium" FONTSIZE="10" CH="%VAR_Mitwirkende%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Informationen%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12"/>
+                    <para LINESP="11"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Abschluss%"/>
+                    <para LINESP="11"/>
+                    <ITEXT FONT="Dosis Bold" FONTSIZE="10" FCOLOR="FV Green - Pantone 361" CH="%VAR_Preis%"/>
+                    <para ALIGN="2" LINESPMode="1" LINESP="11"/>
+                    <ITEXT FONTSIZE="12" CH="%SG_NEXT-RECORD%"/>
+                    <trail ALIGN="2"/>
+                </StoryText>
+            </PAGEOBJECT>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="120.001" YPOS="581.891" OwnPage="0" ItemID="536120807" PTYPE="12" WIDTH="555.28" HEIGHT="240" FRTYPE="0" CLIPEDIT="0" ANNAME="Group8" groupWidth="555.28" groupHeight="240" groupClips="1" path="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" copath="M0 0 L555.28 0 L555.28 240 L0 240 L0 0 Z" gXpos="120.001" gYpos="581.891" gWidth="0" gHeight="0" LAYER="1">
+            <PAGEOBJECT XPOS="120.001" YPOS="581.891" OwnPage="0" ItemID="531768183" PTYPE="2" WIDTH="173.247" HEIGHT="240" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="0" RATIO="1" Pagenumber="0" PFILE="../../images/%VAR_@Cover%" PRFILE="sRGB IEC61966-2.1" IRENDER="0" path="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" copath="M0 0 L173.247 0 L173.247 240 L0 240 L0 0 Z" gXpos="0" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1"/>
+            <PAGEOBJECT XPOS="300.75" YPOS="581.891" OwnPage="0" ItemID="531763175" PTYPE="4" WIDTH="374.531" HEIGHT="25" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 25 L0 25 L0 0 Z" copath="M0 0 L374.53 0 L374.53 25 L0 25 L0 0 Z" gXpos="180.749" gYpos="0" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT FONT="Dosis SemiBold" FONTSIZE="9" FEATURES="inherit" CH="%VAR_AutorInnen%"/>
+                    <para LINESPMode="1" LINESP="18"/>
+                    <ITEXT FONT="Dosis Bold" FONTSIZE="12" FCOLOR="FV Red" CH="%VAR_Kopfleiste%"/>
+                    <para LINESPMode="1" LINESP="16"/>
+                </StoryText>
+            </PAGEOBJECT>
+            <PAGEOBJECT XPOS="300.75" YPOS="613.023712453363" OwnPage="0" ItemID="535901095" PTYPE="4" WIDTH="374.531" HEIGHT="208.867287546637" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L374.531 0 L374.531 208.867 L0 208.867 L0 0 Z" copath="M0 0 L374.53 0 L374.53 208.867 L0 208.867 L0 0 Z" gXpos="180.749" gYpos="31.1327124533631" gWidth="555.28" gHeight="240" LAYER="1" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="11" CH="%VAR_Inhaltsbeschreibung%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="11"/>
+                    <ITEXT FONT="Dosis Medium" FONTSIZE="10" CH="%VAR_Mitwirkende%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12" KeepLinesStart="0" KeepTogether="0"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Informationen%"/>
+                    <para ALIGN="3" LINESPMode="0" LINESP="12"/>
+                    <para LINESP="11"/>
+                    <ITEXT FONT="Dosis Book" FONTSIZE="10" CH="%VAR_Abschluss%"/>
+                    <para LINESP="11"/>
+                    <ITEXT FONT="Dosis Bold" FONTSIZE="10" FCOLOR="FV Green - Pantone 361" CH="%VAR_Preis%"/>
+                    <trail ALIGN="2"/>
+                </StoryText>
+            </PAGEOBJECT>
         </PAGEOBJECT>
     </DOCUMENT>
 </SCRIBUSUTF8NEW>
