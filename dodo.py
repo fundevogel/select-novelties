@@ -8,9 +8,11 @@ from doit.tools import run_once
 import os  # path
 import re  # sub
 import sys  # stdout.write
+import json
 import datetime  # datetime.now
 import fileinput  # input
 
+from pandas import read_csv
 from slugify import slugify
 
 from scripts.python.hermes import create_mail
@@ -88,9 +90,15 @@ structure = [
 
 # Data files
 categories = [section[0] for section in structure]
+
+# (1) CSV files
 csv_files = [category + '.csv' for category in categories]
 csv_src = [src + '/csv/' + file for file in csv_files if os.path.isfile(src + '/csv/' + file)]
 csv_dist = [path.replace(src, dist) for path in csv_src]
+
+# (2) JSON files
+json_files = [category + '.json' for category in categories]
+json_src = [src + '/json/' + file for file in json_files if os.path.isfile(src + '/json/' + file)]
 
 #
 # VARIABLES (END)
@@ -128,6 +136,7 @@ def task_phase_one():
         'actions': None,
         'task_dep': [
             'new_issue',
+            'csv2json',
             'fetch_api',
             'find_duplicates',
             'check_age_ratings',
@@ -181,6 +190,45 @@ def task_new_issue():
     return {
         'uptodate': [run_once],
         'actions': ['bash scripts/bash/new_issue.bash ' + issue],
+    }
+
+
+def task_csv2json():
+    """
+    Converts CSV source files to JSON
+
+    ISSUE/src/csv/example.csv` >> `ISSUE/src/json/example.json`
+    """
+    def csv2json():
+        # Define header row
+        names = [
+            'AutorIn',
+            'Titel',
+            'Verlag',
+            'ISBN',
+            'Einband',
+            'Preis',
+            'Meldenummer',
+            'SortRabatt',
+            'Gewicht',
+            'Informationen',
+            'Zusatz',
+            'Kommentar',
+        ]
+
+        for csv_file in csv_src:
+            # Convert CSV to JSON
+            # (1) Load CSV data
+            csv_data = read_csv(csv_file, encoding='iso-8859-1', sep=';', names=names)
+
+            # (2) Store as JSON
+            json_file = src + '/json/' + os.path.basename(csv_file)[:-4] + '.json'
+            csv_data.to_json(json_file, 'records', force_ascii=False, indent=4)
+
+    return {
+        'file_dep': csv_src,
+        'actions': [csv2json],
+        'targets': json_src,
     }
 
 

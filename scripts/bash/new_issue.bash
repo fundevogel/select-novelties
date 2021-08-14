@@ -20,8 +20,10 @@ cd "$root_directory"/issues/"$issue" || exit
 for dir in config \
            meta \
            src/csv \
+           src/json \
            src/templates \
            dist/csv \
+           dist/json \
            dist/images \
            dist/images \
            dist/documents/pdf \
@@ -40,7 +42,7 @@ if [ -d ../../"$issue" ]; then
 
     for file in ../../"$issue"/*.csv; do
         base_name=$(basename "$file")
-        iconv --from-code=ISO8859-1 --to-code=UTF-8 "$file" | tr -d '\015' > src/csv/"$base_name"
+        mv "$file" src/csv/"$base_name"
     done
 
     rm -rf ../../"$issue"
