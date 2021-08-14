@@ -67,6 +67,14 @@ class FetchApi
 
 
     /**
+     * Failed API calls
+     *
+     * @var array
+     */
+    private $failures = [];
+
+
+    /**
      * Constructor
      *
      * @param string $issue Current issue
@@ -174,13 +182,14 @@ class FetchApi
                     # (2) Store all available descriptions as string
                     $node['Inhaltsbeschreibung'] = Butler::join($book->description(true), "\n");
 
+                    echo ' done.';
+                    echo "\n";
+
                 } catch (\Exception $e) {
-                    # Add data from spreadsheet in case of failure
-                    $node['AutorIn'] = Butler::reverseName($item['AutorIn']);
-                    $node['Titel'] = $item['Titel'];
-                    $node['Preis'] = $item['Preis'];
-                    $node['Erscheinungsjahr'] = $item['Erscheinungsjahr'];
-                    $node['Altersempfehlung'] = $item['Altersempfehlung'];
+                    echo ' failed!';
+                    echo "\n";
+
+                    $this->failures[] = $item['ISBN'];
                 }
 
                 # Handle age recommendations ..
@@ -193,9 +202,6 @@ class FetchApi
                 if (isset($this->properAges[$item['ISBN']])) {
                     $node['Altersempfehlung'] = $this->properAges[$item['ISBN']];
                 }
-
-                echo ' done.';
-                echo "\n";
 
                 echo 'Downloading cover ..';
 
@@ -228,8 +234,17 @@ class FetchApi
             $data = Butler::sort($data, 'order', 'asc');
 
             # Create updated CSV file
-            var_dump($this->dist . '/csv/' . basename($file));
             Pcbis\Spreadsheets::array2csv($data, $this->dist . '/csv/' . basename($file));
+
+            # Store failed ISBNs
+            if (!empty($this->failures)) {
+                # (1) Create file handle
+                # (2) Pretty-print results
+                # (3) Close file handle
+                $file = fopen($this->base . '/config/failures.json', 'w');
+                fwrite($file, json_encode($this->failures, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT));
+                fclose($file);
+            }
         }
     }
 }

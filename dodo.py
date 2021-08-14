@@ -40,7 +40,7 @@ DOIT_CONFIG = {
 #
 
 # CLI
-config = {'issue': get_var('issue', '2021_02')}
+config = {'issue': get_var('issue', '123')}
 issue = config['issue']
 
 # Directories
@@ -48,7 +48,7 @@ home = 'issues/' + issue
 src = home + '/src'
 dist = home + '/dist'
 meta = home + '/meta'
-shared = 'shared'
+shared = 'assets'
 
 # Files
 base_template = dist + '/templates/base.sla'
@@ -130,8 +130,7 @@ def task_phase_one():
             'new_issue',
             'fetch_api',
             'find_duplicates',
-            'detect_age_ratings',
-            'generate_partials',
+            'check_age_ratings',
         ]
     }
 
@@ -143,6 +142,8 @@ def task_phase_two():
     return {
         'actions': None,
         'task_dep': [
+            'process_csv',
+            'generate_partials',
             'create_base',
             'extend_base',
             'steady_base',
@@ -160,7 +161,7 @@ def task_phase_three():
             'build_pdf',
             'optimize_document',
             'write_summary',
-            'compose_mails',
+            # 'compose_mails',
         ]
     }
 
@@ -251,25 +252,25 @@ def task_generate_partials():
         # Otherwise ..
         if os.path.isfile(template_file) is False:
             # .. common template file for given category
-            template_file = shared + '/templates/partials/' + template_name
+            template_file = shared + '/templates/' + template_name
 
         # But if that doesn't exist either ..
         if os.path.isfile(template_file) is False:
             # .. ultimately resort to common generic template file
-            template_file = shared + '/templates/partials/dataList.sla'
+            template_file = shared + '/templates/dataList.sla'
 
         # TODO: Maybe python function may be imported + executed directly?
         command = [
             # (1) Virtual environment python executable
             # (2) Python script `ScribusGenerator` by @berteh
-            # See https:#github.com/berteh/ScribusGenerator
+            # See https://github.com/berteh/ScribusGenerator
             '.env/bin/python',
-            'scripts/vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
-            '--single',  # Single file output
-            '-c ' + data_file,  # CSV file
+            'vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
+            '--single',                            # Single file output
+            '-c ' + data_file,                     # CSV file
             '-o ' + dist + '/templates/partials',  # Output directory
-            '-n ' + category,  # Output filename (without extension)
-            template_file,  # Template path
+            '-n ' + category,                      # Output filename
+            template_file,                         # Template path
         ]
 
         # Prepare category substitution
@@ -323,7 +324,7 @@ def task_create_base():
     intro_cmd = [
         # 'flatpak run net.scribus.Scribus -g -ns -py',
         'scribus -g -ns -py',
-        'scripts/delete_page.py',
+        'scripts/python/delete_page.py',
         base_template,
         '--page ' + str(page_number),
     ]
@@ -355,11 +356,11 @@ def task_extend_base():
             # (1) Python script, executed via Scribus (Flatpak)
             # (2) Uses `processed` base template version
             # 'flatpak run net.scribus.Scribus -g -ns -py',
-            'scribus -g -ns -py',
-            'scripts/import_pages.py',
-            base_template,
-            category_file,  # Import file
-            '--page ' + str(page_number),  # Page number
+            'scribus -g -ns -py',               # Scribus command
+            'scripts/python/import_pages.py',   # Scribus script
+            base_template,                      # Base template
+            category_file,                      # Import file
+            '--page ' + str(page_number),       # Page number
             '--masterpage category_' + season,  # Masterpage
         ]
 
@@ -367,10 +368,10 @@ def task_extend_base():
         if os.path.isfile(category_file) is False:
             command = [
                 # 'flatpak run net.scribus.Scribus -g -ns -py',
-                'scribus -g -ns -py',
-                'scripts/delete_page.py',
-                base_template,
-                '--page ' + str(page_number),
+                'scribus -g -ns -py',             # Scribus command
+                'scripts/python/delete_page.py',  # Scribus script
+                base_template,                    # Base template
+                '--page ' + str(page_number),     # Page number
             ]
 
         yield {
@@ -443,10 +444,11 @@ def task_build_pdf():
     # Build command
     command = [
         # Python script, executed via Scribus (Flatpak)
-        # 'flatpak run net.scribus.Scribus -g -py scripts/build_pdf.py',
-        'scribus -g -py scripts/build_pdf.py',
-        '--input ' + edited_template,  # Input file
-        '--output %(targets)s',  # Output file
+        # 'flatpak run net.scribus.Scribus',
+        'scribus -g -py',               # Scribus command
+        'scripts/python/build_pdf.py',  # Scribus script
+        '--input ' + edited_template,   # Input file
+        '--output %(targets)s',         # Output file
     ]
 
     return {
@@ -462,7 +464,8 @@ def task_optimize_document():
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
     # Season slug
-    slug = slugify(season_de)
+    # slug = slugify(season_de)
+    slug = 'herbst'
 
     # Image resolutions
     resolutions = [
@@ -549,7 +552,7 @@ def task_write_summary():
 
 
 # TODO: Improve mail + templates
-def task_compose_mails():
+def compose_mails():
     """
     Drafts mail files for publishers
 
@@ -596,4 +599,44 @@ def task_compose_mails():
 
 #
 # TASKS (END)
+###
+
+
+###
+# HELPERS (START)
+#
+
+def create_path(path):
+    # Determine if (future) target is appropriate data file
+    if os.path.splitext(path)[1].lower() in ['.csv', '.json']:
+        path = os.path.dirname(path)
+
+    if not os.path.exists(path):
+        try:
+            os.makedirs(path)
+
+        # Guard against race condition
+        except OSError:
+            pass
+
+
+def load_json(json_file):
+    try:
+        with open(json_file, 'r') as file:
+            return json.load(file)
+
+    except json.decoder.JSONDecodeError:
+        raise Exception
+
+    return {}
+
+
+def dump_json(data, json_file):
+    create_path(json_file)
+
+    with open(json_file, 'w') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
+#
+# HELPERS (END)
 ###
