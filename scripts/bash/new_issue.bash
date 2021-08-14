@@ -33,11 +33,7 @@ do
     mkdir -p "$dir"
 done
 
-# (2) Copy blocklist & proper ages skeletons
-cp ../../assets/config/block-list.json config/
-cp ../../assets/config/proper-ages.json config/
-
-# (3) Convert CSV (if present)
+# (2) Copy CSV files (if present)
 if [ -d ../../"$issue" ]; then
 
     for file in ../../"$issue"/*.csv; do

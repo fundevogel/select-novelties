@@ -50,6 +50,7 @@ home = 'issues/' + issue
 src = home + '/src'
 dist = home + '/dist'
 meta = home + '/meta'
+conf = home + '/config'
 shared = 'assets'
 
 # Files
@@ -99,6 +100,13 @@ csv_dist = [path.replace(src, dist) for path in csv_src]
 # (2) JSON files
 json_files = [category + '.json' for category in categories]
 json_src = [src + '/json/' + file for file in json_files if os.path.isfile(src + '/json/' + file)]
+json_dist = [path.replace(src, dist) for path in json_src]
+
+# Report files
+duplicates_file = conf + '/duplicates.json'
+age_rating_file = conf + '/age-ratings.json'
+duplicates_report = meta + '/duplicates.txt'
+age_rating_report = meta + '/age-ratings.txt'
 
 #
 # VARIABLES (END)
@@ -151,7 +159,7 @@ def task_phase_two():
     return {
         'actions': None,
         'task_dep': [
-            'process_csv',
+            'process_data',
             'generate_partials',
             'create_base',
             'extend_base',
@@ -236,12 +244,12 @@ def task_fetch_api():
     """
     Fetches bibliographic data & book covers
 
-    ISSUE/dist/csv/example.csv` >> `ISSUE/dist/csv/example.csv`
+    >> `ISSUE/config/age-ratings.json`
     """
     return {
-        'file_dep': csv_src,
-        'actions': ['php scripts/php/fetch_api.php ' + issue],
-        'targets': csv_dist,
+        'file_dep': json_src,
+        'actions': ['php scripts/php/fetch_api.php ' + issue + ' fetching'],
+        'targets': [age_rating_file],
     }
 
 
@@ -249,25 +257,104 @@ def task_find_duplicates():
     """
     Finds all duplicate ISBNs
 
+    >> `ISSUE/config/duplicates.json`
     >> `ISSUE/meta/duplicates.txt`
     """
+    def find_duplicates():
+        duplicates = {}
+
+        # Extract all categories an ISBN appears in
+        for json_file in json_src:
+            # Get category (= filename w/o extension)
+            category = os.path.basename(json_file)[:-5]
+
+            for data in load_json(json_file):
+                isbn = data['ISBN']
+
+                if isbn not in duplicates:
+                    duplicates[isbn] = []
+
+                duplicates[isbn].append(category)
+
+        # Setup ISBN allowlist & report
+        isbns = {}
+        report = []
+
+        # Go through findings ..
+        for isbn, categories in duplicates.items():
+            # .. checking if each ISBN has more than one category, and if so ..
+            if len(categories) > 1:
+                # .. report duplicate for given categories
+                # (1) Remove duplicate categories
+                categories = list(dict.fromkeys(categories))
+
+                # (2) Report duplicate ISBN & categories in question
+                report.append('%s: %s' % (isbn, ' & '.join(categories)))
+
+                # (3) Store duplicate ISBN
+                if isbn not in isbns:
+                    isbns[isbn] = []
+
+                isbns[isbn].append(category)
+
+        # Store duplicate ISBNs
+        if isbns:
+            dump_json(isbns, duplicates_file)
+
+        # Provide message in case report is empty
+        if not report:
+            report = ['No duplicates found!']
+
+        # Write report to file
+        with open(duplicates_report, 'w') as file:
+            file.writelines(line + '\n' for line in report)
+
     return {
-        'file_dep': csv_dist,
-        'actions': ['bash scripts/bash/find_duplicates.bash ' + issue],
-        'targets': [meta + '/duplicates.txt'],
+        'file_dep': json_src,
+        'actions': [find_duplicates],
+        'targets': [duplicates_file, duplicates_report],
     }
 
 
-def task_detect_age_ratings():
+def task_check_age_ratings():
     """
     Detects improper age ratings
 
     >> `ISSUE/meta/age-ratings.txt`
     """
+    def check_age_ratings():
+        age_ratings = []
+
+        for isbn, age_rating in load_json(age_rating_file).items():
+            age_ratings.append('%s: %s' % (isbn, age_rating))
+
+        if not age_ratings:
+            # .. otherwise there isn't anything to report back, really
+            age_ratings = ['No improper age ratings found!']
+
+        print(age_ratings)
+        # Save improper age ratings
+        with open(age_rating_report, 'w') as file:
+            # Write age ratings report to file
+            file.writelines(age_rating + '\n' for age_rating in age_ratings)
+
     return {
-        'file_dep': csv_dist,
-        'actions': ['bash scripts/bash/detect_age_ratings.bash ' + issue],
-        'targets': [meta + '/age-ratings.txt'],
+        'file_dep': [age_rating_file],
+        'actions': [check_age_ratings],
+        'targets': [age_rating_report],
+    }
+
+
+def task_process_data():
+    """
+    Processes raw data
+
+    ISSUE/src/json/example.json` >> `ISSUE/dist/json/example.json`
+    """
+    return {
+        'file_dep': json_src,
+        'actions': ['php scripts/php/fetch_api.php ' + issue + ' processing'],
+        'targets': json_dist,
     }
 
 
