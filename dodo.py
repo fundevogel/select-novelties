@@ -9,16 +9,25 @@ import os  # path
 import re  # sub
 import sys  # stdout.write
 import json  # dump, load
+import time  # mktime
 import datetime  # datetime.now
 import fileinput  # input
+import mimetypes  # guess_type
+
+from email import generator  # Generator
+from email import encoders  # encode_base64
+from email import utils  # formatdate
+from email.mime.audio import MIMEAudio
+from email.mime.base import MIMEBase
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 from operator import itemgetter
 
 from pandas import read_csv
 from slugify import slugify
 from lxml import etree
-
-from scripts.python.hermes import create_mail
 
 
 ###
@@ -210,7 +219,7 @@ def task_phase_three():
             'build_pdf',
             'optimize_document',
             'write_summary',
-            # 'compose_mails',
+            'compose_mails',
         ]
     }
 
@@ -694,45 +703,61 @@ def task_write_summary():
     }
 
 
-# TODO: Improve mail + templates
-def compose_mails():
+def task_compose_mails():
     """
     Drafts mail files for publishers
 
     >> `ISSUE/dist/documents/mails/publisher.eml`
     """
     # Extract books from template
-    books = get_booklist(edited_template, json_dist)
+    books = extract_books(edited_template)
 
-    # Select publishers
-    publishers = get_publishers(books)
+    # Grab publishers
+    publishers = {book['Verlag'] for book in books}
 
-    for publisher in publishers:
+    # Build text block for each of them
+    for publisher in sorted(publishers, key=str.casefold):
         text_block = []
 
         for book in books:
-            if book[1] == publisher:
-                author = book[2]
-                title = book[3]
-                page_number = book[4]
+            if book['Verlag'] == publisher:
+                author = book['AutorIn']
+                title = book['Titel']
+                page_number = book['Seitenzahl']
 
                 text_block.append(
                     author + ' - "' + title + '" auf Seite ' +
-                    str(page_number) + '<br>'
+                    str(page_number) + '\n'
                 )
 
         # Craft output path
         mail_file = dist + '/documents/mails/'  # Add path
-        mail_file += publisher + '.eml'
+        mail_file += slugify(publisher, replacements=slug_replacements) + '.eml'
 
         subject = 'Empfehlungsliste ' + season_de + ' ' + year
+
         # TODO: Variable text - autumn is quite different!
-        text = '\n'.join(text_block)
+        text_block = '<br>'.join(text_block)
+
+        # Load text parts
+        # (1) Grab season text
+        with open(assets + '/mails/' + season + '.html', 'r') as file:
+            season_text = ''.join(file.readlines())
+
+        # (2) Grab email signature
+        with open(assets + '/mails/signature.html', 'r') as file:
+            signature = ''.join(file.readlines())
+
+        text = (
+            '<html><head></head><body>'
+            + season_text + '<p>' + text_block + '</p>' + signature +
+            '</body></html>'
+        )
 
         yield {
             'name': mail_file,
             'actions': [(create_mail, [], {
-                'season': season,
+                'is_from': 'info@fundevogel.de',
                 'subject': subject,
                 'text': text,
                 'output_path': mail_file,
@@ -814,6 +839,95 @@ def extract_books(input_file: str):
 
     # Sort by (1) page number, (2) publisher, (3) author & (4) book title
     return sorted(books, key=itemgetter('Seitenzahl', 'Verlag', 'AutorIn', 'Titel'))
+
+
+def create_mail(
+    is_from='',
+    goes_to='',
+    cc='',
+    bcc='',
+    subject='',
+    text='',
+    attachments=[],
+    output_path='mail.eml',
+):
+    # Create `eml` file
+    # (1) Add message header
+    mail = MIMEMultipart()
+    mail['Subject'] = subject
+    mail['To'] = goes_to
+    mail['From'] = is_from
+    mail['Cc'] = cc
+    mail['Bcc'] = bcc
+    mail['Date'] = get_rfc2822_date()
+
+    # (2) Add message body
+    body = MIMEText(text, 'html', 'utf-8')
+    mail.attach(body)
+
+    # (3) Add attachments
+    if attachments:
+        for attachment in attachments:
+            attachment = add_attachment(attachment)
+
+            if attachment:
+                mail.attach(attachment)
+
+    # (4) Write contents
+    with open(output_path, 'w') as file:
+        output_path = generator.Generator(file)
+        output_path.flatten(mail)
+
+
+def get_rfc2822_date():
+    # See https://tools.ietf.org/html/rfc2822
+    now = datetime.datetime.now()
+    time_tuple = now.timetuple()
+    timestamp = time.mktime(time_tuple)
+
+    return utils.formatdate(timestamp)
+
+
+def add_attachment(file_path: str):
+    # Checking if attachment file exists
+    if os.path.isfile(file_path):
+
+        # Detecting filetype
+        file_type, encoding = mimetypes.guess_type(file_path)
+
+        if file_type is None or encoding is not None:
+            file_type = 'application/octet-stream'
+
+        type_primary, type_secondary = file_type.split('/', 1)
+
+        if type_primary == 'text':
+            with open(file_path) as file:
+                data = MIMEText(file.read(), type_secondary)
+
+        elif type_primary == 'image':
+            with open(file_path, 'rb') as file:
+                data = MIMEImage(file.read(), type_secondary)
+
+        elif type_primary == 'audio':
+            with open(file_path, 'rb') as file:
+                data = MIMEAudio(file.read(), type_secondary)
+
+        else:
+            with open(file_path, 'rb') as file:
+                data = MIMEBase(type_primary, type_secondary)
+                data.set_payload(file.read())
+
+            encoders.encode_base64(data)
+
+        # Build filename
+        file_name = os.path.basename(file_path)
+
+        # Add attachment header
+        data.add_header('Content-Disposition', 'attachment', filename=file_name)
+
+        return data
+
+    return False
 
 #
 # HELPERS (END)
