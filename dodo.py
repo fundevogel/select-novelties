@@ -69,7 +69,7 @@ base_template = dist + '/templates/base.sla'
 edited_template = dist + '/templates/edited.sla'
 document_file = dist + '/documents/pdf/final.pdf'
 summary_file = meta + '/summary.txt'
-redacted_data_file = conf + '/data.json'
+data_contents_file = conf + '/data.json'
 
 # Time
 now = datetime.datetime.now()
@@ -222,7 +222,7 @@ def task_phase_three():
             'optimize_document',
             'write_summary',
             'compose_mails',
-            'extract_descriptions',
+            'extract_data',
         ]
     }
 
@@ -767,22 +767,42 @@ def task_compose_mails():
         }
 
 
-def task_extract_descriptions():
+def task_extract_data():
     """
-    Grab all descriptions from the redacted template
+    Grab data from the redacted template
 
-    >> `ISSUE/config/descriptions.json`
+    >> `ISSUE/config/data.json`
     """
-    def extract_descriptions():
-        # Extract books from template
-        books = grab_descriptions(edited_template)
+    def extract_data():
+        # Parsing Scribus template file
+        text_elements = etree.parse(edited_template).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+        print(text_elements)
+        books = {}
+
+        # Parsing JSON data files
+        for json_file in json_dist:
+            # Extract books from template
+            for data in load_json(json_file):
+                book = []
+
+                for element in text_elements:
+                    if data['ISBN'] in element.attrib['CH']:
+                        # Determine page number
+                        parent = element.getparent()
+
+                        for child in parent:
+                            if (child.tag == 'ITEXT'):
+                                book.append(child.attrib['CH'])
+
+                books[data['ISBN']] = book[:-1]
 
         # Store results
-        dump_json(books, redacted_data_file)
+        dump_json(books, data_contents_file)
 
     return {
-        'actions': [(extract_descriptions)],
-        'targets': [redacted_data_file],
+        'file_dep': json_dist,
+        'actions': [(extract_data)],
+        'targets': [data_contents_file],
     }
 
 #
@@ -859,34 +879,6 @@ def extract_books(input_file: str):
 
     # Sort by (1) page number, (2) publisher, (3) author & (4) book title
     return sorted(books, key=itemgetter('Seitenzahl', 'Verlag', 'AutorIn', 'Titel'))
-
-
-def grab_descriptions(input_file: str):
-    # Parsing Scribus template file
-    text_elements = etree.parse(input_file).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
-
-    books = {}
-
-    # Parsing JSON data files
-    for json_file in json_dist:
-        # Determine category
-        # category = headings[os.path.basename(json_file)[:-5]]
-
-        for data in load_json(json_file):
-            book = []
-
-            for element in text_elements:
-                if data['ISBN'] in element.attrib['CH']:
-                    # Determine page number
-                    parent = element.getparent()
-
-                    for child in parent:
-                        if (child.tag == 'ITEXT'):
-                            book.append(child.attrib['CH'])
-
-            books[data['ISBN']] = book[:-1]
-
-    return books
 
 
 def create_mail(
