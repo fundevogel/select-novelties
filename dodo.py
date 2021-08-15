@@ -8,7 +8,7 @@ from doit.tools import run_once
 import os  # path
 import re  # sub
 import sys  # stdout.write
-import json
+import json  # dump, load
 import datetime  # datetime.now
 import fileinput  # input
 
@@ -53,7 +53,7 @@ src = home + '/src'
 dist = home + '/dist'
 meta = home + '/meta'
 conf = home + '/config'
-shared = 'assets'
+assets = 'assets'
 
 # Files
 base_template = dist + '/templates/base.sla'
@@ -70,6 +70,16 @@ next_year = str(now.year + 1)
 # Season
 season = 'spring' if issue[-2:] == '01' else 'autumn'
 season_de = 'Frühjahr' if season == 'spring' else 'Herbst'
+
+slug_replacements = ([
+    ['Ü', 'UE'],
+    ['ü', 'ue'],
+    ['Ö', 'OE'],
+    ['ö', 'oe'],
+    ['Ä', 'AE'],
+    ['ä', 'ae'],
+    ['ß', 'ss'],
+])
 
 # Document structure
 structure = [
@@ -384,7 +394,7 @@ def task_generate_partials():
     Using `ISSUE/dist/csv/example.csv` with either
     a) `ISSUE/src/templates/example.sla`,
     b) `ISSUE/src/templates/dataList.sla` or
-    c) `shared/templates/dataList.sla` as fallback
+    c) `assets/templates/dataList.sla` as fallback
 
     >> `ISSUE/dist/templates/example.sla`
     """
@@ -406,12 +416,12 @@ def task_generate_partials():
         # Otherwise ..
         if os.path.isfile(template_file) is False:
             # .. common template file for given category
-            template_file = shared + '/templates/' + template_name
+            template_file = assets + '/templates/' + template_name
 
         # But if that doesn't exist either ..
         if os.path.isfile(template_file) is False:
             # .. ultimately resort to common generic template file
-            template_file = shared + '/templates/dataList.sla'
+            template_file = assets + '/templates/dataList.sla'
 
         # TODO: Maybe python function may be imported + executed directly?
         command = [
@@ -450,7 +460,7 @@ def task_create_base():
 
     if os.path.isfile(base_file) is False:
         # If it doesn't, choose common base template
-        base_file = shared + '/templates/main.sla'
+        base_file = assets + '/templates/main.sla'
 
     # Remove unsuitable intro page
     page_number = 4 if season == 'spring' else 3
@@ -599,8 +609,7 @@ def task_optimize_document():
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
     # Season slug
-    # slug = slugify(season_de)
-    slug = 'herbst'
+    slug = slugify(season_de, replacements=slug_replacements)
 
     # Image resolutions
     resolutions = [
