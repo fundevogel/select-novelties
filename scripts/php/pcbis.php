@@ -281,7 +281,7 @@ class FetchApi
                 # Create updated JSON file
                 # TODO: Remove CSV generation once JSON support is merged
                 # See https://github.com/berteh/ScribusGenerator/pull/184
-                $this->jsonStore($data, $this->dist . '/json/' . $category . '.json');
+                $this->jsonStore($data, $this->dist . '/json/' . $category . '.json', true);
 
                 # Create updated CSV file
                 Pcbis\Spreadsheets::array2csv($data, $this->dist . '/csv/' . $category . '.csv');
@@ -415,14 +415,18 @@ class FetchApi
      * Shared
      */
 
-    private function jsonStore(array $data, string $file): void
+    private function jsonStore(array $data, string $file, bool $valuesOnly = false): void
     {
+        if ($valuesOnly === true) {
+            $data = array_values($data);
+        }
+
         # Store data as JSON file
         # (1) Create file handle
         $file = fopen($file, 'w');
 
         # (2) Write JSON data
-        fwrite($file, json_encode(array_values($data), JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
+        fwrite($file, json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
 
         # (3) Close file handle
         fclose($file);
