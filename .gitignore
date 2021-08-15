@@ -20,5 +20,5 @@
 !/issues/**/buchempfehlungen-*-[0-9][0-9][0-9][0-9].pdf
 
 # Experimental
-/scripts/python/spring.py
-/scripts/python/autumn.py
+/assets/mails/spring.html
+/assets/mails/autumn.html

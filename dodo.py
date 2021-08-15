@@ -8,13 +8,26 @@ from doit.tools import run_once
 import os  # path
 import re  # sub
 import sys  # stdout.write
+import json  # dump, load
+import time  # mktime
 import datetime  # datetime.now
 import fileinput  # input
+import mimetypes  # guess_type
 
+from email import generator  # Generator
+from email import encoders  # encode_base64
+from email import utils  # formatdate
+from email.mime.audio import MIMEAudio
+from email.mime.base import MIMEBase
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+from operator import itemgetter
+
+from pandas import read_csv
 from slugify import slugify
-
-from scripts.python.hermes import create_mail
-from scripts.python.thoth import get_booklist, get_publishers, get_book_count
+from lxml import etree
 
 
 ###
@@ -48,12 +61,15 @@ home = 'issues/' + issue
 src = home + '/src'
 dist = home + '/dist'
 meta = home + '/meta'
-shared = 'assets'
+conf = home + '/config'
+assets = 'assets'
 
 # Files
 base_template = dist + '/templates/base.sla'
 edited_template = dist + '/templates/edited.sla'
 document_file = dist + '/documents/pdf/final.pdf'
+summary_file = meta + '/summary.txt'
+redacted_data_file = conf + '/data.json'
 
 # Time
 now = datetime.datetime.now()
@@ -65,6 +81,16 @@ next_year = str(now.year + 1)
 # Season
 season = 'spring' if issue[-2:] == '01' else 'autumn'
 season_de = 'Frühjahr' if season == 'spring' else 'Herbst'
+
+slug_replacements = ([
+    ['Ü', 'UE'],
+    ['ü', 'ue'],
+    ['Ö', 'OE'],
+    ['ö', 'oe'],
+    ['Ä', 'AE'],
+    ['ä', 'ae'],
+    ['ß', 'ss'],
+])
 
 # Document structure
 structure = [
@@ -86,11 +112,44 @@ structure = [
     ['toddler', 5],
 ]
 
+# Headings
+headings = {
+    'toddler': 'Für die Kleinsten',
+    'bilderbuch': 'Bilderbuch',
+    'vorlesebuch': 'Vorlesegeschichten',
+    'ab6': 'Erstleser',
+    'ab8': 'Bücher ab 8',
+    'ab10': 'Bücher ab 10',
+    'ab12': 'Bücher ab 12',
+    'ab14': 'Junge Erwachsene',
+    'comic': 'Graphic Novel',
+    'sachbuch': 'Sachbuch',
+    'kreatives': 'Kreatives Gestalten',
+    'besonderes': 'Besonderes',
+    'hoerbuch': 'Hörbuch Spezial',
+    'ostern': 'Ostern Spezial',
+    'weihnachten': 'Weihnachten Spezial',
+    'kalender': 'Kalender für ' + next_year,
+}
+
 # Data files
 categories = [section[0] for section in structure]
+
+# (1) CSV files
 csv_files = [category + '.csv' for category in categories]
 csv_src = [src + '/csv/' + file for file in csv_files if os.path.isfile(src + '/csv/' + file)]
 csv_dist = [path.replace(src, dist) for path in csv_src]
+
+# (2) JSON files
+json_files = [category + '.json' for category in categories]
+json_src = [src + '/json/' + file for file in json_files if os.path.isfile(src + '/json/' + file)]
+json_dist = [path.replace(src, dist) for path in json_src]
+
+# Report files
+duplicates_file = conf + '/duplicates.json'
+age_rating_file = conf + '/age-ratings.json'
+duplicates_report = meta + '/duplicates.txt'
+age_rating_report = meta + '/age-ratings.txt'
 
 #
 # VARIABLES (END)
@@ -128,6 +187,7 @@ def task_phase_one():
         'actions': None,
         'task_dep': [
             'new_issue',
+            'csv2json',
             'fetch_api',
             'find_duplicates',
             'check_age_ratings',
@@ -142,7 +202,7 @@ def task_phase_two():
     return {
         'actions': None,
         'task_dep': [
-            'process_csv',
+            'process_data',
             'generate_partials',
             'create_base',
             'extend_base',
@@ -161,7 +221,8 @@ def task_phase_three():
             'build_pdf',
             'optimize_document',
             'write_summary',
-            # 'compose_mails',
+            'compose_mails',
+            'extract_descriptions',
         ]
     }
 
@@ -184,16 +245,55 @@ def task_new_issue():
     }
 
 
+def task_csv2json():
+    """
+    Converts CSV source files to JSON
+
+    ISSUE/src/csv/example.csv` >> `ISSUE/src/json/example.json`
+    """
+    def csv2json():
+        # Define header row
+        names = [
+            'AutorIn',
+            'Titel',
+            'Verlag',
+            'ISBN',
+            'Einband',
+            'Preis',
+            'Meldenummer',
+            'SortRabatt',
+            'Gewicht',
+            'Informationen',
+            'Zusatz',
+            'Kommentar',
+        ]
+
+        for csv_file in csv_src:
+            # Convert CSV to JSON
+            # (1) Load CSV data
+            csv_data = read_csv(csv_file, encoding='iso-8859-1', sep=';', names=names)
+
+            # (2) Store as JSON
+            json_file = src + '/json/' + os.path.basename(csv_file)[:-4] + '.json'
+            csv_data.to_json(json_file, 'records', force_ascii=False, indent=4)
+
+    return {
+        'file_dep': csv_src,
+        'actions': [csv2json],
+        'targets': json_src,
+    }
+
+
 def task_fetch_api():
     """
     Fetches bibliographic data & book covers
 
-    ISSUE/dist/csv/example.csv` >> `ISSUE/dist/csv/example.csv`
+    >> `ISSUE/config/age-ratings.json`
     """
     return {
-        'file_dep': csv_src,
-        'actions': ['php scripts/php/fetch_api.php ' + issue],
-        'targets': csv_dist,
+        'file_dep': json_src,
+        'actions': ['php scripts/php/pcbis.php ' + issue + ' fetching'],
+        'targets': [age_rating_file],
     }
 
 
@@ -201,25 +301,101 @@ def task_find_duplicates():
     """
     Finds all duplicate ISBNs
 
+    >> `ISSUE/config/duplicates.json`
     >> `ISSUE/meta/duplicates.txt`
     """
+    def find_duplicates():
+        duplicates = {}
+
+        # Extract all categories an ISBN appears in
+        for json_file in json_src:
+            # Get category (= filename w/o extension)
+            category = os.path.basename(json_file)[:-5]
+
+            for data in load_json(json_file):
+                isbn = data['ISBN']
+
+                if isbn not in duplicates:
+                    duplicates[isbn] = set()
+
+                duplicates[isbn].add(category)
+
+        # Setup ISBN allowlist & report
+        isbns = {}
+        report = []
+
+        # Go through findings ..
+        for isbn, categories in duplicates.items():
+            # .. checking if each ISBN has more than one category, and if so ..
+            if len(categories) > 1:
+                # .. report duplicate for given categories
+                # (1) Remove duplicate categories
+                categories = list(dict.fromkeys(categories))
+
+                # (2) Report duplicate ISBN & categories in question
+                report.append('%s: %s' % (isbn, ' & '.join(categories)))
+
+                # (3) Store duplicate categories per ISBN
+                isbns[isbn] = categories
+
+        # Store duplicate ISBNs
+        if isbns:
+            dump_json(isbns, duplicates_file)
+
+        # Provide message in case report is empty
+        if not report:
+            report = ['No duplicates found!']
+
+        # Write report to file
+        with open(duplicates_report, 'w') as file:
+            file.writelines(line + '\n' for line in report)
+
     return {
-        'file_dep': csv_dist,
-        'actions': ['bash scripts/bash/find_duplicates.bash ' + issue],
-        'targets': [meta + '/duplicates.txt'],
+        'file_dep': json_src,
+        'actions': [find_duplicates],
+        'targets': [duplicates_file, duplicates_report],
     }
 
 
-def task_detect_age_ratings():
+def task_check_age_ratings():
     """
     Detects improper age ratings
 
     >> `ISSUE/meta/age-ratings.txt`
     """
+    def check_age_ratings():
+        age_ratings = []
+
+        for isbn, age_rating in load_json(age_rating_file).items():
+            age_ratings.append('%s: %s' % (isbn, age_rating))
+
+        if not age_ratings:
+            # .. otherwise there isn't anything to report back, really
+            age_ratings = ['No improper age ratings found!']
+
+        print(age_ratings)
+        # Save improper age ratings
+        with open(age_rating_report, 'w') as file:
+            # Write age ratings report to file
+            file.writelines(age_rating + '\n' for age_rating in age_ratings)
+
     return {
-        'file_dep': csv_dist,
-        'actions': ['bash scripts/bash/detect_age_ratings.bash ' + issue],
-        'targets': [meta + '/age-ratings.txt'],
+        'file_dep': [age_rating_file],
+        'actions': [check_age_ratings],
+        'targets': [age_rating_report],
+    }
+
+
+def task_process_data():
+    """
+    Processes raw data
+
+    ISSUE/src/json/example.json` >> `ISSUE/dist/json/example.json`
+    """
+    return {
+        'file_dep': json_src,
+        'actions': ['php scripts/php/pcbis.php ' + issue + ' processing'],
+        'targets': json_dist,
     }
 
 
@@ -230,7 +406,7 @@ def task_generate_partials():
     Using `ISSUE/dist/csv/example.csv` with either
     a) `ISSUE/src/templates/example.sla`,
     b) `ISSUE/src/templates/dataList.sla` or
-    c) `shared/templates/dataList.sla` as fallback
+    c) `assets/templates/dataList.sla` as fallback
 
     >> `ISSUE/dist/templates/example.sla`
     """
@@ -252,12 +428,12 @@ def task_generate_partials():
         # Otherwise ..
         if os.path.isfile(template_file) is False:
             # .. common template file for given category
-            template_file = shared + '/templates/' + template_name
+            template_file = assets + '/templates/' + template_name
 
         # But if that doesn't exist either ..
         if os.path.isfile(template_file) is False:
             # .. ultimately resort to common generic template file
-            template_file = shared + '/templates/dataList.sla'
+            template_file = assets + '/templates/dataList.sla'
 
         # TODO: Maybe python function may be imported + executed directly?
         command = [
@@ -275,25 +451,6 @@ def task_generate_partials():
 
         # Prepare category substitution
         partial_file = dist + '/templates/partials/' + category + '.sla'
-
-        headings = {
-            'toddler': 'Für die Kleinsten',
-            'bilderbuch': 'Bilderbuch',
-            'vorlesebuch': 'Vorlesegeschichten',
-            'ab6': 'Erstleser',
-            'ab8': 'Bücher ab 8',
-            'ab10': 'Bücher ab 10',
-            'ab12': 'Bücher ab 12',
-            'ab14': 'Junge Erwachsene',
-            'comic': 'Graphic Novel',
-            'sachbuch': 'Sachbuch',
-            'kreatives': 'Kreatives Gestalten',
-            'besonderes': 'Besonderes',
-            'hoerbuch': 'Hörbuch Spezial',
-            'ostern': 'Ostern Spezial',
-            'weihnachten': 'Weihnachten Spezial',
-            'kalender': 'Kalender für ' + next_year,
-        }
 
         yield {
             'name': data_file,
@@ -315,7 +472,7 @@ def task_create_base():
 
     if os.path.isfile(base_file) is False:
         # If it doesn't, choose common base template
-        base_file = shared + '/templates/main.sla'
+        base_file = assets + '/templates/main.sla'
 
     # Remove unsuitable intro page
     page_number = 4 if season == 'spring' else 3
@@ -464,8 +621,7 @@ def task_optimize_document():
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
     # Season slug
-    # slug = slugify(season_de)
-    slug = 'herbst'
+    slug = slugify(season_de, replacements=slug_replacements)
 
     # Image resolutions
     resolutions = [
@@ -523,20 +679,19 @@ def task_write_summary():
     """
     def summarize():
         # Extract books from template
-        books = get_booklist(edited_template)
+        books = extract_books(edited_template)
 
-        # Select publishers
-        publishers = get_publishers(books)
+        publishers = {book['Verlag'] for book in books}
 
-        with open(meta + '/summary.txt', 'w') as file:
-            for publisher in publishers:
+        with open(summary_file, 'w') as file:
+            for publisher in sorted(publishers, key=str.casefold):
                 file.write(publisher + ':\n')
 
                 for book in books:
-                    if book[1] == publisher:
-                        author = book[2]
-                        title = book[3]
-                        page_number = book[4]
+                    if book['Verlag'] == publisher:
+                        author = book['AutorIn']
+                        title = book['Titel']
+                        page_number = book['Seitenzahl']
 
                         file.write(
                             author + ' - "' + title + '" auf Seite ' +
@@ -547,55 +702,90 @@ def task_write_summary():
 
     return {
         'actions': [(summarize)],
-        'targets': [meta + '/summary.txt'],
+        'targets': [summary_file],
     }
 
 
-# TODO: Improve mail + templates
-def compose_mails():
+def task_compose_mails():
     """
     Drafts mail files for publishers
 
     >> `ISSUE/dist/documents/mails/publisher.eml`
     """
     # Extract books from template
-    books = get_booklist(edited_template)
+    books = extract_books(edited_template)
 
-    # Select publishers
-    publishers = get_publishers(books)
+    # Grab publishers
+    publishers = {book['Verlag'] for book in books}
 
-    for publisher in publishers:
+    # Build text block for each of them
+    for publisher in sorted(publishers, key=str.casefold):
         text_block = []
 
         for book in books:
-            if book[1] == publisher:
-                author = book[2]
-                title = book[3]
-                page_number = book[4]
+            if book['Verlag'] == publisher:
+                author = book['AutorIn']
+                title = book['Titel']
+                page_number = book['Seitenzahl']
 
                 text_block.append(
                     author + ' - "' + title + '" auf Seite ' +
-                    str(page_number) + '<br>'
+                    str(page_number) + '\n'
                 )
 
         # Craft output path
         mail_file = dist + '/documents/mails/'  # Add path
-        mail_file += publisher + '.eml'
+        mail_file += slugify(publisher, replacements=slug_replacements) + '.eml'
 
         subject = 'Empfehlungsliste ' + season_de + ' ' + year
+
         # TODO: Variable text - autumn is quite different!
-        text = '\n'.join(text_block)
+        text_block = '<br>'.join(text_block)
+
+        # Load text parts
+        # (1) Grab season text
+        with open(assets + '/mails/' + season + '.html', 'r') as file:
+            season_text = ''.join(file.readlines())
+
+        # (2) Grab email signature
+        with open(assets + '/mails/signature.html', 'r') as file:
+            signature = ''.join(file.readlines())
+
+        text = (
+            '<html><head></head><body>'
+            + season_text + '<p>' + text_block + '</p>' + signature +
+            '</body></html>'
+        )
 
         yield {
             'name': mail_file,
             'actions': [(create_mail, [], {
-                'season': season,
+                'is_from': 'info@fundevogel.de',
                 'subject': subject,
                 'text': text,
                 'output_path': mail_file,
             })],
             'targets': [mail_file],
         }
+
+
+def task_extract_descriptions():
+    """
+    Grab all descriptions from the redacted template
+
+    >> `ISSUE/config/descriptions.json`
+    """
+    def extract_descriptions():
+        # Extract books from template
+        books = grab_descriptions(edited_template)
+
+        # Store results
+        dump_json(books, redacted_data_file)
+
+    return {
+        'actions': [(extract_descriptions)],
+        'targets': [redacted_data_file],
+    }
 
 #
 # TASKS (END)
@@ -636,6 +826,158 @@ def dump_json(data, json_file):
 
     with open(json_file, 'w') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+
+
+def extract_books(input_file: str):
+    # Parsing Scribus template file
+    text_elements = etree.parse(input_file).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+
+    books = []
+
+    # Parsing JSON data files
+    for json_file in json_dist:
+        # Determine category
+        category = headings[os.path.basename(json_file)[:-5]]
+
+        for data in load_json(json_file):
+            book = {
+                'AutorIn': data['AutorInnen'],
+                'Titel': data['Titel'],
+                'Verlag': data['Verlag'],
+                'Seitenzahl': 0,
+                'Kategorie': category,
+            }
+
+            for element in text_elements:
+                if data['ISBN'] in element.attrib['CH']:
+                    # Determine page number
+                    parent = element.xpath('./../..')
+                    page = int(parent[0].attrib['OwnPage'])
+
+                    # Store data
+                    book['Seitenzahl'] = page + 1
+
+            books.append(book)
+
+    # Sort by (1) page number, (2) publisher, (3) author & (4) book title
+    return sorted(books, key=itemgetter('Seitenzahl', 'Verlag', 'AutorIn', 'Titel'))
+
+
+def grab_descriptions(input_file: str):
+    # Parsing Scribus template file
+    text_elements = etree.parse(input_file).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+
+    books = {}
+
+    # Parsing JSON data files
+    for json_file in json_dist:
+        # Determine category
+        # category = headings[os.path.basename(json_file)[:-5]]
+
+        for data in load_json(json_file):
+            book = []
+
+            for element in text_elements:
+                if data['ISBN'] in element.attrib['CH']:
+                    # Determine page number
+                    parent = element.getparent()
+
+                    for child in parent:
+                        if (child.tag == 'ITEXT'):
+                            book.append(child.attrib['CH'])
+
+            books[data['ISBN']] = book[:-1]
+
+    return books
+
+
+def create_mail(
+    is_from='',
+    goes_to='',
+    cc='',
+    bcc='',
+    subject='',
+    text='',
+    attachments=[],
+    output_path='mail.eml',
+):
+    # Create `eml` file
+    # (1) Add message header
+    mail = MIMEMultipart()
+    mail['Subject'] = subject
+    mail['To'] = goes_to
+    mail['From'] = is_from
+    mail['Cc'] = cc
+    mail['Bcc'] = bcc
+    mail['Date'] = get_rfc2822_date()
+
+    # (2) Add message body
+    body = MIMEText(text, 'html', 'utf-8')
+    mail.attach(body)
+
+    # (3) Add attachments
+    if attachments:
+        for attachment in attachments:
+            attachment = add_attachment(attachment)
+
+            if attachment:
+                mail.attach(attachment)
+
+    # (4) Write contents
+    with open(output_path, 'w') as file:
+        output_path = generator.Generator(file)
+        output_path.flatten(mail)
+
+
+def get_rfc2822_date():
+    # See https://tools.ietf.org/html/rfc2822
+    now = datetime.datetime.now()
+    time_tuple = now.timetuple()
+    timestamp = time.mktime(time_tuple)
+
+    return utils.formatdate(timestamp)
+
+
+def add_attachment(file_path: str):
+    # Checking if attachment file exists
+    if os.path.isfile(file_path):
+
+        # Detecting filetype
+        file_type, encoding = mimetypes.guess_type(file_path)
+
+        if file_type is None or encoding is not None:
+            file_type = 'application/octet-stream'
+
+        type_primary, type_secondary = file_type.split('/', 1)
+
+        if type_primary == 'text':
+            with open(file_path) as file:
+                data = MIMEText(file.read(), type_secondary)
+
+        elif type_primary == 'image':
+            with open(file_path, 'rb') as file:
+                data = MIMEImage(file.read(), type_secondary)
+
+        elif type_primary == 'audio':
+            with open(file_path, 'rb') as file:
+                data = MIMEAudio(file.read(), type_secondary)
+
+        else:
+            with open(file_path, 'rb') as file:
+                data = MIMEBase(type_primary, type_secondary)
+                data.set_payload(file.read())
+
+            encoders.encode_base64(data)
+
+        # Build filename
+        file_name = os.path.basename(file_path)
+
+        # Add attachment header
+        data.add_header('Content-Disposition', 'attachment', filename=file_name)
+
+        return data
+
+    return False
 
 #
 # HELPERS (END)

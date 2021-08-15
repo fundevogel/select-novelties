@@ -17,12 +17,12 @@ cd "$root_directory"/issues/"$issue" || exit
 
 # Preparing directory structure
 # (1) Generate skeleton
-for dir in config \
-           meta \
+for dir in meta \
+           config \
            src/csv \
+           src/json \
            src/templates \
-           dist/csv \
-           dist/images \
+           dist/json \
            dist/images \
            dist/documents/pdf \
            dist/documents/mails \
@@ -31,16 +31,12 @@ do
     mkdir -p "$dir"
 done
 
-# (2) Copy blocklist & proper ages skeletons
-cp ../../assets/config/block-list.json config/
-cp ../../assets/config/proper-ages.json config/
-
-# (3) Convert CSV (if present)
+# (2) Copy CSV files (if present)
 if [ -d ../../"$issue" ]; then
 
     for file in ../../"$issue"/*.csv; do
         base_name=$(basename "$file")
-        iconv --from-code=ISO8859-1 --to-code=UTF-8 "$file" | tr -d '\015' > src/csv/"$base_name"
+        mv "$file" src/csv/"$base_name"
     done
 
     rm -rf ../../"$issue"
