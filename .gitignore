@@ -15,7 +15,12 @@
 /.*cache
 
 # Auto-generated content
-/issues/**/dist
+# (1) Build folder
+/issues/**/dist/*
+!/issues/**/dist/templates
+/issues/**/dist/templates/*
+!/issues/**/dist/templates/edited.sla
+# (2) Finished editions
 /issues/**/*.pdf
 !/issues/**/*-buchempfehlungen.pdf
 
