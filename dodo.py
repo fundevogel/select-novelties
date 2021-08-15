@@ -12,11 +12,13 @@ import json
 import datetime  # datetime.now
 import fileinput  # input
 
+from operator import itemgetter
+
 from pandas import read_csv
 from slugify import slugify
+from lxml import etree
 
 from scripts.python.hermes import create_mail
-from scripts.python.thoth import get_booklist, get_publishers, get_book_count
 
 
 ###
@@ -88,6 +90,26 @@ structure = [
     ['bilderbuch', 6],
     ['toddler', 5],
 ]
+
+# Headings
+headings = {
+    'toddler': 'Für die Kleinsten',
+    'bilderbuch': 'Bilderbuch',
+    'vorlesebuch': 'Vorlesegeschichten',
+    'ab6': 'Erstleser',
+    'ab8': 'Bücher ab 8',
+    'ab10': 'Bücher ab 10',
+    'ab12': 'Bücher ab 12',
+    'ab14': 'Junge Erwachsene',
+    'comic': 'Graphic Novel',
+    'sachbuch': 'Sachbuch',
+    'kreatives': 'Kreatives Gestalten',
+    'besonderes': 'Besonderes',
+    'hoerbuch': 'Hörbuch Spezial',
+    'ostern': 'Ostern Spezial',
+    'weihnachten': 'Weihnachten Spezial',
+    'kalender': 'Kalender für ' + next_year,
+}
 
 # Data files
 categories = [section[0] for section in structure]
@@ -408,25 +430,6 @@ def task_generate_partials():
         # Prepare category substitution
         partial_file = dist + '/templates/partials/' + category + '.sla'
 
-        headings = {
-            'toddler': 'Für die Kleinsten',
-            'bilderbuch': 'Bilderbuch',
-            'vorlesebuch': 'Vorlesegeschichten',
-            'ab6': 'Erstleser',
-            'ab8': 'Bücher ab 8',
-            'ab10': 'Bücher ab 10',
-            'ab12': 'Bücher ab 12',
-            'ab14': 'Junge Erwachsene',
-            'comic': 'Graphic Novel',
-            'sachbuch': 'Sachbuch',
-            'kreatives': 'Kreatives Gestalten',
-            'besonderes': 'Besonderes',
-            'hoerbuch': 'Hörbuch Spezial',
-            'ostern': 'Ostern Spezial',
-            'weihnachten': 'Weihnachten Spezial',
-            'kalender': 'Kalender für ' + next_year,
-        }
-
         yield {
             'name': data_file,
             'file_dep': [data_file, template_file],
@@ -655,20 +658,19 @@ def task_write_summary():
     """
     def summarize():
         # Extract books from template
-        books = get_booklist(edited_template)
+        books = extract_books(edited_template)
 
-        # Select publishers
-        publishers = get_publishers(books)
+        publishers = {book['Verlag'] for book in books}
 
         with open(meta + '/summary.txt', 'w') as file:
-            for publisher in publishers:
+            for publisher in sorted(publishers, key=str.casefold):
                 file.write(publisher + ':\n')
 
                 for book in books:
-                    if book[1] == publisher:
-                        author = book[2]
-                        title = book[3]
-                        page_number = book[4]
+                    if book['Verlag'] == publisher:
+                        author = book['AutorIn']
+                        title = book['Titel']
+                        page_number = book['Seitenzahl']
 
                         file.write(
                             author + ' - "' + title + '" auf Seite ' +
@@ -691,7 +693,7 @@ def compose_mails():
     >> `ISSUE/dist/documents/mails/publisher.eml`
     """
     # Extract books from template
-    books = get_booklist(edited_template)
+    books = get_booklist(edited_template, json_dist)
 
     # Select publishers
     publishers = get_publishers(books)
@@ -768,6 +770,41 @@ def dump_json(data, json_file):
 
     with open(json_file, 'w') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+
+
+def extract_books(input_file: str):
+    # Parsing Scribus template file
+    text_elements = etree.parse(input_file).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+
+    books = []
+
+    # Parsing JSON data files
+    for json_file in json_dist:
+        # Determine category
+        category = headings[os.path.basename(json_file)[:-5]]
+
+        for data in load_json(json_file):
+            book = {
+                'AutorIn': data['AutorInnen'],
+                'Titel': data['Titel'],
+                'Verlag': data['Verlag'],
+                'Seitenzahl': 0,
+                'Kategorie': category,
+            }
+
+            for element in text_elements:
+                if data['ISBN'] in element.attrib['CH']:
+                    # Determine page number
+                    parent = element.xpath('./../..')
+                    page = int(parent[0].attrib['OwnPage'])
+
+                    # Store data
+                    book['Seitenzahl'] = page + 1
+
+            books.append(book)
+
+    # Sort by (1) page number, (2) publisher, (3) author & (4) book title
+    return sorted(books, key=itemgetter('Seitenzahl', 'Verlag', 'AutorIn', 'Titel'))
 
 #
 # HELPERS (END)

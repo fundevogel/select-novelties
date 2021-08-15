@@ -187,7 +187,9 @@ class FetchApi
                 $this->jsonStore($this->ageRatings, $this->base . '/config/age-ratings.json');
 
                 # (2) Store failed ISBNs
-                $this->jsonStore($this->failures, $this->base . '/meta/failures.json');
+                if (!empty($this->failures)) {
+                    $this->jsonStore($this->failures, $this->base . '/meta/failures.json');
+                }
             }
         }
 
@@ -235,14 +237,15 @@ class FetchApi
                     # (2) Keep comma-separated author (for sorting)
                     $node = [
                         'ISBN' => $isbn,
-                        'order' => $item['AutorIn'],
+                        'AutorIn' => $item['AutorIn'],
                     ];
 
                     try {
                         # Fetch bibliographic data from API
                         $book = $this->api->load($isbn);
 
-                        # Combine all information
+                        # Combine all information for ..
+                        # (1) .. template files
                         $node['AutorInnen'] = $book->author();
                         $node['Kopfleiste'] = $this->buildHeading($book);
                         $node['Inhaltsbeschreibung'] = $this->buildDescription($book);
@@ -251,6 +254,11 @@ class FetchApi
                         $node['Abschluss'] = $this->buildClosing($book);
                         $node['Preis'] = $book->retailPrice();
                         $node['@Cover'] = Butler::slug($book->title()) . '.jpg';
+
+                        # (2) .. general use
+                        $node['Titel'] = $book->title();
+                        $node['Untertitel'] = $book->subtitle();
+                        $node['Verlag'] = $book->publisher();
 
                         # Store data record
                         $data[]  = $node;
@@ -268,9 +276,11 @@ class FetchApi
                 }
 
                 # Sort by author's last name
-                $data = Butler::sort($data, 'order', 'asc');
+                $data = Butler::sort($data, 'AutorIn', 'asc');
 
                 # Create updated JSON file
+                # TODO: Remove CSV generation once JSON support is merged
+                # See https://github.com/berteh/ScribusGenerator/pull/184
                 $this->jsonStore($data, $this->dist . '/json/' . $category . '.json');
 
                 # Create updated CSV file
