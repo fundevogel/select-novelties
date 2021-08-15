@@ -17,14 +17,12 @@ cd "$root_directory"/issues/"$issue" || exit
 
 # Preparing directory structure
 # (1) Generate skeleton
-for dir in config \
-           meta \
+for dir in meta \
+           config \
            src/csv \
            src/json \
            src/templates \
-           dist/csv \
            dist/json \
-           dist/images \
            dist/images \
            dist/documents/pdf \
            dist/documents/mails \

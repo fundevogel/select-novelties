@@ -248,7 +248,7 @@ def task_fetch_api():
     """
     return {
         'file_dep': json_src,
-        'actions': ['php scripts/php/fetch_api.php ' + issue + ' fetching'],
+        'actions': ['php scripts/php/pcbis.php ' + issue + ' fetching'],
         'targets': [age_rating_file],
     }
 
@@ -272,9 +272,9 @@ def task_find_duplicates():
                 isbn = data['ISBN']
 
                 if isbn not in duplicates:
-                    duplicates[isbn] = []
+                    duplicates[isbn] = set()
 
-                duplicates[isbn].append(category)
+                duplicates[isbn].add(category)
 
         # Setup ISBN allowlist & report
         isbns = {}
@@ -291,11 +291,8 @@ def task_find_duplicates():
                 # (2) Report duplicate ISBN & categories in question
                 report.append('%s: %s' % (isbn, ' & '.join(categories)))
 
-                # (3) Store duplicate ISBN
-                if isbn not in isbns:
-                    isbns[isbn] = []
-
-                isbns[isbn].append(category)
+                # (3) Store duplicate categories per ISBN
+                isbns[isbn] = categories
 
         # Store duplicate ISBNs
         if isbns:
@@ -353,7 +350,7 @@ def task_process_data():
     """
     return {
         'file_dep': json_src,
-        'actions': ['php scripts/php/fetch_api.php ' + issue + ' processing'],
+        'actions': ['php scripts/php/pcbis.php ' + issue + ' processing'],
         'targets': json_dist,
     }
 
