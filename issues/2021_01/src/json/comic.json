@@ -1,0 +1,44 @@
+[
+    {
+        "AutorIn":"Lemire, Sabine",
+        "Titel":"Mira #familie #paris #abschied.",
+        "Verlag":"Klett Kinderbuch Verlag",
+        "ISBN":"978-3-95470-247-3",
+        "Einband":"KT",
+        "Preis":"15.00 EUR",
+        "Meldenummer":null,
+        "SortRabatt":30.0,
+        "Gewicht":"398 g",
+        "Informationen":" 2021;112 S.;24 cm;ab 10 J.;",
+        "Zusatz":250,
+        "Kommentar":"Mira - Band 4"
+    },
+    {
+        "AutorIn":"Wagenbreth, Henning",
+        "Titel":"Rückwärtsland.",
+        "Verlag":"Peter Hammer Verlag",
+        "ISBN":"978-3-7795-0646-1",
+        "Einband":"GEB",
+        "Preis":"25.00 EUR",
+        "Meldenummer":null,
+        "SortRabatt":30.0,
+        "Gewicht":"354 g",
+        "Informationen":" 2021;40 S.;durchgehend farbig illustriert;30.3 cm;von 8 - 99 J.;",
+        "Zusatz":230,
+        "Kommentar":null
+    },
+    {
+        "AutorIn":"Schmitt, Volker",
+        "Titel":"Zack!.",
+        "Verlag":"Kibitz, Berlin",
+        "ISBN":"978-3-948690-09-0",
+        "Einband":"GEB",
+        "Preis":"15.00 EUR",
+        "Meldenummer":21.0,
+        "SortRabatt":35.0,
+        "Gewicht":null,
+        "Informationen":" 1;2021;96 S.;23 cm;ab 4 J.;",
+        "Zusatz":180,
+        "Kommentar":null
+    }
+]
