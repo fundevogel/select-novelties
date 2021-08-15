@@ -635,10 +635,8 @@ def task_optimize_document():
 
     # TODO: Keep order
     for resolution in resolutions:
-        # Craft output path
-        optimized_file = home + '/'  # Add path
-        optimized_file += 'buchempfehlungen-' + slug  # Add season
-        optimized_file += '-' + str(now.year) + '_' + resolution + '.pdf'
+        # Build output filepath
+        optimized_file = home + '/' + str(now.year) + '-' + slug + '-buchempfehlungen_' + resolution + '.pdf'
 
         # Build command
         command = [
