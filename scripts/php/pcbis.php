@@ -6,22 +6,22 @@ use Pcbis\Webservice;
 use Pcbis\Helpers\Butler;
 
 
-class FetchApi
+class KNVClient
 {
-    /**
-     * Current issue
-     *
-     * @var string
-     */
-    private $issue;
-
-
     /**
      * Modus operandi
      *
      * @var string
      */
     private $mode;
+
+
+    /**
+     * Current issue
+     *
+     * @var string
+     */
+    private $issue;
 
 
     /**
@@ -41,7 +41,7 @@ class FetchApi
 
 
     /**
-     * JSON source files
+     * JSON source file(s)
      *
      * @var array
      */
@@ -75,22 +75,23 @@ class FetchApi
     /**
      * Constructor
      *
-     * @param string $issue Current issue
      * @param string $mode Modus operandi
+     * @param string $issue Current issue
+     * @param string $category Current category
      * @throws Exception
      * @return void
      */
-    public function __construct($issue, $mode)
+    public function __construct($mode, $issue, $category)
     {
-        if ($issue === null || $mode === null) {
+        if ($mode === null || $issue === null) {
             throw new Exception('Please enter valid parameters.');
         }
 
-        # Determine issue
-        $this->issue = $issue;
-
         # Determine mode
         $this->mode = $mode;
+
+        # Determine issue
+        $this->issue = $issue;
 
         # Set paths
         # (1) Base path
@@ -100,15 +101,30 @@ class FetchApi
         $this->root = $this->base . '/src';
         $this->dist = $this->base . '/dist';
 
-        # Determine source files
+        # Determine source file(s) ..
+        # (1) .. for mode 'fetching'
         $this->files = glob($this->root . '/json/*.json');
+
+        # (2) .. for mode 'processing'
+        if ($mode === 'processing') {
+            if ($category === null) {
+                throw new Exception('Please enter valid parameters.');
+            }
+
+            # Check if category file exists
+            if (!file_exists($file = $this->root . '/json/' . $category . '.json')) {
+                throw new Exception(sprintf('Invalid file: "%s"', $file));
+            }
+
+            $this->files = [$file];
+        }
 
         # Authenticate with KNV's API
         # (1) Load credentials
         $credentials = json_decode(file_get_contents(__DIR__ . '/../../login.json'), true);
 
         # (2) Initialize API
-        $this->api = new Webservice($credentials, $this->dist . '/.cache');
+        $this->api = new Webservice($credentials, __DIR__ . '/../../.cache');
     }
 
 
@@ -137,17 +153,19 @@ class FetchApi
                         # Fetch bibliographic data from API
                         $book = $this->api->load($isbn);
 
-                        # Determine age recommendation
-                        $age = $book->age();
+                        # Determine age recommendation (except for calendars)
+                        if (!$book->isCalendar()) {
+                            $age = $book->age();
 
-                        # Handle empty age ratings
-                        if ($age === '') {
-                            $age = 'Keine Altersangabe';
-                        }
+                            # Handle empty age ratings
+                            if ($age === '') {
+                                $age = 'Keine Altersangabe';
+                            }
 
-                        # Store age rating (if inappropriate)
-                        if (Butler::contains($age, 'angabe') || Butler::contains($age, 'bis')) {
-                            $this->ageRatings[$isbn] = $age;
+                            # Store age rating (if inappropriate)
+                            if (Butler::contains($age, 'angabe') || Butler::contains($age, 'bis')) {
+                                $this->ageRatings[$isbn] = $age;
+                            }
                         }
 
                         echo ' done.';
@@ -220,13 +238,11 @@ class FetchApi
 
                     # Block duplicate ISBNs across category
                     if (in_array($isbn, $isbns) === true) {
-                        echo 'Blocked category duplicate: ' . $isbn;
                         continue;
                     }
 
                     # Block duplicate ISBNs across categories
                     if (isset($duplicates[$isbn]) && in_array($category, $duplicates[$isbn])) {
-                        echo 'Blocked global duplicate: ' . $isbn;
                         continue;
                     }
 
@@ -434,16 +450,22 @@ class FetchApi
 }
 
 
-$issue = null;
-
-if (isset($argv[1])) {
-    $issue = $argv[1];
-}
-
 $mode = null;
 
-if (isset($argv[2])) {
-    $mode = $argv[2];
+if (isset($argv[1])) {
+    $mode = $argv[1];
 }
 
-$object = (new FetchApi($issue, $mode))->run();
+$issue = null;
+
+if (isset($argv[2])) {
+    $issue = $argv[2];
+}
+
+$category = null;
+
+if (isset($argv[3])) {
+    $category = $argv[3];
+}
+
+$object = (new KNVClient($mode, $issue, $category))->run();
