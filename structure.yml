@@ -1,0 +1,20 @@
+# This document outlines the common structure of each issue
+
+general:
+  toddler: "Für die Kleinsten"
+  bilderbuch: "Bilderbuch"
+  vorlesebuch: "Vorlesegeschichten"
+  ab6: "Erstleser"
+  ab8: "Bücher ab 8"
+  ab10: "Bücher ab 10"
+  ab12: "Bücher ab 12"
+  ab14: "Bücher für junge Erwachsene"
+  sachbuch: "Sachbücher"
+  besonderes: "Besonderes"
+  hoerbuch: "Hörbuch Spezial"
+seasonal:
+  spring:
+    ostern: "Ostern Spezial"
+  autumn:
+    weihnachten: "Weihnachten Spezial"
+    kalender: "Kalender für JAHR"

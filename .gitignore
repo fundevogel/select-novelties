@@ -1,0 +1,29 @@
+# Cache files
+/__pycache__/
+/.doit.db
+
+# Composer files
+/composer.lock
+/vendor
+
+# Development files
+/.vscode
+/.env
+
+# Sensitive information
+/login.json
+/.*cache
+
+# Auto-generated content
+# (1) Build folder
+/issues/**/dist/*
+!/issues/**/dist/templates
+/issues/**/dist/templates/*
+!/issues/**/dist/templates/edited.sla
+# (2) Finished editions
+/issues/**/*.pdf
+!/issues/**/*-buchempfehlungen.pdf
+
+# Experimental
+/assets/mails/spring.html
+/assets/mails/autumn.html
