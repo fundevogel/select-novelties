@@ -40,7 +40,7 @@
         }
     ],
     "require": {
-        "fundevogel/php-pcbis": "2.1.4",
+        "fundevogel/php-pcbis": "2.2.3",
         "berteh/scribusgenerator": "@dev"
     }
 }
