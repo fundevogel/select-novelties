@@ -1,8 +1,5 @@
-Improper age rating for 4251732322861: Keine Altersangabe
-Improper age rating for 4250809648095: Keine Altersangabe
-Improper age rating for 978-3-0360-5022-5: Keine Altersangabe
-Improper age rating for 978-3-95878-041-5: Keine Altersangabe
-Improper age rating for 4250809647876: Keine Altersangabe
-Improper age rating for 978-3-649-64031-8: Keine Altersangabe
-Improper age rating for 978-3-8458-4320-9: Keine Altersangabe
-
+978-3-522-18537-0: Keine Altersangabe
+978-3-96594-109-0: Keine Altersangabe
+978-3-03876-200-3: Keine Altersangabe
+978-3-96704-716-5: Keine Altersangabe
+978-3-8458-4320-9: Keine Altersangabe
