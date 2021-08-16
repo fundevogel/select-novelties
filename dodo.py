@@ -2,7 +2,6 @@
 # ~*~ coding=utf-8 ~*~
 
 from doit import get_var
-from doit.tools import run_once
 
 # TODO: Import only what is needed
 import os  # path
@@ -38,7 +37,6 @@ DOIT_CONFIG = {
     'action_string_formatting': 'old',
     'default_tasks': [
         'phase_one',
-        'phase_two',
     ],
     'verbosity': 2,
 }
@@ -53,23 +51,18 @@ DOIT_CONFIG = {
 #
 
 # CLI
-config = {'issue': get_var('issue', '123')}
+config = {'issue': get_var('issue', '2021_02')}
 issue = config['issue']
 
 # Directories
-home = 'issues/' + issue
-src = home + '/src'
-dist = home + '/dist'
-meta = home + '/meta'
-conf = home + '/config'
+# (1) Base
 assets = 'assets'
-
-# Files
-base_template = dist + '/templates/base.sla'
-edited_template = dist + '/templates/edited.sla'
-document_file = dist + '/documents/pdf/final.pdf'
-summary_file = meta + '/summary.txt'
-data_contents_file = conf + '/data.json'
+# (2) Per-issue
+home_dir = 'issues/' + issue
+meta_dir = home_dir + '/meta'
+conf_dir = home_dir + '/config'
+src_dir = home_dir + '/src'
+dist_dir = home_dir + '/dist'
 
 # Time
 now = datetime.datetime.now()
@@ -132,25 +125,6 @@ headings = {
     'kalender': 'Kalender für ' + next_year,
 }
 
-# Data files
-categories = [section[0] for section in structure]
-
-# (1) CSV files
-csv_files = [category + '.csv' for category in categories]
-csv_src = [src + '/csv/' + file for file in csv_files if os.path.isfile(src + '/csv/' + file)]
-csv_dist = [path.replace(src, dist) for path in csv_src]
-
-# (2) JSON files
-json_files = [category + '.json' for category in categories]
-json_src = [src + '/json/' + file for file in json_files if os.path.isfile(src + '/json/' + file)]
-json_dist = [path.replace(src, dist) for path in json_src]
-
-# Report files
-duplicates_file = conf + '/duplicates.json'
-age_rating_file = conf + '/age-ratings.json'
-duplicates_report = meta + '/duplicates.txt'
-age_rating_report = meta + '/age-ratings.txt'
-
 #
 # VARIABLES (END)
 ###
@@ -160,15 +134,32 @@ age_rating_report = meta + '/age-ratings.txt'
 # HELPERS (START)
 #
 
-# Replaces pattern inside a given file
-def replace(path, pattern, replacement):
-    file = fileinput.input(path, inplace=True)
+def get_files(extension: str, mode: str) -> list:
+    files = [category + '.' + extension for category in [section[0] for section in structure]]
 
-    for line in file:
-        line = re.sub(pattern, replacement, line)
-        sys.stdout.write(line)
+    directory = {
+        'src': src_dir,
+        'dist': dist_dir,
+    }
 
-    file.close()
+    if mode not in directory:
+        return []
+
+    return [directory[mode] + '/' + extension + '/' + file for file in files if os.path.isfile(directory[mode] + '/' + extension + '/' + file)]
+
+
+def get_template(template: str) -> str:
+    if template == 'base':
+        return dist_dir + '/templates/base.sla'
+
+    if template == 'edited':
+        return dist_dir + '/templates/edited.sla'
+
+    if template == 'document':
+        return dist_dir + '/documents/pdf/final.pdf'
+
+    if template == 'age-ratings':
+        return conf_dir + '/age-ratings.json'
 
 #
 # HELPERS (END)
@@ -240,7 +231,6 @@ def task_new_issue():
     Sets up new issue
     """
     return {
-        'uptodate': [run_once],
         'actions': ['bash scripts/bash/new_issue.bash ' + issue],
     }
 
@@ -251,37 +241,41 @@ def task_csv2json():
 
     ISSUE/src/csv/example.csv` >> `ISSUE/src/json/example.json`
     """
-    def csv2json():
-        # Define header row
-        names = [
-            'AutorIn',
-            'Titel',
-            'Verlag',
-            'ISBN',
-            'Einband',
-            'Preis',
-            'Meldenummer',
-            'SortRabatt',
-            'Gewicht',
-            'Informationen',
-            'Zusatz',
-            'Kommentar',
-        ]
+    # Define header row
+    names = [
+        'AutorIn',
+        'Titel',
+        'Verlag',
+        'ISBN',
+        'Einband',
+        'Preis',
+        'Meldenummer',
+        'SortRabatt',
+        'Gewicht',
+        'Informationen',
+        'Zusatz',
+        'Kommentar',
+    ]
 
-        for csv_file in csv_src:
-            # Convert CSV to JSON
-            # (1) Load CSV data
-            csv_data = read_csv(csv_file, encoding='iso-8859-1', sep=';', names=names)
 
-            # (2) Store as JSON
-            json_file = src + '/json/' + os.path.basename(csv_file)[:-4] + '.json'
-            csv_data.to_json(json_file, 'records', force_ascii=False, indent=4)
+    def csv2json(dependencies, targets):
+        # Convert CSV to JSON
+        # (1) Load CSV data
+        csv_data = read_csv(dependencies[0], encoding='iso-8859-1', sep=';', names=names)
 
-    return {
-        'file_dep': csv_src,
-        'actions': [csv2json],
-        'targets': json_src,
-    }
+        # (2) Store as JSON
+        csv_data.to_json(targets[0], 'records', force_ascii=False, indent=4)
+
+
+    for csv_file in get_files('csv', 'src'):
+        json_file = src_dir + '/json/' + os.path.basename(csv_file)[:-4] + '.json'
+
+        yield {
+            'name': json_file,
+            'file_dep': [csv_file],
+            'actions': [csv2json],
+            'targets': [json_file],
+        }
 
 
 def task_fetch_api():
@@ -290,9 +284,12 @@ def task_fetch_api():
 
     >> `ISSUE/config/age-ratings.json`
     """
+    json_files = get_files('json', 'src')
+    age_rating_file = get_template('age-ratings')
+
     return {
-        'file_dep': json_src,
-        'actions': ['php scripts/php/pcbis.php ' + issue + ' fetching'],
+        'file_dep': json_files,
+        'actions': ['php scripts/php/pcbis.php fetching ' + issue],
         'targets': [age_rating_file],
     }
 
@@ -304,11 +301,16 @@ def task_find_duplicates():
     >> `ISSUE/config/duplicates.json`
     >> `ISSUE/meta/duplicates.txt`
     """
+    json_files = get_files('json', 'src')
+
+    duplicates_file = conf_dir + '/duplicates.json'
+    duplicates_report = meta_dir + '/duplicates.txt'
+
     def find_duplicates():
         duplicates = {}
 
         # Extract all categories an ISBN appears in
-        for json_file in json_src:
+        for json_file in json_files:
             # Get category (= filename w/o extension)
             category = os.path.basename(json_file)[:-5]
 
@@ -339,8 +341,7 @@ def task_find_duplicates():
                 isbns[isbn] = categories
 
         # Store duplicate ISBNs
-        if isbns:
-            dump_json(isbns, duplicates_file)
+        dump_json(isbns, duplicates_file)
 
         # Provide message in case report is empty
         if not report:
@@ -351,9 +352,12 @@ def task_find_duplicates():
             file.writelines(line + '\n' for line in report)
 
     return {
-        'file_dep': json_src,
+        'file_dep': json_files,
         'actions': [find_duplicates],
-        'targets': [duplicates_file, duplicates_report],
+        'targets': [
+            duplicates_file,
+            duplicates_report,
+        ],
     }
 
 
@@ -363,6 +367,9 @@ def task_check_age_ratings():
 
     >> `ISSUE/meta/age-ratings.txt`
     """
+    age_rating_file = get_template('age-ratings')
+    age_rating_report = meta_dir + '/age-ratings.txt'
+
     def check_age_ratings():
         age_ratings = []
 
@@ -373,7 +380,6 @@ def task_check_age_ratings():
             # .. otherwise there isn't anything to report back, really
             age_ratings = ['No improper age ratings found!']
 
-        print(age_ratings)
         # Save improper age ratings
         with open(age_rating_report, 'w') as file:
             # Write age ratings report to file
@@ -392,11 +398,17 @@ def task_process_data():
 
     ISSUE/src/json/example.json` >> `ISSUE/dist/json/example.json`
     """
-    return {
-        'file_dep': json_src,
-        'actions': ['php scripts/php/pcbis.php ' + issue + ' processing'],
-        'targets': json_dist,
-    }
+    for json_file in get_files('json', 'src'):
+        target_file = json_file.replace('src', 'dist')
+        category = os.path.basename(json_file)[:-5]
+
+        yield {
+            'name': json_file,
+            'file_dep': [json_file],
+            'task_dep': ['fetch_api'],
+            'actions': ['php scripts/php/pcbis.php processing ' + issue + ' ' + category],
+            'targets': [target_file, target_file.replace('json', 'csv')],
+        }
 
 
 def task_generate_partials():
@@ -410,24 +422,28 @@ def task_generate_partials():
 
     >> `ISSUE/dist/templates/example.sla`
     """
-    for data_file in csv_dist:
+    for data_file in get_files('csv', 'dist'):
         # Stripping path & extension
         category = os.path.basename(data_file)[:-4]
+
+        # Build target directory & filename
+        partials_dir = dist_dir + '/templates/partials'
+        partial_file = partials_dir + '/' + category + '.sla'
 
         # Add template extension
         template_name = category + '.sla'
 
         # Add source path
-        template_file = src + '/templates/' + template_name
+        template_file = src_dir + '/templates/' + template_name
 
         # Check if per-issue template file for given category exists ..
         if os.path.isfile(template_file) is False:
             # .. if it doesn't, choose per-issue generic template file
-            template_file = src + '/templates/dataList.sla'
+            template_file = src_dir + '/templates/dataList.sla'
 
-        # Otherwise ..
+        # .. otherwise ..
         if os.path.isfile(template_file) is False:
-            # .. common template file for given category
+            # .. use common template file for given category
             template_file = assets + '/templates/' + template_name
 
         # But if that doesn't exist either ..
@@ -442,24 +458,21 @@ def task_generate_partials():
             # See https://github.com/berteh/ScribusGenerator
             '.env/bin/python',
             'vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
-            '--single',                            # Single file output
-            '-c ' + data_file,                     # CSV file
-            '-o ' + dist + '/templates/partials',  # Output directory
-            '-n ' + category,                      # Output filename
-            template_file,                         # Template path
+            '--single',            # Single file output
+            '-c ' + data_file,     # CSV file
+            '-o ' + partials_dir,  # Output directory
+            '-n ' + category,      # Output filename
+            template_file,         # Template path
         ]
 
-        # Prepare category substitution
-        partial_file = dist + '/templates/partials/' + category + '.sla'
-
         yield {
-            'name': data_file,
+            'name': partial_file,
             'file_dep': [data_file, template_file],
             'actions': [
                 ' '.join(command),
                 (replace, [partial_file, '%%CATEGORY%%', headings[category]]),
             ],
-            'targets': [dist + '/templates/partials/' + category + '.sla'],
+            'targets': [partial_file],
         }
 
 
@@ -468,7 +481,8 @@ def task_create_base():
     Sets up base template before importing category partials
     """
     # Check if per-issue base template exists
-    base_file = src + '/templates/main.sla'
+    base_file = src_dir + '/templates/main.sla'
+    base_template = get_template('base')
 
     if os.path.isfile(base_file) is False:
         # If it doesn't, choose common base template
@@ -491,7 +505,7 @@ def task_create_base():
             'cp ' + base_file + ' ' + base_template,
             ' '.join(intro_cmd),
         ],
-        'targets': [base_template],
+        # 'targets': [base_template],
         'clean': True,
     }
 
@@ -503,10 +517,12 @@ def task_extend_base():
     `ISSUE/dist/templates/unprocessed.sla` +
     `ISSUE/dist/templates/partials/*.sla` >> `ISSUE/dist/processed.sla`
     """
+    base_template = get_template('base')
+
     # Create import for each category partial after its designated page number
     for category, page_number in structure:
         # Define category partial
-        category_file = dist + '/templates/partials/' + category + '.sla'
+        category_file = dist_dir + '/templates/partials/' + category + '.sla'
 
         # Build command
         command = [
@@ -544,10 +560,12 @@ def task_steady_base():
 
     a) replacing variables
     b) copying base template
-    c) comparing book count
 
     `ISSUE/dist/templates/base.sla` >> `ISSUE/dist/templates/edited.sla`
     """
+    base_template = get_template('base')
+    edited_template = get_template('edited')
+
     # Replace spring template names with autumn ones
     def apply_season():
         templates = [
@@ -562,31 +580,20 @@ def task_steady_base():
             # .. therefore, we have to change in case of autumn edition
             for template in templates:
                 # .. achieved with a simple substitution
-                replace(
-                    base_template,
+                replace(base_template,
                     'MNAM="' + template,
                     'MNAM="' + template.replace('spring', 'autumn')
                 )
 
-    # Performs nominal-actual comparison of total books
-    def compare(template_file):
-        # Count books - [0] = CSV, [1] = SLA
-        total_csv, total_sla = get_book_count(edited_template)
-
-        # Check if they match - if not, exit
-        if total_csv != total_sla:
-            sys.exit('You shall not pass!')
-
     return {
         'file_dep': [base_template],
-        'task_dep': ['extend_base'],
+        # 'task_dep': ['extend_base'],
         'actions': [
             (apply_season),
             (replace, [base_template, '%%SEASON%%', season_de]),
             (replace, [base_template, '%%YEAR%%', year]),
             (replace, [base_template, '%%NEXT_YEAR%%', next_year]),
             'cp %(dependencies)s %(targets)s',
-            (compare, [edited_template])
         ],
         'targets': [edited_template],
     }
@@ -598,6 +605,9 @@ def task_build_pdf():
 
     `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
     """
+    edited_template = get_template('edited')
+    document_file = get_template('document')
+
     # Build command
     command = [
         # Python script, executed via Scribus (Flatpak)
@@ -620,23 +630,25 @@ def task_optimize_document():
 
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
+    document_file = get_template('document')
+
     # Season slug
     slug = slugify(season_de, replacements=slug_replacements)
 
     # Image resolutions
     resolutions = [
         '50',   # XXS
-        '100',  # XS
-        '150',  # S
-        '200',  # M
-        '250',  # L
-        '300',  # XL
+        '75',  # XS
+        '100',  # S
+        '175',  # M
+        '200',  # L
+        '225',  # XL
+        '250',  # XXL
     ]
 
-    # TODO: Keep order
     for resolution in resolutions:
         # Build output filepath
-        optimized_file = home + '/' + str(now.year) + '-' + slug + '-buchempfehlungen_' + resolution + '.pdf'
+        optimized_file = home_dir + '/' + str(now.year) + '-' + slug + '-buchempfehlungen_' + resolution + '.pdf'
 
         # Build command
         command = [
@@ -675,6 +687,9 @@ def task_write_summary():
 
     >> `ISSUE/meta/summary.txt`
     """
+    edited_template = get_template('edited')
+    summary_file = meta_dir + '/summary.txt'
+
     def summarize():
         # Extract books from template
         books = extract_books(edited_template)
@@ -710,6 +725,8 @@ def task_compose_mails():
 
     >> `ISSUE/dist/documents/mails/publisher.eml`
     """
+    edited_template = get_template('edited')
+
     # Extract books from template
     books = extract_books(edited_template)
 
@@ -731,16 +748,15 @@ def task_compose_mails():
                     str(page_number) + '\n'
                 )
 
-        # Craft output path
-        mail_file = dist + '/documents/mails/'  # Add path
+        # Build output filepath
+        mail_file = dist_dir + '/documents/mails/'  # Add path
         mail_file += slugify(publisher, replacements=slug_replacements) + '.eml'
 
         subject = 'Empfehlungsliste ' + season_de + ' ' + year
 
-        # TODO: Variable text - autumn is quite different!
+        # Load text parts
         text_block = '<br>'.join(text_block)
 
-        # Load text parts
         # (1) Grab season text
         with open(assets + '/mails/' + season + '.html', 'r') as file:
             season_text = ''.join(file.readlines())
@@ -773,14 +789,18 @@ def task_extract_data():
 
     >> `ISSUE/config/data.json`
     """
+    edited_template = get_template('edited')
+    data_contents_file = conf_dir + '/data.json'
+    json_files = get_files('json', 'dist')
+
     def extract_data():
         # Parsing Scribus template file
         text_elements = etree.parse(edited_template).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
-        print(text_elements)
+
         books = {}
 
         # Parsing JSON data files
-        for json_file in json_dist:
+        for json_file in json_files:
             # Extract books from template
             for data in load_json(json_file):
                 book = []
@@ -800,7 +820,7 @@ def task_extract_data():
         dump_json(books, data_contents_file)
 
     return {
-        'file_dep': json_dist,
+        'file_dep': json_files,
         'actions': [(extract_data)],
         'targets': [data_contents_file],
     }
@@ -811,8 +831,19 @@ def task_extract_data():
 
 
 ###
-# HELPERS (START)
+# UTILITIES (START)
 #
+
+def replace(path, pattern, replacement):
+    # Replace pattern inside a given file
+    file = fileinput.input(path, inplace=True)
+
+    for line in file:
+        line = re.sub(pattern, replacement, line)
+        sys.stdout.write(line)
+
+    file.close()
+
 
 def create_path(path):
     # Determine if (future) target is appropriate data file
@@ -847,13 +878,15 @@ def dump_json(data, json_file):
 
 
 def extract_books(input_file: str):
+    json_files = get_files('json', 'dist')
+
     # Parsing Scribus template file
     text_elements = etree.parse(input_file).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
 
     books = []
 
     # Parsing JSON data files
-    for json_file in json_dist:
+    for json_file in json_files:
         # Determine category
         category = headings[os.path.basename(json_file)[:-5]]
 
@@ -970,5 +1003,5 @@ def add_attachment(file_path: str):
     return False
 
 #
-# HELPERS (END)
+# UTILITIES (END)
 ###

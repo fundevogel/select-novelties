@@ -15,13 +15,13 @@ root_directory=$(dirname "$(dirname "$(dirname "$0")")")
 mkdir -p "$root_directory"/issues/"$issue"
 cd "$root_directory"/issues/"$issue" || exit
 
-# Preparing directory structure
-# (1) Generate skeleton
+# Prepare directory structure
 for dir in meta \
            config \
            src/csv \
            src/json \
            src/templates \
+           dist/csv \
            dist/json \
            dist/images \
            dist/documents/pdf \
@@ -31,13 +31,14 @@ do
     mkdir -p "$dir"
 done
 
-# (2) Copy CSV files (if present)
+# Fill with CSV files (if present)
 if [ -d ../../"$issue" ]; then
-
+    # (1) Move files from dummy directory
     for file in ../../"$issue"/*.csv; do
         base_name=$(basename "$file")
         mv "$file" src/csv/"$base_name"
     done
 
+    # (2) Remove dummy directory
     rm -rf ../../"$issue"
 fi
