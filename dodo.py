@@ -177,7 +177,6 @@ def task_phase_one():
     return {
         'actions': None,
         'task_dep': [
-            'new_issue',
             'csv2json',
             'fetch_api',
             'find_duplicates',
@@ -225,15 +224,6 @@ def task_phase_three():
 ###
 # TASKS (START)
 #
-
-def task_new_issue():
-    """
-    Sets up new issue
-    """
-    return {
-        'actions': ['bash scripts/bash/new_issue.bash ' + issue],
-    }
-
 
 def task_csv2json():
     """

@@ -10,10 +10,8 @@
 
 issue=$1
 
-root_directory=$(dirname "$(dirname "$(dirname "$0")")")
-
-mkdir -p "$root_directory"/issues/"$issue"
-cd "$root_directory"/issues/"$issue" || exit
+mkdir -p issues/"$issue"
+cd issues/"$issue" || exit
 
 # Prepare directory structure
 for dir in meta \
@@ -21,7 +19,6 @@ for dir in meta \
            src/csv \
            src/json \
            src/templates \
-           dist/csv \
            dist/json \
            dist/images \
            dist/documents/pdf \
@@ -40,5 +37,5 @@ if [ -d ../../"$issue" ]; then
     done
 
     # (2) Remove dummy directory
-    rm -rf ../../"$issue"
+    rm -d ../../"$issue"
 fi
