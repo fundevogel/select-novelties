@@ -1,59 +1,6 @@
-Results:
-Found improper age recommendation for 978-3-551-55519-9: von 10  bis  12 Jahren
-Found improper age recommendation for 978-3-423-62742-9: von 11  bis  99 Jahren
-Found improper age recommendation for 978-3-423-64076-3: von 11  bis  99 Jahren
-Found improper age recommendation for 978-3-423-62738-2: von 11  bis  99 Jahren
-Found improper age recommendation for 978-3-423-76320-2: von 10  bis  99 Jahren
-Found improper age recommendation for 978-3-423-64078-7: von 11  bis  99 Jahren
-Found improper age recommendation for 978-3-423-65034-2: von 12  bis  99 Jahren
-Found improper age recommendation for 978-3-551-31975-3: von 13  bis  16 Jahren
-Found improper age recommendation for 978-3-551-58444-1: von 12  bis  99 Jahren
-Found improper age recommendation for 978-3-423-64071-8: von 12  bis  99 Jahren
-Found improper age recommendation for 978-3-423-62744-3: von 12  bis  99 Jahren
-Found improper age recommendation for 978-3-551-58437-3: von 14  bis  99 Jahren
-Found improper age recommendation for 978-3-423-76316-5: von 14  bis  99 Jahren
-Found improper age recommendation for 978-3-86648-609-6: Keine Altersangabe
-Found improper age recommendation for 978-3-7795-0653-9: Keine Altersangabe
-Found improper age recommendation for 978-3-423-74067-8: von 14  bis  99 Jahren
-Found improper age recommendation for 978-3-257-30081-9: Keine Altersangabe
-Found improper age recommendation for 978-3-257-07148-1: Keine Altersangabe
-Found improper age recommendation for 978-3-551-55517-5: von 8  bis  99 Jahren
-Found improper age recommendation for 978-3-03876-194-5: von 6  bis  99 Jahren
-Found improper age recommendation for 978-1-78941-346-5: von 9  bis  99 Jahren
-Found improper age recommendation for 978-3-03876-134-1: von 9 bis 99 Jahren
-Found improper age recommendation for 978-3-7459-0521-2: Keine Altersangabe
-Found improper age recommendation for 978-3-03876-195-2: Keine Altersangabe
-Found improper age recommendation for 978-3-03876-192-1: Keine Altersangabe
-Found improper age recommendation for 978-3-03876-193-8: von 4  bis  99 Jahren
-Found improper age recommendation for 978-3-7152-0793-3: Keine Altersangabe
-Found improper age recommendation for 978-3-551-51919-1: von 3  bis  6 Jahren
-Found improper age recommendation for 978-3-551-51923-8: von 3  bis  99 Jahren
-Found improper age recommendation for 978-3-7424-1803-6: Keine Altersangabe
-Found improper age recommendation for 978-3-7424-1855-5: Keine Altersangabe
-Found improper age recommendation for 978-3-96346-041-8: von 8  bis  88 Jahren
-Found improper age recommendation for 978-3-96346-042-5: von 8  bis  88 Jahren
-Found improper age recommendation for 978-3-7424-1651-3: Keine Altersangabe
-Found improper age recommendation for 978-3-473-43999-7: von 2  bis  4 Jahren
-Found improper age recommendation for 978-3-551-17143-6: von 2  bis  4 Jahren
-Found improper age recommendation for 978-3-551-19024-6: von 6  bis  9 Jahren
-Found improper age recommendation for 978-3-551-18989-9: von 3  bis  5 Jahren
-Found improper age recommendation for 978-3-551-51848-4: von 4  bis  7 Jahren
-Found improper age recommendation for 978-3-551-51338-0: von 3  bis  6 Jahren
-Found improper age recommendation for 978-3-03876-190-7: von 8  bis  99 Jahren
-Found improper age recommendation for 978-3-440-17159-2: von 2  bis  4 Jahren
-Found improper age recommendation for 978-3-473-55534-5: von 8 bis 99 Jahren
-Found improper age recommendation for 978-1-78941-461-5: von 3  bis  99 Jahren
-Found improper age recommendation for 978-3-473-32985-4: von 4 bis 7 Jahren
-Found improper age recommendation for 978-3-86648-643-0: Keine Altersangabe
-Found improper age recommendation for 978-3-473-32987-8: von 2 bis 4 Jahren
-Found improper age recommendation for 978-3-423-76329-5: von 10  bis  99 Jahren
-Found improper age recommendation for 978-3-473-43980-5: von 18 bis 36 Monaten
-Found improper age recommendation for 978-3-473-43892-1: von 18 bis 36 Monaten
-Found improper age recommendation for 978-3-473-39700-6: von 0 bis 12 Monaten
-Found improper age recommendation for 978-3-473-43996-6: von 2 bis 4 Jahren
-Found improper age recommendation for 978-3-551-52164-4: von 24  bis  4 Jahren
-Found improper age recommendation for 978-3-473-43981-2: von 18 bis 36 Monaten
-Found improper age recommendation for 978-3-551-55516-8: von 6  bis  8 Jahren
-Found improper age recommendation for 978-3-551-51997-9: von 6  bis  10 Jahren
-Found improper age recommendation for 978-3-423-64077-0: von 6  bis  99 Jahren
-
+978-3-7152-0793-3: Keine Altersangabe
+978-3-86648-643-0: Keine Altersangabe
+978-3-86648-609-6: Keine Altersangabe
+978-3-7795-0653-9: Keine Altersangabe
+978-3-257-30081-9: Keine Altersangabe
+978-3-257-07148-1: Keine Altersangabe
