@@ -11,14 +11,16 @@
     },
     "authors": [
         {
-            "name": "Fundevogel",
+            "name": "Kinder- und Jugendbuchhandlung Fundevogel",
+            "email": "maschinenraum@fundevogel.de",
             "homepage": "https://fundevogel.de",
-            "role": "Project Author"
+            "role": "Maintainer"
         },
         {
             "name": "Martin Folkers",
+            "email": "hello@twobrain.io",
             "homepage": "https://twobrain.io",
-            "role": "Contributor"
+            "role": "Developer"
         }
     ],
     "repositories": [
