@@ -25,6 +25,14 @@ class KNVClient
 
 
     /**
+     * Current category
+     *
+     * @var string
+     */
+    private $category;
+
+
+    /**
      * Source path
      *
      * @var string
@@ -41,11 +49,11 @@ class KNVClient
 
 
     /**
-     * JSON source file(s)
+     * JSON source file
      *
-     * @var array
+     * @var str
      */
-    private $files;
+    private $file;
 
 
     /**
@@ -61,7 +69,10 @@ class KNVClient
      *
      * @var array
      */
-    private $failures = [];
+    private $failures = [
+        'data' => [],
+        'cover' => [],
+    ];
 
 
     /**
@@ -83,7 +94,7 @@ class KNVClient
      */
     public function __construct($mode, $issue, $category)
     {
-        if ($mode === null || $issue === null) {
+        if ($mode === null || $issue === null || $category === null) {
             throw new Exception('Please enter valid parameters.');
         }
 
@@ -93,6 +104,9 @@ class KNVClient
         # Determine issue
         $this->issue = $issue;
 
+        # Determine category
+        $this->category = $category;
+
         # Set paths
         # (1) Base path
         $this->base = realpath(dirname(__DIR__) . '/../issues/' . $issue);
@@ -100,24 +114,6 @@ class KNVClient
         # (2) Source & destination path
         $this->root = $this->base . '/src';
         $this->dist = $this->base . '/dist';
-
-        # Determine source file(s) ..
-        # (1) .. for mode 'fetching'
-        $this->files = glob($this->root . '/json/*.json');
-
-        # (2) .. for mode 'processing'
-        if ($mode === 'processing') {
-            if ($category === null) {
-                throw new Exception('Please enter valid parameters.');
-            }
-
-            # Check if category file exists
-            if (!file_exists($file = $this->root . '/json/' . $category . '.json')) {
-                throw new Exception(sprintf('Invalid file: "%s"', $file));
-            }
-
-            $this->files = [$file];
-        }
 
         # Authenticate with KNV's API
         # (1) Load credentials
@@ -136,48 +132,65 @@ class KNVClient
     public function run(): void
     {
         if ($this->mode === 'fetching') {
-            foreach ($this->files as $file) {
-                # Load data from JSON file
-                $data = json_decode(file_get_contents($file), true);
+            # Determine source file
+            if (!file_exists($file = $this->root . '/csv/' . $this->category . '.csv')) {
+                throw new Exception(sprintf('Invalid file: "%s"', $file));
+            }
 
-                # Retrieve data for all books
-                foreach ($data as $item) {
-                    $isbn = $item['ISBN'];
+            # Load data from JSON file
+            $headers = [
+                'AutorIn',
+                'Titel',
+                'Verlag',
+                'ISBN',
+                'Einband',
+                'Preis',
+                'Meldenummer',
+                'SortRabatt',
+                'Gewicht',
+                'Informationen',
+                'Zusatz',
+                'Kommentar'
+            ];
 
-                    echo sprintf('Processing "%s":', $isbn);
-                    echo "\n";
+            $data = [];
 
-                    echo 'Fetching data from API ..';
+            # Retrieve data for all books
+            foreach (Pcbis\Spreadsheets::csvOpen($file, $headers) as $item) {
+                $isbn = $item['ISBN'];
 
-                    try {
-                        # Fetch bibliographic data from API
-                        $book = $this->api->load($isbn);
+                echo sprintf('Processing "%s":', $isbn);
+                echo "\n";
 
-                        # Determine age recommendation (except for calendars)
-                        if (!$book->isCalendar()) {
-                            $age = $book->age();
+                echo 'Fetching data from API ..';
 
-                            # Handle empty age ratings
-                            if ($age === '') {
-                                $age = 'Keine Altersangabe';
-                            }
+                try {
+                    # Fetch bibliographic data from API
+                    $book = $this->api->load($isbn);
 
-                            # Store age rating (if inappropriate)
-                            if (Butler::contains($age, 'angabe') || Butler::contains($age, 'bis')) {
-                                $this->ageRatings[$isbn] = $age;
-                            }
+                    # Export dataset
+                    $set = array_merge(['ISBN' => $isbn], $book->export());
+
+                    # Determine age recommendation ..
+                    $age = '';
+
+                    # .. (1) except for calendars
+                    if (!$book->isCalendar()) {
+                        $age = $book->age();
+
+                        # Handle empty age ratings
+                        if ($age === '') {
+                            $age = 'Keine Altersangabe';
                         }
-
-                        echo ' done.';
-                        echo "\n";
-
-                    } catch (Exception $e) {
-                        # Add ISBN when fetching data fails
-                        $this->failures['data'][] = $isbn;
-
-                        echo ' failed!';
-                        echo "\n";
                     }
+
+                    # .. (2) and apply it
+                    $set['Altersempfehlung'] = $age;
+
+                    $data[] = $set;
+
+                    echo ' done.';
+                    echo "\n";
 
                     echo 'Downloading cover ..';
 
@@ -194,114 +207,116 @@ class KNVClient
                     echo ' done.';
                     echo "\n";
                     echo "\n";
-                }
 
-                echo 'Process complete!';
-                echo "\n";
-                echo "\n";
+                } catch (Exception $e) {
+                    # Add ISBN when fetching data fails
+                    $this->failures['data'][] = $isbn;
 
-                # Save data for further processing
-                # (1) Store age ratings
-                $this->jsonStore($this->ageRatings, $this->base . '/config/age-ratings.json');
-
-                # (2) Store failed ISBNs
-                if (!empty($this->failures)) {
-                    $this->jsonStore($this->failures, $this->base . '/meta/failures.json');
+                    echo ' failed!';
+                    echo "\n";
                 }
             }
+
+            echo 'Process complete!';
+            echo "\n";
+            echo "\n";
+
+            # Save data for further processing
+            # (1) Store dadasets
+            $this->jsonStore($data, $this->root . '/json/' . $this->category . '.json', true);
+
+            # (2) Store failed ISBNs
+            $this->jsonStore($this->failures, $this->base . '/meta/failures.json');
         }
 
         if ($this->mode === 'processing') {
+            # Determine source file
+            if (!file_exists($file = $this->root . '/json/' . $this->category . '.json')) {
+                throw new Exception(sprintf('Invalid file: "%s"', $file));
+            }
+
+            # Load age ratings
             if (file_exists($ageRatingsFile = $this->base . '/config/age-ratings.json')) {
                 $this->ageRatings = json_decode(file_get_contents($ageRatingsFile), true);
             }
 
+            # Load duplicates file
             if (file_exists($duplicatesFile = $this->base . '/config/duplicates.json')) {
                 $duplicates = json_decode(file_get_contents($duplicatesFile), true);
             }
 
-            foreach ($this->files as $file) {
-                # Prevent duplicate ISBNs per category
-                $isbns =  [];
+            # Prevent duplicate ISBNs per category
+            $isbns =  [];
 
-                # Load data from JSON file
-                $raw = json_decode(file_get_contents($file), true);
+            # Load data from JSON file
+            $raw = json_decode(file_get_contents($file), true);
 
-                # Determine category
-                $category = basename(explode('.', $file)[0]);
+            $data  = [];
 
-                $data  = [];
+            # Retrieve data for every book
+            foreach ($raw as $item) {
+                $isbn = $item['ISBN'];
 
-                # Retrieve data for every book
-                foreach ($raw as $item) {
-                    $isbn = $item['ISBN'];
-
-                    # Block duplicate ISBNs across category
-                    if (in_array($isbn, $isbns) === true) {
-                        continue;
-                    }
-
-                    # Block duplicate ISBNs across categories
-                    if (isset($duplicates[$isbn]) && in_array($category, $duplicates[$isbn])) {
-                        continue;
-                    }
-
-                    echo sprintf('Processing "%s" ..', $isbn);
-
-                    # Setup basic information
-                    # (1) International Standard Book Number
-                    # (2) Keep comma-separated author (for sorting)
-                    $node = [
-                        'ISBN' => $isbn,
-                        'AutorIn' => $item['AutorIn'],
-                    ];
-
-                    try {
-                        # Fetch bibliographic data from API
-                        $book = $this->api->load($isbn);
-
-                        # Combine all information for ..
-                        # (1) .. template files
-                        $node['AutorInnen'] = $book->author();
-                        $node['Kopfleiste'] = $this->buildHeading($book);
-                        $node['Inhaltsbeschreibung'] = $this->buildDescription($book);
-                        $node['Mitwirkende'] = $this->buildParticipants($book);
-                        $node['Informationen'] = $this->buildInformation($book);
-                        $node['Abschluss'] = $this->buildClosing($book);
-                        $node['Preis'] = $book->retailPrice();
-                        $node['@Cover'] = Butler::slug($book->title()) . '.jpg';
-
-                        # (2) .. general use
-                        $node['Titel'] = $book->title();
-                        $node['Untertitel'] = $book->subtitle();
-                        $node['Verlag'] = $book->publisher();
-
-                        # Store data record
-                        $data[]  = $node;
-
-                        # Mark ISBN as processed
-                        $isbns[]  = $isbn;
-
-                        echo ' done.';
-                        echo "\n";
-
-                    } catch (\Exception $e) {
-                        echo ' failed!';
-                        echo "\n";
-                    }
+                # Block duplicate ISBNs across category
+                if (in_array($isbn, $isbns) === true) {
+                    continue;
                 }
 
-                # Sort by author's last name
-                $data = Butler::sort($data, 'AutorIn', 'asc');
+                # Block duplicate ISBNs across categories
+                if (isset($duplicates[$isbn]) && in_array($this->category, $duplicates[$isbn])) {
+                    continue;
+                }
 
-                # Create updated JSON file
-                # TODO: Remove CSV generation once JSON support is merged
-                # See https://github.com/berteh/ScribusGenerator/pull/184
-                $this->jsonStore($data, $this->dist . '/json/' . $category . '.json', true);
+                echo sprintf('Processing "%s" ..', $isbn);
 
-                # Create updated CSV file
-                Pcbis\Spreadsheets::array2csv($data, $this->dist . '/csv/' . $category . '.csv');
+                # Setup basic information
+                # (1) International Standard Book Number
+                # (2) Keep comma-separated author (for sorting)
+                $node = [
+                    'ISBN' => $isbn,
+                    'AutorIn' => $item['AutorIn'],
+                ];
+
+                try {
+                    # Fetch bibliographic data from API
+                    $book = $this->api->load($isbn);
+
+                    # Combine all information for ..
+                    # (1) .. template files
+                    $node['AutorInnen'] = $book->author();
+                    $node['Kopfleiste'] = $this->buildHeading($book);
+                    $node['Inhaltsbeschreibung'] = $this->buildDescription($book);
+                    $node['Mitwirkende'] = $this->buildParticipants($book);
+                    $node['Informationen'] = $this->buildInformation($book);
+                    $node['Abschluss'] = $this->buildClosing($book);
+                    $node['Preis'] = $book->retailPrice();
+                    $node['@Cover'] = Butler::slug($book->title()) . '.jpg';
+
+                    # (2) .. general use
+                    $node['Titel'] = $book->title();
+                    $node['Untertitel'] = $book->subtitle();
+                    $node['Verlag'] = $book->publisher();
+
+                    # Store data record
+                    $data[]  = $node;
+
+                    # Mark ISBN as processed
+                    $isbns[]  = $isbn;
+
+                    echo ' done.';
+                    echo "\n";
+
+                } catch (\Exception $e) {
+                    echo ' failed!';
+                    echo "\n";
+                }
             }
+
+            # Sort by author's last name
+            $data = Butler::sort($data, 'AutorIn', 'asc');
+
+            # Create updated JSON file
+            $this->jsonStore($data, $this->dist . '/json/' . $this->category . '.json', true);
         }
     }
 
