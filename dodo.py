@@ -1,17 +1,13 @@
-#! /usr/bin/python
-# ~*~ coding=utf-8 ~*~
+import os
+import re
+import sys
+import json
+import fileinput
 
-from doit import get_var
-
-# TODO: Import only what is needed
-import os  # path
-import re  # sub
-import sys  # stdout.write
-import json  # dump, load
-import time  # mktime
-import datetime  # datetime.now
-import fileinput  # input
-import mimetypes  # guess_type
+from datetime import datetime
+from mimetypes import guess_type
+from operator import itemgetter
+from time import mktime
 
 from email import generator  # Generator
 from email import encoders  # encode_base64
@@ -22,41 +18,36 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from operator import itemgetter
-
+from doit import get_var
+from lxml import etree
 from pandas import read_csv
 from slugify import slugify
-from lxml import etree
 
 
 ###
 # CONFIG (START)
 #
 
+# CLI
 DOIT_CONFIG = {
+    'verbosity': 2,
     'action_string_formatting': 'old',
     'default_tasks': [
         'phase_one',
     ],
-    'verbosity': 2,
 }
 
-#
-# CONFIG (END)
-###
-
-
-###
-# VARIABLES (START)
-#
-
-# CLI
 config = {'issue': get_var('issue', '2021_02')}
 issue = config['issue']
+
+# Season
+season = 'spring' if issue[-2:] == '01' else 'autumn'
+season_de = 'Frühjahr' if season == 'spring' else 'Herbst'
 
 # Directories
 # (1) Base
 assets = 'assets'
+
 # (2) Per-issue
 home_dir = 'issues/' + issue
 meta_dir = home_dir + '/meta'
@@ -65,45 +56,10 @@ src_dir = home_dir + '/src'
 dist_dir = home_dir + '/dist'
 
 # Time
-now = datetime.datetime.now()
-
-# Get this & next year
+now = datetime.now()
 year = str(now.year)
 next_year = str(now.year + 1)
-
-# Season
-season = 'spring' if issue[-2:] == '01' else 'autumn'
-season_de = 'Frühjahr' if season == 'spring' else 'Herbst'
-
-slug_replacements = ([
-    ['Ü', 'UE'],
-    ['ü', 'ue'],
-    ['Ö', 'OE'],
-    ['ö', 'oe'],
-    ['Ä', 'AE'],
-    ['ä', 'ae'],
-    ['ß', 'ss'],
-])
-
-# Document structure
-structure = [
-    ['kalender', 20],
-    ['weihnachten', 19],
-    ['ostern', 18],
-    ['hoerbuch', 17],
-    ['besonderes', 16],
-    ['kreatives', 15],
-    ['sachbuch', 14],
-    ['comic', 13],
-    ['ab14', 12],
-    ['ab12', 11],
-    ['ab10', 10],
-    ['ab8', 9],
-    ['ab6', 8],
-    ['vorlesebuch', 7],
-    ['bilderbuch', 6],
-    ['toddler', 5],
-]
+last_year = str(now.year - 1)
 
 # Headings
 headings = {
@@ -126,43 +82,7 @@ headings = {
 }
 
 #
-# VARIABLES (END)
-###
-
-
-###
-# HELPERS (START)
-#
-
-def get_files(extension: str, mode: str) -> list:
-    files = [category + '.' + extension for category in [section[0] for section in structure]]
-
-    directory = {
-        'src': src_dir,
-        'dist': dist_dir,
-    }
-
-    if mode not in directory:
-        return []
-
-    return [directory[mode] + '/' + extension + '/' + file for file in files if os.path.isfile(directory[mode] + '/' + extension + '/' + file)]
-
-
-def get_template(template: str) -> str:
-    if template == 'base':
-        return dist_dir + '/templates/base.sla'
-
-    if template == 'edited':
-        return dist_dir + '/templates/edited.sla'
-
-    if template == 'document':
-        return dist_dir + '/documents/pdf/final.pdf'
-
-    if template == 'age-ratings':
-        return conf_dir + '/age-ratings.json'
-
-#
-# HELPERS (END)
+# CONFIG (END)
 ###
 
 
@@ -177,10 +97,8 @@ def task_phase_one():
     return {
         'actions': None,
         'task_dep': [
-            'csv2json',
             'fetch_api',
-            'find_duplicates',
-            'check_age_ratings',
+            'check_data',
         ]
     }
 
@@ -193,10 +111,10 @@ def task_phase_two():
         'actions': None,
         'task_dep': [
             'process_data',
+            'create_template',
             'generate_partials',
-            'create_base',
-            'extend_base',
-            'steady_base',
+            'import_partials',
+            'prepare_editing',
         ]
     }
 
@@ -209,10 +127,8 @@ def task_phase_three():
         'actions': None,
         'task_dep': [
             'build_pdf',
-            'optimize_document',
-            'write_summary',
-            'compose_mails',
-            'extract_data',
+            'optimize_pdf',
+            'finish_issue',
         ]
     }
 
@@ -225,82 +141,38 @@ def task_phase_three():
 # TASKS (START)
 #
 
-def task_csv2json():
-    """
-    Converts CSV source files to JSON
-
-    ISSUE/src/csv/example.csv` >> `ISSUE/src/json/example.json`
-    """
-    # Define header row
-    names = [
-        'AutorIn',
-        'Titel',
-        'Verlag',
-        'ISBN',
-        'Einband',
-        'Preis',
-        'Meldenummer',
-        'SortRabatt',
-        'Gewicht',
-        'Informationen',
-        'Zusatz',
-        'Kommentar',
-    ]
-
-
-    def csv2json(dependencies, targets):
-        # Convert CSV to JSON
-        # (1) Load CSV data
-        csv_data = read_csv(dependencies[0], encoding='iso-8859-1', sep=';', names=names)
-
-        # (2) Store as JSON
-        csv_data.to_json(targets[0], 'records', force_ascii=False, indent=4)
-
-
-    for csv_file in get_files('csv', 'src'):
-        json_file = src_dir + '/json/' + os.path.basename(csv_file)[:-4] + '.json'
-
-        yield {
-            'name': json_file,
-            'file_dep': [csv_file],
-            'actions': [csv2json],
-            'targets': [json_file],
-        }
-
-
 def task_fetch_api():
     """
     Fetches bibliographic data & book covers
 
-    >> `ISSUE/config/age-ratings.json`
+    ISSUE/src/csv/example.csv` >> `ISSUE/src/json/example.json`
     """
-    json_files = get_files('json', 'src')
-    age_rating_file = get_template('age-ratings')
+    for csv_file in get_files('csv', 'src'):
+        category = os.path.basename(csv_file)[:-4]
+        json_file = src_dir + '/json/' + category + '.json'
 
-    return {
-        'file_dep': json_files,
-        'actions': ['php scripts/php/pcbis.php fetching ' + issue],
-        'targets': [age_rating_file],
-    }
+        yield {
+            'name': json_file,
+            'file_dep': [csv_file],
+            'actions': ['php scripts/php/pcbis.php fetching ' + issue + ' ' + category],
+            'targets': [json_file],
+        }
 
 
-def task_find_duplicates():
+def task_check_data():
     """
-    Finds all duplicate ISBNs
+    Finds all duplicate ISBNs & detects improper age ratings
 
     >> `ISSUE/config/duplicates.json`
     >> `ISSUE/meta/duplicates.txt`
+    >> `ISSUE/config/age-ratings.json`
+    >> `ISSUE/meta/age-ratings.txt`
     """
-    json_files = get_files('json', 'src')
-
-    duplicates_file = conf_dir + '/duplicates.json'
-    duplicates_report = meta_dir + '/duplicates.txt'
-
-    def find_duplicates():
+    def find_duplicates(dependencies, targets):
         duplicates = {}
 
         # Extract all categories an ISBN appears in
-        for json_file in json_files:
+        for json_file in dependencies:
             # Get category (= filename w/o extension)
             category = os.path.basename(json_file)[:-5]
 
@@ -331,39 +203,35 @@ def task_find_duplicates():
                 isbns[isbn] = categories
 
         # Store duplicate ISBNs
-        dump_json(isbns, duplicates_file)
+        dump_json(isbns, targets[0])
 
         # Provide message in case report is empty
         if not report:
             report = ['No duplicates found!']
 
         # Write report to file
-        with open(duplicates_report, 'w') as file:
+        with open(targets[1], 'w') as file:
             file.writelines(line + '\n' for line in report)
 
-    return {
-        'file_dep': json_files,
-        'actions': [find_duplicates],
-        'targets': [
-            duplicates_file,
-            duplicates_report,
-        ],
-    }
 
+    def check_age_ratings(dependencies, targets):
+        src = {}
 
-def task_check_age_ratings():
-    """
-    Detects improper age ratings
+        for data_file in dependencies:
+            category = os.path.basename(data_file)[:-5]
 
-    >> `ISSUE/meta/age-ratings.txt`
-    """
-    age_rating_file = get_template('age-ratings')
-    age_rating_report = meta_dir + '/age-ratings.txt'
+            for data in load_json(data_file):
+                age_rating = data['Altersempfehlung']
 
-    def check_age_ratings():
+                if 'angabe' in age_rating or 'bis' in age_rating:
+                    src[data['ISBN']] = age_rating
+
+        # Store age ratings data in JSON file
+        dump_json(src, targets[2])
+
         age_ratings = []
 
-        for isbn, age_rating in load_json(age_rating_file).items():
+        for isbn, age_rating in src.items():
             age_ratings.append('%s: %s' % (isbn, age_rating))
 
         if not age_ratings:
@@ -371,34 +239,74 @@ def task_check_age_ratings():
             age_ratings = ['No improper age ratings found!']
 
         # Save improper age ratings
-        with open(age_rating_report, 'w') as file:
+        with open(targets[3], 'w') as file:
             # Write age ratings report to file
             file.writelines(age_rating + '\n' for age_rating in age_ratings)
 
+
     return {
-        'file_dep': [age_rating_file],
-        'actions': [check_age_ratings],
-        'targets': [age_rating_report],
+        'task_dep': ['fetch_api'],
+        'file_dep': get_files('json', 'src'),
+        'actions': [
+            find_duplicates,
+            check_age_ratings,
+        ],
+        'targets': [
+            get_template('duplicates'),
+            meta_dir + '/duplicates.txt',
+            get_template('age-ratings'),
+            meta_dir + '/age-ratings.txt',
+        ],
     }
 
 
 def task_process_data():
     """
-    Processes raw data
+    Processes raw data, respecting duplicates & proper age ratings
 
     ISSUE/src/json/example.json` >> `ISSUE/dist/json/example.json`
     """
     for json_file in get_files('json', 'src'):
-        target_file = json_file.replace('src', 'dist')
         category = os.path.basename(json_file)[:-5]
 
         yield {
             'name': json_file,
-            'file_dep': [json_file],
+            'file_dep': [json_file, get_template('age-ratings'), get_template('duplicates')],
             'task_dep': ['fetch_api'],
             'actions': ['php scripts/php/pcbis.php processing ' + issue + ' ' + category],
-            'targets': [target_file, target_file.replace('json', 'csv')],
+            'targets': [json_file.replace('src', 'dist')],
         }
+
+
+def task_create_template():
+    """
+    Creates base template fitting the current season
+    """
+    # Check if per-issue base template exists
+    base_file = src_dir + '/templates/main.sla'
+
+    if os.path.isfile(base_file) is False:
+        # If it doesn't, choose common base template
+        base_file = assets + '/templates/main.sla'
+
+    # Remove unsuitable intro page
+    page_number = 4 if season == 'spring' else 3
+
+    # Build command
+    create_template = [
+        'scribus -g -ns -py',             # Scribus command
+        'scripts/python/delete_page.py',  # Scribus script
+        '%(targets)s',                    # Base template
+        '--page ' + str(page_number),     # Page number
+    ]
+
+    return {
+        'actions': [
+            'cp ' + base_file + ' %(targets)s',
+            ' '.join(create_template),
+        ],
+        'targets': [get_template('base')],
+    }
 
 
 def task_generate_partials():
@@ -406,6 +314,7 @@ def task_generate_partials():
     Generates one template file per category
 
     Using `ISSUE/dist/csv/example.csv` with either
+
     a) `ISSUE/src/templates/example.sla`,
     b) `ISSUE/src/templates/dataList.sla` or
     c) `assets/templates/dataList.sla` as fallback
@@ -441,8 +350,7 @@ def task_generate_partials():
             # .. ultimately resort to common generic template file
             template_file = assets + '/templates/dataList.sla'
 
-        # TODO: Maybe python function may be imported + executed directly?
-        command = [
+        generate_partials = [
             # (1) Virtual environment python executable
             # (2) Python script `ScribusGenerator` by @berteh
             # See https://github.com/berteh/ScribusGenerator
@@ -457,57 +365,41 @@ def task_generate_partials():
 
         yield {
             'name': partial_file,
-            'file_dep': [data_file, template_file],
+            'file_dep': [data_file],
             'actions': [
-                ' '.join(command),
+                ' '.join(generate_partials),
                 (replace, [partial_file, '%%CATEGORY%%', headings[category]]),
             ],
             'targets': [partial_file],
         }
 
 
-def task_create_base():
-    """
-    Sets up base template before importing category partials
-    """
-    # Check if per-issue base template exists
-    base_file = src_dir + '/templates/main.sla'
-    base_template = get_template('base')
-
-    if os.path.isfile(base_file) is False:
-        # If it doesn't, choose common base template
-        base_file = assets + '/templates/main.sla'
-
-    # Remove unsuitable intro page
-    page_number = 4 if season == 'spring' else 3
-
-    # Build command
-    intro_cmd = [
-        # 'flatpak run net.scribus.Scribus -g -ns -py',
-        'scribus -g -ns -py',
-        'scripts/python/delete_page.py',
-        base_template,
-        '--page ' + str(page_number),
-    ]
-
-    return {
-        'actions': [
-            'cp ' + base_file + ' ' + base_template,
-            ' '.join(intro_cmd),
-        ],
-        # 'targets': [base_template],
-        'clean': True,
-    }
-
-
-def task_extend_base():
+def task_import_partials():
     """
     Imports category partials into base template
 
     `ISSUE/dist/templates/unprocessed.sla` +
     `ISSUE/dist/templates/partials/*.sla` >> `ISSUE/dist/processed.sla`
     """
-    base_template = get_template('base')
+    # Document structure
+    structure = [
+        ['kalender', 20],
+        ['weihnachten', 19],
+        ['ostern', 18],
+        ['hoerbuch', 17],
+        ['besonderes', 16],
+        ['kreatives', 15],
+        ['sachbuch', 14],
+        ['comic', 13],
+        ['ab14', 12],
+        ['ab12', 11],
+        ['ab10', 10],
+        ['ab8', 9],
+        ['ab6', 8],
+        ['vorlesebuch', 7],
+        ['bilderbuch', 6],
+        ['toddler', 5],
+    ]
 
     # Create import for each category partial after its designated page number
     for category, page_number in structure:
@@ -515,13 +407,10 @@ def task_extend_base():
         category_file = dist_dir + '/templates/partials/' + category + '.sla'
 
         # Build command
-        command = [
-            # (1) Python script, executed via Scribus (Flatpak)
-            # (2) Uses `processed` base template version
-            # 'flatpak run net.scribus.Scribus -g -ns -py',
+        import_partials = [
             'scribus -g -ns -py',               # Scribus command
-            'scripts/python/import_pages.py',   # Scribus script
-            base_template,                      # Base template
+            'scripts/python/import_partials.py',   # Scribus script
+            '%(dependencies)s',                 # Base template
             category_file,                      # Import file
             '--page ' + str(page_number),       # Page number
             '--masterpage category_' + season,  # Masterpage
@@ -529,35 +418,33 @@ def task_extend_base():
 
         # Remove cover page if corresponding category partial doesn't exist
         if os.path.isfile(category_file) is False:
-            command = [
-                # 'flatpak run net.scribus.Scribus -g -ns -py',
+            import_partials = [
                 'scribus -g -ns -py',             # Scribus command
                 'scripts/python/delete_page.py',  # Scribus script
-                base_template,                    # Base template
+                '%(dependencies)s',               # Base template
                 '--page ' + str(page_number),     # Page number
             ]
 
         yield {
             'name': category_file,
-            'file_dep': [base_template],
-            'actions': [' '.join(command)],
+            'file_dep': [get_template('base')],
+            'actions': [' '.join(import_partials)],
         }
 
 
-def task_steady_base():
+def task_prepare_editing():
     """
-    Ensures that base template is ready for manual editing
+    Prepares base template for manual editing
 
-    a) replacing variables
-    b) copying base template
+    a) replace variables
+    b) copy base template
 
     `ISSUE/dist/templates/base.sla` >> `ISSUE/dist/templates/edited.sla`
     """
-    base_template = get_template('base')
     edited_template = get_template('edited')
 
     # Replace spring template names with autumn ones
-    def apply_season():
+    def apply_season(dependencies):
         templates = [
             'cover_spring',
             'toc_spring',
@@ -570,22 +457,20 @@ def task_steady_base():
             # .. therefore, we have to change in case of autumn edition
             for template in templates:
                 # .. achieved with a simple substitution
-                replace(base_template,
+                replace(dependencies[0],
                     'MNAM="' + template,
                     'MNAM="' + template.replace('spring', 'autumn')
                 )
 
     return {
-        'file_dep': [base_template],
-        # 'task_dep': ['extend_base'],
+        'file_dep': [get_template('base')],
         'actions': [
             (apply_season),
-            (replace, [base_template, '%%SEASON%%', season_de]),
-            (replace, [base_template, '%%YEAR%%', year]),
-            (replace, [base_template, '%%NEXT_YEAR%%', next_year]),
-            'cp %(dependencies)s %(targets)s',
+            (replace, ['%(dependencies)s', '%%SEASON%%', season_de]),
+            (replace, ['%(dependencies)s', '%%YEAR%%', year]),
+            (replace, ['%(dependencies)s', '%%NEXT_YEAR%%', next_year]),
+            'cp %(dependencies)s ' + edited_template,
         ],
-        'targets': [edited_template],
     }
 
 
@@ -595,35 +480,29 @@ def task_build_pdf():
 
     `ISSUE/dist/templates/edited.sla` >> `ISSUE/dist/documents/final.pdf`
     """
-    edited_template = get_template('edited')
-    document_file = get_template('document')
-
     # Build command
-    command = [
-        # Python script, executed via Scribus (Flatpak)
-        # 'flatpak run net.scribus.Scribus',
+    build_pdf = [
         'scribus -g -py',               # Scribus command
         'scripts/python/build_pdf.py',  # Scribus script
-        '--input ' + edited_template,   # Input file
+        '--input %(dependencies)s',     # Input file
         '--output %(targets)s',         # Output file
     ]
 
     return {
-        'actions': [' '.join(command)],
-        'targets': [document_file]
+        'file_dep': [get_template('edited')],
+        'actions': [' '.join(build_pdf)],
+        'targets': [get_template('document')],
     }
 
 
-def task_optimize_document():
+def task_optimize_pdf():
     """
     Optimizes document for smaller file size
 
     `ISSUE/dist/documents/pdf/bloated.pdf` >> `ISSUE/dist/optimized.pdf`
     """
-    document_file = get_template('document')
-
     # Season slug
-    slug = slugify(season_de, replacements=slug_replacements)
+    season_slug = slug(season_de)
 
     # Image resolutions
     resolutions = [
@@ -638,10 +517,10 @@ def task_optimize_document():
 
     for resolution in resolutions:
         # Build output filepath
-        optimized_file = home_dir + '/' + str(now.year) + '-' + slug + '-buchempfehlungen_' + resolution + '.pdf'
+        optimized_file = home_dir + '/' + str(now.year) + '-' + season_slug + '-buchempfehlungen_' + resolution + '.pdf'
 
         # Build command
-        command = [
+        optimize_pdf = [
             'gs',
             '-sDEVICE=pdfwrite',
             '-dCompatibilityLevel=1.4',
@@ -665,132 +544,94 @@ def task_optimize_document():
 
         yield {
             'name': [optimized_file],
-            'file_dep': [document_file],
-            'actions': [' '.join(command)],
+            'file_dep': [get_template('document')],
+            'actions': [' '.join(optimize_pdf)],
             'targets': [optimized_file],
         }
 
 
-def task_write_summary():
+def task_finish_issue():
     """
-    Lists all books, sorted by publisher
-
-    >> `ISSUE/meta/summary.txt`
-    """
-    edited_template = get_template('edited')
-    summary_file = meta_dir + '/summary.txt'
-
-    def summarize():
-        # Extract books from template
-        books = extract_books(edited_template)
-
-        publishers = {book['Verlag'] for book in books}
-
-        with open(summary_file, 'w') as file:
-            for publisher in sorted(publishers, key=str.casefold):
-                file.write(publisher + ':\n')
-
-                for book in books:
-                    if book['Verlag'] == publisher:
-                        author = book['AutorIn']
-                        title = book['Titel']
-                        page_number = book['Seitenzahl']
-
-                        file.write(
-                            author + ' - "' + title + '" auf Seite ' +
-                            str(page_number) + '\n'
-                        )
-
-                file.write('\n')
-
-    return {
-        'actions': [(summarize)],
-        'targets': [summary_file],
-    }
-
-
-def task_compose_mails():
-    """
-    Drafts mail files for publishers
+    Parses the redacted template for use in post-production
 
     >> `ISSUE/dist/documents/mails/publisher.eml`
-    """
-    edited_template = get_template('edited')
-
-    # Extract books from template
-    books = extract_books(edited_template)
-
-    # Grab publishers
-    publishers = {book['Verlag'] for book in books}
-
-    # Build text block for each of them
-    for publisher in sorted(publishers, key=str.casefold):
-        text_block = []
-
-        for book in books:
-            if book['Verlag'] == publisher:
-                author = book['AutorIn']
-                title = book['Titel']
-                page_number = book['Seitenzahl']
-
-                text_block.append(
-                    author + ' - "' + title + '" auf Seite ' +
-                    str(page_number) + '\n'
-                )
-
-        # Build output filepath
-        mail_file = dist_dir + '/documents/mails/'  # Add path
-        mail_file += slugify(publisher, replacements=slug_replacements) + '.eml'
-
-        subject = 'Empfehlungsliste ' + season_de + ' ' + year
-
-        # Load text parts
-        text_block = '<br>'.join(text_block)
-
-        # (1) Grab season text
-        with open(assets + '/mails/' + season + '.html', 'r') as file:
-            season_text = ''.join(file.readlines())
-
-        # (2) Grab email signature
-        with open(assets + '/mails/signature.html', 'r') as file:
-            signature = ''.join(file.readlines())
-
-        text = (
-            '<html><head></head><body>'
-            + season_text + '<p>' + text_block + '</p>' + signature +
-            '</body></html>'
-        )
-
-        yield {
-            'name': mail_file,
-            'actions': [(create_mail, [], {
-                'is_from': 'info@fundevogel.de',
-                'subject': subject,
-                'text': text,
-                'output_path': mail_file,
-            })],
-            'targets': [mail_file],
-        }
-
-
-def task_extract_data():
-    """
-    Grab data from the redacted template
-
+    >> `ISSUE/meta/summary.txt`
     >> `ISSUE/config/data.json`
     """
-    edited_template = get_template('edited')
-    data_contents_file = conf_dir + '/data.json'
-    json_files = get_files('json', 'dist')
+    def compose_mails(targets):
+        # Extract books from template
+        books = extract_books(get_template('edited'))
 
-    def extract_data():
+        # Grab publishers
+        publishers = {book['Verlag'] for book in books}
+
+        # Build text block for each of them
+        for publisher in sorted(publishers, key=str.casefold):
+            text_blocks = []
+
+            for book in books:
+                if book['Verlag'] == publisher:
+                    text_blocks.append({
+                        'author': book['AutorIn'],
+                        'title': book['Titel'],
+                        'pages': book['Seitenzahl'],
+                    })
+
+            # Sort by (1) page number, (2) author & (3) book title
+            text_blocks = [block['author'] + ' - "' + block['title'] + '" auf Seite ' + str(block['pages']) for block in sorted(text_blocks, key=itemgetter('pages', 'author', 'title'))]
+
+            # Write summary
+            with open(targets[0], 'a') as file:
+                file.write(publisher + ':\n')
+                file.writelines([line + '\n' for line in text_blocks])
+                file.write('\n')
+
+            # Build output filepath
+            mail_file = dist_dir + '/documents/mails/' + slug(publisher) + '.eml'
+
+            # Load text parts
+            text_block = '<br>'.join(text_blocks)
+
+            # (1) Grab season text
+            with open(assets + '/mails/' + season + '.html', 'r') as file:
+                season_text = ''.join(file.readlines())
+
+            # (2) Replace year placeholders
+            for placeholder, replacement in {
+                '%%LAST_YEAR%%': last_year,
+                '%%THIS_YEAR%%': year,
+                '%%NEXT_YEAR%%': year + '/' + next_year[2:],
+            }.items():
+                season_text = season_text.replace(placeholder, replacement)
+
+            # (3) Grab email signature
+            with open(assets + '/mails/signature.html', 'r') as file:
+                signature = ''.join(file.readlines())
+
+            text = (
+                '<html><head></head><body>'
+                + season_text + '<p>' + text_block + '</p>' + signature +
+                '</body></html>'
+            )
+
+            # Create subject
+            subject = 'Empfehlungsliste ' + season_de + ' ' + year
+
+            create_mail(
+                is_from='info@fundevogel.de',
+                subject=subject, text=text,
+                output_path=mail_file
+            )
+
+
+    def extract_data(dependencies, targets):
         # Parsing Scribus template file
-        text_elements = etree.parse(edited_template).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+        text_elements = etree.parse(dependencies[0]).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
 
         books = {}
 
         # Parsing JSON data files
-        for json_file in json_files:
+        for json_file in get_files('json', 'dist'):
             # Extract books from template
             for data in load_json(json_file):
                 book = []
@@ -807,16 +648,98 @@ def task_extract_data():
                 books[data['ISBN']] = book[:-1]
 
         # Store results
-        dump_json(books, data_contents_file)
+        dump_json(books, targets[1])
+
 
     return {
-        'file_dep': json_files,
-        'actions': [(extract_data)],
-        'targets': [data_contents_file],
+        'file_dep': [get_template('edited')],
+        'actions': [
+            'rm -f %(targets)s',
+            compose_mails,
+            extract_data,
+        ],
+        'targets': [
+            meta_dir + '/summary.txt',
+            conf_dir + '/data.json',
+        ],
     }
 
 #
 # TASKS (END)
+###
+
+
+###
+# HELPERS (START)
+#
+
+def get_files(extension: str, mode: str) -> list:
+    # Build categories
+    # (1) Base
+    categories = [
+        'toddler',
+        'bilderbuch',
+        'vorlesebuch',
+        'ab6',
+        'ab8',
+        'ab10',
+        'ab12',
+        'ab14',
+        'sachbuch',
+        'besonderes',
+        'hoerbuch',
+    ]
+
+    # (2) Per-season
+    per_season = {
+        'spring': ['ostern'],
+        'autumn': [
+            'weihnachten',
+            'kalender',
+        ]
+    }
+
+    categories = categories + per_season[season]
+
+    # (3) Occasionally
+    if os.path.isfile(src_dir + '/csv/comic.csv'):
+        categories.append('comic')
+
+    if os.path.isfile(src_dir + '/csv/kreatives.csv'):
+        categories.append('kreatives')
+
+    # Build files listing
+    files = [category + '.' + extension for category in categories]
+
+    directory = {
+        'src': src_dir,
+        'dist': dist_dir,
+    }
+
+    if mode not in directory:
+        return []
+
+    return [directory[mode] + '/' + extension + '/' + file for file in files if os.path.isfile(directory[mode] + '/' + extension + '/' + file)]
+
+
+def get_template(template: str) -> str:
+    if template == 'base':
+        return dist_dir + '/templates/base.sla'
+
+    if template == 'edited':
+        return dist_dir + '/templates/edited.sla'
+
+    if template == 'document':
+        return dist_dir + '/documents/pdf/final.pdf'
+
+    if template == 'duplicates':
+        return conf_dir + '/duplicates.json'
+
+    if template == 'age-ratings':
+        return conf_dir + '/age-ratings.json'
+
+#
+# HELPERS (END)
 ###
 
 
@@ -865,6 +788,19 @@ def dump_json(data, json_file):
 
     with open(json_file, 'w') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+
+
+def slug(string: str) -> str:
+    # Slugify string using german custom replacements
+    return slugify(string, replacements=([
+        ['Ü', 'UE'],
+        ['ü', 'ue'],
+        ['Ö', 'OE'],
+        ['ö', 'oe'],
+        ['Ä', 'AE'],
+        ['ä', 'ae'],
+        ['ß', 'ss'],
+    ]))
 
 
 def extract_books(input_file: str):
@@ -944,9 +880,8 @@ def create_mail(
 
 def get_rfc2822_date():
     # See https://tools.ietf.org/html/rfc2822
-    now = datetime.datetime.now()
     time_tuple = now.timetuple()
-    timestamp = time.mktime(time_tuple)
+    timestamp = mktime(time_tuple)
 
     return utils.formatdate(timestamp)
 
@@ -956,7 +891,7 @@ def add_attachment(file_path: str):
     if os.path.isfile(file_path):
 
         # Detecting filetype
-        file_type, encoding = mimetypes.guess_type(file_path)
+        file_type, encoding = guess_type(file_path)
 
         if file_type is None or encoding is not None:
             file_type = 'application/octet-stream'
