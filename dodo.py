@@ -66,7 +66,7 @@ last_year = str(now.year - 1)
 # Headings
 headings = {
     'toddler': 'Für die Kleinsten',
-    'bilderbuch': 'Bilderbuch',
+    'bilderbuch': 'Bilderbücher',
     'vorlesebuch': 'Vorlesegeschichten',
     'ab6': 'Erstleser',
     'ab8': 'Bücher ab 8',
@@ -74,7 +74,7 @@ headings = {
     'ab12': 'Bücher ab 12',
     'ab14': 'Junge Erwachsene',
     'comic': 'Graphic Novel',
-    'sachbuch': 'Sachbuch',
+    'sachbuch': 'Sachbücher',
     'kreatives': 'Kreatives Gestalten',
     'besonderes': 'Besonderes',
     'hoerbuch': 'Hörbuch Spezial',
@@ -219,10 +219,10 @@ def task_check_data():
     def check_age_ratings(dependencies, targets):
         src = {}
 
-        for data_file in dependencies:
-            category = os.path.basename(data_file)[:-5]
+        for json_file in dependencies:
+            category = os.path.basename(json_file)[:-5]
 
-            for data in load_json(data_file):
+            for data in load_json(json_file):
                 age_rating = data['Altersempfehlung']
 
                 if 'angabe' in age_rating or 'bis' in age_rating:
@@ -323,9 +323,9 @@ def task_generate_partials():
 
     >> `ISSUE/dist/templates/example.sla`
     """
-    for data_file in get_files('csv', 'dist'):
+    for csv_file in get_files('csv', 'dist'):
         # Stripping path & extension
-        category = os.path.basename(data_file)[:-4]
+        category = os.path.basename(csv_file)[:-4]
 
         # Build target directory & filename
         partials_dir = dist_dir + '/templates/partials'
@@ -359,7 +359,7 @@ def task_generate_partials():
             '.env/bin/python',
             'vendor/berteh/scribusgenerator/ScribusGeneratorCLI.py',
             '--single',            # Single file output
-            '-c ' + data_file,     # CSV file
+            '-c ' + csv_file,      # CSV file
             '-o ' + partials_dir,  # Output directory
             '-n ' + category,      # Output filename
             template_file,         # Template path
@@ -367,7 +367,7 @@ def task_generate_partials():
 
         yield {
             'name': partial_file,
-            'file_dep': [data_file],
+            'file_dep': [csv_file],
             'actions': [
                 ' '.join(generate_partials),
                 (replace, [partial_file, '%%CATEGORY%%', headings[category]]),
