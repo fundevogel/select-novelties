@@ -506,8 +506,8 @@ def task_optimize_pdf():
     # Season slug
     season_slug = slug(season_de)
 
-    # Image resolutions
-    resolutions = [
+    # Printing resolutions
+    dots_per_inch = [
         '50',   # XXS
         '75',  # XS
         '100',  # S
@@ -517,30 +517,47 @@ def task_optimize_pdf():
         '250',  # XXL
     ]
 
-    for resolution in resolutions:
+    for dpi in dots_per_inch:
         # Build output filepath
-        optimized_file = home_dir + '/' + str(now.year) + '-' + season_slug + '-buchempfehlungen_' + resolution + '.pdf'
+        optimized_file = home_dir + '/' + str(now.year) + '-' + season_slug + '-buchempfehlungen_' + dpi + '.pdf'
 
         # Build command
         optimize_pdf = [
             'gs',
-            '-sDEVICE=pdfwrite',
             '-dCompatibilityLevel=1.4',
-            '-dConvertCMYKImagesToRGB=true',
+            '-dNOPAUSE',
+            '-dBATCH',
+            '-dQUIET',
+
+            # Performance
+            # See https://ghostscript.com/doc/current/Use.htm#Improving_performance
+            '-dNumRenderingThreads=8',               # Increase number of threads
+            '-dBandHeight=100',                      # Increase band size
+            '-dBufferSpace=1000000000',              # Reduce per-band overhead
+            '-dNOGC',                                # Disable garbage collector
+
+            # Font optimization
             '-dSubsetFonts=true',
             '-dCompressFonts=true',
-            '-dPDFSETTINGS=/printer',
-            '-dDownsampleColorImages=true',
-            '-dDownsampleGrayImages=true',
+
+            # Image quality & colors
+            # Manually apply '-dPDFSETTINGS=XY' where XY ..
+            # /default
+            # /screen:    72dpi
+            # /ebook:    150dpi
+            # /printer:  300dpi
+            # /prepress: 300dpi
+            '-dMonoImageResolution=' + dpi,
+            '-dGrayImageResolution=' + dpi,
+            '-dColorImageResolution=' + dpi,
             '-dDownsampleMonoImages=true',
-            '-dColorImageResolution=' + resolution,
-            '-dGrayImageResolution=' + resolution,
-            '-dMonoImageResolution=' + resolution,
-            '-dNOPAUSE',
-            '-dQUIET',
-            '-dBATCH',
+            '-dDownsampleGrayImages=true',
+            '-dDownsampleColorImages=true',
+            '-dConvertCMYKImagesToRGB=true',
+
+            # I/O
+            '-sDEVICE=pdfwrite',
             '-sOutputFile=%(targets)s',
-            '-c .setpdfwrite',
             '-f %(dependencies)s',
         ]
 
