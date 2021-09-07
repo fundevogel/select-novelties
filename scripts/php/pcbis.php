@@ -414,8 +414,8 @@ class KNVClient
         if ($book->isCalendar()) {
             # TODO: Add dimensions
             $specifics = Butler::join([
-                ' und',
-                $book->dimensions(),
+                'und',
+                $book->dimensions() . 'cm',
                 'groß'
             ], ' ');
         }
