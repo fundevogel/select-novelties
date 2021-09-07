@@ -643,35 +643,78 @@ def task_finish_issue():
             )
 
 
-    def extract_data(dependencies, targets):
-        # Parsing Scribus template file
-        text_elements = etree.parse(dependencies[0]).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
+    def extract_data(targets):
+        # Parse Scribus template file
+        text_elements = etree.parse(get_template('edited')).getroot().findall('.//PAGEOBJECT/StoryText/ITEXT')
 
         books = {}
 
         # Parsing JSON data files
         for json_file in get_files('json', 'dist'):
-            # Extract books from template
-            for data in load_json(json_file):
-                book = []
+            # Buffer results for easier sorting later on
+            buffer = []
 
+            # Extract books from template
+            for json_data in load_json(json_file):
+                # Fix edge cases when author is undefined
+                # See 978-3-649-64031-8
+                if not json_data['AutorIn']:
+                    json_data['AutorIn'] = ''
+
+                # Go through all text elements
                 for element in text_elements:
-                    if data['ISBN'] in element.attrib['CH']:
-                        # Determine page number
+                    # Look for matching ISBN
+                    if json_data['ISBN'] in element.attrib['CH']:
+                        # Extract header
+                        # (1) Grab previous 'PAGEOBJECT' element
+                        page_object = element.getparent().getparent().getprevious()
+
+                        # (2) Extract children
+                        header = []
+
+                        if len(page_object) > 0:
+                            for child in page_object[0]:
+                                if (child.tag == 'ITEXT'):
+                                    header.append(child.attrib['CH'])
+
+                        # Extract text
+                        # (1) Grab parent element
                         parent = element.getparent()
+
+                        # (2) Extract children
+                        body = []
 
                         for child in parent:
                             if (child.tag == 'ITEXT'):
-                                book.append(child.attrib['CH'])
+                                body.append(child.attrib['CH'])
 
-                books[data['ISBN']] = book[:-1]
+                        # Stop
+                        break
+
+                # Build book data
+                buffer.append({
+                    # (1) ISBN & author (for sorting)
+                    'isbn': json_data['ISBN'],
+                    'author': json_data['AutorIn'],
+
+                    # (2) Header
+                    'header': header,
+
+                    # (3) Text body (excluding ISBN, age rating & retail price)
+                    'body': body[:-2],
+                })
+
+            # Determine heading
+            heading = headings[os.path.basename(json_file)[:-5]]
+
+            books[heading] = sorted(buffer, key=itemgetter('author'))
 
         # Store results
         dump_json(books, targets[1])
 
 
     return {
-        'file_dep': [get_template('edited')],
+        # 'file_dep': [get_template('edited')],
         'actions': [
             'rm -f %(targets)s',
             compose_mails,
@@ -679,7 +722,7 @@ def task_finish_issue():
         ],
         'targets': [
             meta_dir + '/summary.txt',
-            conf_dir + '/data.json',
+            home_dir + '/data.json',
         ],
     }
 
