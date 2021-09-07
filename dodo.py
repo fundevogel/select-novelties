@@ -28,7 +28,7 @@ from slugify import slugify
 # CONFIG (START)
 #
 
-VERSION = '2.2.0'
+VERSION = '2.2.1'
 
 # CLI
 DOIT_CONFIG = {
