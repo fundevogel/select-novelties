@@ -677,6 +677,15 @@ def task_finish_issue():
                                 if (child.tag == 'ITEXT'):
                                     header.append(child.attrib['CH'])
 
+                        # (3) Fix edge cases where header comes AFTER body
+                        if not header:
+                            page_object = element.getparent().getparent().getnext()
+
+                            if len(page_object) > 0:
+                                for child in page_object[0]:
+                                    if (child.tag == 'ITEXT'):
+                                        header.append(child.attrib['CH'])
+
                         # Extract text
                         # (1) Grab parent element
                         parent = element.getparent()
