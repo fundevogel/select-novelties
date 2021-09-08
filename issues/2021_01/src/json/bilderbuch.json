@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-86429-503-4",
+        "Sortierung": "Alaska, Nini",
         "Titel": "Zickenzeit",
         "Untertitel": "Bilderbuch",
         "Verlag": "Tulipan",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-03876-195-2",
+        "Sortierung": "Andros, Camille",
         "Titel": "Das Kleid und das Mädchen",
         "Untertitel": "",
         "Verlag": "Midas",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7026-5951-6",
+        "Sortierung": "Bansch, Helga",
         "Titel": "Der PUPU",
         "Untertitel": "Bilderbuch",
         "Verlag": "Jungbrunnen-Verlag",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-03876-192-1",
+        "Sortierung": "Beaty, Andrea",
         "Titel": "Rosie Rosin, Erfinderin",
         "Untertitel": "",
         "Verlag": "Midas",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-314-10530-2",
+        "Sortierung": "Beer, Hans de",
         "Titel": "Kleiner Eisbär. Lars und die Pandabären",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-8337-4183-8",
+        "Sortierung": "Brenman, Ilan",
         "Titel": "Komm, wir wollen spielen!",
         "Untertitel": "",
         "Verlag": "Jumbo Neue Medien",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7348-2138-7",
+        "Sortierung": "Bright, Rachel",
         "Titel": "Der Sorgosaurus",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7348-2086-1",
+        "Sortierung": "Chatterton, Chris",
         "Titel": "Hallo Boss!",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-03876-193-8",
+        "Sortierung": "Cottle, Katie",
         "Titel": "Der blaue Riese",
         "Untertitel": "Bilderbuch",
         "Verlag": "Midas",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-8369-6102-8",
+        "Sortierung": "Garton Scanlon, Liz",
         "Titel": "Fünf Minuten",
         "Untertitel": "Das ist ganz schön lang. Nein, ist es nicht. Doch, ist es.",
         "Verlag": "Gerstenberg Verlag",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-8337-4246-0",
+        "Sortierung": "Gíron, Maria",
         "Titel": "Arthur und der Elefant ohne Erinnerung",
         "Untertitel": "Bilderbuch",
         "Verlag": "Jumbo Neue Medien",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-86429-474-7",
+        "Sortierung": "Gmehling, Will",
         "Titel": "Bahnhof am Ozean",
         "Untertitel": "Bilderbuch",
         "Verlag": "Tulipan",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-314-10550-0",
+        "Sortierung": "Gorbachev, Valeri",
         "Titel": "Die gute Pute",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-314-10562-3",
+        "Sortierung": "Gugger, Rebecca",
         "Titel": "Der Berg",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-907114-17-9",
+        "Sortierung": "Hout, Mies van",
         "Titel": "Wär ich doch ...",
         "Untertitel": "Bilderbuch",
         "Verlag": "Aracari",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-8337-4259-0",
+        "Sortierung": "Isern, Susanna",
         "Titel": "Das große Buch der allergrößten Schätze",
         "Untertitel": "Bilderbuch",
         "Verlag": "Jumbo Neue Medien",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-314-10532-6",
+        "Sortierung": "Julian, Sean",
         "Titel": "Normans erster Tag im Dinokindergarten",
         "Untertitel": "",
         "Verlag": "NordSüd Verlag",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-551-51919-1",
+        "Sortierung": "Kunkel, Daniela",
         "Titel": "Das kleine WIR im Kindergarten",
         "Untertitel": "Bilderbuch für Kinder ab 3 über das WIR-Gefühl und Zusammenhalt in der Kita",
         "Verlag": "Carlsen",
@@ -451,6 +469,7 @@
     },
     {
         "ISBN": "978-3-257-01286-6",
+        "Sortierung": "Kurkow, Andrej",
         "Titel": "Warum den Igel keiner streichelt",
         "Untertitel": "",
         "Verlag": "Diogenes",
@@ -476,6 +495,7 @@
     },
     {
         "ISBN": "978-3-7432-0943-5",
+        "Sortierung": "Lang, Suzanne",
         "Titel": "Jim hat keinen Bock",
         "Untertitel": "Lustiges Bilderbuch über Gefühle. Bilderbuch",
         "Verlag": "Loewe Verlag",
@@ -501,6 +521,7 @@
     },
     {
         "ISBN": "978-3-95470-241-1",
+        "Sortierung": "Lindenbaum, Pija",
         "Titel": "Wir müssen zur Arbeit",
         "Untertitel": "",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -526,6 +547,7 @@
     },
     {
         "ISBN": "978-3-7512-0033-2",
+        "Sortierung": "Lindgren, Astrid",
         "Titel": "Ferien auf Saltkrokan. Als Tjorven einen Seehund bekam",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -551,6 +573,7 @@
     },
     {
         "ISBN": "978-3-257-01288-0",
+        "Sortierung": "Meyer, Timon",
         "Titel": "Pauls Garten",
         "Untertitel": "",
         "Verlag": "Diogenes",
@@ -576,6 +599,7 @@
     },
     {
         "ISBN": "978-3-934029-84-2",
+        "Sortierung": "Nüsch, Julia",
         "Titel": "Der fleißige Mistkäfer und die Träume der Anderen",
         "Untertitel": "",
         "Verlag": "Kindermann",
@@ -601,6 +625,7 @@
     },
     {
         "ISBN": "978-3-551-51923-8",
+        "Sortierung": "Owen, Chris",
         "Titel": "Pandazamba",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -626,6 +651,7 @@
     },
     {
         "ISBN": "978-3-86429-512-6",
+        "Sortierung": "Pabst, Inka",
         "Titel": "Elfi, das traurige Krokodil",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -651,6 +677,7 @@
     },
     {
         "ISBN": "978-3-8337-4278-1",
+        "Sortierung": "Pigé, Florian",
         "Titel": "So klein",
         "Untertitel": "",
         "Verlag": "Jumbo Neue Medien",
@@ -676,6 +703,7 @@
     },
     {
         "ISBN": "978-3-96594-087-1",
+        "Sortierung": "Poulin, Andrée",
         "Titel": "Zwei Jungs und eine Hochzeit",
         "Untertitel": "preisgekröntes Bilderbuch für Jungen und Mädchen ab 4 - für Toleranz und Vielfalt",
         "Verlag": "Südpol Verlag",
@@ -701,6 +729,7 @@
     },
     {
         "ISBN": "978-3-314-10533-3",
+        "Sortierung": "Ries, Johanna",
         "Titel": "Die Fleckenfeder",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -726,6 +755,7 @@
     },
     {
         "ISBN": "978-3-7707-0234-3",
+        "Sortierung": "Sasmaz, Sinem",
         "Titel": "Und wo sind meine Punkte?",
         "Untertitel": "",
         "Verlag": "Ellermann",
@@ -751,6 +781,7 @@
     },
     {
         "ISBN": "978-3-7022-3915-2",
+        "Sortierung": "Schlager, Leonie",
         "Titel": "Der Wassermann hat Zeit",
         "Untertitel": "",
         "Verlag": "Tyrolia",
@@ -776,6 +807,7 @@
     },
     {
         "ISBN": "978-3-7432-0601-4",
+        "Sortierung": "Schmidt, Hans-Christian",
         "Titel": "Wer von euch?",
         "Untertitel": "Ein Bilderbuch zum Mitraten. Bilderbuch",
         "Verlag": "Loewe Verlag",
@@ -801,6 +833,7 @@
     },
     {
         "ISBN": "978-3-86429-519-5",
+        "Sortierung": "Schomburg, Andrea",
         "Titel": "Ab hier kenn ich mich aus",
         "Untertitel": "Bilderbuch",
         "Verlag": "Tulipan",
@@ -826,6 +859,7 @@
     },
     {
         "ISBN": "978-3-7512-0009-7",
+        "Sortierung": "Schulze, Bianca",
         "Titel": "Nicht den Drachen wecken",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -851,6 +885,7 @@
     },
     {
         "ISBN": "978-3-96826-006-8",
+        "Sortierung": "Simler, Isabelle",
         "Titel": "Süße Träumer",
         "Untertitel": "Bilderbuch",
         "Verlag": "Von Hacht Verlag",
@@ -876,6 +911,7 @@
     },
     {
         "ISBN": "978-3-7512-0036-3",
+        "Sortierung": "Small, Steve",
         "Titel": "Mit dir ist sogar Regen schön",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -901,6 +937,7 @@
     },
     {
         "ISBN": "978-3-8337-4265-1",
+        "Sortierung": "Swiderski, Carla",
         "Titel": "Ricki in der Tintenwolke",
         "Untertitel": "",
         "Verlag": "Jumbo Neue Medien",
@@ -926,6 +963,7 @@
     },
     {
         "ISBN": "978-3-907114-18-6",
+        "Sortierung": "Timmers, Leo",
         "Titel": "Die Elefanteninsel",
         "Untertitel": "Bilderbuch",
         "Verlag": "Aracari",
@@ -951,6 +989,7 @@
     },
     {
         "ISBN": "978-3-7512-0007-3",
+        "Sortierung": "Wieslander, Jujja",
         "Titel": "Mama Muh und Krähe werden Freunde",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -976,6 +1015,7 @@
     },
     {
         "ISBN": "978-3-257-01285-9",
+        "Sortierung": "Zimnik, Reiner",
         "Titel": "Der Bär auf dem Motorrad",
         "Untertitel": "",
         "Verlag": "Diogenes",
@@ -1001,6 +1041,7 @@
     },
     {
         "ISBN": "978-3-96843-018-8",
+        "Sortierung": "Zanotti, Cosetta",
         "Titel": "Was Worte alles machen",
         "Untertitel": "Bilderbuch",
         "Verlag": "Carl-Auer",
@@ -1026,6 +1067,7 @@
     },
     {
         "ISBN": "978-3-7152-0793-3",
+        "Sortierung": "D'Arcangelo, Laura",
         "Titel": "Herr Bert und Alfonso jagen einen Dieb",
         "Untertitel": "",
         "Verlag": "Atlantis Zürich",

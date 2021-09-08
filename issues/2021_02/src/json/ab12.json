@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-570-15945-3",
+        "Sortierung": "Harrington, Karen",
         "Titel": "Briefe an mein verrücktes Leben",
         "Untertitel": "",
         "Verlag": "cbj",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-423-64086-2",
+        "Sortierung": "Schulz, Hermann",
         "Titel": "Therese - Das Mädchen, das mit Krokodilen spielte",
         "Untertitel": "Historischer Roman für Jugendliche ab 12",
         "Verlag": "DTV",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-8414-2171-5",
+        "Sortierung": "Caplan, Ted",
         "Titel": "Rettet Steve!",
         "Untertitel": "- und die Welt",
         "Verlag": "FISCHER FJB",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-7335-0607-0",
+        "Sortierung": "Schäuble, Martin",
         "Titel": "Sein Reich",
         "Untertitel": "",
         "Verlag": "FISCHER Kinder- und Jugendtaschenbuch",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-522-30593-8",
+        "Sortierung": "Duhm, Lisa",
         "Titel": "Sie sind überall",
         "Untertitel": "Gegen Faschismus in deinem Feed | Sachbuch über Rechtsextreme in den sozialen Medien",
         "Verlag": "Gabriel in der Thienemann-Esslinger Verlag GmbH",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-407-82003-7",
+        "Sortierung": "Uschmann, Oliver",
         "Titel": "Es kommt",
         "Untertitel": "",
         "Verlag": "Beltz",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7026-5959-2",
+        "Sortierung": "Jünger, Brigitte",
         "Titel": "Monster",
         "Untertitel": "",
         "Verlag": "Jungbrunnen-Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7348-5055-4",
+        "Sortierung": "Hoffmann, Anne",
         "Titel": "Es geht ja bloß um den Rest meines Lebens",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-95854-170-2",
+        "Sortierung": "Schrocke, Kathrin",
         "Titel": "Bunte Fische überall",
         "Untertitel": "",
         "Verlag": "mixtvision",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-522-50705-9",
+        "Sortierung": "Gibson, Naomi",
         "Titel": "Seeing what you see, feeling what you feel",
         "Untertitel": "Kann eine KI zur Liebe deines Lebens werden?",
         "Verlag": "Planet! in der Thienemann-Esslinger Verlag GmbH",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-949315-05-3",
+        "Sortierung": "Wilson, Jamia",
         "Titel": "Das Buch vom Feminismus",
         "Untertitel": "",
         "Verlag": "Zuckersüss",

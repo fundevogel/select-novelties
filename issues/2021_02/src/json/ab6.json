@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-401-71726-5",
+        "Sortierung": "Lagerlöf, Selma",
         "Titel": "Nils Holgersson",
         "Untertitel": "Klassiker einfach lesen",
         "Verlag": "Arena",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-401-71587-2",
+        "Sortierung": "Seltmann, Christian",
         "Titel": "Beste Freunde und ein tolles Abenteuer",
         "Untertitel": "Der Bücherbär: 1. Klasse. Mit Bildergeschichten",
         "Verlag": "Arena",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-411-78003-7",
+        "Sortierung": "Vorbach, Britta",
         "Titel": "Dein Lesestart - Band 4: Mutige Menschen",
         "Untertitel": "",
         "Verlag": "Bibliographisches Institut, Berlin",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-411-78001-3",
+        "Sortierung": "Küntzel, Karolin",
         "Titel": "Dein Lesestart - Band 1: Pferde und Ponys",
         "Untertitel": "",
         "Verlag": "Bibliographisches Institut, Berlin",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-411-78002-0",
+        "Sortierung": "Neudert, Cee",
         "Titel": "Dein Lesestart - Band 2: Weltraum",
         "Untertitel": "",
         "Verlag": "Bibliographisches Institut, Berlin",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-7373-3485-3",
+        "Sortierung": "Braun, Christina",
         "Titel": "Duden Leseprofi - Spannende Sachgeschichten für wissbegierige Erstleser, 2. Klasse",
         "Untertitel": "Kinderbuch für Erstleser ab 7 Jahren",
         "Verlag": "FISCHER Duden",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-407-75596-4",
+        "Sortierung": "Gmehling, Will",
         "Titel": "Warum heulst du, Heulehund?",
         "Untertitel": "",
         "Verlag": "Beltz",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-89565-418-3",
+        "Sortierung": "Iwasa, Megumi",
         "Titel": "Viele Grüße vom schüchternen Hai",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-89565-417-6",
+        "Sortierung": "Ohlsson, Sara",
         "Titel": "Fanny und die Liebe",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-89565-416-9",
+        "Sortierung": "Stehr, Frédéric",
         "Titel": "Isidor bleibt wach",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-86429-520-1",
+        "Sortierung": "Bernhardt, Angela",
         "Titel": "Das Rätsel um die rosa Box",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-7891-2135-7",
+        "Sortierung": "Thiele-Eich, Insa",
         "Titel": "Abenteuer Raketenstart",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-7512-0101-8",
+        "Sortierung": "Almellehan, Muzoon",
         "Titel": "Ein Koffer voller Bücher",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-96177-086-1",
+        "Sortierung": "Hedlund, Helena",
         "Titel": "Kerstin ist goldrichtig",
         "Untertitel": "",
         "Verlag": "Woow Books",

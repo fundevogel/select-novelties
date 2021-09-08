@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-7456-0212-8",
+        "Sortierung": "Baron, Adam",
         "Titel": "Auftauchen, 6 Audio-CD",
         "Untertitel": "Für Rettung ist es nie zu spät: 6 CDs, Lesung. CD Standard Audio Format. Ungekürzte Ausgabe. 450 Min.",
         "Verlag": "Silberfisch",
@@ -27,6 +28,7 @@
     },
     {
         "ISBN": "978-3-7456-0262-3",
+        "Sortierung": "Bohlmann, Sabine",
         "Titel": "Ein Mädchen namens Willow, 3 Audio-CD",
         "Untertitel": "3 CDs, Lesung. CD Standard Audio Format. Gekürzte Ausgabe. 215 Min.",
         "Verlag": "Silberfisch",
@@ -53,6 +55,7 @@
     },
     {
         "ISBN": "978-3-7424-1803-6",
+        "Sortierung": "Daughtry, Mikki",
         "Titel": "All This Time - Lieben heißt unendlich sein, 1 Audio-CD, 1 MP3",
         "Untertitel": "Ungekürzte Lesung mit Fabian Kluckert (1 mp3-CD), Lesung. 653 Min.",
         "Verlag": "Der Audio Verlag, DAV",
@@ -79,6 +82,7 @@
     },
     {
         "ISBN": "978-3-8373-1188-4",
+        "Sortierung": "Lindgren, Astrid",
         "Titel": "Ferien auf Saltkrokan. Als Tjorven einen Seehund bekam, 1 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. 30 Min.",
         "Verlag": "Oetinger Media",
@@ -105,6 +109,7 @@
     },
     {
         "ISBN": "978-3-7456-0269-2",
+        "Sortierung": "Muser , Martin",
         "Titel": "Nuschki, 1 Audio-CD",
         "Untertitel": "1 CD, Lesung. CD Standard Audio Format. Gekürzte Ausgabe. 75 Min.",
         "Verlag": "Silberfisch",
@@ -131,6 +136,7 @@
     },
     {
         "ISBN": "978-3-8373-1182-2",
+        "Sortierung": "Nordqvist, Sven",
         "Titel": "Pettersson und Findus. Unsere schönsten Abenteuer, 5 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Hörspiel. 139 Min.",
         "Verlag": "Oetinger Media",
@@ -157,6 +163,7 @@
     },
     {
         "ISBN": "978-3-8337-4282-8",
+        "Sortierung": "Osterwalder, Markus",
         "Titel": "Bobo Siebenschläfer. Zusammen sind wir stark, Audio-CD",
         "Untertitel": "Geschichten für Kleine mit KlangErlebnissen und Liedern. Lesung. Mit Lied für Bobo!. 45 Min.",
         "Verlag": "Jumbo Neue Medien",
@@ -183,6 +190,7 @@
     },
     {
         "ISBN": "978-3-96346-041-8",
+        "Sortierung": "Pfitzner, Sandra",
         "Titel": "Abenteuer & Wissen: Sophie Scholl, Audio-CD",
         "Untertitel": "Der Widerstand der Weißen Rose, Lesung. 80 Min.",
         "Verlag": "headroom sound production",
@@ -209,6 +217,7 @@
     },
     {
         "ISBN": "978-3-96346-042-5",
+        "Sortierung": "Pfitzner, Sandra",
         "Titel": "Abenteuer & Wissen: Maria Sibylla Merian, Audio-CD",
         "Untertitel": "Expedition zu den Schmetterlingen, Lesung. 80 Min.",
         "Verlag": "headroom sound production",
@@ -235,6 +244,7 @@
     },
     {
         "ISBN": "978-3-7456-0191-6",
+        "Sortierung": "Preußler , Otfried",
         "Titel": "Der kleine Wassermann, 2 Audio-CD",
         "Untertitel": "2 CDs, Lesung. CD Standard Audio Format. Ungekürzte Ausgabe. 130 Min.",
         "Verlag": "Silberfisch",
@@ -261,6 +271,7 @@
     },
     {
         "ISBN": "978-3-7424-1651-3",
+        "Sortierung": "Sanchez Vegara, Maria Isabel",
         "Titel": "Little People, Big Dreams® - Teil 2: Ella Fitzgerald, Jane Austen, Coco Chanel, Muhammad Ali, 1 Audio-CD",
         "Untertitel": "31 Min.",
         "Verlag": "Der Audio Verlag, DAV",
@@ -287,6 +298,7 @@
     },
     {
         "ISBN": "978-3-7456-0265-4",
+        "Sortierung": "Scheffel, Annika",
         "Titel": "Sommer auf Solupp, 3 Audio-CD",
         "Untertitel": "3 CDs, Lesung. CD Standard Audio Format. Gekürzte Ausgabe. 225 Min.",
         "Verlag": "Silberfisch",
@@ -313,6 +325,7 @@
     },
     {
         "ISBN": "978-3-7456-0288-3",
+        "Sortierung": "Scherz, Oliver",
         "Titel": "Wir sind nachher wieder da, wir müssen kurz nach Afrika - Autorenlesung, 1 Audio-CD",
         "Untertitel": "1 CD, Lesung. CD Standard Audio Format. Gekürzte Ausgabe. 75 Min.",
         "Verlag": "Silberfisch",
@@ -339,6 +352,7 @@
     },
     {
         "ISBN": "978-3-7313-1286-4",
+        "Sortierung": "Taylor, Thomas",
         "Titel": "Malamander. Die Geheimnisse von Eerie-on-Sea, 5 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. 480 Min.",
         "Verlag": "Igel-Records",
@@ -365,6 +379,7 @@
     },
     {
         "ISBN": "978-3-8373-1179-2",
+        "Sortierung": "Wohlleben, Peter",
         "Titel": "Kommst du mit nach draußen?, 2 Audio-CD",
         "Untertitel": "Eine Entdeckungsreise durch Garten und Stadt, Lesung. CD Standard Audio Format. 80 Min.",
         "Verlag": "Oetinger Media",
@@ -391,6 +406,7 @@
     },
     {
         "ISBN": "978-3-7424-1855-5",
+        "Sortierung": "Pearson, Jenny",
         "Titel": "Die unglaubliche Wunderreise des Freddie Yates, 1 Audio-CD, 1 MP3",
         "Untertitel": "Ungekürzte Lesung mit Simon Jäger (1 mp3-CD), Lesung. 332 Min.",
         "Verlag": "Der Audio Verlag, DAV",

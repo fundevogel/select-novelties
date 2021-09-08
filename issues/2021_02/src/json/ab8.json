@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-401-60505-0",
+        "Sortierung": "Pantermüller, Alice",
         "Titel": "Mein Lotta-Leben (18). Im Zeichen des Tapirs",
         "Untertitel": "Ein herrlich verrücktes Abenteuer der großen Bestsellerreihe für alle von 9-12 Jahren",
         "Verlag": "Arena",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-414-82618-3",
+        "Sortierung": "Städing, Sabine",
         "Titel": "Petronella Apfelmus",
         "Untertitel": "Eismagie und wilde Wichte. Band 9",
         "Verlag": "Boje Verlag",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-551-65385-7",
+        "Sortierung": "Goldfarb, Tobias",
         "Titel": "Fonk 1: Geheimagent aus dem All",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-551-55810-7",
+        "Sortierung": "Hub, Ulrich",
         "Titel": "Lahme Ente, blindes Huhn",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-65070-2",
+        "Sortierung": "Kling, Maria",
         "Titel": "Freddy und Flo gruseln sich vor gar nix!",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-551-55809-1",
+        "Sortierung": "Peck, Hannah",
         "Titel": "Ein Fall für Kate. Mit Volldampf in ein Abenteuer voller Schnurrhaare, Schneebesen und Schabernack!",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-551-65362-8",
+        "Sortierung": "Auer, Margit",
         "Titel": "Die Schule der magischen Tiere 12: Voll das Chaos!",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-8369-6060-1",
+        "Sortierung": "van Leeuwen, Joke",
         "Titel": "Als ich mal",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-8369-5695-6",
+        "Sortierung": "Samson, Gideon",
         "Titel": "Ein Zebra in der Schule",
         "Untertitel": "Elf erstaunliche Schulgeschichten",
         "Verlag": "Gerstenberg Verlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-407-75598-8",
+        "Sortierung": "Erbertz, Christina",
         "Titel": "Peri Scholz rettet die Welt",
         "Untertitel": "... oder auch nicht",
         "Verlag": "Beltz",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-7026-5958-5",
+        "Sortierung": "Roher, Michael",
         "Titel": "Kali kann Kanari",
         "Untertitel": "",
         "Verlag": "Jungbrunnen-Verlag",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-95470-256-5",
+        "Sortierung": "Praßler, Anna Maria",
         "Titel": "Hinterhoftage",
         "Untertitel": "Wie ich Hannibal verlor, einen Freund gewann und der Sauerteig das alles nicht überlebte",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-7011-8198-8",
+        "Sortierung": "Balàka, Bettina",
         "Titel": "Dicke Biber",
         "Untertitel": "Ein Naturschutzkrimi",
         "Verlag": "Leykam",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-7432-1274-9",
+        "Sortierung": "Rae, Tina",
         "Titel": "Nicht okay ist auch okay",
         "Untertitel": "Eine Anleitung zum Wohlbefinden - Kindgerechtes Sachbuch über psychische Probleme und mentale Gesundheit",
         "Verlag": "Loewe Verlag",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7348-4109-5",
+        "Sortierung": "Morpurgo, Michael",
         "Titel": "Der Leuchtturmwärter und ich",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-89565-419-0",
+        "Sortierung": "Lagercrantz, Rose",
         "Titel": "Zwei von jedem",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-522-50712-7",
+        "Sortierung": "Bertram, Rüdiger",
         "Titel": "Isa und die wilde Zorra 1: Sei mutig wie ein Puma!",
         "Untertitel": "Lustige Geschichte mit Comic-Elementen",
         "Verlag": "Planet! in der Thienemann-Esslinger Verlag GmbH",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-522-50711-0",
+        "Sortierung": "Hasselbusch, Birgit",
         "Titel": "Hallo, hej und marhaba",
         "Untertitel": "Freundschaftsspiel mit Doppelpass | Freundschaftsgeschichte über alle Grenzen hinweg",
         "Verlag": "Planet! in der Thienemann-Esslinger Verlag GmbH",
@@ -451,6 +469,7 @@
     },
     {
         "ISBN": "978-3-7512-0052-3",
+        "Sortierung": "Blesken, Julia",
         "Titel": "Mission Kolomoro oder: Opa in der Plastiktüte",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -476,6 +495,7 @@
     },
     {
         "ISBN": "978-3-948417-11-6",
+        "Sortierung": "Mierswa, Annette",
         "Titel": "Alia am Ort der Wunder",
         "Untertitel": "",
         "Verlag": "Windy Verlag",
@@ -501,6 +521,7 @@
     },
     {
         "ISBN": "978-3-95470-252-7",
+        "Sortierung": "Aakeson, Kim Fupz",
         "Titel": "Hugo & Hassan forever",
         "Untertitel": "Hugo & Hassan, Band 2",
         "Verlag": "Klett Kinderbuch Verlag",

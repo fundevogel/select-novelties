@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-401-71782-1",
+        "Sortierung": "Schmachtl, Andreas H.",
         "Titel": "Hörnchen & Bär. Haufenweise echt waldige Abenteuer",
         "Untertitel": "Vorlesebuch ab 4 Jahren",
         "Verlag": "Arena",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-8458-4481-7",
+        "Sortierung": "Newman, Samantha",
         "Titel": "Die schönsten Geschichten für mutige Mädchen",
         "Untertitel": "",
         "Verlag": "ars edition",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7152-0831-2",
+        "Sortierung": "Pauli, Lorenz",
         "Titel": "Als Rigo Mäuse anpflanzte und Rosa die Leoparden erfand",
         "Untertitel": "Bilderbuch",
         "Verlag": "Atlantis Zürich",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-551-51999-3",
+        "Sortierung": "Rosales, Caroline",
         "Titel": "Allerbeste Schwestern",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-570-17894-2",
+        "Sortierung": "Ludwig, Sabine",
         "Titel": "Drittes Schilfrohr links - Geschichten vom Seerosenteich",
         "Untertitel": "",
         "Verlag": "cbj",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-570-17899-7",
+        "Sortierung": "Krause, Ute",
         "Titel": "Die Muskeltiere und die große Käseverschwörung",
         "Untertitel": "zum Vor- und Selberlesen",
         "Verlag": "cbj",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-423-64085-5",
+        "Sortierung": "Tidholm, Thomas",
         "Titel": "Die Eisreise",
         "Untertitel": "Farbig illustriertes Vorlesebuch für Kinder ab 6",
         "Verlag": "DTV",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7514-0008-4",
+        "Sortierung": "Klitzing, Maren von",
         "Titel": "Wohin fliegst du, kleiner Storch?",
         "Untertitel": "",
         "Verlag": "Ellermann",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7373-5768-5",
+        "Sortierung": "Tielmann, Christian",
         "Titel": "Haben Raben Rabeneltern?",
         "Untertitel": "Die wirklich wahre Wahrheit über Tiere",
         "Verlag": "FISCHER Sauerländer",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-89565-413-8",
+        "Sortierung": "Franck, Ed",
         "Titel": "Den Mond vom Himmel pflücken",
         "Untertitel": "Geschichten von Panda und Eichhörnchen",
         "Verlag": "Moritz",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-8251-5283-3",
+        "Sortierung": "Stark, Ulf",
         "Titel": "Ein Sommer mit Percy und Buffalo Bill",
         "Untertitel": "",
         "Verlag": "Urachhaus",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-7512-0055-4",
+        "Sortierung": "Maar, Paul",
         "Titel": "Möpse, Dackel, Hütehunde",
         "Untertitel": "Das fabelhafte Hundebuch von Paul Maar",
         "Verlag": "Oetinger",

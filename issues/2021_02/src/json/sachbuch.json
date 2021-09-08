@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-570-17866-9",
+        "Sortierung": "Unka, Vasanti",
         "Titel": "Das Universum und ich",
         "Untertitel": "Sachbilderbuch ab 4 Jahren",
         "Verlag": "cbj",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-649-63740-0",
+        "Sortierung": "Paganelli, Elisa",
         "Titel": "Das große Orchesterbuch",
         "Untertitel": "In Zusammenarbeit mit dem London Symphony Orchestra und Sir Simon Rattle",
         "Verlag": "Coppenrath, Münster",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-8310-4326-2",
+        "Sortierung": "Paxmann, Christine",
         "Titel": "Demokratie für Kids",
         "Untertitel": "So geht's! Wer darf wählen? Wer darf regieren? Wie funktionieren Wahlen? Haben Kinder Rechte? Wer ist der Staat?",
         "Verlag": "Dorling Kindersley",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-8310-4258-6",
+        "Sortierung": "Taylor, Barbara",
         "Titel": "Atlas der Tiere",
         "Untertitel": "Eine Reise zu den faszinierendsten Tieren der Erde",
         "Verlag": "Dorling Kindersley",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-8310-4206-7",
+        "Sortierung": "Gater, Will",
         "Titel": "Wundervolle Welt der Sterne",
         "Untertitel": "Ein Weltall-Bilderbuch für die ganze Familie. Hochwertig ausgestattet mit Lesebändchen, Goldfolie und Goldschnitt",
         "Verlag": "Dorling Kindersley",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-7373-5791-3",
+        "Sortierung": "Lutz, Hannah",
         "Titel": "Mit Sicherheit Verliebt",
         "Untertitel": "Ein Aufklärungsbuch",
         "Verlag": "FISCHER Sauerländer",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-8369-6133-2",
+        "Sortierung": "Druvert, Hélène",
         "Titel": "Wolken, Luft und Sterne",
         "Untertitel": "Von der Erde bis ins All",
         "Verlag": "Gerstenberg Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-96269-113-4",
+        "Sortierung": "Macaulay, David",
         "Titel": "Sie bauten eine Moschee",
         "Untertitel": "",
         "Verlag": "Impian GmbH",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7348-6002-7",
+        "Sortierung": "Prinz, Johanna",
         "Titel": "Tag und Nacht im Wald",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-03876-200-3",
+        "Sortierung": "Richards, Mary",
         "Titel": "Die Geschichte der Musik - für Kinder",
         "Untertitel": "",
         "Verlag": "Midas",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-03876-203-4",
+        "Sortierung": "Beaty, Andrea",
         "Titel": "Ada Kraft liebt Wissenschaft",
         "Untertitel": "",
         "Verlag": "Midas",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-328-30086-1",
+        "Sortierung": "Greener, Rachel",
         "Titel": "Ein Baby! Wie eine Familie entsteht",
         "Untertitel": "Sachbilderbuch für Kinder ab 5 Jahren",
         "Verlag": "Penguin Verlag München",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-7913-7452-9",
+        "Sortierung": "Gaya, Ester",
         "Titel": "Das Museum der Pilze",
         "Untertitel": "Eintritt frei!",
         "Verlag": "Prestel",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-7886-2242-8",
+        "Sortierung": "Ole Häntzschel",
         "Titel": "Wie viel Regenwald passt auf dieses Brot?",
         "Untertitel": "Erstaunliche Grafiken über Klima und Umwelt",
         "Verlag": "Tessloff",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7022-3919-0",
+        "Sortierung": "Hubka, Christine",
         "Titel": "Und doch sind alle Äpfel rund ...",
         "Untertitel": "Was Judentum, Christentum und Islam gemeinsam haben. Eine besondere Familiengeschichte",
         "Verlag": "Tyrolia",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-7022-3991-6",
+        "Sortierung": "Laibl, Melanie",
         "Titel": "Schau wie schlau",
         "Untertitel": "Bionik: wenn Natur die Technik beflügelt",
         "Verlag": "Tyrolia",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-949315-00-8",
+        "Sortierung": "Salvia, Anna",
         "Titel": "Hallo, Periode!",
         "Untertitel": "Wissen, wie's läuft. Alles, was du über die Periode wissen musst. Das erste inklusive Handbuch zur Menstruation.",
         "Verlag": "Zuckersüss",

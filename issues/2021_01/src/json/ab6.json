@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-551-65593-6",
+        "Sortierung": "Auer, Margit",
         "Titel": "Die Schule der magischen Tiere ermittelt 3: Der Kokosnuss-Klau (Zum Lesenlernen)",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-7432-0760-8",
+        "Sortierung": "Benn, Amelie",
         "Titel": "Bildermaus - Geschichten vom ersten Schultag",
         "Untertitel": "Mit Bildern lesen lernen",
         "Verlag": "Loewe Verlag",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-473-46021-2",
+        "Sortierung": "Mai, Manfred",
         "Titel": "Leons erster Schultag",
         "Untertitel": "Mit Wörterliste zum Ausklappen",
         "Verlag": "Ravensburger Verlag",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-86429-499-0",
+        "Sortierung": "Petrick, Nina",
         "Titel": "Doppelt gebucht",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-86429-513-3",
+        "Sortierung": "Wiggert, Veronika",
         "Titel": "Fußballsommer",
         "Untertitel": "",
         "Verlag": "Tulipan",

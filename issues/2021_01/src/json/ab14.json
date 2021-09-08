@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-03880-204-4",
+        "Sortierung": "Albertalli, Becky",
         "Titel": "Was ist mit uns",
         "Untertitel": "",
         "Verlag": "Arctis Verlag",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-551-58437-3",
+        "Sortierung": "Bennett, Jenn",
         "Titel": "Wiedersehen mit Lucky",
         "Untertitel": "Eine romantische Komödie über alte Freunde und eine neue Liebe",
         "Verlag": "Carlsen",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7512-0053-0",
+        "Sortierung": "Boie, Kirsten",
         "Titel": "Dunkelnacht",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-423-76316-5",
+        "Sortierung": "Creedle, Laura",
         "Titel": "Die Liebesbriefe von Abelard und Lily",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-86648-609-6",
+        "Sortierung": "Jalonen, Olli",
         "Titel": "Die Himmelskugel",
         "Untertitel": "",
         "Verlag": "mareverlag",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-03880-044-6",
+        "Sortierung": "Kyra, Groh",
         "Titel": "Mein Leben als lexikalische Lücke",
         "Untertitel": "",
         "Verlag": "Arctis Verlag",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7795-0653-9",
+        "Sortierung": "Nganang, Patrice",
         "Titel": "Spur der Krabbe",
         "Untertitel": "Roman",
         "Verlag": "Peter Hammer Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7348-5051-6",
+        "Sortierung": "Peterson, Megan Cooley",
         "Titel": "Lügentochter",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7855-8729-4",
+        "Sortierung": "Poznanski, Ursula",
         "Titel": "Layers",
         "Untertitel": "",
         "Verlag": "Loewe Verlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-8369-6099-1",
+        "Sortierung": "Reinhardt, Dirk",
         "Titel": "Perfect Storm",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-96428-096-1",
+        "Sortierung": "Rottmann, Eva",
         "Titel": "Mats & Milad",
         "Untertitel": "oder: Nachrichten vom Arsch der Welt",
         "Verlag": "Jacoby & Stuart",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-257-30081-9",
+        "Sortierung": "Schlink, Bernhard",
         "Titel": "20. Juli",
         "Untertitel": "Ein Zeitstück",
         "Verlag": "Diogenes",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-7432-0857-5",
+        "Sortierung": "Shah, London",
         "Titel": "Water Rising (Band 1) - Flucht in die Tiefe",
         "Untertitel": "Dystopischer Climate Thriller",
         "Verlag": "Loewe Verlag",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-03880-203-7",
+        "Sortierung": "Silvera, Adam",
         "Titel": "Am Ende sterben wir sowieso",
         "Untertitel": "",
         "Verlag": "Arctis Verlag",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7022-3917-6",
+        "Sortierung": "Steinkellner, Elisabeth",
         "Titel": "Esther und Salomon",
         "Untertitel": "",
         "Verlag": "Tyrolia",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-7348-5050-9",
+        "Sortierung": "Thamm, Andreas",
         "Titel": "Wenn man so will, waren es die Aliens",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-257-07148-1",
+        "Sortierung": "Wells, Benedict",
         "Titel": "Hard Land",
         "Untertitel": "",
         "Verlag": "Diogenes",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-423-74067-8",
+        "Sortierung": "Oliver, Lauren",
         "Titel": "Broken Things - Alles nur (k)ein Spiel",
         "Untertitel": "Thriller",
         "Verlag": "DTV",

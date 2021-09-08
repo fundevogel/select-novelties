@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-8415-0679-5",
+        "Sortierung": "Aamand, Kristina",
         "Titel": "Wenn Worte meine Waffe wären",
         "Untertitel": "Deutscher Jugendliteraturpreis, Nominierung der Jugendjury",
         "Verlag": "Oetinger Taschenbuch",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-423-65034-2",
+        "Sortierung": "Han, Jenny",
         "Titel": "Zitronensüß",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-551-31975-3",
+        "Sortierung": "Höra, Daniel",
         "Titel": "Carlsen Clips: Von wegen Freundschaft!",
         "Untertitel": "Wenn falsche Freunde zum echten Problem werden - ein Roman in kurzer, einfacher Sprache, ideal für den Unterricht",
         "Verlag": "Carlsen",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-86429-484-6",
+        "Sortierung": "Huppertz, Nikola",
         "Titel": "Schön wie die Acht",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-58444-1",
+        "Sortierung": "Marasco, Roberta",
         "Titel": "Alles ganz normal",
         "Untertitel": "Spritziges Jugendbuch ab 12 über Freundschaft, Girl Power und die erste Periode",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-423-64071-8",
+        "Sortierung": "McGhee, Alison",
         "Titel": "Wie man eine Raumkapsel verlässt",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-423-62744-3",
+        "Sortierung": "Reynolds, Jason",
         "Titel": "Ghost",
         "Untertitel": "Jede Menge Leben",
         "Verlag": "DTV",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-551-55692-9",
+        "Sortierung": "Riordan, Rick",
         "Titel": "Die Abenteuer des Apollo, Der Turm des Nero",
         "Untertitel": "Der letzte Band der Bestsellerserie aus dem Kosmos von Percy Jackson!",
         "Verlag": "Carlsen",
