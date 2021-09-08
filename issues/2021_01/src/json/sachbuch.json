@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-8369-6097-7",
+        "Sortierung": "Aladjidi, Virginie",
         "Titel": "Mammut, Urmensch, Höhlenbär",
         "Untertitel": "Leben in der Steinzeit",
         "Verlag": "Gerstenberg Verlag",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-03876-190-7",
+        "Sortierung": "Albanese, Lara",
         "Titel": "Atlas des Weltalls",
         "Untertitel": "Die Geheimnisse des Himmels und der Sterne",
         "Verlag": "Midas",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7348-6011-9",
+        "Sortierung": "Albrecht, Anna Elisabeth",
         "Titel": "Abenteuer Welterbe - Entdecke besondere Orte in Deutschland",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-440-17159-2",
+        "Sortierung": "Apfelbacher, Lisa",
         "Titel": "Guck mal. Frühling, Sommer, Herbst und Winter",
         "Untertitel": "",
         "Verlag": "Kosmos (Franckh-Kosmos)",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-473-55534-5",
+        "Sortierung": "Butterfield, Moira",
         "Titel": "Die bunte Welt der Flaggen",
         "Untertitel": "",
         "Verlag": "Ravensburger Verlag",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-1-78941-461-5",
+        "Sortierung": "Daynes, Katie",
         "Titel": "Erklär mir den Mond",
         "Untertitel": "",
         "Verlag": "Usborne Verlag",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-473-32985-4",
+        "Sortierung": "Erne, Andrea",
         "Titel": "Wieso? Weshalb? Warum? Alles über Roboter (Band 47)",
         "Untertitel": "",
         "Verlag": "Ravensburger Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7886-2114-8",
+        "Sortierung": "Florian Huber",
         "Titel": "Ozeane",
         "Untertitel": "Die Meere erforschen und schützen",
         "Verlag": "Tessloff",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-86648-643-0",
+        "Sortierung": "Hein, Till",
         "Titel": "Crazy Horse",
         "Untertitel": "Launische Faulpelze, gefräßige Tänzer und schwangere Männchen: Die schillernde Welt der Seepferdchen",
         "Verlag": "mareverlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-551-25491-7",
+        "Sortierung": "Levenson, Eleanor",
         "Titel": "Politik",
         "Untertitel": "100 Begriffe aus Politik und Gesellschaft in 100 Wörtern erklärt",
         "Verlag": "Carlsen",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-473-32987-8",
+        "Sortierung": "Nieländer, Peter",
         "Titel": "Wieso? Weshalb? Warum? Mein junior-Lexikon: Urlaub",
         "Untertitel": "",
         "Verlag": "Ravensburger Verlag",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-8369-6038-0",
+        "Sortierung": "Schutten, Jan Paul",
         "Titel": "Das Weltall",
         "Untertitel": "oder Das Geheimnis, wie aus nichts etwas wurde",
         "Verlag": "Gerstenberg Verlag",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-423-76329-5",
+        "Sortierung": "Schwieger, Frank",
         "Titel": "Ich, Kleopatra, und die alten Ägypter",
         "Untertitel": "Geschichte witzig und originell erzählt ab 10",
         "Verlag": "DTV",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-7891-2133-3",
+        "Sortierung": "Wohlleben, Peter",
         "Titel": "Kommst du mit nach draußen?",
         "Untertitel": "Eine Entdeckungsreise durch Garten und Stadt",
         "Verlag": "Oetinger",

@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-95470-247-3",
+        "Sortierung": "Lemire, Sabine",
         "Titel": "Mira #familie #paris #abschied",
         "Untertitel": "",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-7795-0646-1",
+        "Sortierung": "Wagenbreth, Henning",
         "Titel": "Rückwärtsland",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-948690-09-0",
+        "Sortierung": "Schmitt, Volker",
         "Titel": "Zack!",
         "Untertitel": "",
         "Verlag": "Kibitz, Berlin",

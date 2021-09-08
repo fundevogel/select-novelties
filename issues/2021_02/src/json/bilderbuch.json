@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-96185-560-5",
+        "Sortierung": "Papini, Arianna",
         "Titel": "GLÜCK ist so  ein einfaches Wort",
         "Untertitel": "Bilderbuch",
         "Verlag": "360 Grad",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-8489-0197-5",
+        "Sortierung": "Scott, Jordan",
         "Titel": "Ich bin wie der Fluss",
         "Untertitel": "Beeindruckendes Bilderbuch über die Kraft der Sprache",
         "Verlag": "Aladin",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-945530-37-5",
+        "Sortierung": "Kölsch-Bunzen, Nina",
         "Titel": "Selma und Anton",
         "Untertitel": "Die Geschichte einer langen Freundschaft. Bilderbuch",
         "Verlag": "Ariella",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-8458-4114-4",
+        "Sortierung": "Bohlmann, Sabine",
         "Titel": "Du, Papa ... Ist zehn viel?",
         "Untertitel": "",
         "Verlag": "ars edition",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-8458-4359-9",
+        "Sortierung": "Andres, Kristina",
         "Titel": "Maus und Eichhorn auf großer Winterreise",
         "Untertitel": "",
         "Verlag": "ars edition",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-7152-0796-4",
+        "Sortierung": "Janisch, Heinz",
         "Titel": "Und dann kam der Fuchs",
         "Untertitel": "Bilderbuch",
         "Verlag": "Atlantis Zürich",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-85535-667-6",
+        "Sortierung": "Nason, Riel",
         "Titel": "Das kleine Flickengespenst",
         "Untertitel": "Bilderbuch",
         "Verlag": "Atrium Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-95939-099-6",
+        "Sortierung": "Mattiangeli, Susanna",
         "Titel": "Ein Museumstag",
         "Untertitel": "",
         "Verlag": "Bohem Press",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-96843-013-3",
+        "Sortierung": "Brantley-Newton, Vanessa",
         "Titel": "Genau wie ich",
         "Untertitel": "Bilderbuch",
         "Verlag": "Carl-Auer",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-551-52128-6",
+        "Sortierung": "Kling, Marc-Uwe",
         "Titel": "Das NEINhorn und die SchLANGEWEILE",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-570-17922-2",
+        "Sortierung": "Robinson, Christian",
         "Titel": "Du bist wichtig",
         "Untertitel": "",
         "Verlag": "cbj",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-96704-708-0",
+        "Sortierung": "Imai, Hiyoko",
         "Titel": "Sun und Shiro und die gelb gepunktete Schlange",
         "Untertitel": "",
         "Verlag": "Die Gestalten Verlag",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-257-01261-3",
+        "Sortierung": "Krause, Ute",
         "Titel": "Der Löwe auf dem Dachboden",
         "Untertitel": "",
         "Verlag": "Diogenes",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-257-01294-1",
+        "Sortierung": "Brugger, Hazel",
         "Titel": "Deutschland Was Geht",
         "Untertitel": "Das Wimmelbuch",
         "Verlag": "Diogenes",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7373-5842-2",
+        "Sortierung": "Janssen, Mark",
         "Titel": "Stopp! Das brauch ich noch!",
         "Untertitel": "",
         "Verlag": "FISCHER Sauerländer",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-7373-5769-2",
+        "Sortierung": "Napp, Daniel",
         "Titel": "Die Einschlafweltmeisterschaft der Tiere",
         "Untertitel": "",
         "Verlag": "FISCHER Sauerländer",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-7725-2915-3",
+        "Sortierung": "Praagman, Milja",
         "Titel": "Bei dir",
         "Untertitel": "Bilderbuch",
         "Verlag": "Freies Geistesleben",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-8369-6121-9",
+        "Sortierung": "Tallec, Olivier",
         "Titel": "Nur ein kleines bisschen",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -451,6 +469,7 @@
     },
     {
         "ISBN": "978-3-8369-6145-5",
+        "Sortierung": "Berner, Rotraut Susanne",
         "Titel": "Armin, der Buchhändler",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -476,6 +495,7 @@
     },
     {
         "ISBN": "978-3-458-17955-9",
+        "Sortierung": "Sánchez Vegara, María Isabel",
         "Titel": "Ruth Bader Ginsburg",
         "Untertitel": "Little People, Big Dreams. Deutsche Ausgabe",
         "Verlag": "Insel Verlag",
@@ -501,6 +521,7 @@
     },
     {
         "ISBN": "978-3-458-17855-2",
+        "Sortierung": "Sánchez Vegara, María Isabel",
         "Titel": "Mahatma Gandhi",
         "Untertitel": "Little People, Big Dreams. Deutsche Ausgabe",
         "Verlag": "Insel Verlag",
@@ -526,6 +547,7 @@
     },
     {
         "ISBN": "978-3-458-17956-6",
+        "Sortierung": "Morss, Alex",
         "Titel": "Winterschlaf",
         "Untertitel": "Vom Überwintern der Tiere",
         "Verlag": "Insel Verlag",
@@ -551,6 +573,7 @@
     },
     {
         "ISBN": "978-3-407-75497-4",
+        "Sortierung": "Oppermann, Lea-Lina",
         "Titel": "Sinas Reise in die Welt der Schatten",
         "Untertitel": "Vierfarbiges Bilderbuch",
         "Verlag": "Beltz",
@@ -576,6 +599,7 @@
     },
     {
         "ISBN": "978-3-407-75494-3",
+        "Sortierung": "Göbel, Doro",
         "Titel": "Auf zum Markt!",
         "Untertitel": "Eine Wimmelbilder-Geschichte. Vierfarbiges Pappbilderbuch",
         "Verlag": "Beltz",
@@ -601,6 +625,7 @@
     },
     {
         "ISBN": "978-3-407-76246-7",
+        "Sortierung": "Sarihi, Sepideh",
         "Titel": "Meine liebsten Dinge müssen mit",
         "Untertitel": "Vierfarbiges Bilderbuch",
         "Verlag": "Beltz",
@@ -626,6 +651,7 @@
     },
     {
         "ISBN": "978-3-407-75496-7",
+        "Sortierung": "Waechter, Philip",
         "Titel": "Ein Tag mit Freunden",
         "Untertitel": "Vierfarbiges Bilderbuch",
         "Verlag": "Beltz",
@@ -651,6 +677,7 @@
     },
     {
         "ISBN": "978-3-407-75498-1",
+        "Sortierung": "Moser, Erwin",
         "Titel": "Das Haus auf dem fliegenden Felsen",
         "Untertitel": "Bilder und Geschichten zum Weitererzählen von Erwin Moser",
         "Verlag": "Beltz",
@@ -676,6 +703,7 @@
     },
     {
         "ISBN": "978-3-8337-4343-6",
+        "Sortierung": "Nogués, Alex",
         "Titel": "Wie kommen eine Million Austern auf die Spitze des Berges?",
         "Untertitel": "Eine Reise in die Welt der Fossilien. Bilderbuch",
         "Verlag": "Jumbo Neue Medien",
@@ -701,6 +729,7 @@
     },
     {
         "ISBN": "978-3-7026-5956-1",
+        "Sortierung": "Janisch, Heinz",
         "Titel": "Kitzeln kann man sich nicht allein",
         "Untertitel": "Bilderbuch",
         "Verlag": "Jungbrunnen-Verlag",
@@ -726,6 +755,7 @@
     },
     {
         "ISBN": "978-3-95470-159-9",
+        "Sortierung": "Drust, Rike",
         "Titel": "Wenn du Nein sagst, stirbt ein Kaninchen!",
         "Untertitel": "Störrischen Eltern unverschämt und effektiv drohen. Bilderbuch",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -751,6 +781,7 @@
     },
     {
         "ISBN": "978-3-95728-525-6",
+        "Sortierung": "Oziewicz, Tina",
         "Titel": "Die Freude springt aufs Trampolin",
         "Untertitel": "Unsere Gefühle für Kinder erklärt",
         "Verlag": "Knesebeck",
@@ -776,6 +807,7 @@
     },
     {
         "ISBN": "978-3-95728-524-9",
+        "Sortierung": "Ratanavanh, Seng Soun",
         "Titel": "Freunde sind das Funkeln in der Nacht",
         "Untertitel": "",
         "Verlag": "Knesebeck",
@@ -801,6 +833,7 @@
     },
     {
         "ISBN": "978-3-95614-466-0",
+        "Sortierung": "Crowther, Kitty",
         "Titel": "Kleine Gutenachtgeschichten",
         "Untertitel": "",
         "Verlag": "Verlag Antje Kunstmann",
@@ -826,6 +859,7 @@
     },
     {
         "ISBN": "978-3-7432-1116-2",
+        "Sortierung": "Percival, Tom",
         "Titel": "Sophias Sorge (Die Reihe der starken Gefühle)",
         "Untertitel": "Hilf deinem Kind mit seinen Gefühlen umzugehen - Einfühlsames Bilderbuch über Gefühle und Traurigkeit ab 4 Jahren. Bilderbuch",
         "Verlag": "Loewe Verlag",
@@ -851,6 +885,7 @@
     },
     {
         "ISBN": "978-3-7348-2078-6",
+        "Sortierung": "Angeli, May",
         "Titel": "Bär und Ente",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -876,6 +911,7 @@
     },
     {
         "ISBN": "978-3-7348-2075-5",
+        "Sortierung": "Bright, Rachel",
         "Titel": "Der Wal, der immer mehr wollte",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -901,6 +937,7 @@
     },
     {
         "ISBN": "978-3-948722-12-8",
+        "Sortierung": "Peng, Käptn",
         "Titel": "Der Habicht und der Hahn",
         "Untertitel": "Nach einem Song von Käptn Peng",
         "Verlag": "mairisch Verlag",
@@ -926,6 +963,7 @@
     },
     {
         "ISBN": "978-3-03876-193-8",
+        "Sortierung": "Cottle, Katie",
         "Titel": "Der blaue Riese",
         "Untertitel": "Bilderbuch",
         "Verlag": "Midas",
@@ -951,6 +989,7 @@
     },
     {
         "ISBN": "978-3-95854-166-5",
+        "Sortierung": "van den Speulhof, Barbara",
         "Titel": "Amelie und die Entdecker",
         "Untertitel": "",
         "Verlag": "mixtvision",
@@ -976,6 +1015,7 @@
     },
     {
         "ISBN": "978-3-89565-411-4",
+        "Sortierung": "Damm, Antje",
         "Titel": "Teddy ist weg!",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -1001,6 +1041,7 @@
     },
     {
         "ISBN": "978-3-314-10573-9",
+        "Sortierung": "Klassen, Jon",
         "Titel": "Aus heiterem Himmel",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -1026,6 +1067,7 @@
     },
     {
         "ISBN": "978-3-314-10578-4",
+        "Sortierung": "Iwamura, Kazuo",
         "Titel": "Familie Maus feiert den Herbst",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -1051,6 +1093,7 @@
     },
     {
         "ISBN": "978-3-314-10577-7",
+        "Sortierung": "Petz, Moritz",
         "Titel": "Der Dachs hat heute Langeweile!",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -1076,6 +1119,7 @@
     },
     {
         "ISBN": "978-3-314-10583-8",
+        "Sortierung": "Damjan, Mischa",
         "Titel": "Der Clown sagte Nein",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -1101,6 +1145,7 @@
     },
     {
         "ISBN": "978-3-314-10576-0",
+        "Sortierung": "Romanelli, Serena",
         "Titel": "Bruno",
         "Untertitel": "Kurze Geschichten für lange Nächte. Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -1126,6 +1171,7 @@
     },
     {
         "ISBN": "978-3-7117-4023-6",
+        "Sortierung": "Cali, Davide",
         "Titel": "Wählt Wolf!",
         "Untertitel": "",
         "Verlag": "Picus Verlag",
@@ -1151,6 +1197,7 @@
     },
     {
         "ISBN": "978-3-7913-7493-2",
+        "Sortierung": "Teckentrup, Britta",
         "Titel": "Wütend",
         "Untertitel": "",
         "Verlag": "Prestel",
@@ -1176,6 +1223,7 @@
     },
     {
         "ISBN": "978-3-522-45937-2",
+        "Sortierung": "Farina, Matthew",
         "Titel": "Es ist Herbst, kleiner Fuchs",
         "Untertitel": "Liebevolle Papa-und-Sohn-Geschichte im bunten Herbstwald",
         "Verlag": "Thienemann in der Thienemann-Esslinger Verlag GmbH",
@@ -1201,6 +1249,7 @@
     },
     {
         "ISBN": "978-3-522-45960-0",
+        "Sortierung": "Kulot, Daniela",
         "Titel": "Im Winterwald",
         "Untertitel": "Stimmungsvolle Vorlesegeschichte",
         "Verlag": "Thienemann in der Thienemann-Esslinger Verlag GmbH",
@@ -1226,6 +1275,7 @@
     },
     {
         "ISBN": "978-3-522-45977-8",
+        "Sortierung": "Meschenmoser, Sebastian",
         "Titel": "Herr Eichhorn und die unvergessliche Nuss",
         "Untertitel": "Eichhörnchen-Abenteuer im bunten Herbst-Wald",
         "Verlag": "Thienemann in der Thienemann-Esslinger Verlag GmbH",
@@ -1251,6 +1301,7 @@
     },
     {
         "ISBN": "978-3-86429-516-4",
+        "Sortierung": "Trofa, Sara",
         "Titel": "Lecker!",
         "Untertitel": "Ein Mückenabenteuer. Bilderbuch",
         "Verlag": "Tulipan",
@@ -1276,6 +1327,7 @@
     },
     {
         "ISBN": "978-3-86429-529-4",
+        "Sortierung": "Schulze, Ingo",
         "Titel": "Die Kuh Ute",
         "Untertitel": "Bilderbuch",
         "Verlag": "Tulipan",
@@ -1301,6 +1353,7 @@
     },
     {
         "ISBN": "978-3-86429-515-7",
+        "Sortierung": "Berbig, Renus",
         "Titel": "Tapetentier und Holzvogel",
         "Untertitel": "Bilderbuch",
         "Verlag": "Tulipan",
@@ -1326,6 +1379,7 @@
     },
     {
         "ISBN": "978-3-8251-5284-0",
+        "Sortierung": "Drescher, Daniela",
         "Titel": "Bertie Pom und das große Donnerwetter",
         "Untertitel": "Bilderbuch",
         "Verlag": "Urachhaus",
@@ -1351,6 +1405,7 @@
     },
     {
         "ISBN": "978-3-7891-4808-8",
+        "Sortierung": "Taschinski, Stefanie",
         "Titel": "Vom Esel, der keine Geschichte hatte",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -1376,6 +1431,7 @@
     },
     {
         "ISBN": "978-3-96428-117-3",
+        "Sortierung": "Fan, Terry",
         "Titel": "Es fiel vom Himmel",
         "Untertitel": "",
         "Verlag": "Jacoby & Stuart",
@@ -1401,6 +1457,7 @@
     },
     {
         "ISBN": "978-3-522-45953-2",
+        "Sortierung": "Scherz, Oliver",
         "Titel": "Ben.",
         "Untertitel": "Mein erster Tag mit Herrn Sowa",
         "Verlag": "Thienemann in der Thienemann-Esslinger Verlag GmbH",

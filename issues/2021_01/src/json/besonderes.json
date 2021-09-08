@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-03876-194-5",
+        "Sortierung": "Gibran, Khalil",
         "Titel": "Der Prophet",
         "Untertitel": "Illustrierte Ausgabe für Kinder",
         "Verlag": "Midas",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-314-10561-6",
+        "Sortierung": "Haslbauer, Carla",
         "Titel": "Die Tode meiner Mutter",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-948722-04-3",
+        "Sortierung": "Heinrich, Finn-Ole",
         "Titel": "Schlafen wie die Rüben",
         "Untertitel": "",
         "Verlag": "mairisch Verlag",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-1-78941-346-5",
+        "Sortierung": "Hull, Sarah",
         "Titel": "Ist das Kunst?",
         "Untertitel": "",
         "Verlag": "Usborne Verlag",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-314-10563-0",
+        "Sortierung": "Jeffers, Oliver",
         "Titel": "Was wir bauen",
         "Untertitel": "Pläne für unsere Zukunft. Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-314-10565-4",
+        "Sortierung": "Paul, Baptiste & Miranda",
         "Titel": "Frieden",
         "Untertitel": "Bilderbuch",
         "Verlag": "NordSüd Verlag",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-8369-6036-6",
+        "Sortierung": "Roskifte, Kristin",
         "Titel": "Alle zählen",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7459-0521-2",
+        "Sortierung": "Strömstedt, Jenny",
         "Titel": "Kinder verändern die Welt",
         "Untertitel": "",
         "Verlag": "EMF Edition Michael Fischer",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-95470-246-6",
+        "Sortierung": "von der Gathen, Katharina",
         "Titel": "AnyBody",
         "Untertitel": "Dick & dünn & Haut & Haar: das große Abc von unserem Körper-Zuhause",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-03876-134-1",
+        "Sortierung": "Letria, José Jorge",
         "Titel": "Der Krieg",
         "Untertitel": "Illustrierte Ausgabe",
         "Verlag": "Midas",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-8369-6050-2",
+        "Sortierung": "Romanyschyn, Romana",
         "Titel": "Sehen",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",

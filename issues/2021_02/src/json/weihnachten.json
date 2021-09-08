@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-8489-0196-8",
+        "Sortierung": "Naumann, Ebi",
         "Titel": "Kleine Schneeflocke",
         "Untertitel": "Zauberhaftes Bilderbuch zu Weihnachten",
         "Verlag": "Aladin",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-907114-21-6",
+        "Sortierung": "Dedieu, Thierry",
         "Titel": "Auf der Suche nach dem Schneemann",
         "Untertitel": "Bilderbuch",
         "Verlag": "Aracari",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-401-60637-8",
+        "Sortierung": "Abedi, Isabel",
         "Titel": "Ein wirklich wahres Weihnachtswunder",
         "Untertitel": "Weihnachts-Kinderbuch zum Vorlesen und Selberlesen ab 8",
         "Verlag": "Arena",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-401-71729-6",
+        "Sortierung": "Dickens, Charles",
         "Titel": "Eine Weihnachtsgeschichte",
         "Untertitel": "Klassiker einfach lesen",
         "Verlag": "Arena",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-8398-4991-0",
+        "Sortierung": "Vahle, Fredrik",
         "Titel": "Die schönsten Weihnachtslieder, 2 Audio-CD",
         "Untertitel": "Mit 70 Liedern durch den Advent, Musikdarbietung/Musical/Oper. Ungekürzte Ausgabe. 162 Min.",
         "Verlag": "Argon Verlag",
@@ -124,6 +129,7 @@
     },
     {
         "ISBN": "978-3-8398-4993-4",
+        "Sortierung": "Bright, Paul",
         "Titel": "Der ganze Wald freut sich auf Weihnachten, 1 Audio-CD",
         "Untertitel": "Ungekürzte Ausgabe, Lesung. 40 Min.",
         "Verlag": "Argon Verlag",
@@ -150,6 +156,7 @@
     },
     {
         "ISBN": "978-3-8458-4466-4",
+        "Sortierung": "Hickey, Katie",
         "Titel": "Bald ist Weihnachten!",
         "Untertitel": "Ein Adventskalenderbuch",
         "Verlag": "ars edition",
@@ -175,6 +182,7 @@
     },
     {
         "ISBN": "978-3-8458-4320-9",
+        "Sortierung": "Ronge, Hartmut",
         "Titel": "Das Kind vom Lama heist Lametta. Kinder erklären Weihnachten",
         "Untertitel": "",
         "Verlag": "ars edition",
@@ -200,6 +208,7 @@
     },
     {
         "ISBN": "978-3-7152-0799-5",
+        "Sortierung": "Welby, Bethan",
         "Titel": "Mein Freund, der Weihnachtsbaum",
         "Untertitel": "Bilderbuch",
         "Verlag": "Atlantis Zürich",
@@ -225,6 +234,7 @@
     },
     {
         "ISBN": "978-3-551-17010-1",
+        "Sortierung": "Chudzinski, Daniela",
         "Titel": "Die Weihnachtsgeschichte mit Waldemar, dem Dromedar ... und Emmchen, dem Lämmchen",
         "Untertitel": "Ein Wendebuch",
         "Verlag": "Carlsen",
@@ -250,6 +260,7 @@
     },
     {
         "ISBN": "978-3-551-55751-3",
+        "Sortierung": "Rowling, J.K.",
         "Titel": "Jacks wundersame Reise mit dem Weihnachtsschwein",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -275,6 +286,7 @@
     },
     {
         "ISBN": "978-3-649-63786-8",
+        "Sortierung": "van den Speulhof, Barbara",
         "Titel": "Der Grolltroll ... Schöne Bescherung! (Bd. 4)",
         "Untertitel": "",
         "Verlag": "Coppenrath, Münster",
@@ -300,6 +312,7 @@
     },
     {
         "ISBN": "978-3-649-64031-8",
+        "Sortierung": "",
         "Titel": "Mitmachkalender - Mach mit! 24 Ideen, um unsere Welt besser und schöner zu machen",
         "Untertitel": "Lesen, malen, umweltfreundlich basteln",
         "Verlag": "Coppenrath, Münster",
@@ -311,6 +324,7 @@
     },
     {
         "ISBN": "978-3-649-63056-2",
+        "Sortierung": "Uebe, Ingrid",
         "Titel": "24 Weihnachtswichtel",
         "Untertitel": "Geschichten & Gedichte für jeden Tag im Advent",
         "Verlag": "Coppenrath, Münster",
@@ -336,6 +350,7 @@
     },
     {
         "ISBN": "978-3-423-64084-8",
+        "Sortierung": "Schneider, Antonie",
         "Titel": "Das große WeihnachtsWunderBuch",
         "Untertitel": "Mit Geschichten und Gedichten, Liedern und Rezepten, Kreativideen und vielem mehr - für Kinder ab 8",
         "Verlag": "DTV",
@@ -361,6 +376,7 @@
     },
     {
         "ISBN": "978-3-7459-0715-5",
+        "Sortierung": "Merchant, Judith",
         "Titel": "Hanni hat Nikoläuse",
         "Untertitel": "Bilderbuchgeschichte zum Vorlesen für Kinder von Bestseller-Autorin Judith Merchant",
         "Verlag": "EMF Edition Michael Fischer",
@@ -386,6 +402,7 @@
     },
     {
         "ISBN": "978-3-480-23706-7",
+        "Sortierung": "Cramm, Dagmar von",
         "Titel": "Ida Bohattas Bilderbuchklassiker: Wunderschöne Weihnachtszeit",
         "Untertitel": "Geschichten, Lieder und Rezepte",
         "Verlag": "Esslinger in der Thienemann-Esslinger Verlag GmbH",
@@ -411,6 +428,7 @@
     },
     {
         "ISBN": "978-3-480-23673-2",
+        "Sortierung": "Zillgens, Gerlis",
         "Titel": "Morgen, Tiere, wird's was geben!",
         "Untertitel": "Eine Weihnachtsgeschichte für Klein und Groß",
         "Verlag": "Esslinger in der Thienemann-Esslinger Verlag GmbH",
@@ -436,6 +454,7 @@
     },
     {
         "ISBN": "978-3-7373-5857-6",
+        "Sortierung": "Steffensmeier, Alexander",
         "Titel": "Lieselotte Weihnachtskuh",
         "Untertitel": "",
         "Verlag": "FISCHER Sauerländer",
@@ -461,6 +480,7 @@
     },
     {
         "ISBN": "978-3-7725-3122-4",
+        "Sortierung": "Neri, Greg",
         "Titel": "Tru und Nelle - eine Weihnachtsgeschichte",
         "Untertitel": "Inspiriert durch die Freundschaft von Truman Capote und Nelle Harper Lee",
         "Verlag": "Freies Geistesleben",
@@ -486,6 +506,7 @@
     },
     {
         "ISBN": "4250915934983",
+        "Sortierung": "Müller, Thomas",
         "Titel": "Zauberhafte Winternacht  Adventskalender",
         "Untertitel": "mit 24 Klapptürchen",
         "Verlag": "Gerstenberg Verlag",
@@ -497,6 +518,7 @@
     },
     {
         "ISBN": "978-3-446-27127-2",
+        "Sortierung": "Wolfrum, Silke",
         "Titel": "Glückskekse im Advent",
         "Untertitel": "Eine Geschichte in 24 Kapiteln",
         "Verlag": "Hanser",
@@ -522,6 +544,7 @@
     },
     {
         "ISBN": "978-3-8337-4388-7",
+        "Sortierung": "Boie, Kirsten",
         "Titel": "Für immer Sommerby, 4 Audio-CD",
         "Untertitel": "[3], Lesung. CD Standard Audio Format. 360 Min.",
         "Verlag": "Jumbo Neue Medien",
@@ -548,6 +571,7 @@
     },
     {
         "ISBN": "978-3-7806-6421-1",
+        "Sortierung": "Mauder, Katharina",
         "Titel": "Das Weihnachtsfest der Tiere",
         "Untertitel": "Ein Adventskalenderbuch",
         "Verlag": "Kaufmann",
@@ -559,6 +583,7 @@
     },
     {
         "ISBN": "978-3-95728-522-5",
+        "Sortierung": "Casey, Dawn",
         "Titel": "Wir warten auf Weihnachten",
         "Untertitel": "mit den schönsten Wintergeschichten aus aller Welt",
         "Verlag": "Knesebeck",
@@ -584,6 +609,7 @@
     },
     {
         "ISBN": "978-3-7432-1109-4",
+        "Sortierung": "Harry, Rebecca",
         "Titel": "Die kleine Maus feiert Weihnachten",
         "Untertitel": "Bilderbuch zum Vorlesen für Kinder ab 3 Jahre",
         "Verlag": "Loewe Verlag",
@@ -609,6 +635,7 @@
     },
     {
         "ISBN": "978-3-8373-9003-2",
+        "Sortierung": "Maar, Paul",
         "Titel": "Das Sams feiert Weihnachten, 3 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. 170 Min.",
         "Verlag": "Oetinger Media",
@@ -635,6 +662,7 @@
     },
     {
         "ISBN": "978-3-8373-1192-1",
+        "Sortierung": "Lindgren, Astrid",
         "Titel": "Wie wir in Småland Weihnachten feierten, 1 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. 42 Min.",
         "Verlag": "Oetinger Media",
@@ -661,6 +689,7 @@
     },
     {
         "ISBN": "978-3-7795-0668-3",
+        "Sortierung": "Budde, Nadia",
         "Titel": "Eins zwei drei Rentier",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -686,6 +715,7 @@
     },
     {
         "ISBN": "978-3-8251-5224-6",
+        "Sortierung": "Haridi, Alex",
         "Titel": "Weihnachten im Mumintal",
         "Untertitel": "Bilderbuch",
         "Verlag": "Urachhaus",
@@ -711,6 +741,7 @@
     },
     {
         "ISBN": "978-3-7891-1048-1",
+        "Sortierung": "Maar, Paul",
         "Titel": "Das Sams feiert Weihnachten",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -736,6 +767,7 @@
     },
     {
         "ISBN": "978-3-7891-2126-5",
+        "Sortierung": "Boie, Kirsten",
         "Titel": "Für immer Sommerby",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -761,6 +793,7 @@
     },
     {
         "ISBN": "978-3-7512-0050-9",
+        "Sortierung": "Taschinski, Stefanie",
         "Titel": "Familie Flickenteppich 4",
         "Untertitel": "Wir freuen uns auf Weihnachten",
         "Verlag": "Oetinger",
@@ -786,6 +819,7 @@
     },
     {
         "ISBN": "978-3-7512-0035-6",
+        "Sortierung": "Lindgren, Astrid",
         "Titel": "Wie wir in Småland Weihnachten feierten",
         "Untertitel": "Bilderbuch",
         "Verlag": "Oetinger",
@@ -811,6 +845,7 @@
     },
     {
         "ISBN": "978-3-451-71582-2",
+        "Sortierung": "Brouwer, Willeke",
         "Titel": "Vom Engel und dem heiligen Kind",
         "Untertitel": "Maria erzählt die Weihnachtsgeschichte",
         "Verlag": "Herder, Freiburg",
@@ -836,6 +871,7 @@
     },
     {
         "ISBN": "978-3-649-63920-6",
+        "Sortierung": "Schaefer, Kristina",
         "Titel": "Mein Winterwichtel-Wimmelbuch",
         "Untertitel": "",
         "Verlag": "Coppenrath, Münster",

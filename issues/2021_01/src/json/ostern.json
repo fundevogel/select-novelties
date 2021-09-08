@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-551-51338-0",
+        "Sortierung": "Tielmann, Christian",
         "Titel": "Wartemal wird Osterschwein",
         "Untertitel": "Ein fröhliches Bilderbuch für Kinder ab 3 über Freundschaft und Frühling",
         "Verlag": "Carlsen",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-551-17143-6",
+        "Sortierung": "Jakobs, Günther",
         "Titel": "Die Eiersucherei",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-551-51848-4",
+        "Sortierung": "Sohr, Daniel",
         "Titel": "Die schönsten Hasengeschichten",
         "Untertitel": "zum Vorlesen in der Osterzeit",
         "Verlag": "Carlsen",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-551-18989-9",
+        "Sortierung": "Pöter, Andrea",
         "Titel": "Mein bunter Osterblock",
         "Untertitel": "Malspaß zu Ostern für Kinder ab 3 Jahren",
         "Verlag": "Carlsen",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-19024-6",
+        "Sortierung": "Poitier, Anton",
         "Titel": "Kreatives Bastelset: Ostern",
         "Untertitel": "Set mit Bastelpapier, Seidenpapier, Stickern und Bastelstäbchen",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-7512-0026-4",
+        "Sortierung": "Weber, Susanne",
         "Titel": "Die kleine Eule. Auwei, was ist das für ein Ei?",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7891-2112-8",
+        "Sortierung": "Praml, Sabine",
         "Titel": "Wenn sieben kleine Badehasen quietschfidel ans Wasser rasen",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7432-1012-7",
+        "Sortierung": "Freedman, Claire",
         "Titel": "Der glücklichste Hase der Welt",
         "Untertitel": "",
         "Verlag": "Loewe Verlag",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7459-0373-7",
+        "Sortierung": "Leiss-Bohn, Simone",
         "Titel": "Mission Ostern - Finde den Eierdieb!",
         "Untertitel": "Löse 24 spannende Rätsel - Mit perforierten Seiten zum Auftrennen für Kinder ab 6 Jahren",
         "Verlag": "EMF Edition Michael Fischer",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-7459-0389-8",
+        "Sortierung": "Precht, Thade",
         "Titel": "111 x Papierfalten - Ostern",
         "Untertitel": "Bastelblock mit Anleitungen und 111 lustigen Papieren zum Sofort-Loslegen - Für Kinder ab 5 Jahren",
         "Verlag": "EMF Edition Michael Fischer",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-473-43999-7",
+        "Sortierung": "Frank, Cornelia",
         "Titel": "Wer bemalt das Osterei?",
         "Untertitel": "",
         "Verlag": "Ravensburger Verlag",

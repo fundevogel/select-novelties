@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-9816539-7-7",
+        "Sortierung": "Funke, Cornelia",
         "Titel": "Drachenreiter 3. Der Fluch der Aurelia, 2 Audio-CD, MP3",
         "Untertitel": "Lesung. 780 Min.",
         "Verlag": "Oetinger Media",
@@ -27,6 +28,7 @@
     },
     {
         "ISBN": "978-3-7424-2071-8",
+        "Sortierung": "Timm, Uwe",
         "Titel": "Die Piratenamsel, 1 Audio-CD",
         "Untertitel": "Hörspiel mit Horst Bollmann, Michael Habeck u.v.a. (1 CD), Hörspiel. 54 Min.",
         "Verlag": "Der Audio Verlag, DAV",
@@ -53,6 +55,7 @@
     },
     {
         "ISBN": "978-3-7424-2120-3",
+        "Sortierung": "Spengler, Constanze",
         "Titel": "Seepferdchen sind ausverkauft, 1 Audio-CD",
         "Untertitel": "... und zwei Stadtbär-Geschichten. Ungekürzte szenische Lesungen mit Helge Heynold (1 CD), Lesung. 64 Min.",
         "Verlag": "Der Audio Verlag, DAV",
@@ -79,6 +82,7 @@
     },
     {
         "ISBN": "978-3-7424-2055-8",
+        "Sortierung": "Favilli, Elena",
         "Titel": "Good Night Stories for Rebel Girls - Die große Box (9 CDs), 9 Audio-CD",
         "Untertitel": "300 außergewöhnliche Frauen. Ungekürzte Lesungen mit Jodie Ahlborn, Iris Berben, Collien Ulmen-Fernandes u.v.a., Lesung. 685 Min.",
         "Verlag": "Der Audio Verlag, DAV",
@@ -105,6 +109,7 @@
     },
     {
         "ISBN": "978-3-8445-4320-9",
+        "Sortierung": "Poznanski, Ursula",
         "Titel": "Shelter, 1 Audio-CD, MP3",
         "Untertitel": "Es ist deine Verschwörung - aber du bist ihr Opfer, Lesung. Ungekürzte Ausgabe. 740 Min.",
         "Verlag": "DHV Der HörVerlag",
@@ -131,6 +136,7 @@
     },
     {
         "ISBN": "978-3-941009-80-6",
+        "Sortierung": "Zipfel, Dita",
         "Titel": "Wie der Wahnsinn mir die Welt erklärte, 4 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. Ungekürzte Ausgabe. 305 Min.",
         "Verlag": "der Diwan Hörbuchverlag",
@@ -157,6 +163,7 @@
     },
     {
         "ISBN": "978-3-8373-1191-4",
+        "Sortierung": "Lindgren, Astrid",
         "Titel": "Märchen, 4 Audio-CD",
         "Untertitel": "CD Standard Audio Format, Lesung. 300 Min.",
         "Verlag": "Oetinger Media",

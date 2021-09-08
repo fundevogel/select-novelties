@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-401-60604-0",
+        "Sortierung": "Brandis, Katja",
         "Titel": "Woodwalkers & Friends (2). Zwölf Geheimnisse",
         "Untertitel": "Das Special zur Bestseller-Reihe: Zwölf Kurzgeschichten aus der Welt der Woodwalkers",
         "Verlag": "Arena",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-551-55520-5",
+        "Sortierung": "Elbs, Rebecca",
         "Titel": "Leo und Lucy: Die Sache mit dem dritten L",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-649-61511-8",
+        "Sortierung": "Wilke, Jutta",
         "Titel": "Das Karlgeheimnis",
         "Untertitel": "Ein Fall für die Detektivin und mich",
         "Verlag": "Coppenrath, Münster",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-7513-0026-1",
+        "Sortierung": "Funke, Cornelia",
         "Titel": "Drachenreiter 3. Der Fluch der Aurelia",
         "Untertitel": "",
         "Verlag": "Dressler Verlag GmbH",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-423-76356-1",
+        "Sortierung": "Schwieger, Frank",
         "Titel": "Ich, Odysseus, und die Bande aus Troja",
         "Untertitel": "Geschichte witzig und originell erzählt ab 10",
         "Verlag": "DTV",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-943833-50-8",
+        "Sortierung": "Steckelmann, Petra",
         "Titel": "Trockenschwimmen mit Opa",
         "Untertitel": "",
         "Verlag": "Edition Pastorplatz",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7373-5790-6",
+        "Sortierung": "Colfer, Chris",
         "Titel": "Land of Stories: Das magische Land - Der Kampf der Welten",
         "Untertitel": "",
         "Verlag": "FISCHER Sauerländer",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7725-2974-0",
+        "Sortierung": "Horvath, Polly",
         "Titel": "Marthas Boot",
         "Untertitel": "",
         "Verlag": "Freies Geistesleben",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7725-2780-7",
+        "Sortierung": "Milford, Kate",
         "Titel": "Greenglass House",
         "Untertitel": "",
         "Verlag": "Freies Geistesleben",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-8369-6073-1",
+        "Sortierung": "Hotchner, A. E.",
         "Titel": "Die erstaunlichen Abenteuer des Aaron Broom",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-446-27133-3",
+        "Sortierung": "Workneh, Lilly",
         "Titel": "Good Night Stories for Rebel Girls - 100 Lebensgeschichten Schwarzer Frauen",
         "Untertitel": "",
         "Verlag": "Hanser",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-407-75600-8",
+        "Sortierung": "Krusche, Lisa",
         "Titel": "Das Universum ist verdammt groß und supermystisch",
         "Untertitel": "Roman",
         "Verlag": "Beltz",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-95470-253-4",
+        "Sortierung": "Dåsnes, Nora",
         "Titel": "Regenbogentage",
         "Untertitel": "",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-7795-0666-9",
+        "Sortierung": "Koch, Karin",
         "Titel": "Wieke und Ken",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-522-50723-3",
+        "Sortierung": "Bohlmann, Sabine",
         "Titel": "Ein Mädchen namens Willow 2: Waldgeflüster",
         "Untertitel": "Für alle, die wissen möchten, welche Kräfte in der Natur stecken",
         "Verlag": "Planet! in der Thienemann-Esslinger Verlag GmbH",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-522-18537-0",
+        "Sortierung": "Morosinotto, Davide",
         "Titel": "Die Rebellen von Salento",
         "Untertitel": "Spannender Abenteuerroman",
         "Verlag": "Thienemann in der Thienemann-Esslinger Verlag GmbH",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-86429-518-8",
+        "Sortierung": "Zeevart, Sigrid",
         "Titel": "Mika, Tony und Jack",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-86429-531-7",
+        "Sortierung": "Pannen, Kai",
         "Titel": "Die magische Schwelle",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -451,6 +469,7 @@
     },
     {
         "ISBN": "978-3-8251-5286-4",
+        "Sortierung": "Thor, Annika",
         "Titel": "Der Sohn des Odysseus",
         "Untertitel": "",
         "Verlag": "Urachhaus",
@@ -476,6 +495,7 @@
     },
     {
         "ISBN": "978-3-7891-2104-3",
+        "Sortierung": "Carter, Aimée",
         "Titel": "Die Erben der Animox. Das Gift des Oktopus",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -501,6 +521,7 @@
     },
     {
         "ISBN": "978-3-7512-0169-8",
+        "Sortierung": "Stewner, Tanya",
         "Titel": "Alea Aquarius 7. Im Bannkreis des Schwurs",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -526,6 +547,7 @@
     },
     {
         "ISBN": "978-3-96177-096-0",
+        "Sortierung": "Allen, Kate",
         "Titel": "Tage der Mondschnecke",
         "Untertitel": "",
         "Verlag": "Woow Books",

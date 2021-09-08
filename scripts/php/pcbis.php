@@ -169,7 +169,10 @@ class KNVClient
                     $book = $this->api->load($isbn);
 
                     # Export dataset
-                    $set = array_merge(['ISBN' => $isbn], $book->export());
+                    $set = array_merge([
+                        'ISBN' => $isbn,
+                        'Sortierung' => $item['AutorIn'],
+                    ], $book->export());
 
                     # Determine age recommendation ..
                     $age = '';
@@ -274,7 +277,7 @@ class KNVClient
                 # (2) Keep comma-separated author (for sorting)
                 $node = [
                     'ISBN' => $isbn,
-                    'AutorIn' => $item['AutorIn'],
+                    'Sortierung' => $item['Sortierung'],
                 ];
 
                 try {
@@ -313,7 +316,7 @@ class KNVClient
             }
 
             # Sort by author's last name
-            $data = Butler::sort($data, 'AutorIn', 'asc');
+            $data = Butler::sort($data, 'Sortierung', 'asc');
 
             # Create updated JSON file
             $this->jsonStore($data, $this->dist . '/json/' . $this->category . '.json', true);

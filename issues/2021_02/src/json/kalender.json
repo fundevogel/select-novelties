@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-7795-0660-7",
+        "Sortierung": "Erlbruch, Leonard",
         "Titel": "Leonard Erlbruchs Kinderzimmerkalender 2022",
         "Untertitel": "Kleine Forscher",
         "Verlag": "Peter Hammer Verlag",
@@ -12,6 +13,7 @@
     },
     {
         "ISBN": "978-3-7795-0659-1",
+        "Sortierung": "Erlbruch, Wolf",
         "Titel": "Wolf Erlbruchs Familienplaner 2022",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -23,6 +25,7 @@
     },
     {
         "ISBN": "4250809647876",
+        "Sortierung": "Prinja, Raman",
         "Titel": "Das Planetarium 2022",
         "Untertitel": "Astronomie im Wand-Kalender - Illustriert von Chris Wormell - Poster-Format",
         "Verlag": "DuMont Kalenderverlag",
@@ -34,6 +37,7 @@
     },
     {
         "ISBN": "978-3-0360-5022-5",
+        "Sortierung": "Internationale Jugendbibliothek, München",
         "Titel": "Der Kinder Kalender 2022",
         "Untertitel": "Mit 52 Gedichten und Bildern aus der ganzen Welt",
         "Verlag": "edition momente",
@@ -45,6 +49,7 @@
     },
     {
         "ISBN": "4251732322861",
+        "Sortierung": "ALPHA EDITION",
         "Titel": "Janosch 2022",
         "Untertitel": "Wand-Kalender - Broschüren-Kalender",
         "Verlag": "Alpha Edition",
@@ -56,6 +61,7 @@
     },
     {
         "ISBN": "978-3-95878-040-8",
+        "Sortierung": "Janosch",
         "Titel": "Janosch Tigerentenkalender 2022",
         "Untertitel": "mit Dezemberblatt als Adventskalender",
         "Verlag": "LittleTiger Verlag",
@@ -67,6 +73,7 @@
     },
     {
         "ISBN": "4250809648095",
+        "Sortierung": "Auer, Margit",
         "Titel": "Schule der magischen Tiere 2022",
         "Untertitel": "Broschürenkalender für Kinder",
         "Verlag": "DuMont Kalenderverlag",
@@ -78,6 +85,7 @@
     },
     {
         "ISBN": "978-3-95878-041-5",
+        "Sortierung": "Janosch",
         "Titel": "Janosch Familienplaner 2022",
         "Untertitel": "",
         "Verlag": "LittleTiger Verlag",
@@ -89,6 +97,7 @@
     },
     {
         "ISBN": "978-3-7160-9410-5",
+        "Sortierung": "Härtling, Sophie",
         "Titel": "Arche Kinder Kalender 2022",
         "Untertitel": "Geschichten, Gedichte und Figuren aus der Kinderbuchwelt",
         "Verlag": "Arche Verlag",

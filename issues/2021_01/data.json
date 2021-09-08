@@ -2,7 +2,8 @@
     "Für die Kleinsten": [
         {
             "isbn": "978-3-7415-2553-7",
-            "author": "Doering, Svenja",
+            "sort": "Doering, Svenja",
+            "author": "Svenja Doering",
             "header": [
                 "Doering, Svenja",
                 "Sound- und Fühlbuch \"Tiere der Wildnis\""
@@ -15,7 +16,8 @@
         },
         {
             "isbn": "978-3-7022-3920-6",
-            "author": "Ehgartner, Reinhard",
+            "sort": "Ehgartner, Reinhard",
+            "author": "Reinhard Ehgartner",
             "header": [
                 "Ehgartner, Reinhard",
                 "Das kleine Farben-Einmaleins"
@@ -29,7 +31,8 @@
         },
         {
             "isbn": "978-3-473-43980-5",
-            "author": "Grimm, Sandra",
+            "sort": "Grimm, Sandra",
+            "author": "Sandra Grimm",
             "header": [
                 "Grimm, Sandra",
                 "Ich bin die kleine Biene"
@@ -43,7 +46,8 @@
         },
         {
             "isbn": "978-3-86429-501-0",
-            "author": "Klever, Elsa",
+            "sort": "Klever, Elsa",
+            "author": "Elsa Klever",
             "header": [
                 "Klever, Elsa",
                 "Tier hier"
@@ -57,7 +61,8 @@
         },
         {
             "isbn": "978-3-8337-4222-4",
-            "author": "Martín, Patricia",
+            "sort": "Martín, Patricia",
+            "author": "Patricia Martín",
             "header": [
                 "Martín, Patricia",
                 "Was versteckt sich in deinem Bauch, Mama?"
@@ -72,7 +77,8 @@
         },
         {
             "isbn": "978-3-473-43892-1",
-            "author": "Nahrgang, Frauke",
+            "sort": "Nahrgang, Frauke",
+            "author": "Frauke Nahrgang",
             "header": [
                 "Nahrgang, Frauke",
                 "Sachen suchen, Sachen fühlen: Im Wald"
@@ -86,7 +92,8 @@
         },
         {
             "isbn": "978-3-473-39700-6",
-            "author": "Neubacher-Fesser, Monika",
+            "sort": "Neubacher-Fesser, Monika",
+            "author": "Monika Neubacher-Fesser; Monika Neubacher- Fesser",
             "header": [
                 "Neubacher-Fesser, Monika",
                 "Mein allererstes Rasselbuch"
@@ -101,7 +108,8 @@
         },
         {
             "isbn": "978-3-473-43996-6",
-            "author": "Orso, Kathrin Lena",
+            "sort": "Orso, Kathrin Lena",
+            "author": "Kathrin Lena Orso; Jens Ohrenblicker",
             "header": [
                 "Orso, Kathrin Lena; Ohrenblicker, Jens",
                 "Wer geht wo aufs Klo?"
@@ -116,7 +124,8 @@
         },
         {
             "isbn": "978-3-551-52164-4",
-            "author": "Scheffler, Axel",
+            "sort": "Scheffler, Axel",
+            "author": "Axel Scheffler",
             "header": [
                 "Scheffler, Axel",
                 "Pip und Posy: Die kleine Schnecke"
@@ -130,7 +139,8 @@
         },
         {
             "isbn": "978-3-8337-4275-0",
-            "author": "Weishar-Giuliani, Valérie",
+            "sort": "Weishar-Giuliani, Valérie",
+            "author": "Valérie Weishar-Giuliani",
             "header": [
                 "Weishar-Giuliani, Valérie",
                 "Mein Bär Noah und ich"
@@ -144,7 +154,8 @@
         },
         {
             "isbn": "978-3-473-43981-2",
-            "author": "Wiencirz, Gerlinde",
+            "sort": "Wiencirz, Gerlinde",
+            "author": "Gerlinde Wiencirz",
             "header": [
                 "Wiencirz, Gerlinde",
                 "Ich bin das kleine Kaninchen"
@@ -161,7 +172,8 @@
     "Bilderbücher": [
         {
             "isbn": "978-3-86429-503-4",
-            "author": "Alaska, Nini",
+            "sort": "Alaska, Nini",
+            "author": "Nini Alaska",
             "header": [
                 "Alaska, Nini",
                 "Zickenzeit"
@@ -174,7 +186,8 @@
         },
         {
             "isbn": "978-3-03876-195-2",
-            "author": "Andros, Camille",
+            "sort": "Andros, Camille",
+            "author": "Camille Andros",
             "header": [
                 "Andros, Camille",
                 "Das Kleid und das Mädchen"
@@ -188,7 +201,8 @@
         },
         {
             "isbn": "978-3-7026-5951-6",
-            "author": "Bansch, Helga",
+            "sort": "Bansch, Helga",
+            "author": "Helga Bansch",
             "header": [
                 "Bansch, Helga",
                 "Der PUPU"
@@ -200,7 +214,8 @@
         },
         {
             "isbn": "978-3-03876-192-1",
-            "author": "Beaty, Andrea",
+            "sort": "Beaty, Andrea",
+            "author": "Andrea Beaty",
             "header": [
                 "Beaty, Andrea",
                 "Rosie Rosin, Erfinderin"
@@ -214,7 +229,8 @@
         },
         {
             "isbn": "978-3-314-10530-2",
-            "author": "Beer, Hans de",
+            "sort": "Beer, Hans de",
+            "author": "Hans de Beer",
             "header": [
                 "Beer, Hans de",
                 "Kleiner Eisbär: Lars und die Pandabären"
@@ -228,7 +244,8 @@
         },
         {
             "isbn": "978-3-8337-4183-8",
-            "author": "Brenman, Ilan",
+            "sort": "Brenman, Ilan",
+            "author": "Ilan Brenman",
             "header": [
                 "Brenman, Ilan",
                 "Komm, wir wollen spielen!"
@@ -241,7 +258,8 @@
         },
         {
             "isbn": "978-3-7348-2138-7",
-            "author": "Bright, Rachel",
+            "sort": "Bright, Rachel",
+            "author": "Rachel Bright",
             "header": [
                 "Bright, Rachel",
                 "Der Sorgosaurus"
@@ -255,7 +273,8 @@
         },
         {
             "isbn": "978-3-7348-2086-1",
-            "author": "Chatterton, Chris",
+            "sort": "Chatterton, Chris",
+            "author": "Chris Chatterton",
             "header": [
                 "Chatterton, Chris",
                 "Hallo Boss!"
@@ -269,7 +288,8 @@
         },
         {
             "isbn": "978-3-03876-193-8",
-            "author": "Cottle, Katie",
+            "sort": "Cottle, Katie",
+            "author": "Katie Cottle",
             "header": [
                 "Cottle, Katie",
                 "Der blaue Riese"
@@ -282,7 +302,8 @@
         },
         {
             "isbn": "978-3-7152-0793-3",
-            "author": "D'Arcangelo, Laura",
+            "sort": "D'Arcangelo, Laura",
+            "author": "Laura D'Arcangelo",
             "header": [
                 "D'Arcangelo, Laura",
                 "Herr Bert und Alfonso jagen einen Dieb"
@@ -295,7 +316,8 @@
         },
         {
             "isbn": "978-3-8369-6102-8",
-            "author": "Garton Scanlon, Liz",
+            "sort": "Garton Scanlon, Liz",
+            "author": "Liz Garton Scanlon; Audrey Vernick",
             "header": [
                 "Garton Scanlon, Liz; Vernick, Audrey",
                 "Fünf Minuten"
@@ -309,7 +331,8 @@
         },
         {
             "isbn": "978-3-86429-474-7",
-            "author": "Gmehling, Will",
+            "sort": "Gmehling, Will",
+            "author": "Will Gmehling",
             "header": [
                 "Gmehling, Will",
                 "Bahnhof am Ozean"
@@ -323,7 +346,8 @@
         },
         {
             "isbn": "978-3-314-10550-0",
-            "author": "Gorbachev, Valeri",
+            "sort": "Gorbachev, Valeri",
+            "author": "Valeri Gorbachev",
             "header": [
                 "Gorbachev, Valeri",
                 "Die gute Pute"
@@ -337,7 +361,8 @@
         },
         {
             "isbn": "978-3-314-10562-3",
-            "author": "Gugger, Rebecca",
+            "sort": "Gugger, Rebecca",
+            "author": "Rebecca Gugger",
             "header": [
                 "Gugger, Rebecca",
                 "Der Berg"
@@ -351,7 +376,8 @@
         },
         {
             "isbn": "978-3-8337-4246-0",
-            "author": "Gíron, Maria",
+            "sort": "Gíron, Maria",
+            "author": "Maria Gíron",
             "header": [
                 "Gíron, Maria",
                 "Arthur und der Elefant ohne Erinnerung"
@@ -364,7 +390,8 @@
         },
         {
             "isbn": "978-3-907114-17-9",
-            "author": "Hout, Mies van",
+            "sort": "Hout, Mies van",
+            "author": "Mies van Hout",
             "header": [
                 "Hout, Mies van",
                 "Wär ich doch ..."
@@ -378,7 +405,8 @@
         },
         {
             "isbn": "978-3-8337-4259-0",
-            "author": "Isern, Susanna",
+            "sort": "Isern, Susanna",
+            "author": "Susanna Isern",
             "header": [
                 "Isern, Susanna",
                 "Das große Buch der allergrößten Schätze"
@@ -392,7 +420,8 @@
         },
         {
             "isbn": "978-3-314-10532-6",
-            "author": "Julian, Sean",
+            "sort": "Julian, Sean",
+            "author": "Sean Julian",
             "header": [
                 "Julian, Sean",
                 "Normans erster Tag im Dinokindergarten"
@@ -405,7 +434,8 @@
         },
         {
             "isbn": "978-3-551-51919-1",
-            "author": "Kunkel, Daniela",
+            "sort": "Kunkel, Daniela",
+            "author": "Daniela Kunkel",
             "header": [
                 "Kunkel, Daniela",
                 "Das kleine WIR im Kindergarten"
@@ -418,7 +448,8 @@
         },
         {
             "isbn": "978-3-257-01286-6",
-            "author": "Kurkow, Andrej",
+            "sort": "Kurkow, Andrej",
+            "author": "Andrej Kurkow; Tania Goryushina",
             "header": [
                 "Kurkow, Andrej",
                 "Warum den Igel keiner streichelt"
@@ -432,7 +463,8 @@
         },
         {
             "isbn": "978-3-7432-0943-5",
-            "author": "Lang, Suzanne",
+            "sort": "Lang, Suzanne",
+            "author": "Suzanne Lang",
             "header": [
                 "Lang, Suzanne",
                 "Jim hat keinen Bock"
@@ -446,7 +478,8 @@
         },
         {
             "isbn": "978-3-95470-241-1",
-            "author": "Lindenbaum, Pija",
+            "sort": "Lindenbaum, Pija",
+            "author": "Pija Lindenbaum",
             "header": [
                 "Lindenbaum, Pija",
                 "Wir müssen zur Arbeit"
@@ -459,7 +492,8 @@
         },
         {
             "isbn": "978-3-7512-0033-2",
-            "author": "Lindgren, Astrid",
+            "sort": "Lindgren, Astrid",
+            "author": "Astrid Lindgren",
             "header": [
                 "Lindgren, Astrid",
                 "Ferien auf Saltkrokan"
@@ -472,7 +506,8 @@
         },
         {
             "isbn": "978-3-257-01288-0",
-            "author": "Meyer, Timon",
+            "sort": "Meyer, Timon",
+            "author": "Julian Meyer; Timon Meyer",
             "header": [
                 "Meyer, Timon",
                 "Pauls Garten"
@@ -486,7 +521,8 @@
         },
         {
             "isbn": "978-3-934029-84-2",
-            "author": "Nüsch, Julia",
+            "sort": "Nüsch, Julia",
+            "author": "Julia Nüsch",
             "header": [
                 "Nüsch, Julia",
                 "Der fleißige Mistkäfer und die Träume der Anderen"
@@ -500,7 +536,8 @@
         },
         {
             "isbn": "978-3-551-51923-8",
-            "author": "Owen, Chris",
+            "sort": "Owen, Chris",
+            "author": "Chris Owen",
             "header": [
                 "Owen, Chris",
                 "Pandazamba"
@@ -514,7 +551,8 @@
         },
         {
             "isbn": "978-3-86429-512-6",
-            "author": "Pabst, Inka",
+            "sort": "Pabst, Inka",
+            "author": "Inka Pabst",
             "header": [
                 "Pabst, Inka",
                 "Elfi, das traurige Krokodil"
@@ -527,7 +565,8 @@
         },
         {
             "isbn": "978-3-8337-4278-1",
-            "author": "Pigé, Florian",
+            "sort": "Pigé, Florian",
+            "author": "Florian Pigé",
             "header": [
                 "Pigé, Florian",
                 "So klein"
@@ -541,7 +580,8 @@
         },
         {
             "isbn": "978-3-96594-087-1",
-            "author": "Poulin, Andrée",
+            "sort": "Poulin, Andrée",
+            "author": "Andrée Poulin",
             "header": [
                 "Poulin, Andrée",
                 "Zwei Jungs und eine Hochzeit"
@@ -554,7 +594,8 @@
         },
         {
             "isbn": "978-3-314-10533-3",
-            "author": "Ries, Johanna",
+            "sort": "Ries, Johanna",
+            "author": "Johanna Ries",
             "header": [
                 "Ries, Johanna",
                 "Die Fleckenfeder"
@@ -567,7 +608,8 @@
         },
         {
             "isbn": "978-3-7707-0234-3",
-            "author": "Sasmaz, Sinem",
+            "sort": "Sasmaz, Sinem",
+            "author": "Sinem Sasmaz; Leonard Erlbruch",
             "header": [
                 "Sasmaz, Sinem",
                 "Und wo sind meine Punkte?"
@@ -580,7 +622,8 @@
         },
         {
             "isbn": "978-3-7022-3915-2",
-            "author": "Schlager, Leonie",
+            "sort": "Schlager, Leonie",
+            "author": "Leonie Schlager",
             "header": [
                 "Schlager, Leonie",
                 "Der Wassermann hat Zeit"
@@ -594,7 +637,8 @@
         },
         {
             "isbn": "978-3-7432-0601-4",
-            "author": "Schmidt, Hans-Christian",
+            "sort": "Schmidt, Hans-Christian",
+            "author": "Hans-Christian Schmidt",
             "header": [
                 "Schmidt, Hans-Christian",
                 "Wer von euch?"
@@ -608,7 +652,8 @@
         },
         {
             "isbn": "978-3-86429-519-5",
-            "author": "Schomburg, Andrea",
+            "sort": "Schomburg, Andrea",
+            "author": "Andrea Schomburg",
             "header": [
                 "Schomburg, Andrea",
                 "Ab hier kenn ich mich aus"
@@ -621,7 +666,8 @@
         },
         {
             "isbn": "978-3-7512-0009-7",
-            "author": "Schulze, Bianca",
+            "sort": "Schulze, Bianca",
+            "author": "Bianca Schulze",
             "header": [
                 "Schulze, Bianca",
                 "Nicht den Drachen wecken"
@@ -635,7 +681,8 @@
         },
         {
             "isbn": "978-3-96826-006-8",
-            "author": "Simler, Isabelle",
+            "sort": "Simler, Isabelle",
+            "author": "Isabelle Simler",
             "header": [
                 "Simler, Isabelle",
                 "Süße Träumer"
@@ -649,7 +696,8 @@
         },
         {
             "isbn": "978-3-7512-0036-3",
-            "author": "Small, Steve",
+            "sort": "Small, Steve",
+            "author": "Steve Small",
             "header": [
                 "Small, Steve",
                 "Mit dir ist sogar Regen schön"
@@ -662,7 +710,8 @@
         },
         {
             "isbn": "978-3-8337-4265-1",
-            "author": "Swiderski, Carla",
+            "sort": "Swiderski, Carla",
+            "author": "Carla Swiderski; Hanna Müller; Hannah Stollmayer",
             "header": [
                 "Swiderski, Carla; Müller, Hanna; Stollmeyer, Hannah",
                 "Ricki in der Tintenwolke"
@@ -676,7 +725,8 @@
         },
         {
             "isbn": "978-3-907114-18-6",
-            "author": "Timmers, Leo",
+            "sort": "Timmers, Leo",
+            "author": "Leo Timmers",
             "header": [
                 "Timmers, Leo",
                 "Die Elefanteninsel"
@@ -690,7 +740,8 @@
         },
         {
             "isbn": "978-3-7512-0007-3",
-            "author": "Wieslander, Jujja",
+            "sort": "Wieslander, Jujja",
+            "author": "Jujja Wieslander",
             "header": [
                 "Wieslander, Jujja",
                 "Mama Muh und Krähe werden Freunde"
@@ -703,7 +754,8 @@
         },
         {
             "isbn": "978-3-96843-018-8",
-            "author": "Zanotti, Cosetta",
+            "sort": "Zanotti, Cosetta",
+            "author": "Cosetta Zanotti",
             "header": [
                 "Zanotti, Cosetta",
                 "Was Worte alles machen"
@@ -716,7 +768,8 @@
         },
         {
             "isbn": "978-3-257-01285-9",
-            "author": "Zimnik, Reiner",
+            "sort": "Zimnik, Reiner",
+            "author": "Reiner Zimnik",
             "header": [
                 "Zimnik, Reiner",
                 "Der Bär auf dem Motorrad"
@@ -731,7 +784,8 @@
     "Vorlesegeschichten": [
         {
             "isbn": "978-3-551-55516-8",
-            "author": "Castillo, Lauren",
+            "sort": "Castillo, Lauren",
+            "author": "Lauren Castillo",
             "header": [
                 "Castillo, Lauren",
                 "Igel und Schnuff"
@@ -744,7 +798,8 @@
         },
         {
             "isbn": "978-3-96177-061-8",
-            "author": "Frölander-Ulf, Lena",
+            "sort": "Frölander-Ulf, Lena",
+            "author": "Lena Frölander-Ulf",
             "header": [
                 "Frölander-Ulf, Lena",
                 "Nelson Tigertatze"
@@ -757,7 +812,8 @@
         },
         {
             "isbn": "978-3-7915-0150-5",
-            "author": "Hai, Magdalena",
+            "sort": "Hai, Magdalena",
+            "author": "Magdalena Hai",
             "header": [
                 "Hai, Magdalena",
                 "Die Nimmersattkatze"
@@ -770,7 +826,8 @@
         },
         {
             "isbn": "978-3-7795-0658-4",
-            "author": "Jansen, Hanna",
+            "sort": "Jansen, Hanna",
+            "author": "Hanna Jansen",
             "header": [
                 "Jansen, Hanna",
                 "Hasen in der Nase"
@@ -783,7 +840,8 @@
         },
         {
             "isbn": "978-3-551-17124-5",
-            "author": "Kitzing, Constanze von",
+            "sort": "Kitzing, Constanze von",
+            "author": "Constanze von Kitzing",
             "header": [
                 "Kitzing, Constanze von",
                 "Ich bin anders als du"
@@ -797,7 +855,8 @@
         },
         {
             "isbn": "978-3-551-51997-9",
-            "author": "Kling, Marc-Uwe",
+            "sort": "Kling, Marc-Uwe",
+            "author": "Marc-Uwe Kling",
             "header": [
                 "Kling, Marc-Uwe",
                 "Der Tag, an dem Papa ein heikles Gespräch führen wollte"
@@ -810,7 +869,8 @@
         },
         {
             "isbn": "978-3-7512-0047-9",
-            "author": "Maar, Paul",
+            "sort": "Maar, Paul",
+            "author": "Paul Maar",
             "header": [
                 "Maar, Paul",
                 "Der kleine Troll Tojok"
@@ -823,7 +883,8 @@
         },
         {
             "isbn": "978-3-423-64077-0",
-            "author": "Strathmann, Jan",
+            "sort": "Strathmann, Jan",
+            "author": "Jan Strathmann",
             "header": [
                 "Strathmann, Jan",
                 "Milla und der Nashornbus"
@@ -838,7 +899,8 @@
     "Erstleser": [
         {
             "isbn": "978-3-551-65593-6",
-            "author": "Auer, Margit",
+            "sort": "Auer, Margit",
+            "author": "Margit Auer",
             "header": [
                 "Auer, Margit",
                 "Die Schule der magischen Tiere ermittelt: Der Kokosnuss-Klau"
@@ -852,7 +914,8 @@
         },
         {
             "isbn": "978-3-7432-0760-8",
-            "author": "Benn, Amelie",
+            "sort": "Benn, Amelie",
+            "author": "Amelie Benn",
             "header": [
                 "Benn, Amelie",
                 "Bildermaus - Geschichten vom ersten Schultag"
@@ -866,7 +929,8 @@
         },
         {
             "isbn": "978-3-473-46021-2",
-            "author": "Mai, Manfred",
+            "sort": "Mai, Manfred",
+            "author": "Manfred Mai",
             "header": [
                 "Mai, Manfred",
                 "Leons erster Schultag"
@@ -880,7 +944,8 @@
         },
         {
             "isbn": "978-3-86429-499-0",
-            "author": "Petrick, Nina",
+            "sort": "Petrick, Nina",
+            "author": "Nina Petrick",
             "header": [
                 "Petrick, Nina",
                 "Doppelt gebucht"
@@ -894,7 +959,8 @@
         },
         {
             "isbn": "978-3-86429-513-3",
-            "author": "Wiggert, Veronika",
+            "sort": "Wiggert, Veronika",
+            "author": "Veronika Wiggert",
             "header": [
                 "Wiggert, Veronika",
                 "Fußballsommer"
@@ -909,7 +975,8 @@
     "Bücher ab 8": [
         {
             "isbn": "978-3-551-65336-9",
-            "author": "Auer, Margit",
+            "sort": "Auer, Margit",
+            "author": "Margit Auer",
             "header": [
                 "Auer, Margit",
                 "Die Schule der magischen Tiere - Endlich Ferien: Hatice und Mette-Maja"
@@ -923,7 +990,8 @@
         },
         {
             "isbn": "978-3-86429-487-7",
-            "author": "Dölling, Beate",
+            "sort": "Dölling, Beate",
+            "author": "Beate Dölling",
             "header": [
                 "Dölling, Beate",
                 "Ab in die Rakete"
@@ -936,7 +1004,8 @@
         },
         {
             "isbn": "978-3-85535-645-4",
-            "author": "Juster, Norton",
+            "sort": "Juster, Norton",
+            "author": "Norton Juster",
             "header": [
                 "Juster, Norton",
                 "Die Abenteuer von Milo, Tack und Kackerlack"
@@ -949,7 +1018,8 @@
         },
         {
             "isbn": "978-3-8369-6096-0",
-            "author": "Lambeck, Silke",
+            "sort": "Lambeck, Silke",
+            "author": "Silke Lambeck",
             "header": [
                 "Lambeck, Silke",
                 "Herr Röslein kommt zurück"
@@ -963,7 +1033,8 @@
         },
         {
             "isbn": "978-3-551-55517-5",
-            "author": "Muser, Martin",
+            "sort": "Muser, Martin",
+            "author": "Martin Muser",
             "header": [
                 "Muser, Martin",
                 "Nuschki"
@@ -976,7 +1047,8 @@
         },
         {
             "isbn": "978-3-85535-656-0",
-            "author": "Raúf, Onjali Q.",
+            "sort": "Raúf, Onjali Q.",
+            "author": "Onjali Q. Raúf",
             "header": [
                 "Raúf, Onjali Q.",
                 "Die Nachtbushelden"
@@ -989,7 +1061,8 @@
         },
         {
             "isbn": "978-3-8337-4304-7",
-            "author": "Schirneck, Hubert",
+            "sort": "Schirneck, Hubert",
+            "author": "Hubert Schirneck",
             "header": [
                 "Schirneck, Hubert",
                 "Zwillinge im Doppelpass. Ulf und Kathi im Fußballfieber"
@@ -1002,7 +1075,8 @@
         },
         {
             "isbn": "978-3-7891-1481-6",
-            "author": "Taschinski, Stefanie",
+            "sort": "Taschinski, Stefanie",
+            "author": "Stefanie Taschinski",
             "header": [
                 "Taschinski, Stefanie",
                 "Familie Flickenteppich - Wir machen Ferien"
@@ -1018,7 +1092,8 @@
     "Bücher ab 10": [
         {
             "isbn": "978-3-551-31984-5",
-            "author": "Birdsall, Jeanne",
+            "sort": "Birdsall, Jeanne",
+            "author": "Jeanne Birdsall",
             "header": [
                 "Birdsall, Jeanne",
                 "Die Penderwicks im Glück"
@@ -1031,7 +1106,8 @@
         },
         {
             "isbn": "978-3-8369-6112-7",
-            "author": "Burger, Judith",
+            "sort": "Burger, Judith",
+            "author": "Judith Burger",
             "header": [
                 "Burger, Judith",
                 "Ringo, ich und ein komplett ahnungsloser Sommer"
@@ -1044,7 +1120,8 @@
         },
         {
             "isbn": "978-3-7891-2103-6",
-            "author": "Carter, Aimée",
+            "sort": "Carter, Aimée",
+            "author": "Aimée Carter",
             "header": [
                 "Carter, Aimée",
                 "Die Erben der Animox - Die Beute des Fuchses"
@@ -1058,7 +1135,8 @@
         },
         {
             "isbn": "978-3-96428-084-8",
-            "author": "Daugey, Fleur",
+            "sort": "Daugey, Fleur",
+            "author": "Fleur Daugey; Olivier Charpentier",
             "header": [
                 "Daugey, Fleur; Charpentier, Olivier",
                 "Freiheit! Harriet Tubman, eine amerikanische Heldin"
@@ -1070,7 +1148,8 @@
         },
         {
             "isbn": "978-3-551-55519-9",
-            "author": "Franz, Cornelia",
+            "sort": "Franz, Cornelia",
+            "author": "Cornelia Franz",
             "header": [
                 "Franz, Cornelia",
                 "Calypsos Irrfahrt"
@@ -1083,7 +1162,8 @@
         },
         {
             "isbn": "978-3-423-62742-9",
-            "author": "Goldberg Sloan, Holly",
+            "sort": "Goldberg Sloan, Holly",
+            "author": "Holly Goldberg Sloan; Meg Wolitzer",
             "header": [
                 "Goldberg Sloan, Holly; Wolitzer, Meg",
                 "An Nachteule von Sternhai"
@@ -1096,7 +1176,8 @@
         },
         {
             "isbn": "978-3-7795-0651-5",
-            "author": "Karimé, Andrea",
+            "sort": "Karimé, Andrea",
+            "author": "Andrea Karimé",
             "header": [
                 "Karimé, Andrea",
                 "Sterne im Kopf und ein unglaublicher Plan"
@@ -1109,7 +1190,8 @@
         },
         {
             "isbn": "978-3-423-64076-3",
-            "author": "Klingenberg, Malin",
+            "sort": "Klingenberg, Malin",
+            "author": "Malin Klingenberg",
             "header": [
                 "Klingenberg, Malin",
                 "Elchtage"
@@ -1122,7 +1204,8 @@
         },
         {
             "isbn": "978-3-7478-0035-5",
-            "author": "Kroon, Oskar",
+            "sort": "Kroon, Oskar",
+            "author": "Oskar Kroon",
             "header": [
                 "Kroon, Oskar",
                 "Warten auf Wind"
@@ -1135,7 +1218,8 @@
         },
         {
             "isbn": "978-3-423-62738-2",
-            "author": "Nilsson, Frida",
+            "sort": "Nilsson, Frida",
+            "author": "Frida Nilsson",
             "header": [
                 "Nilsson, Frida",
                 "Sasja und das Reich jenseits des Meeres"
@@ -1148,7 +1232,8 @@
         },
         {
             "isbn": "978-3-423-76320-2",
-            "author": "O'Shaughnessy, Kate",
+            "sort": "O'Shaughnessy, Kate",
+            "author": "Kate O'Shaughnessy",
             "header": [
                 "O'Shaughnessy, Kate",
                 "Das Glück wartet nur bis um vier"
@@ -1161,7 +1246,8 @@
         },
         {
             "isbn": "978-3-423-64078-7",
-            "author": "Reynolds, Jason",
+            "sort": "Reynolds, Jason",
+            "author": "Jason Reynolds",
             "header": [
                 "Reynolds, Jason",
                 "Asphalthelden"
@@ -1175,7 +1261,8 @@
         },
         {
             "isbn": "978-3-551-31992-0",
-            "author": "Rundell, Katherine",
+            "sort": "Rundell, Katherine",
+            "author": "Katherine Rundell",
             "header": [
                 "Rundell, Katherine",
                 "Mitten im Dschungel"
@@ -1188,7 +1275,8 @@
         },
         {
             "isbn": "978-3-7478-0036-2",
-            "author": "Schomburg, Andrea",
+            "sort": "Schomburg, Andrea",
+            "author": "Andrea Schomburg",
             "header": [
                 "Schomburg, Andrea",
                 "Die Spur zum 9. Tag"
@@ -1201,7 +1289,8 @@
         },
         {
             "isbn": "978-3-551-31985-2",
-            "author": "Stewart, Kiera",
+            "sort": "Stewart, Kiera",
+            "author": "Kiera Stewart",
             "header": [
                 "Stewart, Kiera",
                 "Dumme Ideen für einen guten Sommer"
@@ -1214,7 +1303,8 @@
         },
         {
             "isbn": "978-3-8369-6061-8",
-            "author": "Vereecken, Kathleen",
+            "sort": "Vereecken, Kathleen",
+            "author": "Kathleen Vereecken",
             "header": [
                 "Vereecken, Kathleen",
                 "Alles wird gut, immer"
@@ -1228,7 +1318,8 @@
         },
         {
             "isbn": "978-3-423-76325-7",
-            "author": "Zeh, Juli",
+            "sort": "Zeh, Juli",
+            "author": "Juli Zeh",
             "header": [
                 "Zeh, Juli",
                 "Socke und Sophie - Pferdesprache leicht gemacht"
@@ -1243,7 +1334,8 @@
     "Bücher ab 12": [
         {
             "isbn": "978-3-8415-0679-5",
-            "author": "Aamand, Kristina",
+            "sort": "Aamand, Kristina",
+            "author": "Kristina Aamand",
             "header": [
                 "Aamand, Kristina",
                 "Wenn Worte meine Waffe wären"
@@ -1256,7 +1348,8 @@
         },
         {
             "isbn": "978-3-423-65034-2",
-            "author": "Han, Jenny",
+            "sort": "Han, Jenny",
+            "author": "Jenny Han",
             "header": [
                 "Han, Jenny",
                 "Zitronensüß"
@@ -1269,7 +1362,8 @@
         },
         {
             "isbn": "978-3-86429-484-6",
-            "author": "Huppertz, Nikola",
+            "sort": "Huppertz, Nikola",
+            "author": "Nikola Huppertz",
             "header": [
                 "Huppertz, Nikola",
                 "Schön wie die Acht"
@@ -1282,7 +1376,8 @@
         },
         {
             "isbn": "978-3-551-31975-3",
-            "author": "Höra, Daniel",
+            "sort": "Höra, Daniel",
+            "author": "Daniel Höra",
             "header": [
                 "Höra, Daniel",
                 "Von wegen Freundschaft!"
@@ -1294,7 +1389,8 @@
         },
         {
             "isbn": "978-3-551-58444-1",
-            "author": "Marasco, Roberta",
+            "sort": "Marasco, Roberta",
+            "author": "Roberta Marasco",
             "header": [
                 "Marasco, Roberta",
                 "Alles ganz normal"
@@ -1307,7 +1403,8 @@
         },
         {
             "isbn": "978-3-423-64071-8",
-            "author": "McGhee, Alison",
+            "sort": "McGhee, Alison",
+            "author": "Alison McGhee",
             "header": [
                 "McGhee, Alison",
                 "Wie man eine Raumkapsel verlässt"
@@ -1322,7 +1419,8 @@
         },
         {
             "isbn": "978-3-423-62744-3",
-            "author": "Reynolds, Jason",
+            "sort": "Reynolds, Jason",
+            "author": "Jason Reynolds",
             "header": [
                 "Reynolds, Jason",
                 "Ghost"
@@ -1335,7 +1433,8 @@
         },
         {
             "isbn": "978-3-551-55692-9",
-            "author": "Riordan, Rick",
+            "sort": "Riordan, Rick",
+            "author": "Rick Riordan",
             "header": [
                 "Riordan, Rick",
                 "Die Abenteuer des Apollo: Der Turm des Nero"
@@ -1351,7 +1450,8 @@
     "Junge Erwachsene": [
         {
             "isbn": "978-3-03880-204-4",
-            "author": "Albertalli, Becky",
+            "sort": "Albertalli, Becky",
+            "author": "Becky Albertalli; Adam Silvera",
             "header": [
                 "Albertalli, Becky; Silvera, Adam",
                 "Was ist mit uns"
@@ -1365,7 +1465,8 @@
         },
         {
             "isbn": "978-3-551-58437-3",
-            "author": "Bennett, Jenn",
+            "sort": "Bennett, Jenn",
+            "author": "Jenn Bennett",
             "header": [
                 "Bennett, Jenn",
                 "Wiedersehen mit Lucky"
@@ -1379,7 +1480,8 @@
         },
         {
             "isbn": "978-3-7512-0053-0",
-            "author": "Boie, Kirsten",
+            "sort": "Boie, Kirsten",
+            "author": "Kirsten Boie",
             "header": [
                 "Boie, Kirsten",
                 "Dunkelnacht"
@@ -1391,7 +1493,8 @@
         },
         {
             "isbn": "978-3-423-76316-5",
-            "author": "Creedle, Laura",
+            "sort": "Creedle, Laura",
+            "author": "Laura Creedle",
             "header": [
                 "Creedle, Laura",
                 "Die Liebesbriefe von Abelard und Lily"
@@ -1404,7 +1507,8 @@
         },
         {
             "isbn": "978-3-86648-609-6",
-            "author": "Jalonen, Olli",
+            "sort": "Jalonen, Olli",
+            "author": "Olli Jalonen",
             "header": [
                 "Jalonen, Olli",
                 "Die Himmelskugel"
@@ -1418,7 +1522,8 @@
         },
         {
             "isbn": "978-3-03880-044-6",
-            "author": "Kyra, Groh",
+            "sort": "Kyra, Groh",
+            "author": "Kyra Groh",
             "header": [
                 "Kyra, Groh",
                 "Mein Leben als lexikalische Lücke"
@@ -1430,7 +1535,8 @@
         },
         {
             "isbn": "978-3-7795-0653-9",
-            "author": "Nganang, Patrice",
+            "sort": "Nganang, Patrice",
+            "author": "Patrice Nganang",
             "header": [
                 "Nganang, Patrice",
                 "Spur der Krabbe"
@@ -1443,7 +1549,8 @@
         },
         {
             "isbn": "978-3-423-74067-8",
-            "author": "Oliver, Lauren",
+            "sort": "Oliver, Lauren",
+            "author": "Lauren Oliver",
             "header": [
                 "Oliver, Lauren",
                 "Broken Things - Alles nur (k)ein Spiel"
@@ -1456,7 +1563,8 @@
         },
         {
             "isbn": "978-3-7348-5051-6",
-            "author": "Peterson, Megan Cooley",
+            "sort": "Peterson, Megan Cooley",
+            "author": "Megan Cooley Peterson",
             "header": [
                 "Peterson, Megan Cooley",
                 "Lügentochter"
@@ -1469,7 +1577,8 @@
         },
         {
             "isbn": "978-3-7855-8729-4",
-            "author": "Poznanski, Ursula",
+            "sort": "Poznanski, Ursula",
+            "author": "Ursula Poznanski",
             "header": [
                 "Poznanski, Ursula",
                 "Layers"
@@ -1482,7 +1591,8 @@
         },
         {
             "isbn": "978-3-8369-6099-1",
-            "author": "Reinhardt, Dirk",
+            "sort": "Reinhardt, Dirk",
+            "author": "Dirk Reinhardt",
             "header": [
                 "Reinhardt, Dirk",
                 "Perfect Storm"
@@ -1495,7 +1605,8 @@
         },
         {
             "isbn": "978-3-96428-096-1",
-            "author": "Rottmann, Eva",
+            "sort": "Rottmann, Eva",
+            "author": "Eva Rottmann",
             "header": [
                 "Rottmann, Eva",
                 "Mats & Milad"
@@ -1507,7 +1618,8 @@
         },
         {
             "isbn": "978-3-257-30081-9",
-            "author": "Schlink, Bernhard",
+            "sort": "Schlink, Bernhard",
+            "author": "Bernhard Schlink",
             "header": [
                 "Schlink, Bernhard",
                 "20. Juli"
@@ -1519,7 +1631,8 @@
         },
         {
             "isbn": "978-3-7432-0857-5",
-            "author": "Shah, London",
+            "sort": "Shah, London",
+            "author": "London Shah",
             "header": [
                 "Shah, London",
                 "Water Rising - Flucht in die Tiefe"
@@ -1533,7 +1646,8 @@
         },
         {
             "isbn": "978-3-03880-203-7",
-            "author": "Silvera, Adam",
+            "sort": "Silvera, Adam",
+            "author": "Adam Silvera",
             "header": [
                 "Silvera, Adam",
                 "Am Ende sterben wir sowieso"
@@ -1546,7 +1660,8 @@
         },
         {
             "isbn": "978-3-7022-3917-6",
-            "author": "Steinkellner, Elisabeth",
+            "sort": "Steinkellner, Elisabeth",
+            "author": "Elisabeth Steinkellner",
             "header": [
                 "Steinkellner, Elisabeth",
                 "Esther und Salomon"
@@ -1559,7 +1674,8 @@
         },
         {
             "isbn": "978-3-7348-5050-9",
-            "author": "Thamm, Andreas",
+            "sort": "Thamm, Andreas",
+            "author": "Andreas Thamm",
             "header": [
                 "Thamm, Andreas",
                 "Wenn man so will, waren es die Aliens"
@@ -1571,7 +1687,8 @@
         },
         {
             "isbn": "978-3-257-07148-1",
-            "author": "Wells, Benedict",
+            "sort": "Wells, Benedict",
+            "author": "Benedict Wells",
             "header": [
                 "Wells, Benedict",
                 "Hard Land"
@@ -1583,10 +1700,42 @@
             ]
         }
     ],
+    "Graphic Novel": [
+        {
+            "isbn": "978-3-948690-09-0",
+            "sort": "Schmitt, Volker",
+            "author": "Volker Schmitt",
+            "header": [
+                "Schmitt, Volker",
+                "Zack!"
+            ],
+            "body": [
+                "»Bist du .. ein Pirat?« Der rauschebartige Mann, den Bonny schnarchend am Strand entdeckt, erinnert sich weder daran, wo er herkommt noch an seinen Namen. Doch mit seinem einen Bein MUSS er einfach ein Pirat sein! Und als solcher braucht er einen Namen und eine Crew! Ehe Bonnys Pirat sich's versieht, heißt er Zack und sticht auch schon mit ihr in See ..",
+                "Fantasie- und temperamentvoll erzählen Autor Volker Schmitt und Zeichnerin Ma riam Ben-Arab von einem beherzten Madchen, der Suche nach dem Glück und - aye! - von einem wildschonen Piratenabenteuer.",
+                "Illustration: Ben-Arab, Màriam",
+                "2021 bei Kibitz, Berlin erschienen; gebunden, 96 Seiten stark."
+            ]
+        },
+        {
+            "isbn": "978-3-7795-0646-1",
+            "sort": "Wagenbreth, Henning",
+            "author": "Henning Wagenbreth",
+            "header": [
+                "Wagenbreth, Henning",
+                "Rückwärtsland"
+            ],
+            "body": [
+                "Hast du mal in jungen Jahren einen Hasen totgefahren? Oder hast du das studiert, was dich gar nicht interessiert? Es gibt eine zweite Chance! Henning Wagenbreth dreht im Rückwärtsland die Zeit zurück und du kannst dann all die Sachen noch einmal und besser machen. In Panels, ganzseitigen Illustrationen und mit treffsicheren Reimen testet der Berliner Illustrator die Idee im Kleinen wie im Großen aus. Wechselt die Richtung beim Vokabular (Ralubakov) und dreht die Logik des Alltags lustig auf links: In der Zeitung kann man lesen, was am nächsten Tag passiert, welche Autos kollidieren, wo ein Gastank explodiert. Wie in einem Film, von hinten abgespielt, springt munter auf, wer halbtot am Boden lag, lodern neue Flammen aus kalter Asche, schießen Kriegskanonen alles heil. Und der Schornstein, hoch und grau, saugt zum Schluss den Himmel blau. ",
+                "2021 bei Peter Hammer Verlag erschienen; gebunden, 40 Seiten stark.",
+                "Durchgehend farbig illustriert."
+            ]
+        }
+    ],
     "Sachbücher": [
         {
             "isbn": "978-3-8369-6097-7",
-            "author": "Aladjidi, Virginie",
+            "sort": "Aladjidi, Virginie",
+            "author": "Virginie Aladjidi",
             "header": [
                 "Aladjidi, Virginie",
                 "Mammut, Urmensch, Höhlenbär"
@@ -1600,7 +1749,8 @@
         },
         {
             "isbn": "978-3-03876-190-7",
-            "author": "Albanese, Lara",
+            "sort": "Albanese, Lara",
+            "author": "Lara Albanese",
             "header": [
                 "Albanese, Lara",
                 "Atlas des Weltalls"
@@ -1614,7 +1764,8 @@
         },
         {
             "isbn": "978-3-7348-6011-9",
-            "author": "Albrecht, Anna Elisabeth",
+            "sort": "Albrecht, Anna Elisabeth",
+            "author": "Anna Elisabeth Albrecht; Susanne Rebscher",
             "header": [
                 "Albrecht, Anna Elisabeth; Rebscher, Susanne",
                 "Abenteuer Welterbe - Entdecke besondere Orte in Deutschland"
@@ -1628,7 +1779,8 @@
         },
         {
             "isbn": "978-3-440-17159-2",
-            "author": "Apfelbacher, Lisa",
+            "sort": "Apfelbacher, Lisa",
+            "author": "Lisa Apfelbacher; Regina Schwarz",
             "header": [
                 "Apfelbacher, Lisa; Schwarz, Regina",
                 "Guck mal. Frühling, Sommer, Herbst und Winter"
@@ -1641,7 +1793,8 @@
         },
         {
             "isbn": "978-3-473-55534-5",
-            "author": "Butterfield, Moira",
+            "sort": "Butterfield, Moira",
+            "author": "Moira Butterfield",
             "header": [
                 "Butterfield, Moira",
                 "Die bunte Welt der Flaggen"
@@ -1655,7 +1808,8 @@
         },
         {
             "isbn": "978-1-78941-461-5",
-            "author": "Daynes, Katie",
+            "sort": "Daynes, Katie",
+            "author": "Katie Daynes",
             "header": [
                 "Daynes, Katie",
                 "Erklär mir den Mond"
@@ -1671,7 +1825,8 @@
         },
         {
             "isbn": "978-3-473-32985-4",
-            "author": "Erne, Andrea",
+            "sort": "Erne, Andrea",
+            "author": "Andrea Erne",
             "header": [
                 "Erne, Andrea",
                 "Alles über Roboter"
@@ -1688,7 +1843,8 @@
         },
         {
             "isbn": "978-3-7886-2114-8",
-            "author": "Florian Huber",
+            "sort": "Florian Huber",
+            "author": "Florian Huber; Uli Kunz",
             "header": [
                 "Florian Huber; Kunz, Uli",
                 "Ozeane. Die Meere erforschen und schützen"
@@ -1701,7 +1857,8 @@
         },
         {
             "isbn": "978-3-86648-643-0",
-            "author": "Hein, Till",
+            "sort": "Hein, Till",
+            "author": "Till Hein",
             "header": [
                 "Hein, Till",
                 "Crazy Horse"
@@ -1714,7 +1871,8 @@
         },
         {
             "isbn": "978-3-551-25491-7",
-            "author": "Levenson, Eleanor",
+            "sort": "Levenson, Eleanor",
+            "author": "Eleanor Levenson",
             "header": [
                 "Levenson, Eleanor",
                 "Politik"
@@ -1727,7 +1885,8 @@
         },
         {
             "isbn": "978-3-473-32987-8",
-            "author": "Nieländer, Peter",
+            "sort": "Nieländer, Peter",
+            "author": "Peter Nieländer",
             "header": [
                 "Nieländer, Peter",
                 "Mein junior-Lexikon: Urlaub"
@@ -1742,7 +1901,8 @@
         },
         {
             "isbn": "978-3-8369-6038-0",
-            "author": "Schutten, Jan Paul",
+            "sort": "Schutten, Jan Paul",
+            "author": "Jan Paul Schutten",
             "header": [
                 "Schutten, Jan Paul",
                 "Das Weltall"
@@ -1758,7 +1918,8 @@
         },
         {
             "isbn": "978-3-423-76329-5",
-            "author": "Schwieger, Frank",
+            "sort": "Schwieger, Frank",
+            "author": "Frank Schwieger",
             "header": [
                 "Schwieger, Frank",
                 "Ich, Kleopatra, und die alten Ägypter"
@@ -1772,7 +1933,8 @@
         },
         {
             "isbn": "978-3-7891-2133-3",
-            "author": "Wohlleben, Peter",
+            "sort": "Wohlleben, Peter",
+            "author": "Peter Wohlleben",
             "header": [
                 "Wohlleben, Peter",
                 "Kommst du mit nach draußen?"
@@ -1788,7 +1950,8 @@
     "Besonderes": [
         {
             "isbn": "978-3-03876-194-5",
-            "author": "Gibran, Khalil",
+            "sort": "Gibran, Khalil",
+            "author": "Khalil Gibran",
             "header": [
                 "Gibran, Khalil",
                 "Der Prophet"
@@ -1801,7 +1964,8 @@
         },
         {
             "isbn": "978-3-314-10561-6",
-            "author": "Haslbauer, Carla",
+            "sort": "Haslbauer, Carla",
+            "author": "Carla Haslbauer",
             "header": [
                 "Haslbauer, Carla",
                 "Die Tode meiner Mutter"
@@ -1815,7 +1979,8 @@
         },
         {
             "isbn": "978-3-948722-04-3",
-            "author": "Heinrich, Finn-Ole",
+            "sort": "Heinrich, Finn-Ole",
+            "author": "Finn-Ole Heinrich; Dita Zipfel",
             "header": [
                 "Heinrich, Finn-Ole; Zipfel, Dita",
                 "Schlafen wie die Rüben"
@@ -1830,7 +1995,8 @@
         },
         {
             "isbn": "978-1-78941-346-5",
-            "author": "Hull, Sarah",
+            "sort": "Hull, Sarah",
+            "author": "Sarah Hull",
             "header": [
                 "Hull, Sarah",
                 "Ist das Kunst?"
@@ -1843,7 +2009,8 @@
         },
         {
             "isbn": "978-3-314-10563-0",
-            "author": "Jeffers, Oliver",
+            "sort": "Jeffers, Oliver",
+            "author": "Oliver Jeffers",
             "header": [
                 "Jeffers, Oliver",
                 "Was wir bauen"
@@ -1858,7 +2025,8 @@
         },
         {
             "isbn": "978-3-03876-134-1",
-            "author": "Letria, José Jorge",
+            "sort": "Letria, José Jorge",
+            "author": "José Jorge Letria",
             "header": [
                 "Letria, José Jorge",
                 "Der Krieg"
@@ -1871,7 +2039,8 @@
         },
         {
             "isbn": "978-3-314-10565-4",
-            "author": "Paul, Baptiste & Miranda",
+            "sort": "Paul, Baptiste & Miranda",
+            "author": "Baptiste & Miranda Paul",
             "header": [
                 "Paul, Baptiste & Miranda",
                 "Frieden"
@@ -1885,7 +2054,8 @@
         },
         {
             "isbn": "978-3-8369-6050-2",
-            "author": "Romanyschyn, Romana",
+            "sort": "Romanyschyn, Romana",
+            "author": "Romana Romanyschyn",
             "header": [
                 "Romanyschyn, Romana",
                 "Sehen"
@@ -1898,7 +2068,8 @@
         },
         {
             "isbn": "978-3-8369-6036-6",
-            "author": "Roskifte, Kristin",
+            "sort": "Roskifte, Kristin",
+            "author": "Kristin Roskifte",
             "header": [
                 "Roskifte, Kristin",
                 "Alle zählen"
@@ -1912,7 +2083,8 @@
         },
         {
             "isbn": "978-3-7459-0521-2",
-            "author": "Strömstedt, Jenny",
+            "sort": "Strömstedt, Jenny",
+            "author": "Jenny Strömstedt",
             "header": [
                 "Strömstedt, Jenny",
                 "Kinder verändern die Welt"
@@ -1925,7 +2097,8 @@
         },
         {
             "isbn": "978-3-95470-246-6",
-            "author": "von der Gathen, Katharina",
+            "sort": "von der Gathen, Katharina",
+            "author": "Katharina von der Gathen",
             "header": [
                 "von der Gathen, Katharina",
                 "AnyBody"
@@ -1940,7 +2113,8 @@
     "Hörbuch Spezial": [
         {
             "isbn": "978-3-7456-0212-8",
-            "author": "Baron, Adam",
+            "sort": "Baron, Adam",
+            "author": "Adam Baron",
             "header": [
                 "Baron, Adam",
                 "Auftauchen"
@@ -1954,7 +2128,8 @@
         },
         {
             "isbn": "978-3-7456-0262-3",
-            "author": "Bohlmann, Sabine",
+            "sort": "Bohlmann, Sabine",
+            "author": "Sabine Bohlmann",
             "header": [
                 "Bohlmann, Sabine",
                 "Ein Mädchen namens Willow"
@@ -1968,7 +2143,8 @@
         },
         {
             "isbn": "978-3-7424-1803-6",
-            "author": "Daughtry, Mikki",
+            "sort": "Daughtry, Mikki",
+            "author": "Mikki Daughtry; Rachael Lippincott",
             "header": [
                 "Daughtry, Mikki; Lippincott, Rachael",
                 "All This Time - Lieben heißt unendlich sein"
@@ -1981,7 +2157,8 @@
         },
         {
             "isbn": "978-3-8373-1188-4",
-            "author": "Lindgren, Astrid",
+            "sort": "Lindgren, Astrid",
+            "author": "Astrid Lindgren",
             "header": [
                 "Lindgren, Astrid",
                 "Ferien auf Saltkrokan"
@@ -1994,7 +2171,8 @@
         },
         {
             "isbn": "978-3-7456-0269-2",
-            "author": "Muser , Martin",
+            "sort": "Muser , Martin",
+            "author": "Martin Muser",
             "header": [
                 "Muser , Martin",
                 "Nuschki"
@@ -2007,7 +2185,8 @@
         },
         {
             "isbn": "978-3-8373-1182-2",
-            "author": "Nordqvist, Sven",
+            "sort": "Nordqvist, Sven",
+            "author": "Sven Nordqvist",
             "header": [
                 "Nordqvist, Sven",
                 "Pettersson und Findus"
@@ -2021,7 +2200,8 @@
         },
         {
             "isbn": "978-3-8337-4282-8",
-            "author": "Osterwalder, Markus",
+            "sort": "Osterwalder, Markus",
+            "author": "Markus Osterwalder; Dorothée Böhlke",
             "header": [
                 "Osterwalder, Markus",
                 "Bobo Siebenschläfer - Zusammen sind wir stark"
@@ -2034,7 +2214,8 @@
         },
         {
             "isbn": "978-3-7424-1855-5",
-            "author": "Pearson, Jenny",
+            "sort": "Pearson, Jenny",
+            "author": "Jenny Pearson",
             "header": [
                 "Pearson, Jenny",
                 "Die unglaubliche Wunderreise des Freddie Yates"
@@ -2047,7 +2228,8 @@
         },
         {
             "isbn": "978-3-96346-041-8",
-            "author": "Pfitzner, Sandra",
+            "sort": "Pfitzner, Sandra",
+            "author": "Sandra Pfitzner",
             "header": [
                 "Pfitzner, Sandra",
                 "Abenteuer & Wissen: Sophie Scholl"
@@ -2061,7 +2243,8 @@
         },
         {
             "isbn": "978-3-96346-042-5",
-            "author": "Pfitzner, Sandra",
+            "sort": "Pfitzner, Sandra",
+            "author": "Sandra Pfitzner",
             "header": [
                 "Pfitzner, Sandra",
                 "Abenteuer & Wissen: Maria Sibylla Merian"
@@ -2074,7 +2257,8 @@
         },
         {
             "isbn": "978-3-7456-0191-6",
-            "author": "Preußler , Otfried",
+            "sort": "Preußler , Otfried",
+            "author": "Otfried Preußler",
             "header": [
                 "Preußler , Otfried",
                 "Der kleine Wassermann"
@@ -2088,7 +2272,8 @@
         },
         {
             "isbn": "978-3-7424-1651-3",
-            "author": "Sanchez Vegara, Maria Isabel",
+            "sort": "Sanchez Vegara, Maria Isabel",
+            "author": "Maria Isabel Sanchez Vegara",
             "header": [
                 "Sanchez Vegara, Maria Isabel",
                 "Little People, Big Dreams: Ella Fitzgerald, Jane Austen, Coco Chanel, Muhammad Ali"
@@ -2102,7 +2287,8 @@
         },
         {
             "isbn": "978-3-7456-0265-4",
-            "author": "Scheffel, Annika",
+            "sort": "Scheffel, Annika",
+            "author": "Annika Scheffel",
             "header": [
                 "Scheffel, Annika",
                 "Sommer auf Solupp"
@@ -2115,7 +2301,8 @@
         },
         {
             "isbn": "978-3-7456-0288-3",
-            "author": "Scherz, Oliver",
+            "sort": "Scherz, Oliver",
+            "author": "Oliver Scherz",
             "header": [
                 "Scherz, Oliver",
                 "Wir sind nachher wieder da, wir müssen kurz nach Afrika"
@@ -2129,7 +2316,8 @@
         },
         {
             "isbn": "978-3-7313-1286-4",
-            "author": "Taylor, Thomas",
+            "sort": "Taylor, Thomas",
+            "author": "Thomas Taylor",
             "header": [
                 "Taylor, Thomas",
                 "Malamander"
@@ -2142,7 +2330,8 @@
         },
         {
             "isbn": "978-3-8373-1179-2",
-            "author": "Wohlleben, Peter",
+            "sort": "Wohlleben, Peter",
+            "author": "Peter Wohlleben",
             "header": [
                 "Wohlleben, Peter",
                 "Kommst du mit nach draußen?"
@@ -2159,7 +2348,8 @@
     "Ostern Spezial": [
         {
             "isbn": "978-3-473-43999-7",
-            "author": "Frank, Cornelia",
+            "sort": "Frank, Cornelia",
+            "author": "Cornelia Frank",
             "header": [
                 "Frank, Cornelia",
                 "Wer bemalt das Osterei?"
@@ -2174,7 +2364,8 @@
         },
         {
             "isbn": "978-3-7432-1012-7",
-            "author": "Freedman, Claire",
+            "sort": "Freedman, Claire",
+            "author": "Claire Freedman",
             "header": [
                 "Freedman, Claire",
                 "Der glücklichste Hase der Welt"
@@ -2188,7 +2379,8 @@
         },
         {
             "isbn": "978-3-551-17143-6",
-            "author": "Jakobs, Günther",
+            "sort": "Jakobs, Günther",
+            "author": "Günther Jakobs",
             "header": [
                 "Jakobs, Günther",
                 "Die Eiersucherei"
@@ -2201,7 +2393,8 @@
         },
         {
             "isbn": "978-3-7459-0373-7",
-            "author": "Leiss-Bohn, Simone",
+            "sort": "Leiss-Bohn, Simone",
+            "author": "Simone Leiss-Bohn",
             "header": [
                 "Leiss-Bohn, Simone",
                 "Mission Ostern - Finde den Eierdieb!"
@@ -2215,7 +2408,8 @@
         },
         {
             "isbn": "978-3-551-19024-6",
-            "author": "Poitier, Anton",
+            "sort": "Poitier, Anton",
+            "author": "Anton Poitier",
             "header": [
                 "Poitier, Anton",
                 "Kreatives Bastelset: Ostern"
@@ -2229,7 +2423,8 @@
         },
         {
             "isbn": "978-3-7891-2112-8",
-            "author": "Praml, Sabine",
+            "sort": "Praml, Sabine",
+            "author": "Sabine Praml",
             "header": [
                 "Praml, Sabine",
                 "Wenn sieben kleine Badehasen quietschfidel ans Wasser rasen"
@@ -2243,7 +2438,8 @@
         },
         {
             "isbn": "978-3-7459-0389-8",
-            "author": "Precht, Thade",
+            "sort": "Precht, Thade",
+            "author": "Thade Precht",
             "header": [
                 "Precht, Thade",
                 "111 x Papierfalten - Ostern"
@@ -2256,7 +2452,8 @@
         },
         {
             "isbn": "978-3-551-18989-9",
-            "author": "Pöter, Andrea",
+            "sort": "Pöter, Andrea",
+            "author": "Andrea Pöter",
             "header": [
                 "Pöter, Andrea",
                 "Mein bunter Osterblock"
@@ -2270,7 +2467,8 @@
         },
         {
             "isbn": "978-3-551-51848-4",
-            "author": "Sohr, Daniel",
+            "sort": "Sohr, Daniel",
+            "author": "Daniel Sohr; Katharina E. Volk; Günther Jakobs; Rüdiger Paulsen; Heribert Schulmeyer; Jette Kleeberg; Ana Zabo; Miriam Cordes; Julian Meyer",
             "header": [
                 "Sohr, Daniel",
                 "Die schönsten Hasengeschichten"
@@ -2284,7 +2482,8 @@
         },
         {
             "isbn": "978-3-551-51338-0",
-            "author": "Tielmann, Christian",
+            "sort": "Tielmann, Christian",
+            "author": "Christian Tielmann",
             "header": [
                 "Tielmann, Christian",
                 "Wartemal wird Osterschwein"
@@ -2298,7 +2497,8 @@
         },
         {
             "isbn": "978-3-7512-0026-4",
-            "author": "Weber, Susanne",
+            "sort": "Weber, Susanne",
+            "author": "Susanne Weber",
             "header": [
                 "Weber, Susanne",
                 "Die kleine Eule - Auwei, was ist das für ein Ei?"
@@ -2310,49 +2510,6 @@
                 "Der Hase, der Bär und die Schmetterlinge haben die verschiedensten Ideen, aber nur der Spatz weiß: Man muss das Ei wärmen. Und, knack - da passiert es: Ein kleines Küken schlüpft heraus. Hurra! ",
                 "Illustration: Jacobs, Tanja",
                 "2021 bei Oetinger erschienen; Pappband, 16 Seiten stark. Unzerreißbar."
-            ]
-        }
-    ],
-    "Graphic Novel": [
-        {
-            "isbn": "978-3-95470-247-3",
-            "author": "Lemire, Sabine",
-            "header": [
-                "Lemire, Sabine",
-                "Mira #familie #paris #abschied"
-            ],
-            "body": [
-                "In letzter Zeit findet Mira ihre Mama einfach nur noch nervig. Ein Glück, dass sie ihre Freunde hat - und Oma, mit der sie immer über alles reden kann. Oma hat außerdem eine besondere Idee: Sie will mit Mira auf Reisen gehen! Aber dann kommt alles ganz anders, und Mira muss plötzlich mit einer völlig neuen Situation klarkommen und mit Gefühlen, die sie bisher nicht kannte.",
-                "Eine Parisreise zwischen Lachen und Weinen - viel Stoff für Miras Tagebuch. ",
-                "Illustration: Bregnhøi, Rasmus",
-                "2021 bei Klett Kinderbuch Verlag erschienen; kartoniert, 112 Seiten stark. "
-            ]
-        },
-        {
-            "isbn": "978-3-948690-09-0",
-            "author": "Schmitt, Volker",
-            "header": [
-                "Schmitt, Volker",
-                "Zack!"
-            ],
-            "body": [
-                "»Bist du .. ein Pirat?« Der rauschebartige Mann, den Bonny schnarchend am Strand entdeckt, erinnert sich weder daran, wo er herkommt noch an seinen Namen. Doch mit seinem einen Bein MUSS er einfach ein Pirat sein! Und als solcher braucht er einen Namen und eine Crew! Ehe Bonnys Pirat sich's versieht, heißt er Zack und sticht auch schon mit ihr in See ..",
-                "Fantasie- und temperamentvoll erzählen Autor Volker Schmitt und Zeichnerin Ma riam Ben-Arab von einem beherzten Madchen, der Suche nach dem Glück und - aye! - von einem wildschonen Piratenabenteuer.",
-                "Illustration: Ben-Arab, Màriam",
-                "2021 bei Kibitz, Berlin erschienen; gebunden, 96 Seiten stark."
-            ]
-        },
-        {
-            "isbn": "978-3-7795-0646-1",
-            "author": "Wagenbreth, Henning",
-            "header": [
-                "Wagenbreth, Henning",
-                "Rückwärtsland"
-            ],
-            "body": [
-                "Hast du mal in jungen Jahren einen Hasen totgefahren? Oder hast du das studiert, was dich gar nicht interessiert? Es gibt eine zweite Chance! Henning Wagenbreth dreht im Rückwärtsland die Zeit zurück und du kannst dann all die Sachen noch einmal und besser machen. In Panels, ganzseitigen Illustrationen und mit treffsicheren Reimen testet der Berliner Illustrator die Idee im Kleinen wie im Großen aus. Wechselt die Richtung beim Vokabular (Ralubakov) und dreht die Logik des Alltags lustig auf links: In der Zeitung kann man lesen, was am nächsten Tag passiert, welche Autos kollidieren, wo ein Gastank explodiert. Wie in einem Film, von hinten abgespielt, springt munter auf, wer halbtot am Boden lag, lodern neue Flammen aus kalter Asche, schießen Kriegskanonen alles heil. Und der Schornstein, hoch und grau, saugt zum Schluss den Himmel blau. ",
-                "2021 bei Peter Hammer Verlag erschienen; gebunden, 40 Seiten stark.",
-                "Durchgehend farbig illustriert."
             ]
         }
     ]

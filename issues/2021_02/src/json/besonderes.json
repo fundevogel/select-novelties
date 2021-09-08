@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-96185-042-6",
+        "Sortierung": "Strathie, Chae",
         "Titel": "Fast vergessenen Märchen über das Meer",
         "Untertitel": "20 Wunder der Natur",
         "Verlag": "360 Grad",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-96185-039-6",
+        "Sortierung": "Edwards, Nicola",
         "Titel": "Total verrückte SPRICHWÖRTER und REDEWENDUNGEN",
         "Untertitel": "Eine Sammlung mit Sprachschätzen und Bildern aus aller Welt",
         "Verlag": "360 Grad",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-03893-036-5",
+        "Sortierung": "Miles, David",
         "Titel": "Ich bin ein Buch",
         "Untertitel": "Bilderbuch",
         "Verlag": "Baeschlin",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-8369-6129-5",
+        "Sortierung": "Litwina, Alexandra",
         "Titel": "Von Moskau nach Wladiwostok",
         "Untertitel": "Eine Reise mit der Transsibirischen Eisenbahn",
         "Verlag": "Gerstenberg Verlag",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-446-26981-1",
+        "Sortierung": "Schaible, Johanna",
         "Titel": "Es war einmal und wird noch lange sein",
         "Untertitel": "",
         "Verlag": "Hanser",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-407-75609-1",
+        "Sortierung": "Thoma, Patricia",
         "Titel": "Unsere Zukunft träumen",
         "Untertitel": "",
         "Verlag": "Beltz",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-95854-176-4",
+        "Sortierung": "Carroll, Lewis",
         "Titel": "Alice im Wunderland",
         "Untertitel": "Ungekürzte Ausgabe",
         "Verlag": "mixtvision",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-89565-420-6",
+        "Sortierung": "Mizielinscy, Aleksandra",
         "Titel": "Alle Welt zu Tisch",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7795-0667-6",
+        "Sortierung": "Rautenberg, Arne",
         "Titel": "fünfzehn kilo kolibri",
         "Untertitel": "Gedichte zum Abheben",
         "Verlag": "Peter Hammer Verlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-96594-109-0",
+        "Sortierung": "Ziegler, Christine",
         "Titel": "Kunstfresser - Aus dem Leben einer Museumsmotte",
         "Untertitel": "Kunst für Kinder in einer spannenden Mischung aus Vorlesebuch, Sachinfos rund um Kunst & Museum und Mitmachbuch ab 6 Jahren",
         "Verlag": "Südpol Verlag",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-7022-3954-1",
+        "Sortierung": "Wildberger, Ela",
         "Titel": "Der Moment, bevor ...",
         "Untertitel": "",
         "Verlag": "Tyrolia",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-96428-108-1",
+        "Sortierung": "Böge, Dieter",
         "Titel": "Was ich nicht weiß",
         "Untertitel": "",
         "Verlag": "Jacoby & Stuart",

@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-8489-0184-5",
+        "Sortierung": "Drewes, Svenja",
         "Titel": "Ich bin klein und du bist groß",
         "Untertitel": "Mein erstes Buch der Gegensätze | Erstes Lernen für die Kleinsten",
         "Verlag": "Aladin",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-8458-4576-0",
+        "Sortierung": "Peter, Andrea",
         "Titel": "Unter Decken verstecken",
         "Untertitel": "",
         "Verlag": "ars edition",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-96704-716-5",
+        "Sortierung": "Farina, Marcos",
         "Titel": "Die tolle Tierschau",
         "Untertitel": "",
         "Verlag": "Die Gestalten Verlag",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-407-75492-9",
+        "Sortierung": "Baltscheit, Martin",
         "Titel": "Bin gleich fertig!",
         "Untertitel": "Vierfarbiges Pappbilderbuch",
         "Verlag": "Beltz",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-407-75612-1",
+        "Sortierung": "Scheffler, Axel",
         "Titel": "Evi Eichhorns Schneemann",
         "Untertitel": "Vierbarbiges Pappbilderbuch mit Klappen",
         "Verlag": "Beltz",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-407-75500-1",
+        "Sortierung": "Scheffler, Axel",
         "Titel": "Die Katze lernt jetzt kochen",
         "Untertitel": "Vierbarbiges Pappbilderbuch mit Klappen",
         "Verlag": "Beltz",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7432-1106-3",
+        "Sortierung": "Lang, Suzanne",
         "Titel": "Jims kleines Buch der miesen Laune",
         "Untertitel": "Nie mehr schlechte Laune mit Jim - Pappbilderbuch zu den Jim-Bestsellern für Kinder ab 2 Jahren",
         "Verlag": "Loewe Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7432-0728-8",
+        "Sortierung": "Baltscheit, Martin",
         "Titel": "Der kleine Esel Liebernicht - Einschlafen? Lieber nicht!",
         "Untertitel": "Lustiges Pappbilderbuch zur Trotzphase für Kleinkinder ab 2 Jahre",
         "Verlag": "Loewe Verlag",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7348-1584-3",
+        "Sortierung": "Nascimbeni, Barbara",
         "Titel": "Meine kleine Tierfamilie - Im Wald",
         "Untertitel": "",
         "Verlag": "Magellan",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-89565-415-2",
+        "Sortierung": "Mühle, Jörg",
         "Titel": "Hasenkind, flieg!",
         "Untertitel": "",
         "Verlag": "Moritz",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-7795-0665-2",
+        "Sortierung": "Straßer, Susanne",
         "Titel": "Kann ich bitte in die Mitte?",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-7415-2609-1",
+        "Sortierung": "Collet, Emilie",
         "Titel": "So klingt Schubert",
         "Untertitel": "Klassik für Kinder - ein Musikbilderbuch mit 6 der bekanntesten klassischen Melodien von Franz Schubert, Geschenkbuch für Kinder ab 2 Jahren. Tönendes Buch",
         "Verlag": "Ullmann Medien",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-1-78941-524-7",
+        "Sortierung": "Taplin, Sam",
         "Titel": "Mein buntes Gucklochbuch: Bist du das, kleiner Dino?",
         "Untertitel": "ab 6 Monaten",
         "Verlag": "Usborne Verlag",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-7512-0090-5",
+        "Sortierung": "Praml, Sabine",
         "Titel": "Wenn sieben müde kleine Hasen abends in ihr Bettchen rasen",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7891-1482-3",
+        "Sortierung": "Zur Brügge, Anne-Kristin",
         "Titel": "Wenn kleine Tiere sich verstecken",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-7512-0093-6",
+        "Sortierung": "Orso, Kathrin Lena",
         "Titel": "Ab ins Bett, kleine Tierkinder!",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-7512-0089-9",
+        "Sortierung": "Weber, Susanne",
         "Titel": "Wo ist die Eule mit der Beule?",
         "Untertitel": "Fühlbuch",
         "Verlag": "Oetinger",

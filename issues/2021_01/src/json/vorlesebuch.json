@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-551-55516-8",
+        "Sortierung": "Castillo, Lauren",
         "Titel": "Igel und Schnuff",
         "Untertitel": "Ideal zum Vorlesen: eine liebevolle Tiergeschichte",
         "Verlag": "Carlsen",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-96177-061-8",
+        "Sortierung": "Frölander-Ulf, Lena",
         "Titel": "Nelson Tigertatze",
         "Untertitel": "",
         "Verlag": "Woow Books",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7915-0150-5",
+        "Sortierung": "Hai, Magdalena",
         "Titel": "Die Nimmersattkatze",
         "Untertitel": "",
         "Verlag": "Dressler Verlag GmbH",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-7795-0658-4",
+        "Sortierung": "Jansen, Hanna",
         "Titel": "Hasen in der Nase",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-17124-5",
+        "Sortierung": "Kitzing, Constanze von",
         "Titel": "Ich bin anders als du",
         "Untertitel": ": Das große Bilderbuch zum Vor- und Mitlesen. Ein buntes Wendebuch über Vielfalt",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-551-51997-9",
+        "Sortierung": "Kling, Marc-Uwe",
         "Titel": "Der Tag, an dem Papa ein heikles Gespräch führen wollte",
         "Untertitel": "Das witzigste Aufklärungsbuch seit dem Urknall",
         "Verlag": "Carlsen",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7512-0047-9",
+        "Sortierung": "Maar, Paul",
         "Titel": "Der kleine Troll Tojok",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-423-64077-0",
+        "Sortierung": "Strathmann, Jan",
         "Titel": "Milla und der Nashornbus",
         "Untertitel": "",
         "Verlag": "DTV",

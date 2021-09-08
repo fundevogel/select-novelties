@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-401-60645-3",
+        "Sortierung": "Garrett, Camryn",
         "Titel": "Off the Record. Unsere Worte sind unsere Macht",
         "Untertitel": "Ein Roman über Gerechtigkeit und Mut ab 14 Jahren",
         "Verlag": "Arena",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-551-58441-0",
+        "Sortierung": "Mendoza, Paola",
         "Titel": "Sanctuary - Flucht in die Freiheit",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-551-58454-0",
+        "Sortierung": "Curtis, Scarlett",
         "Titel": "It's okay not to be okay",
         "Untertitel": "Inspirierende Persönlichkeiten sprechen über psychische Gesundheit",
         "Verlag": "Carlsen",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-551-58447-2",
+        "Sortierung": "Sharpe, Tess",
         "Titel": "The Girls I've Been",
         "Untertitel": "Du glaubst, du kennst mich? Falsch gedacht.",
         "Verlag": "Carlsen",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-570-16619-2",
+        "Sortierung": "Clayton, Dhonielle",
         "Titel": "Blackout",
         "Untertitel": "Liebe leuchtet auch im Dunkeln",
         "Verlag": "cbj",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-570-16622-2",
+        "Sortierung": "Fadugba, Femi",
         "Titel": "The Upper World - Ein Hauch Zukunft",
         "Untertitel": "Ein hochaktueller, spannender Thriller",
         "Verlag": "cbj",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-570-16579-9",
+        "Sortierung": "Praxmayer, Claudia",
         "Titel": "Der Geschmack des Lebens",
         "Untertitel": "Ein packender Future-Fiction-Roman",
         "Verlag": "cbj",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-570-16608-6",
+        "Sortierung": "Gonzales, Sophie",
         "Titel": "Nur fast am Boden zerstört",
         "Untertitel": "",
         "Verlag": "cbj",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7513-0023-0",
+        "Sortierung": "Martin, Peer",
         "Titel": "Blut und Schokolade",
         "Untertitel": "",
         "Verlag": "Dressler Verlag GmbH",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-423-74073-9",
+        "Sortierung": "Leisten, Lena Luisa",
         "Titel": "Je lauter die Stille",
         "Untertitel": "Roman: Bewegende Coming-of-Age-Story",
         "Verlag": "DTV",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-7373-4251-3",
+        "Sortierung": "Rosoff, Meg",
         "Titel": "Sommernachtserwachen",
         "Untertitel": "",
         "Verlag": "FISCHER KJB",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-7373-5884-2",
+        "Sortierung": "Shusterman, Neal",
         "Titel": "Game Changer - Es gibt unendlich viele Möglichkeiten, alles falsch zu machen",
         "Untertitel": "",
         "Verlag": "FISCHER Sauerländer",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-446-27119-7",
+        "Sortierung": "Posthuma, Lisabeth",
         "Titel": "Baby & Solo",
         "Untertitel": "",
         "Verlag": "Hanser",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-407-75602-2",
+        "Sortierung": "Kordon, Klaus",
         "Titel": "Und alles neu macht der Mai",
         "Untertitel": "Roman",
         "Verlag": "Beltz",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7432-1011-0",
+        "Sortierung": "McDowell, Kara",
         "Titel": "One Way Or Another",
         "Untertitel": "Zwei Wege zu dir - Verliebe dich in die spannende Mischung aus Romantik, Witz und Tiefgang - Liebesroman über die Vielfalt der Möglichkeiten",
         "Verlag": "Loewe Verlag",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-7432-0051-7",
+        "Sortierung": "Poznanski, Ursula",
         "Titel": "Shelter",
         "Untertitel": "Es ist deine Verschwörung - aber du bist ihr Opfer.",
         "Verlag": "Loewe Verlag",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-7432-1155-1",
+        "Sortierung": "Moulite, Maritza",
         "Titel": "One Of The Good Ones",
         "Untertitel": "Roadtrip-Roman über Rassismus in den USA",
         "Verlag": "Loewe Verlag",

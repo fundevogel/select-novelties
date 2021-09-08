@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-551-65336-9",
+        "Sortierung": "Auer, Margit",
         "Titel": "Die Schule der magischen Tiere - Endlich Ferien 6: Hatice und Mette-Maja",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-86429-487-7",
+        "Sortierung": "Dölling, Beate",
         "Titel": "Ab in die Rakete",
         "Untertitel": "",
         "Verlag": "Tulipan",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-85535-645-4",
+        "Sortierung": "Juster, Norton",
         "Titel": "Die Abenteuer von Milo, Tack und Kackerlack",
         "Untertitel": "",
         "Verlag": "Atrium Verlag",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-8369-6096-0",
+        "Sortierung": "Lambeck, Silke",
         "Titel": "Herr Röslein kommt zurück",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-55517-5",
+        "Sortierung": "Muser, Martin",
         "Titel": "Nuschki",
         "Untertitel": "Ein Hundeabenteuer von Bestsellerautor Martin Muser - für alle mit Schnauze!",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-85535-656-0",
+        "Sortierung": "Raúf, Onjali Q.",
         "Titel": "Die Nachtbushelden",
         "Untertitel": "",
         "Verlag": "Atrium Verlag",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-8337-4304-7",
+        "Sortierung": "Schirneck, Hubert",
         "Titel": "Zwillinge im Doppelpass. Ulf und Kathi im Fußballfieber",
         "Untertitel": "",
         "Verlag": "Jumbo Neue Medien",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-7891-1481-6",
+        "Sortierung": "Taschinski, Stefanie",
         "Titel": "Familie Flickenteppich 3. Wir machen Ferien",
         "Untertitel": "",
         "Verlag": "Oetinger",

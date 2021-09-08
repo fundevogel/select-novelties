@@ -1,6 +1,7 @@
 [
     {
         "ISBN": "978-3-551-31984-5",
+        "Sortierung": "Birdsall, Jeanne",
         "Titel": "Die Penderwicks im Glück  (Die Penderwicks 5)",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -26,6 +27,7 @@
     },
     {
         "ISBN": "978-3-8369-6112-7",
+        "Sortierung": "Burger, Judith",
         "Titel": "Ringo, ich und ein komplett ahnungsloser Sommer",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -51,6 +53,7 @@
     },
     {
         "ISBN": "978-3-7891-2103-6",
+        "Sortierung": "Carter, Aimée",
         "Titel": "Die Erben der Animox 1. Die Beute des Fuchses",
         "Untertitel": "",
         "Verlag": "Oetinger",
@@ -76,6 +79,7 @@
     },
     {
         "ISBN": "978-3-96428-084-8",
+        "Sortierung": "Daugey, Fleur",
         "Titel": "Freiheit!",
         "Untertitel": "Harriet Tubman, eine amerikanische Heldin",
         "Verlag": "Jacoby & Stuart",
@@ -101,6 +105,7 @@
     },
     {
         "ISBN": "978-3-551-55519-9",
+        "Sortierung": "Franz, Cornelia",
         "Titel": "Calypsos Irrfahrt",
         "Untertitel": "Nala und Mohs Flucht über das Mittelmeer. Für Kinder ab 10",
         "Verlag": "Carlsen",
@@ -126,6 +131,7 @@
     },
     {
         "ISBN": "978-3-423-62742-9",
+        "Sortierung": "Goldberg Sloan, Holly",
         "Titel": "An Nachteule von Sternhai",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -151,6 +157,7 @@
     },
     {
         "ISBN": "978-3-7795-0651-5",
+        "Sortierung": "Karimé, Andrea",
         "Titel": "Sterne im Kopf und ein unglaublicher Plan",
         "Untertitel": "",
         "Verlag": "Peter Hammer Verlag",
@@ -176,6 +183,7 @@
     },
     {
         "ISBN": "978-3-423-64076-3",
+        "Sortierung": "Klingenberg, Malin",
         "Titel": "Elchtage",
         "Untertitel": "Roman",
         "Verlag": "DTV",
@@ -201,6 +209,7 @@
     },
     {
         "ISBN": "978-3-7478-0035-5",
+        "Sortierung": "Kroon, Oskar",
         "Titel": "Warten auf Wind",
         "Untertitel": "",
         "Verlag": "Hummelburg Verlag",
@@ -226,6 +235,7 @@
     },
     {
         "ISBN": "978-3-95470-247-3",
+        "Sortierung": "Lemire, Sabine",
         "Titel": "Mira #familie #paris #abschied",
         "Untertitel": "",
         "Verlag": "Klett Kinderbuch Verlag",
@@ -251,6 +261,7 @@
     },
     {
         "ISBN": "978-3-423-62738-2",
+        "Sortierung": "Nilsson, Frida",
         "Titel": "Sasja und das Reich jenseits des Meeres",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -276,6 +287,7 @@
     },
     {
         "ISBN": "978-3-423-76320-2",
+        "Sortierung": "O'Shaughnessy, Kate",
         "Titel": "Das Glück wartet nur bis um vier",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -301,6 +313,7 @@
     },
     {
         "ISBN": "978-3-423-64078-7",
+        "Sortierung": "Reynolds, Jason",
         "Titel": "Asphalthelden",
         "Untertitel": "",
         "Verlag": "DTV",
@@ -326,6 +339,7 @@
     },
     {
         "ISBN": "978-3-551-31992-0",
+        "Sortierung": "Rundell, Katherine",
         "Titel": "Mitten im Dschungel",
         "Untertitel": "",
         "Verlag": "Carlsen",
@@ -351,6 +365,7 @@
     },
     {
         "ISBN": "978-3-7478-0036-2",
+        "Sortierung": "Schomburg, Andrea",
         "Titel": "Die Spur zum 9. Tag",
         "Untertitel": "",
         "Verlag": "Hummelburg Verlag",
@@ -376,6 +391,7 @@
     },
     {
         "ISBN": "978-3-551-31985-2",
+        "Sortierung": "Stewart, Kiera",
         "Titel": "Dumme Ideen für einen guten Sommer",
         "Untertitel": "Ein Gute-Laune-Buch für starke Mädchen - und alle, die es werden wollen!",
         "Verlag": "Carlsen",
@@ -401,6 +417,7 @@
     },
     {
         "ISBN": "978-3-8369-6061-8",
+        "Sortierung": "Vereecken, Kathleen",
         "Titel": "Alles wird gut, immer",
         "Untertitel": "",
         "Verlag": "Gerstenberg Verlag",
@@ -426,6 +443,7 @@
     },
     {
         "ISBN": "978-3-423-76325-7",
+        "Sortierung": "Zeh, Juli",
         "Titel": "Socke und Sophie - Pferdesprache leicht gemacht",
         "Untertitel": "",
         "Verlag": "DTV",

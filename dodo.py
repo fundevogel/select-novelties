@@ -658,8 +658,8 @@ def task_finish_issue():
             for json_data in load_json(json_file):
                 # Fix edge cases when author is undefined
                 # See 978-3-649-64031-8
-                if not json_data['AutorIn']:
-                    json_data['AutorIn'] = ''
+                if not json_data['AutorInnen']:
+                    json_data['AutorInnen'] = ''
 
                 # Go through all text elements
                 for element in text_elements:
@@ -702,9 +702,10 @@ def task_finish_issue():
 
                 # Build book data
                 buffer.append({
-                    # (1) ISBN & author (for sorting)
+                    # (1) ISBN, sorting order & author(s)
                     'isbn': json_data['ISBN'],
-                    'author': json_data['AutorIn'],
+                    'sort': json_data['Sortierung'],
+                    'author': json_data['AutorInnen'],
 
                     # (2) Header
                     'header': header,
@@ -716,7 +717,7 @@ def task_finish_issue():
             # Determine heading
             heading = headings[os.path.basename(json_file)[:-5]]
 
-            books[heading] = sorted(buffer, key=itemgetter('author'))
+            books[heading] = sorted(buffer, key=itemgetter('sort'))
 
         # Store results
         dump_json(books, targets[1])
