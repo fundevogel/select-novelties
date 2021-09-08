@@ -747,38 +747,7 @@ def task_finish_issue():
 
 def get_files(extension: str, mode: str) -> list:
     # Build categories
-    # (1) Base
-    categories = [
-        'toddler',
-        'bilderbuch',
-        'vorlesebuch',
-        'ab6',
-        'ab8',
-        'ab10',
-        'ab12',
-        'ab14',
-        'sachbuch',
-        'besonderes',
-        'hoerbuch',
-    ]
-
-    # (2) Per-season
-    per_season = {
-        'spring': ['ostern'],
-        'autumn': [
-            'weihnachten',
-            'kalender',
-        ]
-    }
-
-    categories = categories + per_season[season]
-
-    # (3) Occasionally
-    if os.path.isfile(src_dir + '/csv/comic.csv'):
-        categories.append('comic')
-
-    if os.path.isfile(src_dir + '/csv/kreatives.csv'):
-        categories.append('kreatives')
+    categories = list(headings.keys())
 
     # Build files listing
     files = [category + '.' + extension for category in categories]
